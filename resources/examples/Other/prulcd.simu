@@ -1,0 +1,48 @@
+<circuit speed="1000000" animate="0" type="simulide_0.1" noLinAcc="5" reactStep="50" noLinStep="10">
+ 
+Fixed Volt.-7: 
+<item valLabely="-11" Show_id="false" rotation="0" vflip="1" Show_Volt="true" x="-460" id="Fixed Volt.-1" Unit=" V" objectName="Fixed Volt.-7" labelrot="0" hflip="1" y="-148" valLabelx="-60" Voltage="5" labely="-24" labelx="-64" valLabRot="0" itemtype="Fixed Voltage"/>
+ 
+Fixed Volt.-6: 
+<item valLabely="-11" Show_id="false" rotation="0" vflip="1" Show_Volt="true" x="-460" id="Fixed Volt.-2" Unit=" V" objectName="Fixed Volt.-6" labelrot="0" hflip="1" y="-100" valLabelx="-59" Voltage="5" labely="-24" labelx="-64" valLabRot="0" itemtype="Fixed Voltage"/>
+ 
+Fixed Volt.-5: 
+<item valLabely="-8" Show_id="false" rotation="0" vflip="1" Show_Volt="true" x="-460" id="Fixed Volt.-3" Unit=" V" objectName="Fixed Volt.-5" labelrot="0" hflip="1" y="-76" valLabelx="-61" Voltage="5" labely="-24" labelx="-64" valLabRot="0" itemtype="Fixed Voltage"/>
+ 
+Hd44780-4: 
+<item rotation="0" valLabely="0" Show_id="false" itemtype="Hd44780" labelrot="0" id="Hd44780-4" x="-428" labely="-24" Cols="16" Rows="2" y="-228" vflip="1" objectName="Hd44780-4" valLabRot="0" labelx="-16" valLabelx="0" hflip="1"/>
+ 
+Fixed Volt.-3: 
+<item valLabely="-9" Show_id="false" rotation="0" vflip="1" Show_Volt="true" x="-460" id="Fixed Volt.-5" Unit=" V" objectName="Fixed Volt.-3" labelrot="0" hflip="1" y="-204" valLabelx="-59" Voltage="5" labely="-24" labelx="-64" valLabRot="0" itemtype="Fixed Voltage"/>
+ 
+Fixed Volt.-2: 
+<item valLabely="-9" Show_id="false" rotation="0" vflip="1" Show_Volt="true" x="-460" id="Fixed Volt.-6" Unit=" V" objectName="Fixed Volt.-2" labelrot="0" hflip="1" y="-188" valLabelx="-58" Voltage="5" labely="-24" labelx="-64" valLabRot="0" itemtype="Fixed Voltage"/>
+ 
+Fixed Volt.-1: 
+<item valLabely="-12" Show_id="false" rotation="0" vflip="1" Show_Volt="true" x="-460" id="Fixed Volt.-7" Unit=" V" objectName="Fixed Volt.-1" labelrot="0" hflip="1" y="-124" valLabelx="-60" Voltage="5" labely="-24" labelx="-64" valLabRot="0" itemtype="Fixed Voltage"/>
+ 
+Connector-8: 
+<item startpinid="Fixed Volt.-2-outnod" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-444" id="Connector-8" enodeid="Circ_eNode-9" objectName="Connector-8" pointList="-444,-188,-396,-188,-396,-220" labelrot="0" hflip="1" endpinid="Hd44780-4-PinEn" y="-188" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-10: 
+<item startpinid="Fixed Volt.-5-outnod" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-444" id="Connector-10" enodeid="Circ_eNode-11" objectName="Connector-10" pointList="-444,-76,-332,-76,-332,-220" labelrot="0" hflip="1" endpinid="Hd44780-4-dataPin7" y="-76" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-12: 
+<item startpinid="Fixed Volt.-6-outnod" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-444" id="Connector-12" enodeid="Circ_eNode-13" objectName="Connector-12" pointList="-444,-100,-340,-100,-340,-220" labelrot="0" hflip="1" endpinid="Hd44780-4-dataPin6" y="-100" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-14: 
+<item startpinid="Fixed Volt.-1-outnod" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-444" id="Connector-14" enodeid="Circ_eNode-15" objectName="Connector-14" pointList="-444,-124,-348,-124,-348,-220" labelrot="0" hflip="1" endpinid="Hd44780-4-dataPin5" y="-124" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-16: 
+<item startpinid="Fixed Volt.-7-outnod" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-444" id="Connector-16" enodeid="Circ_eNode-17" objectName="Connector-16" pointList="-444,-148,-356,-148,-356,-220" labelrot="0" hflip="1" endpinid="Hd44780-4-dataPin4" y="-148" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-18: 
+<item startpinid="Fixed Volt.-3-outnod" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-444" id="Connector-18" enodeid="Circ_eNode-19" objectName="Connector-18" pointList="-444,-204,-412,-204,-412,-220" labelrot="0" hflip="1" endpinid="Hd44780-4-PinRS" y="-204" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+PlotterWidget-65: 
+<item frameSize="" toolTipDuration="-1" maximumSize="" sizeHint="" pos="" baseSize="" maximumWidth="1000" normalGeometry="" maximized="false" minimumWidth="200" maximumHeight="200" windowFilePath="" windowModality="0" inputMethodHints="0" toolTip="" updatesEnabled="true" palette="" whatsThis="" autoFillBackground="false" minimized="false" itemtype="Plotter" windowOpacity="1" cursor="" styleSheet="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumHeight="200" isActiveWindow="true" minimumSize="" height="200" y="520" childrenRegion="" windowTitle="" contextMenuPolicy="1" x="0" focus="false" windowModified="false" mouseTracking="false" size="" accessibleName="" sizePolicy="" MinVolt="-500" childrenRect="" minimumSizeHint="" width="619" acceptDrops="false" windowIcon="" Tracks="1" objectName="PlotterWidget-65" windowIconText="" geometry="" rect="" locale="" modal="false" Scale="1" frameGeometry="" sizeIncrement="" focusPolicy="0" accessibleDescription="" layoutDirection="0" visible="false" fullScreen="false" MaxVolt="500" enabled="true" statusTip=""/>
+ 
+SerialPortWidget-66: 
+<item frameSize="" toolTipDuration="-1" maximumSize="" sizeHint="" pos="" baseSize="" maximumWidth="450" normalGeometry="" maximized="false" minimumWidth="0" maximumHeight="170" windowFilePath="" SettingsProp="ttyS0,0,3,0,0,0" windowModality="0" inputMethodHints="0" toolTip="" updatesEnabled="true" palette="" whatsThis="" autoFillBackground="false" minimized="false" itemtype="SerialPort" windowOpacity="1" cursor="" styleSheet="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumHeight="0" isActiveWindow="true" minimumSize="" height="147" y="573" childrenRegion="" windowTitle="Configuracion" contextMenuPolicy="1" x="153" focus="false" windowModified="false" mouseTracking="false" size="" accessibleName="" sizePolicy="" childrenRect="" minimumSizeHint="" width="450" acceptDrops="false" windowIcon="" objectName="SerialPortWidget-66" windowIconText="" geometry="" rect="" locale="" modal="false" frameGeometry="" sizeIncrement="" focusPolicy="0" accessibleDescription="" layoutDirection="0" visible="false" fullScreen="false" enabled="true" statusTip=""/>
+ 
+</circuit>

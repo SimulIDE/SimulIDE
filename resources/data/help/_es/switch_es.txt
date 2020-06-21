@@ -1,0 +1,13 @@
+Switch:
+
+Este es un interruptor de bloqueo.
+
+Parámetros:
+- Polos:
+   Determina el número de polos. 1
+- DT:
+   Se puede configurar como simple o doble contacto. false
+   - false (contacto simple) - 2 pines
+   - true (doble contacto) - 3 pines
+- Norm Cerrado:
+   Se puede configurar como normalmente cerrado (NC) o normalmente abierto (NO). false

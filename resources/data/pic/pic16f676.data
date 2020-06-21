@@ -1,0 +1,57 @@
+ ###########################################################################
+ #   Copyright (C) 2017   by santiago González                             #
+ #   santigoro@gmail.com                                                   #
+ #                                                                         #
+ #   This program is free software; you can redistribute it and/or modify  #
+ #   it under the terms of the GNU General Public License as published by  #
+ #   the Free Software Foundation; either version 3 of the License, or     #
+ #   (at your option) any later version.                                   #
+ #                                                                         #
+ #   This program is distributed in the hope that it will be useful,       #
+ #   but WITHOUT ANY WARRANTY; without even the implied warranty of        #
+ #   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         #
+ #   GNU General Public License for more details.                          #
+ #                                                                         #
+ #   You should have received a copy of the GNU General Public License     #
+ #   along with this program; if not, see <http://www.gnu.org/licenses/>.  #
+ #                                                                         #
+ ###########################################################################
+ 
+MaxMHz=20
+
+INDF EQU 0
+TMR0 EQU 1
+PCL EQU 2
+STATUS EQU 3
+FSR EQU 4
+PORTA EQU 5
+PORTC EQU 7
+PCLATH EQU 10
+INTCON EQU 11
+PIR1 EQU 12
+TMR1 EQU 14
+TMR1L EQU 14
+TMR1H EQU 15
+T1CON EQU 16
+CMCON EQU 25
+ADRESH EQU 30
+ADCON0 EQU 31
+OPTION_REG EQU 129
+TRISA EQU 133
+TRISC EQU 135
+PIE1 EQU 140
+PCON EQU 142
+OSCCAL EQU 144
+ANSEL EQU 145
+WPU EQU 149
+WPUA EQU 149
+IOC EQU 150
+IOCA EQU 150
+VRCON EQU 153
+EEDAT EQU 154
+EEDATA EQU 154
+EEADR EQU 155
+EECON1 EQU 156
+EECON2 EQU 157
+ADRESL EQU 158
+ADCON1 EQU 159

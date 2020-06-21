@@ -1,0 +1,35 @@
+74XX90 - decade counter (separate divide-by-2 and divide-by-5 sections)
+
+Uno de los mas populares contadores. Facil de usar como contador de modulo n o divison entre n.
+
+Siempre: MS1+MS2 = 0 y CP1 = Q0
+MR1+MR2 = Q1 -----> Contador modulo 2 (0..1)
+MR1=Q1+MR2=Q0 ----> Contador modulo 3 (0..2)
+MR1+MR2 = Q2 -----> Contador modulo 4 (0..3)
+MR1=Q2+MR2=Q0 ----> Contador modulo 5 (0..4)
+MR1=Q2+MR2=Q0 ----> Contador modulo 6 (0..5)
+MR1=(Q1+Q2)+MR2=Q0 ----> Contador modulo 7 (0..6) Usar AND para MR1
+MR1+MR2 = Q3 -----> Contador modulo 8 (0..7)
+MR1=Q3+MR2=Q0 ----> Contador modulo 9 (0..8)
+MR1+MR2 = 0 ------> Contador decadico (0..9)
+
+Divisores:
+* Divisor entre 5 --> MS1+MS2+MR1+MR2=GND, salida Q3
+* Divisor entre 6 --> CP1+MS1=Q0, MR1+MR2=GND, salida = Q1=MS2
+* Divisor entre 7 --> CP0=Q0, MS1+MS2=GND, MR2=Q2, salida = Q3
+* Divisor entre 8 --> MS1+MS2=Q3, MR1+MR2=GND, salida = Q2
+* Divisor entre 9 --> CP0+MS1=Q0, MR1+MR2=GND, salida Q3=MS2
+* Divisor entre 10 --> MS1+MS2+MR1+MR2=GND, CP1=Q3, salida = Q0
+
+Pines:
+CP0 + CP1 = Clock (pin 1+14)
+MS1 + MS2 = Set (pin 2+3)
+MR1 + MR2 = Reset (pin 6+7)
+Q0..Q3 = Salidas (pin 12+9+8+11)
+
+Vcc = 5
+GND = 10
+No usados = 4+13
+
+Ver help en:
+   ..share/simulide/data/examples/logic/74_series/Help_74XX90.simu

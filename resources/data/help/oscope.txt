@@ -1,0 +1,13 @@
+Oscilloscope:
+
+By default Oscope auto-scale to signal frequency and amplitude.
+
+To manually set Scale and Position disable "Auto" checkBox.
+
+Controls are arraged in two columns: 
+    Horizontal and Vertical.
+
+And two rows: 
+    Scale and Position.
+    
+For example to set Horizontal Scale use control at "Scale" row and "H" column.

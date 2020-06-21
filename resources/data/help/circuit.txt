@@ -1,0 +1,22 @@
+Circuit:
+
+- Speed: Simulation speed in Steps per Second.
+
+- ReactStep: run Reactive components once every simulation steps.
+
+- NoLinAcc: Non-Linear components accuracy. Higher is more accurate.
+
+- Show Grid:
+
+- Show Scrollbar:
+
+- Animate: wires will get Red if Volts>2.5, Blue otherwise.
+
+- Font Scale: scale interface font, for example 1,5 = 150%.
+
+- Auto Backup Secs: Time interval in seconds for Circuit to check for changes and save a backup if there are changes.
+  Setting time to 0 disables Auto Backup.
+
+
+More Info:
+http://simulide.blogspot.com/p/blog-page_15.html

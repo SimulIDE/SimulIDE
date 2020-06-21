@@ -1,0 +1,27 @@
+<circuit type="simulide_0.1">
+ 
+Text-5: 
+<item labely="-24" id="Text-5" Fixed_Width="true" vflip="1" Show_id="false" valLabelx="0" hflip="1" itemtype="TextComponent" valLabRot="0" Margin="5" y="-324" Border="1" rotation="0" labelrot="0" valLabely="0" x="-340" text="This example Demonstrates how to &#xa;use interrupts with TMR0.&#xa;&#xa;State of LED on Ra0 is inverted &#xa;by toggle every 61 interrupts.&#xa;&#xa;PIC16F628A and 16 mHz crystal" objectName="Text-5" labelx="-16"/>
+ 
+Ground (0 V)-4: 
+<item x="-116" vflip="1" objectName="Ground (0 V)-4" valLabRot="0" labelx="0" labely="-24" rotation="0" valLabelx="14" itemtype="Ground" y="-124" labelrot="0" hflip="1" Show_id="false" valLabely="-10" id="Ground (0 V)-4"/>
+ 
+Resistor-3: 
+<item labely="-24" id="Resistor-3" vflip="1" Show_id="false" valLabelx="-16" hflip="1" itemtype="Resistor" valLabRot="0" Unit=" Ω" Show_res="true" y="-180" rotation="0" labelrot="0" valLabely="-21" x="-172" Resistance="100" objectName="Resistor-3" labelx="0"/>
+ 
+pic16f628a-2: 
+<item x="-308" vflip="1" objectName="pic16f628a-2" valLabRot="0" labelx="-12" labely="84" rotation="0" Mhz="16" valLabelx="0" itemtype="PIC" y="-196" program="T0_IRQ_Pic16F628A.hex" labelrot="0" hflip="1" Show_id="true" valLabely="0" id="PIC16F628A"/>
+ 
+Led-1: 
+<item labely="-24" id="Led-1" vflip="1" Show_id="false" valLabelx="0" hflip="1" itemtype="Led" valLabRot="0" threshold="2.3999999999999999" y="-180" rotation="0" labelrot="0" valLabely="0" x="-228" MaxCurrent="0.02" Color="0" Resistance="0.59999999999999998" Grounded="false" objectName="Led-1" labelx="0"/>
+ 
+Connector-6: 
+<item labely="-24" id="Connector-6" startpinid="Resistor-3-rPin" vflip="1" Show_id="false" valLabelx="-14" endpinid="Ground (0 V)-4-Gnd" hflip="1" itemtype="Connector" valLabRot="0" y="-180" rotation="0" labelrot="0" valLabely="2" x="-156" objectName="Connector-6" labelx="0" pointList="-156,-180,-116,-180,-116,-140" enodeid="Circ_eNode-7"/>
+ 
+Connector-8: 
+<item labely="-24" id="Connector-8" startpinid="Led-1-lPin" vflip="1" Show_id="false" valLabelx="0" endpinid="pic16f628a-2-RA0" hflip="1" itemtype="Connector" valLabRot="0" y="-180" rotation="0" labelrot="0" valLabely="0" x="-244" objectName="Connector-8" labelx="0" pointList="-244,-180,-268,-180" enodeid="Circ_eNode-9"/>
+ 
+Connector-10: 
+<item labely="-24" id="Connector-10" startpinid="Led-1-rPin" vflip="1" Show_id="false" valLabelx="0" endpinid="Resistor-3-lPin" hflip="1" itemtype="Connector" valLabRot="0" y="-180" rotation="0" labelrot="0" valLabely="0" x="-212" objectName="Connector-10" labelx="0" pointList="-212,-180,-188,-180" enodeid="Circ_eNode-11"/>
+ 
+</circuit>

@@ -1,0 +1,10 @@
+ [Desktop Entry]
+Version=0.3.10
+Name=SimulIDE
+GenericName=SimulIDE
+Comment=Electronic Circuit Simulator Software
+Exec=/home/user/SimulIDE_0.3.10/bin/simulide
+Icon=/home/user/SimulIDE_0.3.10/share/icons/hicolor/256x256/simulide.png
+Terminal=false
+Type=Application
+Categories=Electronics;EDA;

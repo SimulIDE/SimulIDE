@@ -1,0 +1,13 @@
+Voltaje fijo:
+
+Esta es una fuente de voltaje simple.
+
+Se puede activar/desactivar con el botón en el lado izquierdo.
+
+Parámetros:
+- Voltaje:
+   Establece el valor de la salida. 5
+- Unidades:
+   Establece las unidades. V
+- Mostrar Voltaje:
+   Establece si se muestra o no el valor de la salida. true

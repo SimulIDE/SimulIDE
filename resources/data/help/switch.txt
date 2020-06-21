@@ -1,0 +1,12 @@
+Switch:
+
+This is a latching switch.
+
+It can be configured as normally closed or normally opened using the "Norm Close" property.
+
+To adjust number of poles use "Poles" property.
+
+It can be configured as Double or Sigle Throw using "DT" property:
+
+DT = true  : Double Throw.
+DT = false : Sigle  Throw.

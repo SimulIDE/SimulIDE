@@ -1,0 +1,13 @@
+74XX91 - serial-in, serial-out, 8-bit shift register
+
+Este registro de desplazamiento de 8 bits contiene ocho flip-flops maestro-esclavo RS de entrada y un controlador de reloj.
+
+A B Q !Q
+x 0 0  1
+0 x 0  1
+1 1 1  0 
+
+Nota: Actua luego de 8 pulsos de reloj
+
+Ver help en:
+   ..share/simulide/data/examples/logic/74_series/Help_74XX91.simu

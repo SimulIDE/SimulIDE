@@ -1,0 +1,149 @@
+<!DOCTYPE SimulIDE>
+
+<!-- *************************************************************************** -->
+<!-- *   Copyright (C) 2017 by santiago González                               * -->
+<!-- *   santigoro@gmail.com                                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is free software; you can redistribute it and/or modify  * -->
+<!-- *   it under the terms of the GNU General Public License as published by  * -->
+<!-- *   the Free Software Foundation; either version 3 of the License, or     * -->
+<!-- *   (at your option) any later version.                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is distributed in the hope that it will be useful,       * -->
+<!-- *   but WITHOUT ANY WARRANTY; without even the implied warranty of        * -->
+<!-- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         * -->
+<!-- *   GNU General Public License for more details.                          * -->
+<!-- *                                                                         * -->
+<!-- *   You should have received a copy of the GNU General Public License     * -->
+<!-- *   along with this program; if not, see <http://www.gnu.org/licenses/>.  * -->
+<!-- *                                                                         * -->
+<!-- *************************************************************************** -->
+
+<itemlib>
+    
+    <itemset category="PIC/10F" type="PIC">
+    <item name="pic10f200"  package="pic/pic10f200"  data="pic/pic10f200"  device="pic10f200"  ></item>
+    <item name="pic10f202"  package="pic/pic10f200"  data="pic/pic10f200"  device="pic10f202"  ></item>
+    <item name="pic10f204"  package="pic/pic10f200"  data="pic/pic10f204"  device="pic10f204"  ></item>
+    <item name="pic10f220"  package="pic/pic10f200"  data="pic/pic10f220"  device="pic10f220"  ></item>
+    <item name="pic10f222"  package="pic/pic10f200"  data="pic/pic10f220"  device="pic10f222"  ></item>
+    </itemset>
+    <itemset category="PIC/12C" type="PIC">
+    <item name="pic12c508"  package="pic/pic12f629"  data="pic/pic12c508"  device="pic12c508"  ></item>
+    <item name="pic12c509"  package="pic/pic12f629"  data="pic/pic12c508"  device="pic12c509"  ></item>
+    <item name="pic12ce518" package="pic/pic12f629"  data="pic/pic12c508"  device="pic12ce518" ></item>
+    <item name="pic12ce519" package="pic/pic12f629"  data="pic/pic12c508"  device="pic12ce519" ></item>
+    </itemset>
+    <itemset category="PIC/12F" type="PIC">
+    <item name="pic12f508"  package="pic/pic12f629"  data="pic/pic10f200"  device="pic12f508"  ></item>
+    <item name="pic12f509"  package="pic/pic12f629"  data="pic/pic10f200"  device="pic12f509"  ></item>
+    <item name="pic12f510"  package="pic/pic12f629"  data="pic/pic12f510"  device="pic12f510"  ></item>
+    <item name="pic12f629"  package="pic/pic12f629"  data="pic/pic12f629"  device="pic12f629"  ></item>
+    <item name="pic12f675"  package="pic/pic12f629"  data="pic/pic12f675"  device="pic12f675"  ></item>
+    <item name="pic12f683"  package="pic/pic12f629"  data="pic/pic12f683"  device="pic12f683"  ></item>
+    <item name="pic12f1822" package="pic/pic12f1822" data="pic/pic12f1822" device="pic12f1822" ></item>
+    <item name="pic12f1840" package="pic/pic12f1822" data="pic/pic12f1840" device="pic12f1840" ></item>
+    </itemset>
+    <itemset category="PIC/16C" type="PIC">
+    <item name="pic16c54"   package="pic/pic16c54"   data="pic/pic16c54"   device="pic16c54"   ></item>
+    <item name="pic16c56"   package="pic/pic16c54"   data="pic/pic16c54"   device="pic16c56"   ></item>
+    <item name="pic16c61"   package="pic/pic16f84"   data="pic/pic16c61"   device="pic16c61"   ></item>
+    <item name="pic16c62"   package="pic/pic16f876"  data="pic/pic16c62"   device="pic16c62"   ></item>
+    <item name="pic16c62a"  package="pic/pic16f876"  data="pic/pic16c62"   device="pic16c62a"  ></item>
+    <item name="pic16c63"   package="pic/pic16f876"  data="pic/pic16c63"   device="pic16c63"   ></item>
+    <item name="pic16c64"   package="pic/pic16f877"  data="pic/pic16c64"   device="pic16c64"   ></item>
+    <item name="pic16c65"   package="pic/pic16f877"  data="pic/pic16c65"   device="pic16c65"   ></item>
+    <item name="pic16c65a"  package="pic/pic16f877"  data="pic/pic16c65"   device="pic16c65a"  ></item>
+    <item name="pic16c71"   package="pic/pic16f84"   data="pic/pic16c71"   device="pic16c71"   ></item>
+    <item name="pic16c72"   package="pic/pic16f876"  data="pic/pic16c72"   device="pic16c72"   ></item>
+    <item name="pic16c73"   package="pic/pic16f876"  data="pic/pic16c73"   device="pic16c73"   ></item>
+    <item name="pic16c74"   package="pic/pic16f877"  data="pic/pic16c74"   device="pic16c74"   ></item>
+    <item name="pic16c84"   package="pic/pic16f84"   data="pic/pic16c84"   device="pic16c84"   ></item>
+    <item name="pic16cr62"  package="pic/pic16f876"  data="pic/pic16c62"   device="pic16cr62"  ></item>
+    <item name="pic16cr83"  package="pic/pic16f84"   data="pic/pic16cr83"  device="pic16cr83"  ></item>
+    <item name="pic16cr84"  package="pic/pic16f84"   data="pic/pic16cr83"  device="pic16cr84"  ></item>
+    <item name="pic16c712"  package="pic/pic16f84"   data="pic/pic16c712"  device="pic16c712"  ></item>
+    <item name="pic16c716"  package="pic/pic16f84"   data="pic/pic16c712"  device="pic16c716"  ></item>
+    </itemset>
+    <itemset category="PIC/16F" type="PIC">
+    <item name="pic16f73"   package="pic/pic16f876"  data="pic/pic16f73"   device="pic16f73"   ></item>
+    <item name="pic16f74"   package="pic/pic16f877"  data="pic/pic16f74"   device="pic16f74"   ></item>
+    <item name="pic16f83"   package="pic/pic16f84"   data="pic/pic16f83"   device="pic16f83"   ></item>
+    <item name="pic16f84"   package="pic/pic16f84"   data="pic/pic16f84"   device="pic16f84"   ></item>
+    <item name="pic16f87"   package="pic/pic16f627"  data="pic/pic16f87"   device="pic16f87"   ></item>
+    <item name="pic16f88"   package="pic/pic16f627"  data="pic/pic16f88"   device="pic16f88"   ></item>
+    <item name="pic16f505"  package="pic/pic16f505"  data="pic/pic16f505"  device="pic16f505"  ></item>
+    <item name="pic16f627"  package="pic/pic16f627"  data="pic/pic16f627"  device="pic16f627"  ></item>
+    <item name="pic16f627a" package="pic/pic16f627"  data="pic/pic16f627"  device="pic16f627a" ></item>
+    <item name="pic16f628"  package="pic/pic16f627"  data="pic/pic16f627"  device="pic16f628"  ></item>
+    <item name="pic16f628a" package="pic/pic16f627"  data="pic/pic16f627"  device="pic16f628a" ></item>
+    <item name="pic16f630"  package="pic/pic16f1503" data="pic/pic16f630"  device="pic16f630"  ></item>
+    <item name="pic16f631"  package="pic/pic16f690"  data="pic/pic16f631"  device="pic16f631"  ></item>
+    <item name="pic16f648"  package="pic/pic16f627"  data="pic/pic16f627"  device="pic16f648"  ></item>
+    <item name="pic16f648a" package="pic/pic16f627"  data="pic/pic16f627"  device="pic16f648a" ></item>
+    <item name="pic16f676"  package="pic/pic16f1503" data="pic/pic16f676"  device="pic16f676"  ></item>
+    <item name="pic16f677"  package="pic/pic16f690"  data="pic/pic16f677"  device="pic16f677"  ></item>
+    <item name="pic16f684"  package="pic/pic16f1503" data="pic/pic16f684"  device="pic16f684"  ></item>
+    <item name="pic16f685"  package="pic/pic16f690"  data="pic/pic16f685"  device="pic16f685"  ></item>
+    <item name="pic16f687"  package="pic/pic16f690"  data="pic/pic16f687"  device="pic16f687"  ></item>
+    <item name="pic16f689"  package="pic/pic16f690"  data="pic/pic16f689"  device="pic16f689"  ></item>
+    <item name="pic16f690"  package="pic/pic16f690"  data="pic/pic16f690"  device="pic16f690"  ></item>
+    <item name="pic16f716"  package="pic/pic16f84"   data="pic/pic16f716"  device="pic16f716"  ></item>
+    <item name="pic16f818"  package="pic/pic16f627"  data="pic/pic16f818"  device="pic16f818"  ></item>
+    <item name="pic16f819"  package="pic/pic16f627"  data="pic/pic16f818"  device="pic16f819"  ></item>
+    <item name="pic16f871"  package="pic/pic16f877"  data="pic/pic16f871"  device="pic16f871"  ></item>
+    <item name="pic16f873"  package="pic/pic16f876"  data="pic/pic16f876"  device="pic16f873"  ></item>
+    <item name="pic16f873a" package="pic/pic16f876"  data="pic/pic16f876a" device="pic16f873a" ></item>
+    <item name="pic16f874"  package="pic/pic16f877"  data="pic/pic16f877"  device="pic16f874"  ></item>
+    <item name="pic16f874a" package="pic/pic16f877"  data="pic/pic16f877a" device="pic16f874a" ></item>
+    <item name="pic16f876"  package="pic/pic16f876"  data="pic/pic16f876"  device="pic16f876"  ></item>
+    <item name="pic16f876a" package="pic/pic16f876"  data="pic/pic16f876a" device="pic16f876a" ></item>
+    <item name="pic16f877"  package="pic/pic16f877"  data="pic/pic16f877"  device="pic16f877"  ></item>
+    <item name="pic16f877a" package="pic/pic16f877"  data="pic/pic16f877a" device="pic16f877a" ></item>
+    <item name="pic16f882"  package="pic/pic16f886"  data="pic/pic16f886"  device="pic16f882"  ></item>
+    <item name="pic16f883"  package="pic/pic16f886"  data="pic/pic16f886"  device="pic16f883"  ></item>
+    <item name="pic16f884"  package="pic/pic16f887"  data="pic/pic16f884"  device="pic16f884"  ></item>
+    <item name="pic16f886"  package="pic/pic16f886"  data="pic/pic16f886"  device="pic16f886"  ></item>
+    <item name="pic16f887"  package="pic/pic16f887"  data="pic/pic16f887"  device="pic16f887"  ></item>
+    <item name="pic16f913"  package="pic/pic16f886"  data="pic/pic16f913"  device="pic16f913"  ></item>
+    <item name="pic16f914"  package="pic/pic16f887"  data="pic/pic16f914"  device="pic16f914"  ></item>
+    <item name="pic16f916"  package="pic/pic16f886"  data="pic/pic16f913"  device="pic16f916"  ></item>
+    <item name="pic16f917"  package="pic/pic16f887"  data="pic/pic16f914"  device="pic16f917"  ></item>
+    <item name="pic16f1503" package="pic/pic16f1503" data="pic/pic16f1503" device="pic16f1503" ></item>
+    <item name="pic16f1788" package="pic/pic16f886"  data="pic/pic16f1788" device="pic16f1788" ></item>
+    <item name="pic16f1823" package="pic/pic12f1822" data="pic/pic16f1823" device="pic16f1823" ></item>
+    <item name="pic16f1825" package="pic/pic16f1503" data="pic/pic16f1825" device="pic16f1825" ></item>
+    </itemset>
+    <itemset category="PIC/18C" type="PIC">
+    <item name="pic18c242"  package="pic/pic16f876"  data="pic/pic18c242"  device="pic18c242"  ></item>
+    <item name="pic18c252"  package="pic/pic16f876"  data="pic/pic18c242"  device="pic18c252"  ></item>
+    <item name="pic18c442"  package="pic/pic16f877"  data="pic/pic18c442"  device="pic18c442"  ></item>
+    <item name="pic18c452"  package="pic/pic16f877"  data="pic/pic18c452"  device="pic18c452"  ></item>
+    </itemset>
+    <itemset category="PIC/18F" type="PIC">
+    <item name="pic18f242"  package="pic/pic18f2550" data="pic/pic18f242"  device="pic18f242"  ></item>
+    <item name="pic18f248"  package="pic/pic18f2550" data="pic/pic18f248"  device="pic18f248"  ></item>
+    <item name="pic18f252"  package="pic/pic18f2550" data="pic/pic18f242"  device="pic18f252"  ></item>
+    <item name="pic18f258"  package="pic/pic18f2550" data="pic/pic18f258"  device="pic18f258"  ></item>
+    <item name="pic18f442"  package="pic/pic18f4550" data="pic/pic18f442"  device="pic18f442"  ></item>
+    <item name="pic18f448"  package="pic/pic18f4550" data="pic/pic18f448"  device="pic18f448"  ></item>
+    <item name="pic18f452"  package="pic/pic18f4550" data="pic/pic18f442"  device="pic18f452"  ></item>
+    <item name="pic18f458"  package="pic/pic18f4550" data="pic/pic18f458"  device="pic18f458"  ></item>
+    <item name="pic18f2221" package="pic/pic16f886"  data="pic/pic18f2221" device="pic18f2221" ></item>
+    <item name="pic18f2321" package="pic/pic16f886"  data="pic/pic18f2221" device="pic18f2321" ></item>
+    <item name="pic18f2420" package="pic/pic16f886"  data="pic/pic18f2420" device="pic18f2420" ></item>
+    <item name="pic18f2455" package="pic/pic18f2550" data="pic/pic18f2550" device="pic18f2455" ></item>
+    <item name="pic18f2520" package="pic/pic16f886"  data="pic/pic18f2420" device="pic18f2520" ></item>
+    <item name="pic18f2550" package="pic/pic18f2550" data="pic/pic18f2550" device="pic18f2550" ></item>
+    <item name="pic18f4221" package="pic/pic16f887"  data="pic/pic18f4221" device="pic18f4221" ></item>
+    <item name="pic18f4321" package="pic/pic16f887"  data="pic/pic18f4221" device="pic18f4321" ></item>
+    <item name="pic18f4420" package="pic/pic16f887"  data="pic/pic18f4420" device="pic18f4420" ></item>
+    <item name="pic18f4455" package="pic/pic18f4550" data="pic/pic18f4455" device="pic18f4455" ></item>
+    <item name="pic18f4520" package="pic/pic16f887"  data="pic/pic18f4520" device="pic18f4520" ></item>
+    <item name="pic18f4550" package="pic/pic18f4550" data="pic/pic18f4550" device="pic18f4550" ></item>
+    <item name="pic18f14k22" package="pic/pic16f690"    data="pic/pic18f14k22" device="pic18f14k22" ></item>
+    <item name="pic18f26k22" package="pic/pic18f26k22"  data="pic/pic18f26k22" device="pic18f26k22" ></item>
+    </itemset>
+    
+</itemlib>
+

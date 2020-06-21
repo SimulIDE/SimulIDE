@@ -1,0 +1,10 @@
+Voltage Probe:
+
+- Hover at Wires or Pins to get voltage.
+
+- As digital probe: Orange = High State
+
+- Right-Click and add to Plotter channel.
+
+More Info: 
+ http://simulide.blogspot.com/p/probe.html

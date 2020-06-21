@@ -1,0 +1,11 @@
+Amperimeter:
+
+- Red Pin: Positive.
+- Black Pin: Negative.
+- Right Pin: Output reading as voltage
+
+- Updates at 50 Hz.
+
+
+More Info:
+ http://simulide.blogspot.com/p/meters.html

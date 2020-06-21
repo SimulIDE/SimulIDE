@@ -1,0 +1,14 @@
+Voltimetro:
+Mide la tension entre las puntas de prueba roja y negra.
+
+- Red Pin: Positivo.
+- Black Pin: Negativo.
+- Right Pin: Salida de voltage
+
+Se actualiza a 50 Hz.
+
+Videos Relacionados:
+   https://youtu.be/1BeTy5DGcDc
+   
+Mas informacion:
+   http://simulide.blogspot.com/p/meters.html

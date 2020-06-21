@@ -1,0 +1,327 @@
+<!DOCTYPE SimulIDE>
+
+<subcircuit enodes="14">
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        numInputs = "4"
+        connections="
+        output0-eNode0
+        input3-Package_!G1
+        input0-Package_!P1
+        input2-Package_!G2
+        input1-Package_!G3" >
+    </item>
+
+    <item itemtype="eOrGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        numInputs = "4"
+        connections="
+        input1-eNode0
+        input2-eNode1
+        input3-eNode2
+        input0-eNode3
+        output0-Package_!G" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        numInputs = "3"
+        connections="
+        output0-eNode1
+        input2-Package_!G2
+        input0-Package_!P2
+        input1-Package_!G3" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        numInputs = "2"
+        connections="
+        output0-eNode2
+        input1-Package_!G3
+        input0-Package_!P0" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        numInputs = "4"
+        connections="
+        output0-eNode3
+        input3-Package_!G0
+        input2-Package_!G1
+        input1-Package_!G2
+        input0-Package_!G3" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        numInputs = "2"
+        connections="
+        output0-eNode4
+        input1-Package_!G2
+        input0-Package_!P2" >
+    </item>
+
+    <item itemtype="eOrGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "true"
+        openCollector = "false"
+        numInputs = "4"
+        connections="
+        input3-eNode4
+        input2-eNode5
+        input1-eNode6
+        input0-eNode7
+        output0-Package_Cn+z" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        numInputs = "3"
+        connections="
+        output0-eNode5
+        input2-Package_!G1
+        input0-Package_!P1
+        input1-Package_!G2" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        numInputs = "4"
+        connections="
+        output0-eNode6
+        input3-Package_!G0
+        input0-Package_!P0
+        input2-Package_!G1
+        input1-Package_!G2" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        numInputs = "4"
+        connections="
+        output0-eNode7
+        input3-eNode13
+        input2-Package_!G0
+        input1-Package_!G1
+        input0-Package_!G2" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        numInputs = "3"
+        connections="
+        output0-eNode8
+        input2-eNode13
+        input1-Package_!G0
+        input0-Package_!G1" >
+    </item>
+
+    <item itemtype="eOrGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "true"
+        openCollector = "false"
+        numInputs = "3"
+        connections="
+        input0-eNode8
+        input1-eNode9
+        input2-eNode10
+        output0-Package_Cn+y" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        numInputs = "3"
+        connections="
+        output0-eNode9
+        input2-Package_!G0
+        input0-Package_!P0
+        input1-Package_!G1" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        numInputs = "2"
+        connections="
+        output0-eNode10
+        input1-Package_!G1
+        input0-Package_!P1" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        numInputs = "2"
+        connections="
+        output0-eNode11
+        input1-eNode13
+        input0-Package_!G0" >
+    </item>
+
+    <item itemtype="eOrGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "true"
+        openCollector = "false"
+        numInputs = "2"
+        connections="
+        input0-eNode11
+        input1-eNode12
+        output0-Package_Cn+x" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        numInputs = "2"
+        connections="
+        output0-eNode12
+        input1-Package_!G0
+        input0-Package_!P0" >
+    </item>
+
+    <item itemtype="eOrGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        numInputs = "4"
+        connections="
+        output0-Package_!P
+        input3-Package_!P0
+        input2-Package_!P1
+        input1-Package_!P2
+        input0-Package_!P0" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "true"
+        openCollector = "false"
+        tristate = "false"
+        connections="
+        output0-eNode13
+        input0-Package_Cn" >
+    </item>
+
+</subcircuit>

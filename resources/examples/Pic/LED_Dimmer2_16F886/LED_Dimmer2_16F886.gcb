@@ -1,0 +1,43 @@
+'''A demonstration program for GCGB and GCB.
+'''--------------------------------------------------------------------------------------------------------------------------------
+'''This program powers and dims two LEDs on PORTB.5 and POERTB.2 slowly.
+'''The LEDs will alternate with respect to power output.
+'''The LEDs should be connected the microprocessor via appropiate resistors.
+'''@author 	EvanV plus works of ChuckH
+'''@licence	GPL
+'''@version	1.0a
+'''@date   	31.01.2015
+'''********************************************************************************
+
+; ----- Configuration
+  #chip 16F886, 16
+
+
+; ----- Define Hardware settings
+  'PWMOUT ports are automatically configured in the PWMOUT method
+
+; ----- Constants
+  ' define the PWMout 1 pin - this is required for the PWMOut method
+  #define PWM_out1 portb.5	
+  ' define the PWMout 2 pin - this is required for the PWMOut method
+  #define PWM_out2 portb.2
+
+
+; ----- Main body of program commences here.
+     'Turn one LED on, the other off
+    do
+        'Change duty cycle brighter
+        for cnt = 10 to 250 step 10	
+            'slowly get brighter, 100 value sets speed
+            PWMOut(1, cnt, 10)
+            PWMOut(2, 250-cnt, 10)
+        next
+        'change duty cycle dimmer
+        for cnt = 250 to 10 step -10
+            'slowly dim, 100 value sets speed
+            PWMOut (1, cnt, 10)   'slowly dim, 100 value sets speed
+            PWMOut (2, 250-cnt, 10)
+        next
+    loop
+
+

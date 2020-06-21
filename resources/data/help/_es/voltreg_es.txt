@@ -1,0 +1,10 @@
+Regulador de voltaje:
+
+Pines:
+- I: Entrada (Input)
+- O: Salida (Output)
+- R: Referencia.
+
+Parámetros:
+- Voltaje:
+   Establezca la tensión entre los pines "O" y "R".

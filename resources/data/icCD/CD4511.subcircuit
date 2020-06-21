@@ -1,0 +1,101 @@
+<!DOCTYPE SimulIDE>
+
+<subcircuit enodes="7">
+
+    <item itemtype="eLatchD"
+        inputHighV = "3"
+        inputLowV = "2"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        channels = "8"
+        inputEnable = "true"
+        tristate = "true"
+        connections="
+        output3-eNode0
+        input1-Package_B
+        input0-Package_A
+        input2-Package_C
+        input3-Package_D
+        outEnable-eNode2
+        output0-eNode3
+        output1-eNode4
+        output2-eNode5
+        inputEnable-eNode6" >
+    </item>
+
+    <item itemtype="eResistor"
+        resistance = "10000"
+        connections="
+        rPin-eNode0
+        lPin-eNode2" >
+    </item>
+
+    <item itemtype="eBcdTo7S"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        tristate = "true"
+        connections="
+        input3-eNode0
+        outEnable-eNode1
+        output4-Package_e
+        output0-Package_a
+        output1-Package_b
+        output2-Package_c
+        output3-Package_d
+        output5-Package_f
+        output6-Package_g
+        input0-eNode3
+        input1-eNode4
+        input2-eNode5" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "true"
+        tristate = "false"
+        connections="
+        output0-eNode1
+        input0-Package_!BI" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "true"
+        tristate = "false"
+        connections="
+        input0-Package_!LT
+        output0-eNode2" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "true"
+        tristate = "false"
+        connections="
+        input0-Package_LE
+        output0-eNode6" >
+    </item>
+
+</subcircuit>

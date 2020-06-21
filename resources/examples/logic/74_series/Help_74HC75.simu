@@ -1,0 +1,36 @@
+<circuit reactStep="50" noLinAcc="5" animate="1" speed="1000000" type="simulide_0.4">
+ 
+Probe-40: 
+<item valLabely="0" labely="-19" labelx="-25" valLabelx="16" labelrot="45" objectName="Probe-40" hflip="1" vflip="1" rotation="-45" id="!Q0" valLabRot="45" x="-292" y="-436" Show_volt="false" PlotterCh="0" itemtype="Probe" Threshold="2.5" Show_id="true"/>
+ 
+Probe-38: 
+<item valLabely="0" labely="-19" labelx="-23" valLabelx="16" labelrot="45" objectName="Probe-38" hflip="1" vflip="1" rotation="-45" id="Q0" valLabRot="45" x="-324" y="-444" Show_volt="false" PlotterCh="0" itemtype="Probe" Threshold="2.5" Show_id="true"/>
+ 
+74HC75-32: 
+<item rotation="0" x="-420" labely="-15" objectName="74HC75-32" Show_id="true" y="-436" valLabelx="0" itemtype="Subcircuit" id="74HC75" valLabRot="0" labelx="0" Logic_Symbol="true" valLabely="0" hflip="1" labelrot="0" vflip="1"/>
+ 
+Fixed Voltage-9: 
+<item valLabely="8" labely="-12" labelx="10" valLabelx="-16" labelrot="0" Show_Volt="false" objectName="Fixed Voltage-9" hflip="1" vflip="1" rotation="0" Unit=" V" id="E01" valLabRot="0" x="-524" y="-460" Voltage="5" itemtype="Fixed Voltage" Show_id="true"/>
+ 
+Fixed Voltage-8: 
+<item valLabely="8" labely="-15" labelx="12" valLabelx="-16" labelrot="0" Show_Volt="false" objectName="Fixed Voltage-8" hflip="1" vflip="1" rotation="0" Unit=" V" id="D0" valLabRot="0" x="-488" y="-420" Voltage="5" itemtype="Fixed Voltage" Show_id="true"/>
+ 
+TextComponent-7: 
+<item valLabely="0" labely="-24" labelx="-16" valLabelx="0" labelrot="0" Opacity="1" objectName="TextComponent-7" hflip="1" vflip="1" Fixed_Width="true" Font="Helvetica [Cronyx]" Border="1" rotation="0" id="TextComponent-23" valLabRot="0" x="-520" y="-392" itemtype="TextComponent" Font_Size="10" Show_id="false" Text="D M Q !Q&#xa;x 0 0  1&#xa;0 1 0  1&#xa;1 1 1  0 " Margin="5"/>
+ 
+Connector-37: 
+<item valLabely="0" labely="-24" labelx="-16" enodeid="enode-37" valLabelx="0" labelrot="0" objectName="Connector-37" hflip="1" vflip="1" rotation="0" pointList="-472,-420,-428,-420" id="Connector-37" valLabRot="0" x="-472" y="-420" endpinid="74HC75-32-D0" startpinid="Fixed Voltage-8-outnod" itemtype="Connector" Show_id="false"/>
+ 
+Connector-39: 
+<item valLabely="0" labely="-24" labelx="-16" enodeid="enode-39" valLabelx="0" labelrot="0" objectName="Connector-39" hflip="1" vflip="1" rotation="0" pointList="-380,-428,-340,-428" id="Connector-39" valLabRot="0" x="-380" y="-428" endpinid="Probe-38-inpin" startpinid="74HC75-32-Q0" itemtype="Connector" Show_id="false"/>
+ 
+Connector-41: 
+<item valLabely="0" labely="-24" labelx="-16" enodeid="enode-41" valLabelx="0" labelrot="0" objectName="Connector-41" hflip="1" vflip="1" rotation="0" pointList="-380,-420,-308,-420" id="Connector-41" valLabRot="0" x="-380" y="-420" endpinid="Probe-40-inpin" startpinid="74HC75-32-!Q0" itemtype="Connector" Show_id="false"/>
+ 
+Connector-42: 
+<item valLabely="0" labely="-24" labelx="-16" enodeid="enode-42" valLabelx="0" labelrot="0" objectName="Connector-42" hflip="1" vflip="1" rotation="0" pointList="-508,-460,-452,-460,-452,-428,-428,-428" id="Connector-42" valLabRot="0" x="-508" y="-460" endpinid="74HC75-32-E01" startpinid="Fixed Voltage-9-outnod" itemtype="Connector" Show_id="false"/>
+ 
+PlotterWidget-21: 
+<item maximumHeight="200" focusPolicy="0" maximized="false" windowIconText="" minimumSize="" toolTipDuration="-1" height="200" objectName="PlotterWidget-21" visible="false" frameSize="" palette="" pos="" maximumSize="" Scale="1" childrenRect="" frameGeometry="" styleSheet="" MaxVolt="500" minimumWidth="200" whatsThis="" locale="" focus="false" geometry="" acceptDrops="false" width="200" minimumHeight="200" windowOpacity="1" baseSize="" size="" childrenRegion="" Tracks="1" sizeIncrement="" cursor="" contextMenuPolicy="1" MinVolt="0" sizePolicy="" x="0" mouseTracking="false" enabled="true" minimumSizeHint="" minimized="false" fullScreen="false" windowFilePath="" maximumWidth="1000" windowModality="0" isActiveWindow="true" windowTitle="" normalGeometry="" accessibleDescription="" inputMethodHints="0" font="Sans Serif,9,-1,5,50,0,0,0,0,0" updatesEnabled="true" sizeHint="" modal="false" autoFillBackground="false" itemtype="Plotter" y="0" layoutDirection="0" windowModified="false" toolTip="" accessibleName="" windowIcon="" rect="" statusTip=""/>
+ 
+</circuit>

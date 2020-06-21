@@ -1,0 +1,54 @@
+/***************************************************************************
+ *   Copyright (C) 2017 by santiago González                               *
+ *   santigoro@gmail.com                                                   *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 3 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, see <http://www.gnu.org/licenses/>.  *
+ *                                                                         *
+ ***************************************************************************/
+ 
+MaxMHz=16
+
+ADMUX EQU 7
+ADCSRA EQU 6
+ADCH EQU 5
+ADCL EQU 4
+ADCSRB EQU 3
+DIDR0 EQU 20
+ACSR EQU 8
+EEAR EQU 30
+EEDR EQU 29
+EECR EQU 28
+SREG EQU 63
+SPL EQU 61
+MCUCR EQU 53
+MCUSR EQU 52
+OSCCAL EQU 49
+CLKPR EQU 38
+DWDR EQU 46
+SPMCSR EQU 55
+PORTB EQU 24
+DDRB EQU 23
+PINB EQU 22
+GIMSK EQU 59
+GIFR EQU 58
+PCMSK EQU 21
+TIMSK0 EQU 57
+TIFR0 EQU 56
+OCR0A EQU 54
+TCCR0A EQU 47
+TCNT0 EQU 50
+TCCR0B EQU 51
+OCR0B EQU 41
+GTCCR EQU 40
+WDTCR EQU 33

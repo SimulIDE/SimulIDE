@@ -1,0 +1,26 @@
+<!DOCTYPE SimulIDE>
+
+
+<package name="8_N-ch_key" pins="18" width="4" height="10">
+
+    <pin side="left" pos="1" type="" id="G1" label="G1" /><!-- packagePin1 -->
+    <pin side="left" pos="2" type="" id="G2" label="G2" /><!-- packagePin2 -->
+    <pin side="left" pos="3" type="" id="G3" label="G3" /><!-- packagePin3 -->
+    <pin side="left" pos="4" type="" id="G4" label="G4" /><!-- packagePin4 -->
+    <pin side="left" pos="5" type="" id="G5" label="G5" /><!-- packagePin5 -->
+    <pin side="left" pos="6" type="" id="G6" label="G6" /><!-- packagePin6 -->
+    <pin side="left" pos="7" type="" id="G7" label="G7" /><!-- packagePin7 -->
+    <pin side="left" pos="8" type="" id="G8" label="G8" /><!-- packagePin8 -->
+    <pin side="left" pos="9" type="unused" id="NC" label="NC" /><!-- packagePin9 -->
+    
+    <pin side="right" pos="9" type="" id="GND" label="GND" /><!-- packagePin10 -->
+    <pin side="right" pos="8" type="" id="D8" label="D8" /><!-- packagePin11 -->
+    <pin side="right" pos="7" type="" id="D7" label="D7" /><!-- packagePin12 -->
+    <pin side="right" pos="6" type="" id="D6" label="D6" /><!-- packagePin13 -->
+    <pin side="right" pos="5" type="" id="D5" label="D5" /><!-- packagePin14 -->
+    <pin side="right" pos="4" type="" id="D4" label="D4" /><!-- packagePin15 -->
+    <pin side="right" pos="3" type="" id="D3" label="D3" /><!-- packagePin16 -->
+    <pin side="right" pos="2" type="" id="D2" label="D2" /><!-- packagePin17 -->
+    <pin side="right" pos="1" type="" id="D1" label="D1" /><!-- packagePin18 -->
+ </package>
+

@@ -1,0 +1,15 @@
+74HC77 - 4-bit biestable latch
+
+D0 E01  Q0
+x  0    No cambia
+0  1    0
+1  1    1
+
+Pines:
+D0..D3 = Entradas
+E01 = Latch de Q0 y Q1
+E23 = Latch de Q2 y Q3
+Q0..Q3 = Salidas
+
+Ver help en:
+   ..share/simulide/data/examples/logic/74_series/Help_74HC77.simu

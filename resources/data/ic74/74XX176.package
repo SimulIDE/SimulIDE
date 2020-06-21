@@ -1,0 +1,26 @@
+<!DOCTYPE SimulIDE>
+
+
+
+<package name="74xx176" pins="14" width="4" height="8">
+
+    <pin side="left" pos="1"  type="" id="!Ld" label="!Ld"/><!-- packagePin1 -->
+    <pin side="left" pos="2"  type="" id="QC"  label="QC"/><!-- packagePin2 -->
+    <pin side="left" pos="3"  type="" id="C"   label="C"/><!-- packagePin3 -->
+    <pin side="left" pos="4"  type="" id="A"   label="A" /><!-- packagePin4 -->
+    <pin side="left" pos="5"  type="" id="QA"  label="QA"/><!-- packagePin5 -->
+    <pin side="left" pos="6"  type="" id="CLK2"label="CLK2"/><!-- packagePin6 -->
+
+    <pin side="left" pos="7"  type="unused" id="Gnd" label="Gnd"/><!-- packagePin7 -->
+
+    <pin side="right" pos="7" type="" id="CLK1"  label="CLK1" /><!-- packagePin8 -->
+    <pin side="right" pos="6" type="" id="QB"    label="QB" /><!-- packagePin9 -->
+    <pin side="right" pos="5" type="" id="B"     label="B"/><!-- packagePin10 -->
+    <pin side="right" pos="4" type="" id="D"     label="D" /><!-- packagePin11 -->
+    <pin side="right" pos="3" type="" id="QD"    label="QD" /><!-- packagePin12 -->
+    <pin side="right" pos="2" type="" id="!CLR"  label="!CLR" /><!-- packagePin13 -->
+    
+    <pin side="right" pos="1" type="unused" id="Vcc" label="Vcc"/><!-- packagePin14 -->
+    
+</package>
+

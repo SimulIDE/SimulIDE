@@ -1,0 +1,35 @@
+<!DOCTYPE SimulIDE>
+
+<!-- *************************************************************************** -->
+<!-- *   Copyright (C) 2017 by santiago González                               * -->
+<!-- *   santigoro@gmail.com                                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is free software; you can redistribute it and/or modify  * -->
+<!-- *   it under the terms of the GNU General Public License as published by  * -->
+<!-- *   the Free Software Foundation; either version 3 of the License, or     * -->
+<!-- *   (at your option) any later version.                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is distributed in the hope that it will be useful,       * -->
+<!-- *   but WITHOUT ANY WARRANTY; without even the implied warranty of        * -->
+<!-- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         * -->
+<!-- *   GNU General Public License for more details.                          * -->
+<!-- *                                                                         * -->
+<!-- *   You should have received a copy of the GNU General Public License     * -->
+<!-- *   along with this program; if not, see <http://www.gnu.org/licenses/>.  * -->
+<!-- *                                                                         * -->
+<!-- *************************************************************************** -->
+
+<package name="attiny85" pins="8" width="4" height="5">
+
+    <pin side="left"  pos="1"  type="adc0"  id="PB5"  label="B5"/>
+    <pin side="left"  pos="2"  type="adc3"  id="PB3"  label="B3"/>
+    <pin side="left"  pos="3"  type="adc2"  id="PB4"  label="B4"/>
+    <pin side="left"  pos="4"  type="gnd"   id="GND"  label="Gnd" />
+
+    <pin side="right" pos="1"  type="vcc"   id="VCC"  label="Vcc" />
+    <pin side="right" pos="2"  type="adc1"  id="PB2"  label="B2"/>
+    <pin side="right" pos="3"  type="bidir" id="PB1"  label="B1"/>
+    <pin side="right" pos="4"  type="bidir" id="PB0"  label="B0"/>
+    
+</package>
+

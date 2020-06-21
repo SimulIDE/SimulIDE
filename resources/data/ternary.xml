@@ -1,0 +1,41 @@
+<!DOCTYPE SimulIDE>
+
+<!-- *************************************************************************** -->
+<!-- *   Copyright (C) 2018 by santiago González                               * -->
+<!-- *   santigoro@gmail.com                                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is free software; you can redistribute it and/or modify  * -->
+<!-- *   it under the terms of the GNU General Public License as published by  * -->
+<!-- *   the Free Software Foundation; either version 3 of the License, or     * -->
+<!-- *   (at your option) any later version.                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is distributed in the hope that it will be useful,       * -->
+<!-- *   but WITHOUT ANY WARRANTY; without even the implied warranty of        * -->
+<!-- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         * -->
+<!-- *   GNU General Public License for more details.                          * -->
+<!-- *                                                                         * -->
+<!-- *   You should have received a copy of the GNU General Public License     * -->
+<!-- *   along with this program; if not, see <http://www.gnu.org/licenses/>.  * -->
+<!-- *                                                                         * -->
+<!-- *************************************************************************** -->
+
+<itemlib>
+    <tag>QT_TRANSLATE_NOOP("xmlfile","Logic")</tag>
+    
+    <itemset category="Logic" type="">
+        <item name="Ternary logic"  package=""  subcircuit=""  icon="ic2.png" ></item>
+    </itemset>
+    
+    <itemset category="Logic/Ternary logic" type="Subcircuit">
+    <item name="T_not" package="ternary/Ternary_NOT" subcircuit="ternary/Ternary_NOT" info=" ternary logic NOT" /> 
+    <item name="T_buff" package="ternary/Ternary_BUF" subcircuit="ternary/Ternary_BUF" info=" ternary logic buffer" /> 
+    <item name="T_Mux" package="ternary/Ternary_MUX" subcircuit="ternary/Ternary_MUX" info=" ternary logic multiplexer" /> 
+    <item name="T_AND" package="ternary/Ternary_AND" subcircuit="ternary/Ternary_AND" info=" ternary logic AND" /> 
+    <item name="T_NAND" package="ternary/Ternary_NAND" subcircuit="ternary/Ternary_NAND" info=" ternary logic NAND" /> 
+    <item name="T_OR" package="ternary/Ternary_OR" subcircuit="ternary/Ternary_OR" info=" ternary logic OR" /> 
+    <item name="T_NOR" package="ternary/Ternary_NOR" subcircuit="ternary/Ternary_NOR" info=" ternary logic NOR" /> 
+
+    </itemset>
+
+</itemlib>
+

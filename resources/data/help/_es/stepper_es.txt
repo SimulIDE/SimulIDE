@@ -1,0 +1,9 @@
+Motor de pasos
+
+Parámetros:
+- Pasos:
+   Determina el numero de pasos. 32
+- Resistencia:
+   100
+- Unidades:
+   Ohms

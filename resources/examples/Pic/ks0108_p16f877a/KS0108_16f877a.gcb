@@ -1,0 +1,74 @@
+'''A demonstration program for GCGB and GCB.
+'''--------------------------------------------------------------------------------------------------------------------------------
+'''This program is a simple GLCD demonstration of the KS0108 GLCD capabilities.
+'''This program draws lines, boxes, circles and prints strings and numbers.
+'''The GLCD is connected to the microprocessor as shown in the hardware section of this code.
+'''@author 	EvanV with works of ChuckH
+'''@licence	GPL
+'''@version	1.2c
+'''@date   	22.12.14
+'''********************************************************************************
+
+  #chip 16f877a,16
+
+  #include <glcd.h>
+  #define GLCD_TYPE GLCD_TYPE_KS0108               ' This is the Default value, not required.
+
+
+  #define GLCD_CS1 PORTC.0    'D12 to actually since CS1, CS2 can be reversed on some devices
+  #define GLCD_CS2 PORTC.1
+  #define GLCD_DB0 PORTD.0 'D0 to pin 7 on LCD
+  #define GLCD_DB1 PORTD.1 'D1 to pin 8 on LCD
+  #define GLCD_DB2 PORTD.2 'D2 to pin 9 on LCD
+  #define GLCD_DB3 PORTD.3 'D3 to pin 10 on LCD
+  #define GLCD_DB4 PORTD.4 'D4 to pin 11 on LCD
+  #define GLCD_DB5 PORTD.5 'D5 to pin 12 on LCD
+  #define GLCD_DB6 PORTD.6 'D6 to pin 13 on LCD
+  #define GLCD_DB7 PORTD.7 'D7 to pin 14 on LCD
+
+  #define GLCD_RS PORTe.0
+  #define GLCD_Enable PORTe.2
+  #define GLCD_RW PORTe.1
+  #define GLCD_RESET PORTC.2
+
+  ' Changed timing for 32 mhz device
+  #define KS0108ReadDelay    2   ; = 2 normal usage, 6 or above is OK at 32 mhz!
+  #define KS0108WriteDelay   1    ; = 1 normal usage you may get away with 0, 2 or above is OK at 32 mhz!
+  #define KS0108ClockDelay   1     ; = 1 normal usage you may get away with 0, 2 or above is OK at 32 mhz!
+  'change to LED height, this, avoids set the 4 LED signals
+  #define LED_GLCD_HEIGHT GLCD_HEIGHT-1
+
+; ----- Variables
+  Dim CHAR, XVAR as Byte
+
+; ----- Main body of program commences here.
+  Start:
+    GLCDCLS
+    
+    'Print Hello
+    GLCDPrint 0,10,"Hello"
+    wait 1 s
+    
+    'Print ASCII #:
+    GLCDPrint 0,10, "ASCII #:"
+    
+    'Draw Box Around ASCII Character
+    Box 18,30,28,40	
+    
+    'Print 0 through 9
+    for char = 15 to 129
+        GLCDPrint 17, 20 , Str(char)
+        GLCDdrawCHAR 20,30, char
+        wait 1 s
+    next
+    
+    'Draw Line using line command
+    line 0,50,127,50
+    for xvar = 0 to 80
+        'draw line using Pset command
+        pset xvar,63,on
+    next 
+    Wait 10 s
+    
+  Goto Start
+end

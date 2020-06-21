@@ -1,0 +1,59 @@
+<!DOCTYPE SimulIDE>
+
+<!-- *************************************************************************** -->
+<!-- *   Copyright (C) 2017 by santiago González                               * -->
+<!-- *   santigoro@gmail.com                                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is free software; you can redistribute it and/or modify  * -->
+<!-- *   it under the terms of the GNU General Public License as published by  * -->
+<!-- *   the Free Software Foundation; either version 3 of the License, or     * -->
+<!-- *   (at your option) any later version.                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is distributed in the hope that it will be useful,       * -->
+<!-- *   but WITHOUT ANY WARRANTY; without even the implied warranty of        * -->
+<!-- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         * -->
+<!-- *   GNU General Public License for more details.                          * -->
+<!-- *                                                                         * -->
+<!-- *   You should have received a copy of the GNU General Public License     * -->
+<!-- *   along with this program; if not, see <http://www.gnu.org/licenses/>.  * -->
+<!-- *                                                                         * -->
+<!-- *************************************************************************** -->
+
+<package name="arduinoUno" pins="28" width="20" height="28">
+
+    <pin side="left" pos="2"  type="bidir" id="PD2"  label=" 0  RX "/>
+    <pin side="left" pos="3"  type="bidir" id="PD3"  label=" 1  TX "/>
+    <pin side="left" pos="4"  type="bidir,sda" id="PD1"  label=" 2     "/>
+    <pin side="left" pos="5"  type="pwm2B,scl" id="PD0"  label=" 3  PWM"/>
+    <pin side="left" pos="6"  type="bidir" id="PD4"  label=" 4     "/>
+    <pin side="left" pos="7"  type="pwm0B" id="PC6"  label=" 5  PWM"/>
+    <pin side="left" pos="8"  type="pwm0A" id="PD7"  label=" 6  PWM"/>
+    <pin side="left" pos="9"  type="bidir" id="PE6"  label=" 7"     />
+    
+    <pin side="left" pos="11" type="bidir" id="PB4"  label=" 8"     />
+    <pin side="left" pos="12" type="pwm1A" id="PB5"  label=" 9   PWM"/>
+    <pin side="left" pos="13" type="pwm1B" id="PB6"  label=" 10 PWM"/>
+    <pin side="left" pos="14" type="pwm2A" id="PB7"  label=" 11 PWM"/>
+    <pin side="left" pos="15" type="open"  id="PD6"  label=" 12    "/>
+    <pin side="left" pos="16" type="led"   id="PC7"  label=" 13    "/>
+    <pin side="left" pos="17" type="v0v"   id="GND0" label=" GND   "/>
+    <pin side="left" pos="18" type="aref"  id="AREF" label=" Aref  "/>
+    
+    
+    <pin side="right"   pos="2"  type="adc5"  id="PF0"  label="A5 "/>
+    <pin side="right"   pos="3"  type="adc4"  id="PF1"  label="A4 "/>
+    <pin side="right"   pos="4"  type="adc3"  id="PF4"  label="A3 "/>
+    <pin side="right"   pos="5"  type="adc2"  id="PF5"  label="A2 "/>
+    <pin side="right"   pos="6"  type="adc1"  id="PF6"  label="A1 "/>
+    <pin side="right"   pos="7"  type="adc0"  id="PF7"  label="A0 "/>
+    
+    <pin side="right"   pos="9"  type="vin"   id="Vin"  label="Vin "/>
+    <pin side="right"   pos="10" type="v0v"   id="GND1" label="GND "/>
+    <pin side="right"   pos="11" type="v0v"   id="GND2" label="GND "/>
+    <pin side="right"   pos="12" type="v5v"   id="V5V"  label="5V "/>
+    <pin side="right"   pos="13" type="v3v"   id="V3V"  label="3V3 "/>
+    <pin side="right"   pos="14" type="reset" id="RST"  label="RST "/>
+    
+</package>
+
+

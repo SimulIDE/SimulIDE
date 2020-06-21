@@ -1,0 +1,6 @@
+Frequenciómetro:
+Mide la frecuencia en la punta de prueba a la izquierda.
+
+Conecte el pin izquierdo a un cable o pin del circuito para ver la frecuencia de la señal.
+
+Frecuencia mínima: 2 Hz.

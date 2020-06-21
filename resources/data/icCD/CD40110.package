@@ -1,0 +1,27 @@
+<!DOCTYPE SimulIDE>
+
+
+<package name="dip16" pins="16" width="4" height="9">
+
+    <pin side="left" pos="1"  type="" id="A"  label="A" /><!-- packagePin1 -->
+    <pin side="left" pos="2"  type="" id="G"  label="G" /><!-- packagePin2 -->
+    <pin side="left" pos="3"  type="" id="F"  label="F" /><!-- packagePin3 -->
+    <pin side="left" pos="4"  type="" id="!TE"  label="!TE" /><!-- packagePin4 -->
+    <pin side="left" pos="5"  type="" id="RES" label="RES"/><!-- packagePin5 -->
+    <pin side="left" pos="6"  type="" id="!LE"  label="!LE" /><!-- packagePin6 -->
+    <pin side="left" pos="7"  type="" id="CLKD"label="CLKD" /><!-- packagePin7 -->
+    
+    <pin side="left" pos="8"  type="unused" id="Vss" label="Vss"/><!-- packagePin8 -->
+
+    <pin side="right" pos="8" type="" id="CLKU" label="CLKU"/><!-- packagePin9 -->
+    <pin side="right" pos="7" type="" id="CR" label="CR"/><!-- packagePin10 -->
+    <pin side="right" pos="6" type="" id="BR"  label="BR" /><!-- packagePin11 -->
+    <pin side="right" pos="5" type="" id="E"  label="E" /><!-- packagePin12 -->
+    <pin side="right" pos="4" type="" id="D"  label="D" /><!-- packagePin13 -->
+    <pin side="right" pos="3" type="" id="C"  label="C" /><!-- packagePin14 -->
+    <pin side="right" pos="2" type="" id="B" label="B"/><!-- packagePin15 -->
+    
+    <pin side="right" pos="1" type="unused" id="Vdd" label="Vdd"/><!-- packagePin16 -->
+    
+</package>
+

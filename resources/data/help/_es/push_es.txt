@@ -1,0 +1,7 @@
+Botón Pulsador:
+
+Este es un interruptor sin enclavamiento.
+
+Parámetros:
+- Norm Cerrado:
+   Se puede configurar como normalmente cerrado (NC = true) o normalmente abierto (NO). false

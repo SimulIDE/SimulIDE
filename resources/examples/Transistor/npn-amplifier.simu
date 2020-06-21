@@ -1,0 +1,48 @@
+<circuit speed="1000000" animate="0" type="simulide_0.1" noLinAcc="5" reactStep="50" noLinStep="10">
+ 
+BJT-8: 
+<item valLabely="0" Show_id="false" Gain="100" PNP="false" rotation="0" vflip="1" BC_diode="false" x="-356" id="BJT-1" objectName="BJT-8" Threshold="0.69999999999999996" labelrot="0" hflip="1" y="-284" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="BJT"/>
+ 
+Rail-7: 
+<item valLabely="8" Show_id="false" rotation="0" vflip="1" Show_Volt="true" x="-516" id="Rail-2" Unit=" V" objectName="Rail-7" labelrot="0" hflip="1" y="-412" valLabelx="-16" Voltage="5" labely="-24" labelx="-64" valLabRot="0" itemtype="Rail"/>
+ 
+Resistor-6: 
+<item Show_res="true" valLabely="6" Show_id="false" rotation="90" vflip="1" x="-348" Resistance="100" id="Resistor-3" Unit=" Ω" objectName="Resistor-6" labelrot="0" hflip="1" y="-356" valLabelx="-16" labely="-24" labelx="-12" valLabRot="0" itemtype="Resistor"/>
+ 
+Ground-5: 
+<item rotation="0" valLabely="0" Show_id="false" itemtype="Ground" labelrot="0" id="Ground-4" x="-348" labely="-24" y="-172" vflip="1" objectName="Ground-5" valLabRot="0" labelx="-16" valLabelx="0" hflip="1"/>
+ 
+WaveGen-4: 
+<item valLabely="8" Show_id="false" rotation="0" vflip="1" Show_Volt="true" x="-516" id="WaveGen-5" Unit=" mV" objectName="WaveGen-4" labelrot="0" Wave_Type="0" hflip="1" y="-284" Freq="1" valLabelx="-16" Volt_Base="0.69999999999999996" Quality="4" Voltage="500" labely="-24" Duty_Square="50" labelx="-64" valLabRot="0" Running="true" itemtype="WaveGen"/>
+ 
+Resistor-3: 
+<item Show_res="true" valLabely="6" Show_id="false" rotation="0" vflip="1" x="-412" Resistance="2" id="Resistor-6" Unit=" kΩ" objectName="Resistor-3" labelrot="0" hflip="1" y="-284" valLabelx="-16" labely="-24" labelx="-12" valLabRot="0" itemtype="Resistor"/>
+ 
+Probe-2: 
+<item rotation="-45" valLabely="0" PlotterCh="1" Show_id="false" itemtype="Probe" labelrot="45" id="Probe-7" x="-332" labely="-16" y="-332" vflip="1" Show_volt="true" objectName="Probe-2" valLabRot="45" labelx="16" valLabelx="16" hflip="1"/>
+ 
+Probe-1: 
+<item rotation="-45" valLabely="0" PlotterCh="2" Show_id="false" itemtype="Probe" labelrot="45" id="Probe-8" x="-460" labely="-16" y="-300" vflip="1" Show_volt="true" objectName="Probe-1" valLabRot="45" labelx="16" valLabelx="16" hflip="1"/>
+ 
+Connector-9: 
+<item startpinid="Rail-7-outnod" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-500" id="Connector-9" enodeid="Circ_eNode-10" objectName="Connector-9" pointList="-500,-412,-348,-412,-348,-372" labelrot="0" hflip="1" endpinid="Resistor-6-lPin" y="-412" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-11: 
+<item startpinid="Resistor-6-rPin" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-348" id="Connector-11" enodeid="Circ_eNode-12" objectName="Connector-11" pointList="-348,-340,-348,-300" labelrot="0" hflip="1" endpinid="BJT-8-collector" y="-340" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-13: 
+<item startpinid="Ground-5-Gnd" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-348" id="Connector-13" enodeid="Circ_eNode-14" objectName="Connector-13" pointList="-348,-188,-348,-268" labelrot="0" hflip="1" endpinid="BJT-8-emiter" y="-188" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-15: 
+<item startpinid="WaveGen-4-outnod" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-500" id="Connector-15" enodeid="Circ_eNode-16" objectName="Connector-15" pointList="-500,-284,-428,-284" labelrot="0" hflip="1" endpinid="Resistor-3-lPin" y="-284" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-17: 
+<item startpinid="Resistor-3-rPin" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-396" id="Connector-17" enodeid="Circ_eNode-18" objectName="Connector-17" pointList="-396,-284,-372,-284" labelrot="0" hflip="1" endpinid="BJT-8-base" y="-284" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+PlotterWidget-19: 
+<item frameSize="" toolTipDuration="-1" maximumSize="" sizeHint="" pos="" baseSize="" maximumWidth="1000" normalGeometry="" maximized="false" minimumWidth="200" maximumHeight="200" windowFilePath="" windowModality="0" inputMethodHints="0" toolTip="" updatesEnabled="true" palette="" whatsThis="" autoFillBackground="false" minimized="false" itemtype="Plotter" windowOpacity="1" cursor="" styleSheet="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumHeight="200" isActiveWindow="true" minimumSize="" height="200" y="520" childrenRegion="" windowTitle="" contextMenuPolicy="1" x="0" focus="false" windowModified="false" mouseTracking="false" size="" accessibleName="" sizePolicy="" MinVolt="-500" childrenRect="" minimumSizeHint="" width="619" acceptDrops="false" windowIcon="" Tracks="1" objectName="PlotterWidget-19" windowIconText="" geometry="" rect="" locale="" modal="false" Scale="2" frameGeometry="" sizeIncrement="" focusPolicy="0" accessibleDescription="" layoutDirection="0" visible="true" fullScreen="false" MaxVolt="500" enabled="true" statusTip=""/>
+ 
+SerialPortWidget-20: 
+<item frameSize="" toolTipDuration="-1" maximumSize="" sizeHint="" pos="" baseSize="" maximumWidth="450" normalGeometry="" maximized="false" minimumWidth="0" maximumHeight="170" windowFilePath="" SettingsProp="ttyS0,0,3,0,0,0" windowModality="0" inputMethodHints="0" toolTip="" updatesEnabled="true" palette="" whatsThis="" autoFillBackground="false" minimized="false" itemtype="SerialPort" windowOpacity="1" cursor="" styleSheet="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumHeight="0" isActiveWindow="true" minimumSize="" height="147" y="573" childrenRegion="" windowTitle="Configuracion" contextMenuPolicy="1" x="153" focus="false" windowModified="false" mouseTracking="false" size="" accessibleName="" sizePolicy="" childrenRect="" minimumSizeHint="" width="450" acceptDrops="false" windowIcon="" objectName="SerialPortWidget-20" windowIconText="" geometry="" rect="" locale="" modal="false" frameGeometry="" sizeIncrement="" focusPolicy="0" accessibleDescription="" layoutDirection="0" visible="false" fullScreen="false" enabled="true" statusTip=""/>
+ 
+</circuit>

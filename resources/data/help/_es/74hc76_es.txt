@@ -1,0 +1,6 @@
+74HC76 - dual JK flip-flop, asynchronous preset an clear
+
+Pronto...
+
+Ver help en:
+   ..share/simulide/data/examples/logic/74_series/Help_74HC76.simu

@@ -1,0 +1,30 @@
+<circuit noLinAcc="5" animate="1" reactStep="50" type="simulide_0.4" speed="1000000">
+ 
+74HC77-17: 
+<item y="-348" labelrot="0" x="-316" labely="-20" valLabely="0" id="74HC77" labelx="0" itemtype="Subcircuit" Show_id="true" objectName="74HC77-17" valLabRot="0" rotation="0" vflip="1" hflip="1" Logic_Symbol="true" valLabelx="0"/>
+ 
+TextComponent-5: 
+<item valLabelx="0" labelx="-16" Margin="5" labelrot="0" itemtype="TextComponent" hflip="1" Fixed_Width="true" Border="1" valLabRot="0" Text="D0 E01 Q0&#xa;x  0   Lock&#xa;0  1   0&#xa;1  1   1" Opacity="1" Font="Helvetica [Cronyx]" y="-268" vflip="1" x="-388" labely="-24" objectName="TextComponent-5" rotation="0" Show_id="false" id="TextComponent-12" valLabely="0" Font_Size="10"/>
+ 
+Fixed Voltage-4: 
+<item valLabelx="-16" labelx="11" labelrot="0" itemtype="Fixed Voltage" hflip="1" Unit=" V" valLabRot="0" y="-332" vflip="1" x="-396" labely="-13" objectName="Fixed Voltage-4" rotation="0" Show_id="true" Show_Volt="false" id="D0" Voltage="5" valLabely="8"/>
+ 
+Fixed Voltage-3: 
+<item valLabelx="-16" labelx="10" labelrot="0" itemtype="Fixed Voltage" hflip="1" Unit=" V" valLabRot="0" y="-356" vflip="1" x="-396" labely="-16" objectName="Fixed Voltage-3" rotation="0" Show_id="true" Show_Volt="false" id="E01" Voltage="5" valLabely="8"/>
+ 
+Probe-1: 
+<item Show_volt="false" valLabelx="16" labelx="-20" labelrot="45" itemtype="Probe" hflip="1" Threshold="2.5" valLabRot="45" y="-348" vflip="1" x="-212" labely="-23" objectName="Probe-1" rotation="-45" Show_id="true" id="Q0" PlotterCh="0" valLabely="0"/>
+ 
+Connector-21: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="74HC77-17-Q0" y="-332" vflip="1" x="-276" labely="-24" pointList="-276,-332,-228,-332" objectName="Connector-21" rotation="0" Show_id="false" id="Connector-21" enodeid="enode-21" valLabely="0" endpinid="Probe-1-inpin"/>
+ 
+Connector-33: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="Fixed Voltage-4-outnod" y="-332" vflip="1" x="-380" labely="-24" pointList="-380,-332,-324,-332" objectName="Connector-33" rotation="0" Show_id="false" id="Connector-33" enodeid="enode-33" valLabely="0" endpinid="74HC77-17-D0"/>
+ 
+Connector-34: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="Fixed Voltage-3-outnod" y="-356" vflip="1" x="-380" labely="-24" pointList="-380,-356,-356,-356,-356,-340,-324,-340" objectName="Connector-34" rotation="0" Show_id="false" id="Connector-34" enodeid="enode-34" valLabely="0" endpinid="74HC77-17-E01"/>
+ 
+PlotterWidget-12: 
+<item childrenRect="" toolTip="" Scale="1" sizePolicy="" objectName="PlotterWidget-12" acceptDrops="false" MaxVolt="500" sizeIncrement="" minimumWidth="200" fullScreen="false" height="200" cursor="" minimumSize="" maximumSize="" maximized="false" sizeHint="" windowOpacity="1" geometry="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" pos="" x="0" childrenRegion="" rect="" maximumWidth="1000" windowModified="false" windowIcon="" MinVolt="-500" y="0" minimumSizeHint="" styleSheet="" frameSize="" minimumHeight="200" minimized="false" Tracks="1" windowTitle="" whatsThis="" windowModality="0" locale="" updatesEnabled="true" baseSize="" layoutDirection="0" toolTipDuration="-1" itemtype="Plotter" focusPolicy="0" mouseTracking="false" maximumHeight="200" windowFilePath="" size="" palette="" accessibleName="" inputMethodHints="0" visible="false" normalGeometry="" focus="false" isActiveWindow="true" frameGeometry="" statusTip="" contextMenuPolicy="1" enabled="true" windowIconText="" accessibleDescription="" width="200" modal="false" autoFillBackground="false"/>
+ 
+</circuit>

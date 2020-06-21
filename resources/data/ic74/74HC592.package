@@ -1,0 +1,25 @@
+<!DOCTYPE SimulIDE>
+
+<package name="74HC592" pins="16" width="4" height="9">
+
+    <pin side="left" pos="1"  type="" id="B"   label="B" /><!--  packagePin1 -->
+    <pin side="left" pos="2"  type="" id="C"   label="C" /><!--  packagePin2 -->
+    <pin side="left" pos="3"  type="" id="D"   label="D" /><!--  packagePin3 -->
+    <pin side="left" pos="4"  type="" id="E"   label="E" /><!--  packagePin4 -->
+    <pin side="left" pos="5"  type="" id="F"   label="F" /><!--  packagePin5 -->
+    <pin side="left" pos="6"  type="" id="G"   label="G" /><!--  packagePin6 -->
+    <pin side="left" pos="7"  type="" id="H"   label="H" /><!--  packagePin7 -->
+    
+<pin side="left" pos="8"  type="unused" id="GND" label="GND"/><!-- packagePin8 -->
+
+    <pin side="right" pos="8" type="" id="!RCO"   label="!RCO" /><!-- packagePin9  -->
+    <pin side="right" pos="7" type="" id="!CCLR"  label="!CCLR"   /><!-- packagePin10 -->
+    <pin side="right" pos="6" type="" id="CCK"    label="CCK" /><!-- packagePin11 -->
+    <pin side="right" pos="5" type="" id="!CCKEN" label="!CCKEN" /><!-- packagePin12 -->
+    <pin side="right" pos="4" type="" id="RCK"    label="RCK"   /><!-- packagePin13 -->
+    <pin side="right" pos="3" type="" id="!CLOAD" label="!CLOAD"  /><!-- packagePin14 -->
+    <pin side="right" pos="2" type="" id="A"      label="A"  /><!-- packagePin15 -->
+    
+<pin side="right" pos="1" type="unused" id="Vcc" label="Vcc"/><!-- packagePin16 -->
+ 
+</package>

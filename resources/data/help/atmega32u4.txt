@@ -1,0 +1,70 @@
+MCU: ATmega32u4
+ Package: 44 pin QFN
+
+ 1: PE6   INBT6 AIN0
+ 2: UVCC
+ 3: D-
+ 4: D+
+ 5: UGND
+ 6: UCAP
+ 7: VBUS
+ 8: PB0   SS    PCINT0
+ 9: PB1   ISCI  PCINT1
+10: PB2   MOSI  PDI    PCINT2
+11: PB3   MISO  PDO    PCINT3
+12: PB7   !RTS  OC1C   OC0A   PCINT7
+13: Reset
+14: Vcc
+15: Gnd
+16: XTAL2
+17: XTAL1
+18: PD0   OC0B  SCL    INT0
+19: PD1   SDA   INT1
+20: PD2   INT2  RXD1
+21: PD3   INT3  TXD1
+22: PD5   XCK1  !CTS
+23: Gnd
+24: AVCC
+25: PD4   ADC8  ICP1
+26: PD6   T1    !OC4D  ADC9
+27: PD7   T0    OC4D   ADC10
+28: PB4   ADC11 PCINT4
+29: PB5   OC1A  !OC4B  ADC12  PCINT5
+30: PB6   OC1B  OC4B   ADC13  PCINT6
+31: PC6   OC3A  !OC4A
+32: PC7   ICP3  CLKO   OC4A
+33: PE2   !HWB
+34: Vcc
+35: Gnd
+36: PF7   ADC7  TDI
+37: PF6   ADC6  TDO
+38: PF5   ADC5  TMS
+39: PF4   ADC4  TCK
+40: PF1   ADC1
+41: PF0   ADC0
+42: AREF
+43: Gnd
+44: AVCC
+
+
+Summary:
+The high-performance, low-power Microchip 8-bit AVR RISC-based microcontroller
+32 KB ISP flash memory with read-while-write capabilities, 
+1 KB EEPROM, 
+2,5 KB SRAM, 
+26 general purpose I/O lines, 
+32 general purpose working registers, 
+JTAG interface for boundary-scan and on-chip debugging/programming, 
+1 x 8-bit, 2 x 16-bit timer/counters with compare modes, 
+8 PWM Channels
+internal and external interrupts,
+serial programmable USART, 
+universal serial interface (USI) with start condition detector, 
+12-channel 10-bit A/D converter, 
+programmable watchdog timer with internal oscillator, 
+SPI serial port, 
+6 software selectable power saving modes,
+on-chip Analog Comparator,
+on-chip Temperature Sensor,
+USB 2 Full-speed/Low Speed Device Module with Interrupt on Transfer Completion 
+

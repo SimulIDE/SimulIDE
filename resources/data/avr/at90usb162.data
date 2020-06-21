@@ -1,0 +1,123 @@
+/***************************************************************************
+ *   Copyright (C) 2017 by santiago González                               *
+ *   santigoro@gmail.com                                                   *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 3 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, see <http://www.gnu.org/licenses/>.  *
+ *                                                                         *
+ ***************************************************************************/
+ 
+MaxMHz=16
+
+PORTB EQU 5
+DDRB EQU 4
+PINB EQU 3
+PORTD EQU 11
+DDRD EQU 10
+PIND EQU 9
+SPCR EQU 44
+SPSR EQU 45
+SPDR EQU 46
+SPMCSR EQU 55
+EEARH EQU 34
+EEARL EQU 33
+EEDR EQU 32
+EECR EQU 31
+OCR0B EQU 40
+OCR0A EQU 39
+TCNT0 EQU 38
+TCCR0B EQU 37
+TCCR0A EQU 36
+TIMSK0 EQU 110
+TIFR0 EQU 21
+GTCCR EQU 35
+TCCR1A EQU 128
+TCCR1B EQU 129
+TCCR1C EQU 130
+TCNT1H EQU 133
+TCNT1L EQU 132
+OCR1AH EQU 137
+OCR1AL EQU 136
+OCR1BH EQU 139
+OCR1BL EQU 138
+OCR1CH EQU 141
+OCR1CL EQU 140
+ICR1H EQU 135
+ICR1L EQU 134
+TIMSK1 EQU 111
+TIFR1 EQU 22
+PLLCSR EQU 41
+UEINT EQU 244
+UEBCLX EQU 242
+UEDATX EQU 241
+UEIENX EQU 240
+UESTA1X EQU 239
+UESTA0X EQU 238
+UECFG1X EQU 237
+UECFG0X EQU 236
+UECONX EQU 235
+UERST EQU 234
+UENUM EQU 233
+UEINTX EQU 232
+UDMFN EQU 230
+UDFNUMH EQU 229
+UDFNUML EQU 228
+UDADDR EQU 227
+UDIEN EQU 226
+UDINT EQU 225
+UDCON EQU 224
+USBCON EQU 216
+REGCR EQU 99
+UPOE EQU 251
+PS2CON EQU 250
+SREG EQU 63
+SPH EQU 62
+SPL EQU 61
+MCUCR EQU 53
+MCUSR EQU 52
+OSCCAL EQU 102
+CLKPR EQU 97
+SMCR EQU 51
+EIND EQU 60
+GPIOR2 EQU 43
+GPIOR1 EQU 42
+GPIOR0 EQU 30
+PRR1 EQU 101
+PRR0 EQU 100
+CKSTA EQU 210
+CKSEL1 EQU 209
+CKSEL0 EQU 208
+DWDR EQU 49
+EICRA EQU 105
+EICRB EQU 106
+EIMSK EQU 29
+EIFR EQU 28
+PCMSK0 EQU 107
+PCMSK1 EQU 108
+PCIFR EQU 27
+PCICR EQU 104
+UDR1 EQU 206
+UCSR1A EQU 200
+UCSR1B EQU 201
+UCSR1C EQU 202
+UCSR1D EQU 203
+UBRR1H EQU 205
+UBRR1L EQU 204
+WDTCSR EQU 96
+WDTCKD EQU 98
+ACSR EQU 48
+DIDR1 EQU 127
+PORTC EQU 8
+DDRC EQU 7
+PINC EQU 6
+

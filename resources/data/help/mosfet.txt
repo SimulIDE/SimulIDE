@@ -1,0 +1,6 @@
+Mosfet:
+
+RDSon represents DS Resistance in the lower part of the linear region when conducing:
+    VGS > Vth and VDS < ( VGS – Vth )
+
+It is posible to configure it as P or N channel as well as a depletion mosfet.

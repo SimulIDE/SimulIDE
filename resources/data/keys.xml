@@ -1,0 +1,40 @@
+<!DOCTYPE SimulIDE>
+
+<!-- *************************************************************************** -->
+<!-- *   Copyright (C) 2018 by santiago González                               * -->
+<!-- *   santigoro@gmail.com                                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is free software; you can redistribute it and/or modify  * -->
+<!-- *   it under the terms of the GNU General Public License as published by  * -->
+<!-- *   the Free Software Foundation; either version 3 of the License, or     * -->
+<!-- *   (at your option) any later version.                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is distributed in the hope that it will be useful,       * -->
+<!-- *   but WITHOUT ANY WARRANTY; without even the implied warranty of        * -->
+<!-- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         * -->
+<!-- *   GNU General Public License for more details.                          * -->
+<!-- *                                                                         * -->
+<!-- *   You should have received a copy of the GNU General Public License     * -->
+<!-- *   along with this program; if not, see <http://www.gnu.org/licenses/>.  * -->
+<!-- *                                                                         * -->
+<!-- *************************************************************************** -->
+
+<itemlib>
+    
+    <itemset category="Logic" type="">
+        <item name="Keys"  package=""  subcircuit=""  icon="ic2.png" ></item>
+    </itemset>
+    
+    <itemset category="Logic/Keys" type="Subcircuit">
+
+    <item name="8Nchkey"  package="keys/8Nchkey.package"  subcircuit="keys/8Nchkey.subcircuit" ></item>
+    <item name="8NPNkey"  package="keys/8Nchkey.package"  subcircuit="keys/8npnkey.subcircuit" ></item>
+    <item name="ULN2804"  package="keys/ULN2804.package"  subcircuit="keys/ULN2804.subcircuit" ></item>
+    <item name="ULN2804_OC"  package="keys/ULN2804_OC.package"  subcircuit="keys/ULN2804_OC.subcircuit" ></item>
+    <item name="DG401"  package="keys/DG401.package"  subcircuit="keys/DG401.subcircuit" info=" High-Speed CMOS Analog Switches" /> 
+    <item name="DG403"  package="keys/DG403.package"  subcircuit="keys/DG403.subcircuit" info=" High-Speed CMOS Analog Switches" /> 
+    <item name="DG405"  package="keys/DG405.package"  subcircuit="keys/DG405.subcircuit" info=" High-Speed CMOS Analog Switches" />     
+    <item name="L293"   package="keys/L293.package"   subcircuit="keys/L293.subcircuit"  info=" Quadruple half-H drivers" />         
+    </itemset>
+
+</itemlib>

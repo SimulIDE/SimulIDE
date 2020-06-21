@@ -1,0 +1,45 @@
+<!DOCTYPE SimulIDE>
+
+<!-- *************************************************************************** -->
+<!-- *   Copyright (C) 2018 by santiago González                               * -->
+<!-- *   santigoro@gmail.com                                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is free software; you can redistribute it and/or modify  * -->
+<!-- *   it under the terms of the GNU General Public License as published by  * -->
+<!-- *   the Free Software Foundation; either version 3 of the License, or     * -->
+<!-- *   (at your option) any later version.                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is distributed in the hope that it will be useful,       * -->
+<!-- *   but WITHOUT ANY WARRANTY; without even the implied warranty of        * -->
+<!-- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         * -->
+<!-- *   GNU General Public License for more details.                          * -->
+<!-- *                                                                         * -->
+<!-- *   You should have received a copy of the GNU General Public License     * -->
+<!-- *   along with this program; if not, see <http://www.gnu.org/licenses/>.  * -->
+<!-- *                                                                         * -->
+<!-- *************************************************************************** -->
+
+<package name="dip16" pins="16" width="4" height="9">
+
+    <pin side="left" pos="1"  type="" id="PE"  label="PE" /><!-- packagePin1 -->
+    <pin side="left" pos="2"  type="" id="Q4"  label="Q4" /><!-- packagePin2 -->
+    <pin side="left" pos="3"  type="" id="P4"  label="P4" /><!-- packagePin3 -->
+    <pin side="left" pos="4"  type="" id="P1"  label="P1" /><!-- packagePin4 -->
+    <pin side="left" pos="5"  type="" id="!CI" label="!CI" /><!-- packagePin5 -->
+    <pin side="left" pos="6"  type="" id="Q1"  label="Q1" /><!-- packagePin6 -->
+    <pin side="left" pos="7"  type="" id="!CO" label="!CO" /><!-- packagePin7 -->
+    
+    <pin side="left" pos="8"  type="unused" id="Vss" label="Vss"/><!-- packagePin8 -->
+
+    <pin side="right" pos="8" type="" id="Rst" label="Rst"/><!-- packagePin9 -->
+    <pin side="right" pos="7" type="" id="U/D" label="U/D"/><!-- packagePin10 -->
+    <pin side="right" pos="6" type="" id="Q2"  label="Q2" /><!-- packagePin11 -->
+    <pin side="right" pos="5" type="" id="P2"  label="P2" /><!-- packagePin12 -->
+    <pin side="right" pos="4" type="" id="P3"  label="P3" /><!-- packagePin13 -->
+    <pin side="right" pos="3" type="" id="Q3"  label="Q3" /><!-- packagePin14 -->
+    <pin side="right" pos="2" type="" id="CLK" label="CLK"/><!-- packagePin15 -->
+    
+    <pin side="right" pos="1" type="unused" id="Vdd" label="Vdd"/><!-- packagePin16 -->
+    
+</package>
+

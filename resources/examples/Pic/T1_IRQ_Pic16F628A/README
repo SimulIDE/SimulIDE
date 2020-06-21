@@ -1,0 +1,16 @@
+;********************************************************************** 
+; Filename: PIC16F628A_TMR1.asm 
+; Date: 12 Nov. 2013  
+; Author: Lewis Loflin   
+; Uses TMR1 with ext. 32 kHz crystal to generate interrupt
+; that toggles the state of RA5 LED   
+; 16 mHz crystal                                                                     
+;**********************************************************************
+
+Set Pic Mhz to 16
+
+Assembled with gpasm-0.13.7 (gputils): http://gputils.sourceforge.net/
+    gpasm -L -w1 -i -ainhx32  T1_IRQ_Pic16F628A.asm 
+
+Source and explanations about Pic16f628a Timer1:
+    http://www.bristolwatch.com/PIC16F628A/a4.htm

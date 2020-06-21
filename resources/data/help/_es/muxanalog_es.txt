@@ -1,0 +1,15 @@
+Multiplexor Analógico
+
+Teniendo una entrada en Z (por ejemplo reloj) esta es reflejada en una salida (Y0..Y7) según la selección con A0..A2.
+
+Pines:
+Z = Señal de entrada
+A0..A3 = Selector de puerta (000 = Y0, 100 = Y1, etc)
+!En = Habilitación de la salida. GND
+Y0..Y7 = Salidas
+
+Propiedades:
+- Address Bits:
+   Determina el numero de entradas. 3
+- Impedancia:
+   Determina la impedancia del circuito. 1

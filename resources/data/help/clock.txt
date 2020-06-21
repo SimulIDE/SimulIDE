@@ -1,0 +1,9 @@
+Clock:
+
+This is a simple Clock source.
+
+It can be turned On/Off with the buttton on the left side.
+
+Change Frequency in "Frequency" property above.
+
+It is also possible to change voltage in "Voltage" property above.

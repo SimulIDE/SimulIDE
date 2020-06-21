@@ -1,0 +1,96 @@
+<circuit noLinAcc="5" animate="1" reactStep="50" type="simulide_0.4" speed="1000000">
+ 
+TextComponent-16: 
+<item valLabelx="0" labelx="-16" Margin="5" labelrot="0" itemtype="TextComponent" hflip="1" Fixed_Width="true" Border="1" valLabRot="0" Text="A0 A1 A2 A3 Y0 Y1 Y2 Y3 Y4 Y5 Y6 Y7 Y8 Y9&#xa;0  0  0  0  0  1  1  1  1  1  1  1  1  1 &#xa;1  0  0  0  1  0  1  1  1  1  1  1  1  1&#xa;0  1  0  0  1  1  0  1  1  1  1  1  1  1&#xa;1  1  0  0  1  1  1  0  1  1  1  1  1  1&#xa;0  0  1  0  1  1  1  1  0  1  1  1  1  1&#xa;1  0  1  0  1  1  1  1  1  0  1  1  1  1&#xa;0  1  1  0  1  1  1  1  1  1  0  1  1  1&#xa;1  1  1  0  1  1  1  1  1  1  1  0  1  1&#xa;0  0  0  1  1  1  1  1  1  1  1  1  0  1&#xa;1  0  0  1  1  1  1  1  1  1  1  1  1  0&#xa;0  1  0  1  1  1  1  1  1  1  1  1  1  1&#xa;Resto igual " Opacity="1" Font="Helvetica [Cronyx]" y="-236" vflip="1" x="-428" labely="-24" objectName="TextComponent-16" rotation="0" Show_id="false" id="TextComponent-12" valLabely="0" Font_Size="10"/>
+ 
+Fixed Voltage-15: 
+<item valLabelx="-16" labelx="10" labelrot="0" itemtype="Fixed Voltage" hflip="1" Unit=" V" valLabRot="0" y="-316" vflip="1" x="-396" labely="-12" objectName="Fixed Voltage-15" rotation="0" Show_id="true" Show_Volt="false" id="A1" Voltage="5" valLabely="8"/>
+ 
+Fixed Voltage-14: 
+<item valLabelx="-16" labelx="10" labelrot="0" itemtype="Fixed Voltage" hflip="1" Unit=" V" valLabRot="0" y="-340" vflip="1" x="-396" labely="-16" objectName="Fixed Voltage-14" rotation="0" Show_id="true" Show_Volt="false" id="A0" Voltage="5" valLabely="8"/>
+ 
+Probe-13: 
+<item Show_volt="false" valLabelx="16" labelx="-20" labelrot="45" itemtype="Probe" hflip="1" Threshold="2.5" valLabRot="45" y="-356" vflip="1" x="-244" labely="-18" objectName="Probe-13" rotation="-45" Show_id="true" id="Y" PlotterCh="0" valLabely="0"/>
+ 
+74HC42-12: 
+<item y="-348" labelrot="0" x="-324" labely="-20" valLabely="0" id="74HC42" labelx="0" itemtype="Subcircuit" Show_id="true" objectName="74HC42-12" valLabRot="0" rotation="0" vflip="1" hflip="1" Logic_Symbol="true" valLabelx="0"/>
+ 
+Fixed Voltage-11: 
+<item valLabelx="-16" labelx="10" labelrot="0" itemtype="Fixed Voltage" hflip="1" Unit=" V" valLabRot="0" y="-292" vflip="1" x="-396" labely="-12" objectName="Fixed Voltage-11" rotation="0" Show_id="true" Show_Volt="false" id="A2" Voltage="5" valLabely="8"/>
+ 
+Fixed Voltage-10: 
+<item valLabelx="-16" labelx="10" labelrot="0" itemtype="Fixed Voltage" hflip="1" Unit=" V" valLabRot="0" y="-268" vflip="1" x="-396" labely="-14" objectName="Fixed Voltage-10" rotation="0" Show_id="true" Show_Volt="false" id="A3" Voltage="5" valLabely="8"/>
+ 
+Probe-9: 
+<item Show_volt="false" valLabelx="16" labelx="16" labelrot="45" itemtype="Probe" hflip="1" Threshold="2.5" valLabRot="45" y="-348" vflip="1" x="-212" labely="-16" objectName="Probe-9" rotation="-45" Show_id="false" id="Probe-29" PlotterCh="0" valLabely="0"/>
+ 
+Probe-8: 
+<item Show_volt="false" valLabelx="16" labelx="16" labelrot="45" itemtype="Probe" hflip="1" Threshold="2.5" valLabRot="45" y="-340" vflip="1" x="-244" labely="-16" objectName="Probe-8" rotation="-45" Show_id="false" id="Probe-30" PlotterCh="0" valLabely="0"/>
+ 
+Probe-7: 
+<item Show_volt="false" valLabelx="16" labelx="16" labelrot="45" itemtype="Probe" hflip="1" Threshold="2.5" valLabRot="45" y="-332" vflip="1" x="-212" labely="-16" objectName="Probe-7" rotation="-45" Show_id="false" id="Probe-31" PlotterCh="0" valLabely="0"/>
+ 
+Probe-6: 
+<item Show_volt="false" valLabelx="16" labelx="16" labelrot="45" itemtype="Probe" hflip="1" Threshold="2.5" valLabRot="45" y="-324" vflip="1" x="-244" labely="-16" objectName="Probe-6" rotation="-45" Show_id="false" id="Probe-32" PlotterCh="0" valLabely="0"/>
+ 
+Probe-5: 
+<item Show_volt="false" valLabelx="16" labelx="16" labelrot="45" itemtype="Probe" hflip="1" Threshold="2.5" valLabRot="45" y="-308" vflip="1" x="-244" labely="-16" objectName="Probe-5" rotation="-45" Show_id="false" id="Probe-33" PlotterCh="0" valLabely="0"/>
+ 
+Probe-4: 
+<item Show_volt="false" valLabelx="16" labelx="16" labelrot="45" itemtype="Probe" hflip="1" Threshold="2.5" valLabRot="45" y="-292" vflip="1" x="-244" labely="-16" objectName="Probe-4" rotation="-45" Show_id="false" id="Probe-34" PlotterCh="0" valLabely="0"/>
+ 
+Probe-3: 
+<item Show_volt="false" valLabelx="16" labelx="16" labelrot="45" itemtype="Probe" hflip="1" Threshold="2.5" valLabRot="45" y="-316" vflip="1" x="-212" labely="-16" objectName="Probe-3" rotation="-45" Show_id="false" id="Probe-35" PlotterCh="0" valLabely="0"/>
+ 
+Probe-2: 
+<item Show_volt="false" valLabelx="16" labelx="16" labelrot="45" itemtype="Probe" hflip="1" Threshold="2.5" valLabRot="45" y="-300" vflip="1" x="-212" labely="-16" objectName="Probe-2" rotation="-45" Show_id="false" id="Probe-36" PlotterCh="0" valLabely="0"/>
+ 
+Probe-1: 
+<item Show_volt="false" valLabelx="16" labelx="16" labelrot="45" itemtype="Probe" hflip="1" Threshold="2.5" valLabRot="45" y="-284" vflip="1" x="-212" labely="-16" objectName="Probe-1" rotation="-45" Show_id="false" id="Probe-37" PlotterCh="0" valLabely="0"/>
+ 
+Connector-17: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="Fixed Voltage-14-outnod" y="-340" vflip="1" x="-380" labely="-24" pointList="-380,-340,-332,-340" objectName="Connector-17" rotation="0" Show_id="false" id="Connector-25" enodeid="Circ_eNode-18" valLabely="0" endpinid="74HC42-12-A0"/>
+ 
+Connector-19: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="Fixed Voltage-10-outnod" y="-268" vflip="1" x="-380" labely="-24" pointList="-380,-268,-340,-268,-340,-316,-332,-316" objectName="Connector-19" rotation="0" Show_id="false" id="Connector-26" enodeid="Circ_eNode-20" valLabely="0" endpinid="74HC42-12-A3"/>
+ 
+Connector-21: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="Fixed Voltage-11-outnod" y="-292" vflip="1" x="-380" labely="-24" pointList="-380,-292,-356,-292,-356,-324,-332,-324" objectName="Connector-21" rotation="0" Show_id="false" id="Connector-27" enodeid="Circ_eNode-22" valLabely="0" endpinid="74HC42-12-A2"/>
+ 
+Connector-23: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="Fixed Voltage-15-outnod" y="-316" vflip="1" x="-380" labely="-24" pointList="-380,-316,-372,-316,-372,-332,-332,-332" objectName="Connector-23" rotation="0" Show_id="false" id="Connector-28" enodeid="Circ_eNode-24" valLabely="0" endpinid="74HC42-12-A1"/>
+ 
+Connector-25: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="74HC42-12-!Y0" y="-340" vflip="1" x="-284" labely="-24" pointList="-284,-340,-260,-340" objectName="Connector-25" rotation="0" Show_id="false" id="Connector-38" enodeid="Circ_eNode-26" valLabely="0" endpinid="Probe-13-inpin"/>
+ 
+Connector-27: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="74HC42-12-!Y2" y="-324" vflip="1" x="-284" labely="-24" pointList="-284,-324,-260,-324" objectName="Connector-27" rotation="0" Show_id="false" id="Connector-39" enodeid="Circ_eNode-28" valLabely="0" endpinid="Probe-8-inpin"/>
+ 
+Connector-29: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="74HC42-12-!Y4" y="-308" vflip="1" x="-284" labely="-24" pointList="-284,-308,-260,-308" objectName="Connector-29" rotation="0" Show_id="false" id="Connector-40" enodeid="Circ_eNode-30" valLabely="0" endpinid="Probe-6-inpin"/>
+ 
+Connector-31: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="74HC42-12-!Y6" y="-292" vflip="1" x="-284" labely="-24" pointList="-284,-292,-260,-292" objectName="Connector-31" rotation="0" Show_id="false" id="Connector-41" enodeid="Circ_eNode-32" valLabely="0" endpinid="Probe-5-inpin"/>
+ 
+Connector-33: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="74HC42-12-!Y8" y="-276" vflip="1" x="-284" labely="-24" pointList="-284,-276,-260,-276" objectName="Connector-33" rotation="0" Show_id="false" id="Connector-42" enodeid="Circ_eNode-34" valLabely="0" endpinid="Probe-4-inpin"/>
+ 
+Connector-35: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="74HC42-12-!Y9" y="-268" vflip="1" x="-284" labely="-24" pointList="-284,-268,-228,-268" objectName="Connector-35" rotation="0" Show_id="false" id="Connector-43" enodeid="Circ_eNode-36" valLabely="0" endpinid="Probe-1-inpin"/>
+ 
+Connector-37: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="74HC42-12-!Y7" y="-284" vflip="1" x="-284" labely="-24" pointList="-284,-284,-228,-284" objectName="Connector-37" rotation="0" Show_id="false" id="Connector-44" enodeid="Circ_eNode-38" valLabely="0" endpinid="Probe-2-inpin"/>
+ 
+Connector-39: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="74HC42-12-!Y5" y="-300" vflip="1" x="-284" labely="-24" pointList="-284,-300,-228,-300" objectName="Connector-39" rotation="0" Show_id="false" id="Connector-45" enodeid="Circ_eNode-40" valLabely="0" endpinid="Probe-3-inpin"/>
+ 
+Connector-42: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="74HC42-12-!Y1" y="-332" vflip="1" x="-284" labely="-24" pointList="-284,-332,-228,-332" objectName="Connector-42" rotation="0" Show_id="false" id="Connector-42" enodeid="enode-42" valLabely="0" endpinid="Probe-9-inpin"/>
+ 
+Connector-43: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="74HC42-12-!Y3" y="-316" vflip="1" x="-284" labely="-24" pointList="-284,-316,-228,-316" objectName="Connector-43" rotation="0" Show_id="false" id="Connector-43" enodeid="enode-43" valLabely="0" endpinid="Probe-7-inpin"/>
+ 
+PlotterWidget-41: 
+<item childrenRect="" toolTip="" Scale="1" sizePolicy="" objectName="PlotterWidget-41" acceptDrops="false" MaxVolt="500" sizeIncrement="" minimumWidth="200" fullScreen="false" height="200" cursor="" minimumSize="" maximumSize="" maximized="false" sizeHint="" windowOpacity="1" geometry="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" pos="" x="0" childrenRegion="" rect="" maximumWidth="1000" windowModified="false" windowIcon="" MinVolt="-500" y="0" minimumSizeHint="" styleSheet="" frameSize="" minimumHeight="200" minimized="false" Tracks="1" windowTitle="" whatsThis="" windowModality="0" locale="" updatesEnabled="true" baseSize="" layoutDirection="0" toolTipDuration="-1" itemtype="Plotter" focusPolicy="0" mouseTracking="false" maximumHeight="200" windowFilePath="" size="" palette="" accessibleName="" inputMethodHints="0" visible="false" normalGeometry="" focus="false" isActiveWindow="true" frameGeometry="" statusTip="" contextMenuPolicy="1" enabled="true" windowIconText="" accessibleDescription="" width="200" modal="false" autoFillBackground="false"/>
+ 
+</circuit>

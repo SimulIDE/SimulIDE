@@ -1,0 +1,36 @@
+<circuit speed="1000000" animate="0" type="simulide_0.1" noLinAcc="5" reactStep="50" noLinStep="10">
+ 
+Probe-6: 
+<item rotation="-45" valLabely="0" PlotterCh="0" Show_id="false" itemtype="Probe" labelrot="45" id="Probe-1" x="-204" labely="-16" y="-164" vflip="1" Show_volt="true" objectName="Probe-6" valLabRot="45" labelx="16" valLabelx="16" hflip="1"/>
+ 
+Probe-5: 
+<item rotation="-45" valLabely="0" PlotterCh="0" Show_id="false" itemtype="Probe" labelrot="45" id="Probe-2" x="-316" labely="-16" y="-164" vflip="1" Show_volt="true" objectName="Probe-5" valLabRot="45" labelx="16" valLabelx="16" hflip="1"/>
+ 
+Ground (0 V)-4: 
+<item rotation="0" valLabely="0" Show_id="false" itemtype="Ground" labelrot="0" id="Ground (0 V)-3" x="-92" labely="-24" y="-44" vflip="1" objectName="Ground (0 V)-4" valLabRot="0" labelx="-16" valLabelx="0" hflip="1"/>
+ 
+Resistor-3: 
+<item Show_res="true" valLabely="8" Show_id="false" rotation="0" vflip="1" x="-148" Resistance="100" id="Resistor-4" Unit=" Ω" objectName="Resistor-3" labelrot="0" hflip="1" y="-148" valLabelx="-18" labely="-24" labelx="-16" valLabRot="0" itemtype="Resistor"/>
+ 
+Led-2: 
+<item valLabely="0" Show_id="false" rotation="0" vflip="1" x="-260" Resistance="0.59999999999999998" id="Led-5" objectName="Led-2" Threshold="2.3999999999999999" labelrot="0" hflip="1" y="-148" valLabelx="0" Grounded="false" Color="0" labely="-24" MaxCurrent="0.029999999999999999" labelx="-16" valLabRot="0" itemtype="Led"/>
+ 
+Volt. Source-1: 
+<item valLabely="16" Show_id="false" rotation="0" vflip="1" Show_Volt="true" x="-372" id="Volt. Source-6" Unit=" V" objectName="Volt. Source-1" labelrot="0" hflip="1" y="-148" valLabelx="-25" Voltage="5" labely="-24" labelx="-16" valLabRot="0" itemtype="Voltage Source"/>
+ 
+Connector-7: 
+<item startpinid="Volt. Source-1-outPin" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-356" id="Connector-7" enodeid="Circ_eNode-8" objectName="Connector-7" pointList="-356,-148,-276,-148" labelrot="0" hflip="1" endpinid="Led-2-lPin" y="-148" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-9: 
+<item startpinid="Led-2-rPin" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-244" id="Connector-9" enodeid="Circ_eNode-10" objectName="Connector-9" pointList="-244,-148,-164,-148" labelrot="0" hflip="1" endpinid="Resistor-3-lPin" y="-148" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-11: 
+<item startpinid="Resistor-3-rPin" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-132" id="Connector-11" enodeid="Circ_eNode-12" objectName="Connector-11" pointList="-132,-148,-92,-148,-92,-60" labelrot="0" hflip="1" endpinid="Ground (0 V)-4-Gnd" y="-148" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+PlotterWidget-65: 
+<item frameSize="" toolTipDuration="-1" maximumSize="" sizeHint="" pos="" baseSize="" maximumWidth="1000" normalGeometry="" maximized="false" minimumWidth="200" maximumHeight="200" windowFilePath="" windowModality="0" inputMethodHints="0" toolTip="" updatesEnabled="true" palette="" whatsThis="" autoFillBackground="false" minimized="false" itemtype="Plotter" windowOpacity="1" cursor="" styleSheet="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumHeight="200" isActiveWindow="true" minimumSize="" height="200" y="520" childrenRegion="" windowTitle="" contextMenuPolicy="1" x="0" focus="false" windowModified="false" mouseTracking="false" size="" accessibleName="" sizePolicy="" MinVolt="0" childrenRect="" minimumSizeHint="" width="756" acceptDrops="false" windowIcon="" Tracks="1" objectName="PlotterWidget-65" windowIconText="" geometry="" rect="" locale="" modal="false" Scale="1" frameGeometry="" sizeIncrement="" focusPolicy="0" accessibleDescription="" layoutDirection="0" visible="false" fullScreen="false" MaxVolt="500" enabled="true" statusTip=""/>
+ 
+SerialPortWidget-66: 
+<item frameSize="" toolTipDuration="-1" maximumSize="" sizeHint="" pos="" baseSize="" maximumWidth="450" normalGeometry="" maximized="false" minimumWidth="0" maximumHeight="170" windowFilePath="" SettingsProp="ttyS0,0,3,0,0,0" windowModality="0" inputMethodHints="0" toolTip="" updatesEnabled="true" palette="" whatsThis="" autoFillBackground="false" minimized="false" itemtype="SerialPort" windowOpacity="1" cursor="" styleSheet="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumHeight="0" isActiveWindow="true" minimumSize="" height="147" y="573" childrenRegion="" windowTitle="Configuracion" contextMenuPolicy="1" x="153" focus="false" windowModified="false" mouseTracking="false" size="" accessibleName="" sizePolicy="" childrenRect="" minimumSizeHint="" width="450" acceptDrops="false" windowIcon="" objectName="SerialPortWidget-66" windowIconText="" geometry="" rect="" locale="" modal="false" frameGeometry="" sizeIncrement="" focusPolicy="0" accessibleDescription="" layoutDirection="0" visible="false" fullScreen="false" enabled="true" statusTip=""/>
+ 
+</circuit>

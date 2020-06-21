@@ -1,0 +1,14 @@
+Amperímetro:
+Mide la corriente entre las puntas de prueba roja y negra.
+
+- Pin Rojo: Positivo.
+- Pin Negro: Negativo.
+- Pin Derecha: lectura como voltaje.
+
+- Se actualiza a 50 Hz.
+
+Videos Relacionados: 
+   https://youtu.be/1BeTy5DGcDc
+   
+Mas información:
+   http://simulide.blogspot.com/p/meters.html

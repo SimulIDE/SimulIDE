@@ -1,0 +1,16 @@
+;**********************************************************************
+; Filename: TMR0_IRQ.asm
+; Date:  Nov. 11, 2013 
+; Author: Lewis Loflin 
+; Demonstrates how to use interrupts with TMR0	                                                     
+; State of LED on Ra0 is inverted by toggle every 61 interrupts
+; PIC16F628A and 16 mHz crystal                                                     
+;**********************************************************************
+
+Set Pic Mhz to 16
+
+Assembled with gpasm-0.13.7 (gputils): http://gputils.sourceforge.net/
+    gpasm -L -w1 -i -ainhx32  T0_IRQ_Pic16F628A.asm 
+
+Source and explanations about Pic16f628a Timer0:
+    http://www.bristolwatch.com/PIC16F628A/a3.htm

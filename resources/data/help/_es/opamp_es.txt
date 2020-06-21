@@ -1,0 +1,9 @@
+Amplificador Operacional:
+
+Parámetros:
+- Ganancia:
+   Establece la ganancia en amplitud. 1000
+- Pines de alimentación:
+   Para mostrar los pines de alimentación. false
+   Por defecto, no muestra pines de alimentación y usará 0-5V.
+   Conecte estos pines a cualquier fuente de voltaje que necesite.

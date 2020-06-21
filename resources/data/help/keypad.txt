@@ -1,0 +1,7 @@
+KeyPad:
+
+It is customizable in size ( rows and columns ) and key labels.
+By default it is an standard 12 keys; 4 rows, 3 Cols.
+
+More Info:
+ http://simulide.blogspot.com/p/blog-page_22.html

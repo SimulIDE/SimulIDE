@@ -1,0 +1,5 @@
+Resistor Dip:
+
+Group of resistors.
+
+Set the number of resistors in "Size" property.

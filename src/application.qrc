@@ -1,0 +1,157 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="null.png">../src/icons/components/null.png</file>
+        
+        <file alias="simulide.png">../src/icons/simulide.png</file>
+        <file alias="null-0.png">../src/icons/components/null-0.png</file>
+        <file alias="newcirc.png">../src/icons/mainwindow/new.png</file>
+        <file alias="opencirc.png">../src/icons/mainwindow/open.png</file>
+        <file alias="savecirc.png">../src/icons/mainwindow/save.png</file>
+        <file alias="savecircas.png">../src/icons/mainwindow/saveas.png</file>
+        <file alias="help.png">../src/icons/mainwindow/help.png</file>
+        <file alias="about.png">../src/icons/mainwindow/about.png</file>
+        
+        <file alias="new.png">../src/icons/mainwindow/new.png</file>
+        <file alias="open.png">../src/icons/mainwindow/open.png</file>
+        <file alias="save.png">../src/icons/mainwindow/save.png</file>
+        <file alias="saveas.png">../src/icons/mainwindow/saveas.png</file>
+        
+        <file alias="cut.png">../src/icons/mainwindow/cut.png</file>
+        <file alias="copy.png">../src/icons/mainwindow/copy.png</file>
+        <file alias="paste.png">../src/icons/mainwindow/paste.png</file>
+        
+        <file alias="cdup.png">../src/icons/mainwindow/cdup.png</file>
+        <file alias="undo.png">../src/icons/mainwindow/rotateCCW.png</file>
+        <file alias="redo.png">../src/icons/mainwindow/rotateCW.png</file>
+        <file alias="find.png">../src/icons/mainwindow/find.png</file>
+        
+        <file alias="compile.png">../src/icons/mainwindow/verify.png</file>
+        <file alias="setroot.png">../src/icons/mainwindow/verify.png</file>
+        
+        <file alias="finish.png">../src/icons/mainwindow/finish.png</file>
+        <file alias="step.png">../src/icons/mainwindow/step.png</file>
+        <file alias="stepover.png">../src/icons/mainwindow/stepover.png</file>
+        <file alias="play.png">../src/icons/mainwindow/play.png</file>
+        <file alias="runtobk.png">../src/icons/mainwindow/runtobk.png</file>
+        <file alias="pause.png">../src/icons/mainwindow/pause.png</file>
+        <file alias="reset.png">../src/icons/mainwindow/reset.png</file>
+        <file alias="stop.png">../src/icons/mainwindow/stop.png</file>
+        
+        <file alias="poweroff.png">../src/icons/mainwindow/poweroff.png</file>
+        <file alias="poweron.png">../src/icons/mainwindow/poweron.png</file>
+        <file alias="powerdeb.png">../src/icons/mainwindow/powerdeb.png</file>
+        <file alias="pausesim.png">../src/icons/mainwindow/pausesim.png</file>
+        
+        <file alias="remove.png">../src/icons/mainwindow/remove.png</file>
+        <file alias="properties.png">../src/icons/mainwindow/properties.png</file>
+        <file alias="rotateCW.png">../src/icons/mainwindow/rotateCW.png</file>
+        <file alias="rotateCCW.png">../src/icons/mainwindow/rotateCCW.png</file>
+        <file alias="rotate180.png">../src/icons/mainwindow/rotate180.png</file>
+        <file alias="hflip.png">../src/icons/mainwindow/hflip.png</file>
+        <file alias="vflip.png">../src/icons/mainwindow/vflip.png</file>
+        <file alias="load.png">../src/icons/mainwindow/load.png</file>
+        <file alias="reload.png">../src/icons/mainwindow/reload.png</file>
+        <file alias="terminal.png">../src/icons/mainwindow/terminal.png</file>
+        <file alias="closeterminal.png">../src/icons/mainwindow/closeterminal.png</file>
+        <file alias="saveimage.png">../src/icons/mainwindow/saveimage.png</file>
+        
+        <file alias="rename.png">../src/icons/mainwindow/rename.png</file>
+        <file alias="invert.png">../src/icons/mainwindow/invert.png</file>
+        <file alias="unuse.png">../src/icons/mainwindow/unuse.png</file>
+        
+        <file alias="breakpoint.png">../src/icons/mainwindow/breakpoint.png</file>
+        <file alias="nobreakpoint.png">../src/icons/mainwindow/nobreakpoint.png</file>
+    
+        <file alias="led.png">../src/icons/components/led.png</file>
+        <file alias="diode.png">../src/icons/components/diode.png</file>
+        <file alias="probe.png">../src/icons/components/probe.png</file>
+        <file alias="resistor.png">../src/icons/components/resistor.png</file>
+        <file alias="varresistor.png">../src/icons/components/varresistor.png</file>
+        <file alias="termistor.png">../src/icons/components/termistor.png</file>
+        <file alias="ldr.png">../src/icons/components/ldr.png</file>
+        <file alias="voltage.png">../src/icons/components/voltage.png</file>
+        <file alias="ic2.png">../src/icons/components/ic2.png</file>
+        <file alias="subc.png">../src/icons/components/subc.png</file>
+        <file alias="subc2.png">../src/icons/components/subc2.png</file>
+        <file alias="ground.png">../src/icons/components/ground.png</file>
+        <file alias="voltsource.png">../src/icons/components/voltsource.png</file>
+        <file alias="capacitor.png">../src/icons/components/capacitor.png</file>
+        <file alias="elcapacitor.png">../src/icons/components/elcapacitor.png</file>
+        <file alias="seven_segment.png">../src/icons/components/seven_segment.png</file>
+        <file alias="7segbcd.png">../src/icons/components/7segbcd.png</file>
+        <file alias="switch.png">../src/icons/components/switch.png</file>
+        <file alias="switchdip.png">../src/icons/components/switchdip.png</file>
+        <file alias="inductor.png">../src/icons/components/inductor.png</file>
+        <file alias="buffer.png">../src/icons/components/buffer.png</file>
+        <file alias="andgate.png">../src/icons/components/andgate.png</file>
+        <file alias="orgate.png">../src/icons/components/orgate.png</file>
+        <file alias="xorgate.png">../src/icons/components/xorgate.png</file>
+        <file alias="flipflopd.png">../src/icons/components/flipflopd.png</file>
+        <file alias="flipflopjk.png">../src/icons/components/flipflopjk.png</file>
+        <file alias="potentiometer.png">../src/icons/components/potentiometer.png</file>
+        <file alias="push.png">../src/icons/components/push.png</file>
+        <file alias="opamp.png">../src/icons/components/opamp.png</file>
+        <file alias="pcd8544.png">../src/icons/components/pcd8544.png</file>
+        <file alias="ks0108.png">../src/icons/components/ks0108.png</file>
+        <file alias="hd44780.png">../src/icons/components/hd44780.png</file>
+        <file alias="ssd1306.png">../src/icons/components/ssd1306.png</file>
+        <file alias="mosfet.png">../src/icons/components/mosfet.png</file>
+        <file alias="clock.png">../src/icons/components/clock.png</file>
+        <file alias="resistordip.png">../src/icons/components/resistordip.png</file>
+        <file alias="ledbar.png">../src/icons/components/ledbar.png</file>
+        <file alias="ledmatrix.png">../src/icons/components/ledmatrix.png</file>
+        <file alias="text.png">../src/icons/components/text.png</file>
+        <file alias="voltimeter.png">../src/icons/components/voltimeter.png</file>
+        <file alias="amperimeter.png">../src/icons/components/amperimeter.png</file>
+        <file alias="frequencimeter.png">../src/icons/components/frequencimeter.png</file>
+        <file alias="dcmotor.png">../src/icons/components/dcmotor.png</file>
+        <file alias="servo.png">../src/icons/components/servo.png</file>
+        <file alias="steeper.png">../src/icons/components/steeper.png</file>
+        <file alias="relay-spst.png">../src/icons/components/relay-spst.png</file>
+        <file alias="voltreg.png">../src/icons/components/voltreg.png</file>
+        <file alias="bjt.png">../src/icons/components/bjt.png</file>
+        <file alias="wavegen.png">../src/icons/components/wavegen.png</file>
+        <file alias="oscope.png">../src/icons/components/oscope.png</file>
+        <file alias="toggleswitch.png">../src/icons/components/toggleswitch.png</file>
+        <file alias="audio_out.png">../src/icons/components/audio_out.png</file>
+        <file alias="keypad.png">../src/icons/components/keypad.png</file>
+        <file alias="ellipse.png">../src/icons/components/ellipse.png</file>
+        <file alias="line.png">../src/icons/components/line.png</file>
+        <file alias="rectangle.png">../src/icons/components/rectangle.png</file>
+        <file alias="ws2812.png">../src/icons/components/ws2812.png</file>
+        <file alias="image.png">../src/icons/components/image.png</file>
+        
+        <file alias="inbus.png">../src/icons/components/inbus.png</file>
+        <file alias="outbus.png">../src/icons/components/outbus.png</file>
+        <file alias="1to2.png">../src/icons/components/1to2.png</file>
+        <file alias="1to3.png">../src/icons/components/1to3.png</file>
+        <file alias="1to3-c.png">../src/icons/components/1to3-c.png</file>
+        <file alias="2to1.png">../src/icons/components/2to1.png</file>
+        <file alias="2to2.png">../src/icons/components/2to2.png</file>
+        <file alias="2to3.png">../src/icons/components/2to3.png</file>
+        <file alias="2to3g.png">../src/icons/components/2to3g.png</file>
+        <file alias="3to1.png">../src/icons/components/3to1.png</file>
+        <file alias="3to2.png">../src/icons/components/3to2.png</file>
+        <file alias="3to2g.png">../src/icons/components/3to2g.png</file>
+        <file alias="mux.png">../src/icons/components/mux.png</file>
+        <file alias="demux.png">../src/icons/components/demux.png</file>
+        <file alias="gates.png">../src/icons/components/gates.png</file>
+        
+        <file alias="switchbut.png">../src/icons/mainwindow/switchbut.png</file>
+        
+        <file alias="arduinoUnoIcon.png">../src/icons/components/arduinoUnoIcon.png</file>
+        <file alias="arduinoUno.png">../src/icons/components/arduinoUno.png</file>
+        <file alias="arduinoNano.png">../src/icons/components/arduinoNano.png</file>
+        <file alias="duemilanove.png">../src/icons/components/duemilanove.png</file>
+        <file alias="leonardo.png">../src/icons/components/leonardo.png</file>
+        <file alias="mega.png">../src/icons/components/mega.png</file>
+        <file alias="sr04.png">../src/icons/components/sr04.png</file>
+        
+        <file alias="shield_uno.png">../src/icons/components/shield_uno.png</file>
+        
+        <file alias="blanc.png">../src/icons/components/blanc.png</file>
+        <file alias="font2.png">../src/icons/font/font2.png</file>
+        
+    </qresource>
+</RCC>
+

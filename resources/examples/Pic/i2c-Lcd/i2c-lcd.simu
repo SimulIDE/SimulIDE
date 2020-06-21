@@ -1,0 +1,84 @@
+<circuit type="simulide_0.1">
+ 
+pic16f876-9: 
+<item labely="-17" Ser_Monitor="false" y="-300" rotation="0" Ser_Port="false" x="-716" Program="i2c-lcd.hex" labelrot="0" valLabely="0" Mhz="20" labelx="-13" objectName="pic16f876-9" id="pic16f876" Show_id="true" valLabelx="0" hflip="1" itemtype="PIC" vflip="1" valLabRot="0"/>
+ 
+Resistor-8: 
+<item labely="-24" y="-268" rotation="-90" x="-660" Resistance="5" Show_res="true" labelrot="0" valLabely="6" labelx="-12" objectName="Resistor-8" id="Resistor-8" Show_id="false" valLabelx="-16" hflip="1" itemtype="Resistor" Unit=" kΩ" vflip="1" valLabRot="0"/>
+ 
+Rail.-7: 
+<item labely="-24" y="-356" rotation="0" Show_Volt="true" x="-740" labelrot="0" valLabely="8" labelx="-64" objectName="Rail.-7" id="Rail.-7" Show_id="false" valLabelx="-16" hflip="1" itemtype="Rail" Unit=" V" Voltage="5" vflip="1" valLabRot="0"/>
+ 
+Resistor-6: 
+<item labely="-24" y="-268" rotation="-90" x="-636" Resistance="5" Show_res="true" labelrot="0" valLabely="6" labelx="-12" objectName="Resistor-6" id="Resistor-6" Show_id="false" valLabelx="-16" hflip="1" itemtype="Resistor" Unit=" kΩ" vflip="1" valLabRot="0"/>
+ 
+Node-5: 
+<item x="-660" vflip="1" hflip="1" valLabelx="0" Show_id="false" labelrot="0" valLabely="0" itemtype="Node" valLabRot="0" rotation="0" labely="-24" objectName="Node-5" id="Node-5" y="-356" labelx="-16"/>
+ 
+I2C to Parallel-4: 
+<item x="-524" vflip="1" hflip="1" valLabelx="0" Control_Code="39" Show_id="false" labelrot="0" valLabely="0" itemtype="I2CToParallel" valLabRot="0" rotation="-90" labely="-24" objectName="I2C to Parallel-4" id="I2C to Parallel-4" y="-236" labelx="-16"/>
+ 
+Node-3: 
+<item x="-660" vflip="1" hflip="1" valLabelx="0" Show_id="false" labelrot="0" valLabely="0" itemtype="Node" valLabRot="0" rotation="0" labely="-24" objectName="Node-3" id="Node-3" y="-188" labelx="-16"/>
+ 
+Node-2: 
+<item x="-636" vflip="1" hflip="1" valLabelx="0" Show_id="false" labelrot="0" valLabely="0" itemtype="Node" valLabRot="0" rotation="0" labely="-24" objectName="Node-2" id="Node-2" y="-172" labelx="-16"/>
+ 
+Hd44780-1: 
+<item x="-588" vflip="1" hflip="1" valLabelx="0" Rows="2" Show_id="true" labelrot="0" valLabely="0" itemtype="Hd44780" valLabRot="0" rotation="0" labely="-82" objectName="Hd44780-1" Cols="16" id="Hd44780-1" y="-308" labelx="70"/>
+ 
+Connector-10: 
+<item labely="-24" y="-356" rotation="0" enodeid="Circ_eNode-11" pointList="-724,-356,-660,-356" x="-724" labelrot="0" valLabely="0" labelx="-16" objectName="Connector-10" id="Connector-10" Show_id="false" startpinid="Rail.-7-outnod" endpinid="Node-5-0" valLabelx="0" hflip="1" itemtype="Connector" vflip="1" valLabRot="0"/>
+ 
+Connector-12: 
+<item labely="-24" y="-356" rotation="0" enodeid="Circ_eNode-11" pointList="-660,-356,-660,-284" x="-660" labelrot="0" valLabely="0" labelx="-16" objectName="Connector-12" id="Connector-12" Show_id="false" startpinid="Node-5-2" endpinid="Resistor-8-rPin" valLabelx="0" hflip="1" itemtype="Connector" vflip="1" valLabRot="0"/>
+ 
+Connector-13: 
+<item labely="-24" y="-356" rotation="0" enodeid="Circ_eNode-11" pointList="-660,-356,-636,-356,-636,-284" x="-660" labelrot="0" valLabely="0" labelx="-16" objectName="Connector-13" id="Connector-13" Show_id="false" startpinid="Node-5-1" endpinid="Resistor-6-rPin" valLabelx="0" hflip="1" itemtype="Connector" vflip="1" valLabRot="0"/>
+ 
+Connector-14: 
+<item labely="-24" y="-188" rotation="0" enodeid="Circ_eNode-15" pointList="-676,-188,-660,-188" x="-676" labelrot="0" valLabely="0" labelx="-16" objectName="Connector-14" id="Connector-14" Show_id="false" startpinid="pic16f876-9-RC4" endpinid="Node-3-0" valLabelx="0" hflip="1" itemtype="Connector" vflip="1" valLabRot="0"/>
+ 
+Connector-16: 
+<item labely="-24" y="-188" rotation="0" enodeid="Circ_eNode-17" pointList="-724,-188,-724,-172,-636,-172" x="-724" labelrot="0" valLabely="0" labelx="-16" objectName="Connector-16" id="Connector-16" Show_id="false" startpinid="pic16f876-9-RC3" endpinid="Node-2-0" valLabelx="0" hflip="1" itemtype="Connector" vflip="1" valLabRot="0"/>
+ 
+Connector-18: 
+<item labely="-24" y="-188" rotation="0" enodeid="Circ_eNode-15" pointList="-660,-188,-660,-252" x="-660" labelrot="0" valLabely="0" labelx="-16" objectName="Connector-18" id="Connector-18" Show_id="false" startpinid="Node-3-2" endpinid="Resistor-8-lPin" valLabelx="0" hflip="1" itemtype="Connector" vflip="1" valLabRot="0"/>
+ 
+Connector-19: 
+<item labely="-24" y="-188" rotation="0" enodeid="Circ_eNode-15" pointList="-660,-188,-540,-188,-540,-212" x="-660" labelrot="0" valLabely="0" labelx="-16" objectName="Connector-19" id="Connector-19" Show_id="false" startpinid="Node-3-1" endpinid="I2C to Parallel-4-in0" valLabelx="0" hflip="1" itemtype="Connector" vflip="1" valLabRot="0"/>
+ 
+Connector-20: 
+<item labely="-24" y="-172" rotation="0" enodeid="Circ_eNode-17" pointList="-636,-172,-636,-252" x="-636" labelrot="0" valLabely="0" labelx="-16" objectName="Connector-20" id="Connector-20" Show_id="false" startpinid="Node-2-2" endpinid="Resistor-6-lPin" valLabelx="0" hflip="1" itemtype="Connector" vflip="1" valLabRot="0"/>
+ 
+Connector-21: 
+<item labely="-24" y="-172" rotation="0" enodeid="Circ_eNode-17" pointList="-636,-172,-532,-172,-532,-212" x="-636" labelrot="0" valLabely="0" labelx="-16" objectName="Connector-21" id="Connector-21" Show_id="false" startpinid="Node-2-1" endpinid="I2C to Parallel-4-in1" valLabelx="0" hflip="1" itemtype="Connector" vflip="1" valLabRot="0"/>
+ 
+Connector-22: 
+<item labely="-24" y="-300" rotation="0" enodeid="Circ_eNode-23" pointList="-516,-300,-516,-260" x="-516" labelrot="0" valLabely="0" labelx="-16" objectName="Connector-22" id="Connector-22" Show_id="false" startpinid="Hd44780-1-dataPin4" endpinid="I2C to Parallel-4-out4" valLabelx="0" hflip="1" itemtype="Connector" vflip="1" valLabRot="0"/>
+ 
+Connector-24: 
+<item labely="-24" y="-300" rotation="0" enodeid="Circ_eNode-25" pointList="-508,-300,-508,-260" x="-508" labelrot="0" valLabely="0" labelx="-16" objectName="Connector-24" id="Connector-24" Show_id="false" startpinid="Hd44780-1-dataPin5" endpinid="I2C to Parallel-4-out5" valLabelx="0" hflip="1" itemtype="Connector" vflip="1" valLabRot="0"/>
+ 
+Connector-26: 
+<item labely="-24" y="-300" rotation="0" enodeid="Circ_eNode-27" pointList="-500,-300,-500,-260" x="-500" labelrot="0" valLabely="0" labelx="-16" objectName="Connector-26" id="Connector-26" Show_id="false" startpinid="Hd44780-1-dataPin6" endpinid="I2C to Parallel-4-out6" valLabelx="0" hflip="1" itemtype="Connector" vflip="1" valLabRot="0"/>
+ 
+Connector-28: 
+<item labely="-24" y="-300" rotation="0" enodeid="Circ_eNode-29" pointList="-492,-300,-492,-260" x="-492" labelrot="0" valLabely="0" labelx="-16" objectName="Connector-28" id="Connector-28" Show_id="false" startpinid="Hd44780-1-dataPin7" endpinid="I2C to Parallel-4-out7" valLabelx="0" hflip="1" itemtype="Connector" vflip="1" valLabRot="0"/>
+ 
+Connector-30: 
+<item labely="-24" y="-300" rotation="0" enodeid="Circ_eNode-31" pointList="-572,-300,-572,-268,-548,-268,-548,-260" x="-572" labelrot="0" valLabely="0" labelx="-16" objectName="Connector-30" id="Connector-30" Show_id="false" startpinid="Hd44780-1-PinRS" endpinid="I2C to Parallel-4-out0" valLabelx="0" hflip="1" itemtype="Connector" vflip="1" valLabRot="0"/>
+ 
+Connector-32: 
+<item labely="-24" y="-300" rotation="0" enodeid="Circ_eNode-33" pointList="-564,-300,-564,-276,-540,-276,-540,-260" x="-564" labelrot="0" valLabely="0" labelx="-16" objectName="Connector-32" id="Connector-32" Show_id="false" startpinid="Hd44780-1-PinRW" endpinid="I2C to Parallel-4-out1" valLabelx="0" hflip="1" itemtype="Connector" vflip="1" valLabRot="0"/>
+ 
+Connector-34: 
+<item labely="-24" y="-300" rotation="0" enodeid="Circ_eNode-35" pointList="-556,-300,-556,-284,-532,-284,-532,-260" x="-556" labelrot="0" valLabely="0" labelx="-16" objectName="Connector-34" id="Connector-34" Show_id="false" startpinid="Hd44780-1-PinEn" endpinid="I2C to Parallel-4-out2" valLabelx="0" hflip="1" itemtype="Connector" vflip="1" valLabRot="0"/>
+ 
+PlotterWidget-22: 
+<item pos="" focusPolicy="0" fullScreen="false" locale="" size="" styleSheet="" layoutDirection="0" enabled="true" sizeHint="" maximumWidth="1000" maximumSize="" minimumHeight="200" sizeIncrement="" windowTitle="" statusTip="" baseSize="" minimumSize="" accessibleDescription="" x="0" windowFilePath="" updatesEnabled="true" toolTip="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" whatsThis="" accessibleName="" acceptDrops="false" height="200" inputMethodHints="0" windowIcon="" windowModified="false" cursor="" minimumWidth="200" MinVolt="0" geometry="" frameGeometry="" sizePolicy="" childrenRegion="" palette="" windowIconText="" autoFillBackground="false" width="578" rect="" itemtype="Plotter" mouseTracking="false" windowModality="0" isActiveWindow="true" windowOpacity="1" frameSize="" visible="false" minimumSizeHint="" childrenRect="" objectName="PlotterWidget-22" toolTipDuration="-1" modal="false" y="701" focus="false" maximized="false" minimized="false" contextMenuPolicy="1" maximumHeight="200" MaxVolt="500" normalGeometry=""/>
+ 
+SerialPortWidget-23: 
+<item pos="" focusPolicy="0" fullScreen="false" locale="" size="" styleSheet="" layoutDirection="0" enabled="true" sizeHint="" maximumWidth="450" maximumSize="" minimumHeight="0" sizeIncrement="" windowTitle="Configuracion" statusTip="" baseSize="" minimumSize="" accessibleDescription="" x="0" windowFilePath="" updatesEnabled="true" toolTip="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" whatsThis="" accessibleName="" acceptDrops="false" SettingsProp="ttyS0,0,3,0,0,0" height="141" inputMethodHints="0" windowIcon="" windowModified="false" cursor="" minimumWidth="0" geometry="" frameGeometry="" sizePolicy="" childrenRegion="" palette="" windowIconText="" autoFillBackground="false" width="313" rect="" itemtype="SerialPort" mouseTracking="false" windowModality="0" isActiveWindow="true" windowOpacity="1" frameSize="" visible="false" minimumSizeHint="" childrenRect="" objectName="SerialPortWidget-23" toolTipDuration="-1" modal="false" y="0" focus="false" maximized="false" minimized="false" contextMenuPolicy="1" maximumHeight="170" normalGeometry=""/>
+ 
+</circuit>

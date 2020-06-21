@@ -1,0 +1,13 @@
+Transistor de juntura BJT:
+
+Parámetros:
+- Ganancia:
+   Determina la ganancia. 100
+- PNP:    
+   Determina si es PNP o NPN. false
+- BC diode:
+   Simula el dio BC o no. false
+   Con BC Diode, la simulación puede ser más lenta.
+   
+Videos Relacionados:
+   https://youtu.be/1BeTy5DGcDc

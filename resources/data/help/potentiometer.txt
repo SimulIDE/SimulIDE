@@ -1,0 +1,7 @@
+Potentiometer:
+
+Adjust the dial to set middle position.
+
+Use "Value Ohm" property to set precise middle position.
+
+Use "Resistance" property to set total resistance.

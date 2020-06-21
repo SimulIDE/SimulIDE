@@ -1,0 +1,63 @@
+ ###########################################################################
+ #   Copyright (C) 2012   by santiago González                             #
+ #   santigoro@gmail.com                                                   #
+ #                                                                         #
+ #   This program is free software; you can redistribute it and/or modify  #
+ #   it under the terms of the GNU General Public License as published by  #
+ #   the Free Software Foundation; either version 3 of the License, or     #
+ #   (at your option) any later version.                                   #
+ #                                                                         #
+ #   This program is distributed in the hope that it will be useful,       #
+ #   but WITHOUT ANY WARRANTY; without even the implied warranty of        #
+ #   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         #
+ #   GNU General Public License for more details.                          #
+ #                                                                         #
+ #   You should have received a copy of the GNU General Public License     #
+ #   along with this program; if not, see <http://www.gnu.org/licenses/>.  #
+ #                                                                         #
+ ###########################################################################
+
+##############  MUST BE DEFINED in ORDER:  #########################
+#
+# keywords: list of keyword types
+#
+# keyword-style: foregroundColor backgroundColor bold italic
+# Keyword: in a single line 
+#
+##############  AVAILABLE OPTIONS:  ################################
+#
+# Colors:  { default | #XXXXXX }
+# Bold:    { true | false }
+# Italic:  { true | false }
+#
+# RegExp: must be quotated, example: "#[a-zA-Z]+\b"
+#
+#####################################################################
+
+
+keywords: directives instructions number preprocessor lineComment htmlTag quotation
+
+
+directives-style: #326432 default true false
+directives: "\.[byte|cseg|db|def|device|dseg|dw|endmacro|equ|eseg|exit|include|list|listmac|macro|nolist|org|set]+[^\\b]"
+
+instructions-style: #141446 default true false
+instructions: add adc adiw sub subi sbc sbci sbiw and andi or ori eor com neg sbr cbr inc dec tst clr ser mul rjmp ijmp jmp rcall icall call ret reti cpse cp cpc cpi sbrc sbrs sbic sbis brbs brbc breq brne brcs brcc brsh brlo brmi brpl brge brlt brhs brhc brts brtc brvs brvc brie brid mov movw ldi lds ld ldd sts st std lpm in out push pop lsl lsr rol ror asr swap bset bclr sbi cbi bst bld sec clc sen cln sez clz sei cli ses cls sev clv set clt seh clh nop sleep wdr
+
+preprocessor-style: #414164 default true false
+preprocessor: "#+[^\n]*"
+
+number-style: #3030B8 default false false
+number: "\b[0-9]+\b"
+
+htmlTag-style: #303078 default false false
+htmlTag: "<.*>" 
+
+quotation-style: #407055 default false false
+quotation: "\"(\\.|[^\"])*\""
+
+lineComment-style: #646464 default false true
+lineComment: ";[^\n]*"
+
+ 
+

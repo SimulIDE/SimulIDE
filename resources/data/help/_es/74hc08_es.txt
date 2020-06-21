@@ -1,0 +1,20 @@
+74HC08 - Quad 2-input AND gate
+
+Y = A * B
+
+A  B  Y
+0  0  0
+1  0  0
+0  1  0
+1  1  1
+
+Pines:
+A = Entrada x 4
+B = Entrada x 4
+Y = Salida x 4
+
+Mas información:
+   https://simulide.blogspot.com/p/blog-page_30.html
+   
+Ver help en:
+   ..share/simulide/data/examples/logic/74_series/Help_74HC08.simu

@@ -1,0 +1,16 @@
+'This program tests comparator input CIN- (i.e. Vdd)
+'against CIN+ (i.e.VRCON 15/24*Vdd)
+
+#chip 12F683, 4 'mhz
+
+dir GPIO.2 out
+
+VRCON = b'10101111'
+
+Main:
+
+    CMCON0 = b'00010011'
+
+    wait 100 ms
+
+goto Main

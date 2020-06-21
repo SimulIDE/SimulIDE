@@ -1,0 +1,5 @@
+0  NOP
+1  STM 1
+2  LDI 4
+3  ADD 1
+4  JPI 1

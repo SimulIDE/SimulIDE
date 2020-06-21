@@ -1,0 +1,28 @@
+Display siete segmentos
+
+El orden de los segmentos es a, b, c.. f.
+El pin de alimentación es abajo a la derecha.
+El punto decimal esta a bajo a la izquierda.
+
+Parámetros:
+- Color:
+    Color del LED: amarillo, rojo, verde, azul, naranja o púrpura. Yellow
+- Num Pantallas:
+   Determina el numero de displays. 1
+- Cátodo común:
+   Determina si son cátodo o ánodo común. true
+- Vertical Pins:
+   Determina si los pines estarán verticales. false
+- Umbral:
+    Tensión umbral del LED, debajo de esta tensión no conducen. 2.4
+- CorienteMax:
+    Corriente máxima soportada. Al superar este valor LED se quema. LED parpadea cuando se excede la máxima corriente en aprox 40%. 0.02
+- Resistencia:
+    La resistencia interna, como un truco que es posible sustituir resistencia externa. 1
+
+Videos Relacionados:
+   https://www.youtube.com/watch?v=c7SFryRa5hs
+   https://www.youtube.com/watch?v=pOOIZnZ2lQ4
+   
+Mas información:
+   https://simulide.blogspot.com/p/seven-segment-display.html

@@ -1,0 +1,8 @@
+Voltage Regulator:
+
+Pins:
+- I : Input.
+- O : Output.
+- R : Ref.
+
+Set "Volt" property to adjust voltage between "O" and "R" pins.

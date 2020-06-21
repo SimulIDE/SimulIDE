@@ -1,0 +1,21 @@
+Punta de prueba:
+
+Funciona como una sonda digital: HIGH = Naranja (> 2.5V).
+
+Puedes arrastras la punta de prueba con el mouse por los cables o pín del circuito para obtener voltaje.
+
+Haga clic derecho y agregue canales al trazador de gráficos (Plotter). Puede usar hasta cuatro (4) canales de colores diferentes.
+También hay una marca "Tick" que indica el tiempo representado por cada división en la pantalla del trazador.
+
+El trazador funciona a 50 Fps a cualquier velocidad de circuito que establezca, lo que significa que puede trazar señales de alta frecuencia si reduce la velocidad de la simulación.
+
+Parámetros:
+- Show volt:
+   Muestra (true) o no (false) la tensión detectada. true
+
+Videos Relacionados:
+   Pronto.
+
+Mas información: 
+   http://simulide.blogspot.com/p/probe.html - Punta de prueba
+   https://simulide.blogspot.com/p/blog-page_16.html  - trazador de gráficos (plotter)

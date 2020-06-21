@@ -1,0 +1,179 @@
+/***************************************************************************
+ *   Copyright (C) 2018 by santiago González                               *
+ *   santigoro@gmail.com                                                   *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 3 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, see <http://www.gnu.org/licenses/>.  *
+ *                                                                         *
+ ***************************************************************************/
+ 
+MaxMHz=16
+
+PORTB EQU 5
+DDRB EQU 4
+PINB EQU 3
+PORTC EQU 8
+DDRC EQU 7
+PINC EQU 6
+PORTD EQU 11
+DDRD EQU 10
+PIND EQU 9
+CANGCON EQU 216
+CANGSTA EQU 217
+CANGIT EQU 218
+CANGIE EQU 219
+CANEN2 EQU 220
+CANEN1 EQU 221
+CANIE2 EQU 222
+CANIE1 EQU 223
+CANSIT2 EQU 224
+CANSIT1 EQU 225
+CANBT1 EQU 226
+CANBT2 EQU 227
+CANBT3 EQU 228
+CANTCON EQU 229
+CANTIML EQU 230
+CANTIMH EQU 231
+CANTTCL EQU 232
+CANTTCH EQU 233
+CANTEC EQU 234
+CANREC EQU 235
+CANHPMOB EQU 236
+CANPAGE EQU 237
+CANSTMOB EQU 238
+CANCDMOB EQU 239
+CANIDT4 EQU 240
+CANIDT3 EQU 241
+CANIDT2 EQU 242
+CANIDT1 EQU 243
+CANIDM4 EQU 244
+CANIDM3 EQU 245
+CANIDM2 EQU 246
+CANIDM1 EQU 247
+CANSTML EQU 248
+CANSTMH EQU 249
+CANMSG EQU 250
+AC0CON EQU 148
+AC1CON EQU 149
+AC2CON EQU 150
+AC3CON EQU 151
+ACSR EQU 48
+DACH EQU 146
+DACL EQU 145
+DACON EQU 144
+SPMCSR EQU 55
+SREG EQU 63
+SPL EQU 61
+SPH EQU 62
+MCUCR EQU 53
+MCUSR EQU 52
+OSCCAL EQU 102
+CLKPR EQU 97
+SMCR EQU 51
+GPIOR2 EQU 26
+GPIOR1 EQU 25
+GPIOR0 EQU 30
+PLLCSR EQU 41
+PRR EQU 100
+PORTE EQU 14
+DDRE EQU 13
+PINE EQU 12
+TIMSK0 EQU 110
+TIFR0 EQU 21
+TCCR0A EQU 36
+TCCR0B EQU 37
+TCNT0 EQU 38
+OCR0A EQU 39
+OCR0B EQU 40
+GTCCR EQU 35
+TIMSK1 EQU 111
+TIFR1 EQU 22
+TCCR1A EQU 128
+TCCR1B EQU 129
+TCCR1C EQU 130
+TCNT1L EQU 132
+TCNT1H EQU 133
+OCR1AL EQU 136
+OCR1AH EQU 137
+OCR1BL EQU 138
+OCR1BH EQU 139
+ICR1L EQU 134
+ICR1H EQU 135
+DWDR EQU 49
+ADMUX EQU 124
+ADCSRA EQU 122
+ADCL EQU 120
+ADCH EQU 121
+ADCSRB EQU 123
+DIDR0 EQU 126
+DIDR1 EQU 127
+AMP0CSR EQU 117
+AMP1CSR EQU 118
+AMP2CSR EQU 119
+LINCR EQU 200
+LINSIR EQU 201
+LINENIR EQU 202
+LINERR EQU 203
+LINBTR EQU 204
+LINBRRL EQU 205
+LINBRRH EQU 206
+LINDLR EQU 207
+LINIDR EQU 208
+LINSEL EQU 209
+LINDAT EQU 210
+SPCR EQU 44
+SPSR EQU 45
+SPDR EQU 46
+WDTCSR EQU 96
+EICRA EQU 105
+EIMSK EQU 29
+EIFR EQU 28
+PCICR EQU 104
+PCMSK3 EQU 109
+PCMSK2 EQU 108
+PCMSK1 EQU 107
+PCMSK0 EQU 106
+PCIFR EQU 27
+EEARL EQU 33
+EEARH EQU 34
+EEDR EQU 32
+EECR EQU 31
+PIFR EQU 188
+PIM EQU 187
+PMIC2 EQU 186
+PMIC1 EQU 185
+PMIC0 EQU 184
+PCTL EQU 183
+POC EQU 182
+PCNF EQU 181
+PSYNC EQU 180
+POCR_RBL EQU 178
+POCR_RBH EQU 179
+POCR2SBL EQU 176
+POCR2SBH EQU 177
+POCR2RAL EQU 174
+POCR2RAH EQU 175
+POCR2SAL EQU 172
+POCR2SAH EQU 173
+POCR1SBL EQU 170
+POCR1SBH EQU 171
+POCR1RAL EQU 168
+POCR1RAH EQU 169
+POCR1SAL EQU 166
+POCR1SAH EQU 167
+POCR0SBL EQU 164
+POCR0SBH EQU 165
+POCR0RAL EQU 162
+POCR0RAH EQU 163
+POCR0SAL EQU 160
+POCR0SAH EQU 161

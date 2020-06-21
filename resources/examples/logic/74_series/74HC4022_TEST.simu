@@ -1,0 +1,63 @@
+<circuit speed="1000000" animate="0" type="simulide_0.1" noLinAcc="5" reactStep="50" noLinStep="10">
+ 
+LedBar-6: 
+<item valLabely="0" Show_id="false" rotation="0" vflip="1" x="-260" Resistance="40" id="LedBar-1" objectName="LedBar-6" Threshold="2.3999999999999999" labelrot="0" Size="8" hflip="1" y="-196" valLabelx="0" Grounded="true" Color="1" labely="-24" MaxCurrent="0.029999999999999999" labelx="-16" valLabRot="0" itemtype="LedBar"/>
+ 
+74HC4022-5: 
+<item rotation="0" valLabely="0" Show_id="true" itemtype="Subcircuit" labelrot="0" id="74HC4022-2" x="-412" labely="-20" y="-188" Logic_Symbol="false" vflip="1" objectName="74HC4022-5" valLabRot="0" labelx="0" valLabelx="0" hflip="1"/>
+ 
+Rail.-4: 
+<item valLabely="6" Show_id="false" rotation="-360" vflip="1" Show_Volt="true" x="-324" id="Rail.-3" Unit=" V" objectName="Rail.-4" labelrot="0" hflip="-1" y="-172" valLabelx="8" Voltage="5" labely="-24" labelx="-64" valLabRot="0" itemtype="Rail"/>
+ 
+Ground (0 V)-3: 
+<item rotation="0" valLabely="0" Show_id="false" itemtype="Ground" labelrot="0" id="Ground (0 V)-4" x="-364" labely="-24" y="-60" vflip="1" objectName="Ground (0 V)-3" valLabRot="0" labelx="-16" valLabelx="0" hflip="1"/>
+ 
+Clock-2: 
+<item valLabely="8" Show_id="false" rotation="0" vflip="1" Show_Volt="true" x="-428" id="Clock-5" Unit=" V" objectName="Clock-2" labelrot="0" hflip="1" y="-76" Freq="2" valLabelx="-16" Voltage="5" labely="-24" labelx="-64" valLabRot="0" Running="true" itemtype="Clock"/>
+ 
+Probe-1: 
+<item rotation="-45" valLabely="0" PlotterCh="0" Show_id="false" itemtype="Probe" labelrot="45" id="Probe-6" x="-228" labely="-16" y="-164" vflip="1" Show_volt="true" objectName="Probe-1" valLabRot="45" labelx="16" valLabelx="16" hflip="1"/>
+ 
+Connector-7: 
+<item startpinid="74HC4022-5-Q0" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-420" id="Connector-7" enodeid="Circ_eNode-8" objectName="Connector-7" pointList="-420,-172,-460,-172,-460,-220,-276,-220" labelrot="0" hflip="1" endpinid="LedBar-6-led0-pinP" y="-172" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-9: 
+<item startpinid="74HC4022-5-Q1" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-420" id="Connector-9" enodeid="Circ_eNode-10" objectName="Connector-9" pointList="-420,-180,-444,-180,-444,-212,-276,-212" labelrot="0" hflip="1" endpinid="LedBar-6-led1-pinP" y="-180" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-11: 
+<item startpinid="74HC4022-5-Q3" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-420" id="Connector-11" enodeid="Circ_eNode-12" objectName="Connector-11" pointList="-420,-132,-476,-132,-476,-236,-300,-236,-300,-196,-276,-196" labelrot="0" hflip="1" endpinid="LedBar-6-led3-pinP" y="-132" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-13: 
+<item startpinid="74HC4022-5-Q2" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-420" id="Connector-13" enodeid="Circ_eNode-14" objectName="Connector-13" pointList="-420,-164,-468,-164,-468,-228,-284,-228,-284,-204,-276,-204" labelrot="0" hflip="1" endpinid="LedBar-6-led2-pinP" y="-164" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-15: 
+<item startpinid="74HC4022-5-Q4" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-372" id="Connector-15" enodeid="Circ_eNode-16" objectName="Connector-15" pointList="-372,-140,-308,-140,-308,-188,-276,-188" labelrot="0" hflip="1" endpinid="LedBar-6-led4-pinP" y="-140" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-17: 
+<item startpinid="74HC4022-5-Q5" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-420" id="Connector-17" enodeid="Circ_eNode-18" objectName="Connector-17" pointList="-420,-156,-436,-156,-436,-108,-300,-108,-300,-180,-276,-180" labelrot="0" hflip="1" endpinid="LedBar-6-led5-pinP" y="-156" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-19: 
+<item startpinid="74HC4022-5-Q6" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-420" id="Connector-19" enodeid="Circ_eNode-20" objectName="Connector-19" pointList="-420,-148,-444,-148,-444,-100,-292,-100,-292,-172,-276,-172" labelrot="0" hflip="1" endpinid="LedBar-6-led6-pinP" y="-148" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-21: 
+<item startpinid="74HC4022-5-Q7" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-372" id="Connector-21" enodeid="Circ_eNode-22" objectName="Connector-21" pointList="-372,-132,-276,-132,-276,-164" labelrot="0" hflip="1" endpinid="LedBar-6-led7-pinP" y="-132" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-23: 
+<item startpinid="Rail.-4-outnod" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-340" id="Connector-23" enodeid="Circ_eNode-24" objectName="Connector-23" pointList="-340,-172,-372,-172" labelrot="0" hflip="1" endpinid="74HC4022-5-MR" y="-172" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-25: 
+<item startpinid="Ground (0 V)-3-Gnd" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-364" id="Connector-25" enodeid="Circ_eNode-26" objectName="Connector-25" pointList="-364,-76,-364,-156,-372,-156" labelrot="0" hflip="1" endpinid="74HC4022-5-!CE" y="-76" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-27: 
+<item startpinid="Clock-2-outnod" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-412" id="Connector-27" enodeid="Circ_eNode-28" objectName="Connector-27" pointList="-412,-76,-348,-76,-348,-164,-372,-164" labelrot="0" hflip="1" endpinid="74HC4022-5-CLK" y="-76" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-29: 
+<item startpinid="Probe-1-inpin" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-244" id="Connector-29" enodeid="Circ_eNode-30" objectName="Connector-29" pointList="-244,-148,-372,-148" labelrot="0" hflip="1" endpinid="74HC4022-5-Cout" y="-148" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+PlotterWidget-31: 
+<item frameSize="" toolTipDuration="-1" maximumSize="" sizeHint="" pos="" baseSize="" maximumWidth="1000" normalGeometry="" maximized="false" minimumWidth="200" maximumHeight="200" windowFilePath="" windowModality="0" inputMethodHints="0" toolTip="" updatesEnabled="true" palette="" whatsThis="" autoFillBackground="false" minimized="false" itemtype="Plotter" windowOpacity="1" cursor="" styleSheet="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumHeight="200" isActiveWindow="true" minimumSize="" height="200" y="520" childrenRegion="" windowTitle="" contextMenuPolicy="1" x="0" focus="false" windowModified="false" mouseTracking="false" size="" accessibleName="" sizePolicy="" MinVolt="-500" childrenRect="" minimumSizeHint="" width="619" acceptDrops="false" windowIcon="" Tracks="1" objectName="PlotterWidget-31" windowIconText="" geometry="" rect="" locale="" modal="false" Scale="1" frameGeometry="" sizeIncrement="" focusPolicy="0" accessibleDescription="" layoutDirection="0" visible="false" fullScreen="false" MaxVolt="500" enabled="true" statusTip=""/>
+ 
+SerialPortWidget-32: 
+<item frameSize="" toolTipDuration="-1" maximumSize="" sizeHint="" pos="" baseSize="" maximumWidth="450" normalGeometry="" maximized="false" minimumWidth="0" maximumHeight="170" windowFilePath="" SettingsProp="ttyS0,0,3,0,0,0" windowModality="0" inputMethodHints="0" toolTip="" updatesEnabled="true" palette="" whatsThis="" autoFillBackground="false" minimized="false" itemtype="SerialPort" windowOpacity="1" cursor="" styleSheet="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumHeight="0" isActiveWindow="true" minimumSize="" height="147" y="573" childrenRegion="" windowTitle="Configuracion" contextMenuPolicy="1" x="153" focus="false" windowModified="false" mouseTracking="false" size="" accessibleName="" sizePolicy="" childrenRect="" minimumSizeHint="" width="450" acceptDrops="false" windowIcon="" objectName="SerialPortWidget-32" windowIconText="" geometry="" rect="" locale="" modal="false" frameGeometry="" sizeIncrement="" focusPolicy="0" accessibleDescription="" layoutDirection="0" visible="false" fullScreen="false" enabled="true" statusTip=""/>
+ 
+</circuit>

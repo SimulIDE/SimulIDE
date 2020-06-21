@@ -1,0 +1,56 @@
+MCU: ATmega16M1
+  Package: 32 pin QFN, TQFP
+
+ 1: PD2  MISO1
+ 2: PD3  OC1A     PSCIN2 PCINT18
+ 3: PC1  SS1      OC1B   PSCIN1  PCINT9
+ 4: Vcc
+ 5: Gnd
+ 6: PC2  TXCAN    T0     PCINT10
+ 7: PC3  ICP1B    RXCAN  T1      PCINT11
+ 8: PB0  PSCOUT2A MISO   PCINT0
+ 9: PB1  PSCOUT2B MOSI   INT1    PCINT1
+10: PE1  XTAL1    OC0B   PCINT25
+11: PE2  XTAL2    ADC0   PCINT26
+12: PD4  SCK1     ICP1A  RXLIN   RXD     ADC1 PCINT20
+13: PD5  ADC2     ACMP2  PCINT21
+14: PD6  ADC3     ACMPN2 INT0    PCINT22
+15: PD7  ACMP0    PCINT23
+16: PB2  ADC5     INT1   ACMPN0  PCINT2
+17: PC4  ADC8     AMP1-  ACMPN3  PCINT12
+18: PC5  ADC9     AMP1+  ACMP3   PCINT13
+19: AVCC
+20: AGND
+21: AREF ISRC
+22: PC6  ADC10    ACMP1  PCINT14
+23: PB3  AMP0-    PCINT3
+24: PB4  AMP0+    PCINT4
+25: PC7  D2A      AMP2+  PCINT15
+26: PB5  ADC6     AMP2-  INT2    ACMPN1   PCINT5
+27: PB6  ADC7     PSCOUT1B PCINT6
+28: PB7  ADC4     PSCOUT0B PCINT6
+29: PD0  PSCOUT0A PCINT16
+30: PC0  PSCOUT1A INT3   PCINT8
+31: Reset
+32: PD1  CLKO     PSCIN0 PCINT17
+
+
+Summary:
+The high-performance, low-power Microchip 8-bit AVR RISC-based microcontroller
+16 KB ISP flash memory with read-while-write capabilities, 
+512 B EEPROM, 
+1 KB SRAM, 
+27 general purpose I/O lines, 
+32 general purpose working registers, 
+1 x 8-bit, 1 x 16-bit timer/counters with compare modes,
+10 PWM ñhannels 
+internal and external interrupts,
+On Chip Debug Interface (debugWIRE)
+CAN 2.0A/B with 6 Message Objects - ISO 16845 Certified (1)
+LIN 2.1 and 1.3 Controller or 8-Bit UART
+One Master/Slave SPI Serial Interface
+4 Analog Comparators with Variable Threshold Detection
+11-channel 10-bit A/D converter, 
+programmable watchdog timer with internal oscillator, 
+
+

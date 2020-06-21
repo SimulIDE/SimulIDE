@@ -1,0 +1,9 @@
+Current Source:
+
+This is a variable Current Source.
+
+Current can be adjusted from 0V to max. current using the dial.
+
+It can be turned On/Off with the buttton on the bottom side.
+
+Button label shows current output value.

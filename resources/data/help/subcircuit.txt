@@ -1,0 +1,10 @@
+Subcircuit:
+
+This a component made out of several parts.
+
+It contains a circuit inside in a similar way a chip does.
+
+Each Subcircuit component is described in 2 files: one for the circuit and other for the package.
+
+There is an option to use a Chip like package or a Logic Symbol.
+To change betwen them use "Logic Symbol" propery above.

@@ -1,0 +1,40 @@
+<!DOCTYPE SimulIDE>
+
+<!-- *************************************************************************** -->
+<!-- *   Copyright (C) 2017 by santiago González                               * -->
+<!-- *   santigoro@gmail.com                                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is free software; you can redistribute it and/or modify  * -->
+<!-- *   it under the terms of the GNU General Public License as published by  * -->
+<!-- *   the Free Software Foundation; either version 3 of the License, or     * -->
+<!-- *   (at your option) any later version.                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is distributed in the hope that it will be useful,       * -->
+<!-- *   but WITHOUT ANY WARRANTY; without even the implied warranty of        * -->
+<!-- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         * -->
+<!-- *   GNU General Public License for more details.                          * -->
+<!-- *                                                                         * -->
+<!-- *   You should have received a copy of the GNU General Public License     * -->
+<!-- *   along with this program; if not, see <http://www.gnu.org/licenses/>.  * -->
+<!-- *                                                                         * -->
+<!-- *************************************************************************** -->
+
+<package name="74HC08" pins="14" width="4" height="8">
+
+    <pin side="left" pos="1"  type="" id="A1"  label="A1" /><!-- packagePin1 -->
+    <pin side="left" pos="2"  type="" id="B1"  label="B1" /><!-- packagePin2 -->
+    <pin side="left" pos="3"  type="" id="Y1"  label="Y1" /><!-- packagePin3 -->
+    <pin side="left" pos="4"  type="" id="A2"  label="A2" /><!-- packagePin4 -->
+    <pin side="left" pos="5"  type="" id="B2"  label="B2" /><!-- packagePin5 -->
+    <pin side="left" pos="6"  type="" id="Y2"  label="Y2" /><!-- packagePin6 -->
+    <pin side="left" pos="7"  type="unused" id="GND" label="GND"/><!-- packagePin7 -->
+
+    <pin side="right" pos="7" type="" id="Y3"  label="Y3" /><!-- packagePin8 -->
+    <pin side="right" pos="6" type="" id="A3"  label="A3" /><!-- packagePin9 -->
+    <pin side="right" pos="5" type="" id="B3"  label="B3" /><!-- packagePin10 -->
+    <pin side="right" pos="4" type="" id="Y4"  label="Y4" /><!-- packagePin11 -->
+    <pin side="right" pos="3" type="" id="A4"  label="A4" /><!-- packagePin12 -->
+    <pin side="right" pos="2" type="" id="B4"  label="B4" /><!-- packagePin13 -->
+    <pin side="right" pos="1" type="unused" id="Vcc" label="Vcc"/><!-- packagePin14 -->
+
+</package>

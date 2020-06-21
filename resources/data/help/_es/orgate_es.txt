@@ -1,0 +1,17 @@
+Puerta OR
+
+A  B  Q
+0  0  0
+1  0  1
+0  1  1
+1  1  1
+
+Propiedades:
+- Volt. Alto Entrada: 2.5
+- Volt. Bajo Entrada: 2.5
+- Impedancia Entrada: 1e+14
+- Volt. Alto Salida: 5
+- Volt. Bajo Entrada: 0
+- Impedancia Salida: 40
+- Invertido: false
+- Open Collector: false

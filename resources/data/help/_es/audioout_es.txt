@@ -1,0 +1,7 @@
+Parlante
+
+Tiene dos pines + y -.
+
+Parámetros:
+- Impedancia:
+   Determina la impedancia. 8

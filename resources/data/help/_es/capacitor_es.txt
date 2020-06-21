@@ -1,0 +1,9 @@
+Condensador
+
+Parámetros:
+- Capacidad:
+   Determina la capacidad: 10
+- Unidades:
+   Determina las unidades. uF
+- Show Cap:
+   Muestra su valor. true

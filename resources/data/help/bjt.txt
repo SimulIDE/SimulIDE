@@ -1,0 +1,6 @@
+BJT:
+
+- BC Diode: simulate Base-Collector Diode or not.
+    With BC Diode simulation can be slower.
+    
+It is posible to configure as PNP or NPN with "PNP" property.

@@ -1,0 +1,12 @@
+Relay:
+
+Configurable electromagnetic relay.
+
+To adjust number of poles use "Poles" property.
+
+It can be configured as Double or Sigle Throw using "DT" property:
+
+DT = true  : Double Throw.
+DT = false : Sigle  Throw.
+
+You can also adjust coil resistance and trigger current.

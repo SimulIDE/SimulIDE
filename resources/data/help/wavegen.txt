@@ -1,0 +1,18 @@
+Wave Generator:
+
+Four possible waveforms:
+- Sine.
+- Saw.
+- Triangle
+- Square.
+
+
+It can be turned On/Off with the buttton on the left side.
+
+Change Frequency in "Frequency" property above.
+
+Minimum voltage determined by "Volt Base" property.
+Wave amplitude determined by "Voltage" property.
+
+For Square Wave it is possible to set High state width using "Duty Square" property.
+Default value is 50%.

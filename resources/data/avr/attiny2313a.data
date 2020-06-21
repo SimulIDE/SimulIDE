@@ -1,0 +1,82 @@
+/***************************************************************************
+ *   Copyright (C) 2018 by santiago González                               *
+ *   santigoro@gmail.com                                                   *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 3 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, see <http://www.gnu.org/licenses/>.  *
+ *                                                                         *
+ ***************************************************************************/
+ 
+MaxMHz=20
+
+PORTB EQU 24
+DDRB EQU 23
+PINB EQU 22
+TIMSK EQU 57
+TIFR EQU 56
+OCR0B EQU 60
+OCR0A EQU 54
+TCCR0A EQU 48
+TCNT0 EQU 50
+TCCR0B EQU 51
+EIFR EQU 58
+BODCR EQU 7
+TCCR1A EQU 47
+TCCR1B EQU 46
+TCCR1C EQU 34
+TCNT1L EQU 44
+TCNT1H EQU 45
+OCR1AL EQU 42
+OCR1AH EQU 43
+OCR1BL EQU 40
+OCR1BH EQU 41
+ICR1L EQU 36
+ICR1H EQU 37
+WDTCR EQU 33
+UDR EQU 12
+UCSRA EQU 11
+UCSRB EQU 10
+UCSRC EQU 3
+UBRRH EQU 2
+UBRRL EQU 9
+ACSR EQU 8
+DIDR EQU 1
+PORTD EQU 18
+DDRD EQU 17
+PIND EQU 16
+EEAR EQU 30
+EEDR EQU 29
+EECR EQU 28
+PORTA EQU 27
+DDRA EQU 26
+PINA EQU 25
+USIDR EQU 15
+USISR EQU 14
+USICR EQU 13
+GIMSK EQU 59
+GIFR EQU 58
+PCMSK2 EQU 5
+PCMSK1 EQU 4
+PCMSK0 EQU 32
+SREG EQU 63
+SPL EQU 61
+SPMCSR EQU 55
+MCUCR EQU 53
+MCUSR EQU 52
+OSCCAL EQU 49
+CLKPR EQU 38
+GTCCR EQU 35
+GPIOR2 EQU 21
+GPIOR1 EQU 20
+GPIOR0 EQU 19
+PRR EQU 6

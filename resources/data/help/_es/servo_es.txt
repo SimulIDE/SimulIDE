@@ -1,0 +1,5 @@
+Servo motor
+
+Parámetros:
+- Velocidad:
+   Determina la velocidad. 0.2

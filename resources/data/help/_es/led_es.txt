@@ -1,0 +1,24 @@
+LED:
+
+Parámetros:
+
+- Color:
+    Color del LED: amarillo, rojo, verde, azul, naranja o púrpura. Yellow
+
+- Umbral:
+    Tensión umbral del LED, debajo de esta tensión no conducen. 2.4
+
+- CorienteMax:
+    Corriente máxima soportada. Al superar este valor LED se quema. LED parpadea cuando se excede la maxima corriente en aprox 40%. 0.03
+
+- Resistencia:
+    La resistencia interna, como un truco que es posible sustituir resistencia externa. 0.6
+    
+- A tierra: 
+    Al establecer esta propiedad en true conecta el cátodo a GND, por lo que el circuito queda más simple y más limpio. Cuando esta propiedad se establece en true, desaparece el conector del cátodo. false
+    
+Videos Relacionados: 
+    https://www.youtube.com/watch?v=KG0vvtP1rKk
+
+Mas información:
+    http://simulide.blogspot.com/p/leds.html

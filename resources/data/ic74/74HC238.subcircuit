@@ -1,0 +1,283 @@
+<!DOCTYPE SimulIDE>
+
+<subcircuit enodes="10">
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        numInputs = "4"
+        connections="
+        output0-Package_Y0
+        input3-eNode0
+        input2-eNode7
+        input1-eNode8
+        input0-eNode9" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        numInputs = "4"
+        connections="
+        output0-Package_Y1
+        input3-eNode0
+        input0-eNode6
+        input2-eNode7
+        input1-eNode8" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        numInputs = "4"
+        connections="
+        output0-Package_Y2
+        input3-eNode0
+        input1-eNode5
+        input2-eNode7
+        input0-eNode9" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        numInputs = "4"
+        connections="
+        output0-Package_Y3
+        input3-eNode0
+        input1-eNode5
+        input0-eNode6
+        input2-eNode7" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        numInputs = "4"
+        connections="
+        output0-Package_Y5
+        input3-eNode0
+        input1-eNode4
+        input2-eNode6
+        input0-eNode8" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        numInputs = "4"
+        connections="
+        output0-Package_Y7
+        input0-eNode0
+        input3-eNode4
+        input1-eNode5
+        input2-eNode6" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        numInputs = "4"
+        connections="
+        output0-Package_Y4
+        input3-eNode0
+        input2-eNode4
+        input1-eNode8
+        input0-eNode9" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        numInputs = "4"
+        connections="
+        output0-Package_Y6
+        input3-eNode0
+        input1-eNode4
+        input2-eNode5
+        input0-eNode9" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        numInputs = "3"
+        connections="
+        output0-eNode0
+        input0-eNode1
+        input1-eNode2
+        input2-eNode3" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        tristate = "false"
+        connections="
+        output0-eNode1
+        input0-Package_E3" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "true"
+        tristate = "false"
+        connections="
+        output0-eNode2
+        input0-Package_!E2" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "true"
+        tristate = "false"
+        connections="
+        output0-eNode3
+        input0-Package_!E1" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "true"
+        tristate = "false"
+        connections="
+        input0-Package_A1
+        output0-eNode8" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "true"
+        tristate = "false"
+        connections="
+        input0-Package_A2
+        output0-eNode7" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "true"
+        tristate = "false"
+        connections="
+        output0-eNode4
+        input0-eNode7" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "true"
+        tristate = "false"
+        connections="
+        output0-eNode5
+        input0-eNode8" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "true"
+        tristate = "false"
+        connections="
+        output0-eNode6
+        input0-eNode9" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "true"
+        tristate = "false"
+        connections="
+        output0-eNode9
+        input0-Package_A0" >
+    </item>
+
+</subcircuit>

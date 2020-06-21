@@ -1,0 +1,14 @@
+Diodo rectificador:
+
+Parámetros:
+- Umbral:
+    Tensión directa de conducción. 0.7V
+    
+- Volt. Zener: 
+    Usa un valor >0 en esta para establecer la tensión inversa. 0V
+
+Videos Relacionados: 
+    https://www.youtube.com/watch?v=KG0vvtP1rKk
+
+Mas información:
+    http://simulide.blogspot.com/p/leds.html

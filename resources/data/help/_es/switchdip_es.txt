@@ -1,0 +1,11 @@
+Switch DIP:
+
+Conjunto de interruptores redimensionable en una configuración DIP.
+
+Haga clic en "botones" individuales para ENCENDER/APAGAR: 
+- Verde = On
+- Gris  = Off
+
+Parámetros:
+- Tamaño: 
+   Establecer el número de interruptores. 8

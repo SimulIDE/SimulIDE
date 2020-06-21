@@ -1,0 +1,45 @@
+<circuit speed="1000000" animate="0" type="simulide_0.1" noLinAcc="5" reactStep="50" noLinStep="10">
+ 
+Node-5: 
+<item rotation="0" valLabely="0" Show_id="false" itemtype="Node" labelrot="0" id="Node-2" x="-260" labely="-24" y="-228" vflip="1" objectName="Node-5" valLabRot="0" labelx="-16" valLabelx="0" hflip="1"/>
+ 
+7-4: 
+<item rotation="0" valLabely="0" Show_id="false" itemtype="7-Seg BCD" labelrot="0" id="7-3" x="-228" labely="-24" y="-268" vflip="1" objectName="7-4" valLabRot="0" labelx="-16" valLabelx="0" hflip="1"/>
+ 
+74XX90-3: 
+<item rotation="0" valLabely="0" Show_id="true" itemtype="Subcircuit" labelrot="0" id="7490" x="-316" labely="66" y="-252" Logic_Symbol="false" vflip="1" objectName="74XX90-3" valLabRot="0" labelx="0" valLabelx="0" hflip="1"/>
+ 
+Clock-2: 
+<item valLabely="8" Show_id="true" rotation="0" vflip="1" Show_Volt="true" x="-300" id="Clock" Unit=" V" objectName="Clock-2" labelrot="0" hflip="1" y="-292" Freq="1" valLabelx="-16" Voltage="5" labely="-7" labelx="-66" valLabRot="0" Running="true" itemtype="Clock"/>
+ 
+Text-1: 
+<item Border="1" valLabely="0" Show_id="false" Font="Helvetica [Cronyx]" rotation="0" vflip="1" x="-372" id="Text-6" Margin="5" objectName="Text-1" labelrot="0" hflip="1" y="-380" valLabelx="0" Text="0-9 Counter with 7490.&#xa;&#xa;Turn on Clock to Start Counter." labely="-24" Font_Size="10" labelx="-16" valLabRot="0" Fixed_Width="true" itemtype="TextComponent"/>
+ 
+Connector-6: 
+<item startpinid="Clock-2-outnod" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-284" id="Connector-7" enodeid="Circ_eNode-7" objectName="Connector-6" pointList="-284,-292,-268,-292,-268,-244,-276,-244" labelrot="0" hflip="1" endpinid="74XX90-3-CP0" y="-292" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-8: 
+<item startpinid="74XX90-3-Q0" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-276" id="Connector-9" enodeid="Circ_eNode-9" objectName="Connector-8" pointList="-276,-228,-260,-228" labelrot="0" hflip="1" endpinid="Node-5-0" y="-228" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-10: 
+<item startpinid="Node-5-2" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-260" id="Connector-11" enodeid="Circ_eNode-9" objectName="Connector-10" pointList="-260,-228,-260,-260,-332,-260,-332,-244,-324,-244" labelrot="0" hflip="1" endpinid="74XX90-3-CP1" y="-228" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-11: 
+<item startpinid="Node-5-1" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-260" id="Connector-12" enodeid="Circ_eNode-9" objectName="Connector-11" pointList="-260,-228,-212,-228,-212,-236" labelrot="0" hflip="1" endpinid="7-4-ePin-input0" y="-228" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-12: 
+<item startpinid="74XX90-3-Q1" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-276" id="Connector-13" enodeid="Circ_eNode-13" objectName="Connector-12" pointList="-276,-204,-220,-204,-220,-236" labelrot="0" hflip="1" endpinid="7-4-ePin-input1" y="-204" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-14: 
+<item startpinid="74XX90-3-Q3" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-276" id="Connector-17" enodeid="Circ_eNode-15" objectName="Connector-14" pointList="-276,-220,-236,-220,-236,-236" labelrot="0" hflip="1" endpinid="7-4-ePin-input3" y="-220" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-16: 
+<item startpinid="74XX90-3-Q2" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-276" id="Connector-15" enodeid="Circ_eNode-17" objectName="Connector-16" pointList="-276,-196,-228,-196,-228,-236" labelrot="0" hflip="1" endpinid="7-4-ePin-input2" y="-196" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+PlotterWidget-18: 
+<item frameSize="" toolTipDuration="-1" maximumSize="" sizeHint="" pos="" baseSize="" maximumWidth="1000" normalGeometry="" maximized="false" minimumWidth="200" maximumHeight="200" windowFilePath="" windowModality="0" inputMethodHints="0" toolTip="" updatesEnabled="true" palette="" whatsThis="" autoFillBackground="false" minimized="false" itemtype="Plotter" windowOpacity="1" cursor="" styleSheet="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumHeight="200" isActiveWindow="true" minimumSize="" height="200" y="520" childrenRegion="" windowTitle="" contextMenuPolicy="1" x="0" focus="false" windowModified="false" mouseTracking="false" size="" accessibleName="" sizePolicy="" MinVolt="-500" childrenRect="" minimumSizeHint="" width="619" acceptDrops="false" windowIcon="" Tracks="1" objectName="PlotterWidget-18" windowIconText="" geometry="" rect="" locale="" modal="false" Scale="2" frameGeometry="" sizeIncrement="" focusPolicy="0" accessibleDescription="" layoutDirection="0" visible="false" fullScreen="false" MaxVolt="500" enabled="true" statusTip=""/>
+ 
+SerialPortWidget-19: 
+<item frameSize="" toolTipDuration="-1" maximumSize="" sizeHint="" pos="" baseSize="" maximumWidth="450" normalGeometry="" maximized="false" minimumWidth="0" maximumHeight="170" windowFilePath="" SettingsProp="ttyS0,0,3,0,0,0" windowModality="0" inputMethodHints="0" toolTip="" updatesEnabled="true" palette="" whatsThis="" autoFillBackground="false" minimized="false" itemtype="SerialPort" windowOpacity="1" cursor="" styleSheet="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumHeight="0" isActiveWindow="true" minimumSize="" height="147" y="573" childrenRegion="" windowTitle="Configuracion" contextMenuPolicy="1" x="153" focus="false" windowModified="false" mouseTracking="false" size="" accessibleName="" sizePolicy="" childrenRect="" minimumSizeHint="" width="450" acceptDrops="false" windowIcon="" objectName="SerialPortWidget-19" windowIconText="" geometry="" rect="" locale="" modal="false" frameGeometry="" sizeIncrement="" focusPolicy="0" accessibleDescription="" layoutDirection="0" visible="false" fullScreen="false" enabled="true" statusTip=""/>
+ 
+</circuit>

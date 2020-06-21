@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Compilation Report</title>
+</head>
+<body>
+<h1>Compilation Report</h1>
+<p>Compiler Version (DD/MM/YYYY): 0.94 2015-10-27</p>
+<h2>Chip resource usage:</h2>
+<p>Chip Model: MEGA328P</p>
+<p>Program Memory: 211/32768 words (.64%)</p>
+<p>RAM: 13/2048 bytes (.63%)</p>
+<h2>RAM Allocation</h2>
+<table border="1">
+</table>
+<h2>Subroutines</h2>
+<table border="1">
+<tr><th>Name</th><th>Code Size (lines)</th><th>Compiled Size (words)</th><th>Outgoing calls</th></tr>
+<tr><td>Main</td><td>15</td><td>55</td><td>PWMHANDLER(1), Delay_S(2), Delay_MS(2), INITLEDCONTROL(1), INITSYS(1)</td></tr>
+<tr><td>INITLEDCONTROL</td><td>6</td><td>25</td><td>STARTTIMER(1), INITTIMER2(1)</td></tr>
+<tr><td>PWMHANDLER</td><td>9</td><td>22</td><td></td></tr>
+<tr><td>INITSYS</td><td>365</td><td>7</td><td></td></tr>
+<tr><td>STARTTIMER</td><td>107</td><td>41</td><td></td></tr>
+<tr><td>INITTIMER2</td><td>16</td><td>8</td><td></td></tr>
+<tr><td>Delay_MS</td><td>0</td><td>12</td><td></td></tr>
+<tr><td>Delay_S</td><td>0</td><td>7</td><td>Delay_MS(1)</td></tr>
+<tr><td>SysIntContextSave</td><td>0</td><td>15</td><td></td></tr>
+<tr><td>SysIntContextRestore</td><td>0</td><td>15</td><td></td></tr>
+<tr><td>IntTIMER2_OVF</td><td>0</td><td>4</td><td></td></tr>
+</table>
+</body>
+</html>

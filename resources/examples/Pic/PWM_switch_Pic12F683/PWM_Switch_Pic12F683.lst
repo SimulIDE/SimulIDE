@@ -1,0 +1,650 @@
+gpasm-1.4.0 #1107 (Jan  9 2015) PWM_Switch_Pi   2-13-2016  00:49:20         PAGE  1
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+                      00001 ;   CLOCK: Internal RC 4MHz (instruction execution time: 1usec)
+                      00002 ;    To control H-Bridge direction and speed.
+                      00003 ;   Read ADC GP0 write 10-bit value to PWM GP2
+                      00004 ;    SW1 connected GP3, SW2 connected GP4
+                      00005 ;    SW1 toggles GP1 ON-OFF
+                      00006 ;    SW2 toggles GP5 ON-OFF
+                      00007 ;    GP1 and GP5 connected to H-Bridge inputs.
+                      00008 ;    If GP1 is LOW AND GP5 is LOW PWM turned off.
+                      00009 ;    Lewis Loflin    
+                      00010 ;   www.bristolwatch.com
+                      00011 ;==================================================================================
+                      00012            list     P=12F683, ST=OFF   ; Turnoff Symbol Table in List file.
+                      00013 
+                      00014         errorlevel  -302        ; Ignore error message when storing to Bank 1.
+                      00015 ;==================================================================================
+                      00016 
+                      00017         #include   <p12f683.inc>
+                      00001         LIST
+                      00002 ; P12F683.INC  Standard Header File, Version 1.00    Microchip Technology, Inc.
+                      00003         NOLIST
+                      00004 
+                      00005 ; This header file defines configurations, registers, and other useful bits of
+                      00006 ; information for the PIC12F683 microcontroller.  These names are taken to match 
+                      00007 ; the data sheets as closely as possible.  
+                      00008 
+                      00009 ; Note that the processor must be selected before this file is 
+                      00010 ; included.  The processor may be selected the following ways:
+                      00011 
+                      00012 ;       1. Command line switch:
+                      00013 ;               C:\ MPASM MYFILE.ASM /PIC16F684
+                      00014 ;       2. LIST directive in the source file
+                      00015 ;               LIST   P=PIC12F683
+                      00016 ;       3. Processor Type entry in the MPASM full-screen interface
+                      00017 
+                      00018 ;==========================================================================
+                      00019 ;
+                      00020 ;       Revision History
+                      00021 ;
+                      00022 ;==========================================================================
+                      00023 ;1.00   12/09/03 Original
+                      00024 
+                      00025 ;==========================================================================
+                      00026 ;
+                      00027 ;       Verify Processor
+                      00028 ;
+                      00029 ;==========================================================================
+                      00030 
+                      00031         IFNDEF __12F683
+                      00032            MESSG "Processor-header file mismatch.  Verify selected processor."
+                      00033         ENDIF
+                      00034 
+                      00035 ;==========================================================================
+                      00036 ;
+gpasm-1.4.0 #1107 (Jan  9 2015) PWM_Switch_Pi   2-13-2016  00:49:20         PAGE  2
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+                      00037 ;       Register Definitions
+                      00038 ;
+                      00039 ;==========================================================================
+                      00040 
+  00000000            00041 W                            EQU     H'0000'
+  00000001            00042 F                            EQU     H'0001'
+                      00043 
+                      00044 ;----- Register Files------------------------------------------------------
+                      00045 
+  00000000            00046 INDF                         EQU     H'0000'
+  00000001            00047 TMR0                         EQU     H'0001'
+  00000002            00048 PCL                          EQU     H'0002'
+  00000003            00049 STATUS                       EQU     H'0003'
+  00000004            00050 FSR                          EQU     H'0004'
+  00000005            00051 GPIO                         EQU     H'0005'
+                      00052 
+  0000000A            00053 PCLATH                       EQU     H'000A'
+  0000000B            00054 INTCON                       EQU     H'000B'
+  0000000C            00055 PIR1                         EQU     H'000C'
+                      00056 
+  0000000E            00057 TMR1L                        EQU     H'000E'            
+  0000000F            00058 TMR1H                        EQU     H'000F'            
+  00000010            00059 T1CON                        EQU     H'0010'            
+  00000011            00060 TMR2                         EQU     H'0011'
+  00000012            00061 T2CON                        EQU     H'0012'
+  00000013            00062 CCPR1L                       EQU     H'0013'
+  00000014            00063 CCPR1H                       EQU     H'0014'
+  00000015            00064 CCP1CON                      EQU     H'0015'
+                      00065 
+  00000018            00066 WDTCON                       EQU     H'0018'
+  00000019            00067 CMCON0                       EQU     H'0019'            
+  0000001A            00068 CMCON1                       EQU     H'001A'            
+                      00069 
+  0000001E            00070 ADRESH                       EQU     H'001E'            
+  0000001F            00071 ADCON0                       EQU     H'001F'            
+                      00072 
+  00000081            00073 OPTION_REG                   EQU     H'0081'
+                      00074 
+  00000085            00075 TRISIO                       EQU     H'0085'
+                      00076 
+  0000008C            00077 PIE1                         EQU     H'008C'
+                      00078 
+  0000008E            00079 PCON                         EQU     H'008E'
+  0000008F            00080 OSCCON                       EQU     H'008F'
+  00000090            00081 OSCTUNE                      EQU     H'0090'
+                      00082 
+  00000092            00083 PR2                          EQU     H'0092'
+                      00084 
+  00000095            00085 WPU                          EQU     H'0095'
+  00000095            00086 WPUA                         EQU     H'0095'
+  00000096            00087 IOC                          EQU     H'0096'
+  00000096            00088 IOCA                         EQU     H'0096'
+                      00089 
+gpasm-1.4.0 #1107 (Jan  9 2015) PWM_Switch_Pi   2-13-2016  00:49:20         PAGE  3
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+  00000099            00090 VRCON                        EQU     H'0099'
+  0000009A            00091 EEDATA                       EQU     H'009A' 
+  0000009A            00092 EEDAT                        EQU     H'009A'    
+  0000009B            00093 EEADR                        EQU     H'009B'    
+  0000009C            00094 EECON1                       EQU     H'009C'
+  0000009D            00095 EECON2                       EQU     H'009D'
+  0000009E            00096 ADRESL                       EQU     H'009E'            
+  0000009F            00097 ANSEL                        EQU     H'009F'
+                      00098 
+                      00099 
+                      00100 ;----- STATUS Bits --------------------------------------------------------
+                      00101 
+  00000007            00102 IRP                          EQU     H'0007'
+  00000006            00103 RP1                          EQU     H'0006'
+  00000005            00104 RP0                          EQU     H'0005'
+  00000004            00105 NOT_TO                       EQU     H'0004'
+  00000003            00106 NOT_PD                       EQU     H'0003'
+  00000002            00107 Z                            EQU     H'0002'
+  00000001            00108 DC                           EQU     H'0001'
+  00000000            00109 C                            EQU     H'0000'
+                      00110 
+                      00111 ;----- GPIO Bits -----------------------------------------------------------
+                      00112 
+  00000005            00113 GP5                          EQU     H'0005'
+  00000004            00114 GP4                          EQU     H'0004'
+  00000003            00115 GP3                          EQU     H'0003'
+  00000002            00116 GP2                          EQU     H'0002'
+  00000001            00117 GP1                          EQU     H'0001'
+  00000000            00118 GP0                          EQU     H'0000'
+                      00119 
+                      00120 ;----- INTCON Bits --------------------------------------------------------
+                      00121 
+  00000007            00122 GIE                          EQU     H'0007'
+  00000006            00123 PEIE                         EQU     H'0006'
+  00000005            00124 T0IE                         EQU     H'0005'
+  00000004            00125 INTE                         EQU     H'0004'
+  00000003            00126 GPIE                         EQU     H'0003'
+  00000002            00127 T0IF                         EQU     H'0002'
+  00000001            00128 INTF                         EQU     H'0001'
+  00000000            00129 GPIF                         EQU     H'0000'
+                      00130 
+                      00131 ;----- PIR1 Bits ----------------------------------------------------------
+                      00132 
+  00000007            00133 EEIF                         EQU     H'0007'
+  00000006            00134 ADIF                         EQU     H'0006'
+  00000005            00135 CCP1IF                       EQU     H'0005'
+  00000003            00136 CMIF                         EQU     H'0003'
+  00000002            00137 OSFIF                        EQU     H'0002'
+  00000001            00138 T2IF                         EQU     H'0001'
+  00000001            00139 TMR2IF                       EQU     H'0001'
+  00000000            00140 T1IF                         EQU     H'0000'
+  00000000            00141 TMR1IF                       EQU     H'0000'
+                      00142 
+gpasm-1.4.0 #1107 (Jan  9 2015) PWM_Switch_Pi   2-13-2016  00:49:20         PAGE  4
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+                      00143 ;----- T1CON Bits ---------------------------------------------------------
+                      00144 
+  00000007            00145 T1GINV                       EQU     H'0007'
+  00000006            00146 T1GE                         EQU     H'0006'
+  00000005            00147 T1CKPS1                      EQU     H'0005'
+  00000004            00148 T1CKPS0                      EQU     H'0004'
+  00000003            00149 T1OSCEN                      EQU     H'0003'
+  00000002            00150 NOT_T1SYNC                   EQU     H'0002'
+  00000001            00151 TMR1CS                       EQU     H'0001'
+  00000000            00152 TMR1ON                       EQU     H'0000'
+                      00153 
+                      00154 ;----- T2CON Bits ---------------------------------------------------------
+                      00155 
+  00000006            00156 TOUTPS3                      EQU     H'0006'
+  00000005            00157 TOUTPS2                      EQU     H'0005'
+  00000004            00158 TOUTPS1                      EQU     H'0004'
+  00000003            00159 TOUTPS0                      EQU     H'0003'
+  00000002            00160 TMR2ON                       EQU     H'0002'
+  00000001            00161 T2CKPS1                      EQU     H'0001'
+  00000000            00162 T2CKPS0                      EQU     H'0000'
+                      00163 
+                      00164 ;----- CCP1CON Bits -------------------------------------------------------
+                      00165 
+  00000005            00166 DC1B1                        EQU     H'0005'
+  00000004            00167 DC1B0                        EQU     H'0004'
+  00000003            00168 CCP1M3                       EQU     H'0003'
+  00000002            00169 CCP1M2                       EQU     H'0002'
+  00000001            00170 CCP1M1                       EQU     H'0001'
+  00000000            00171 CCP1M0                       EQU     H'0000'
+                      00172 
+                      00173 ;----- WDTCON Bits --------------------------------------------------------
+                      00174 
+  00000004            00175 WDTPS3                       EQU     H'0004'
+  00000003            00176 WDTPS2                       EQU     H'0003'
+  00000002            00177 WDTPS1                       EQU     H'0002'
+  00000001            00178 WDTPS0                       EQU     H'0001'
+  00000000            00179 SWDTEN                       EQU     H'0000'
+                      00180 
+                      00181 ;----- COMCON0 Bits -------------------------------------------------------
+                      00182 
+  00000006            00183 COUT                         EQU     H'0006'
+  00000004            00184 CINV                         EQU     H'0004'
+  00000003            00185 CIS                          EQU     H'0003'
+  00000002            00186 CM2                          EQU     H'0002'
+  00000001            00187 CM1                          EQU     H'0001'
+  00000000            00188 CM0                          EQU     H'0000'
+                      00189 
+                      00190 ;----- COMCON1 Bits -------------------------------------------------------
+                      00191 
+  00000001            00192 T1GSS                       EQU      H'0001'
+  00000000            00193 CMSYNC                      EQU      H'0000'
+                      00194 
+                      00195 ;----- ADCON0 Bits --------------------------------------------------------
+gpasm-1.4.0 #1107 (Jan  9 2015) PWM_Switch_Pi   2-13-2016  00:49:20         PAGE  5
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+                      00196 
+  00000007            00197 ADFM                         EQU     H'0007'
+  00000006            00198 VCFG                         EQU     H'0006'
+  00000004            00199 CHS2                         EQU     H'0004'
+  00000003            00200 CHS1                         EQU     H'0003'
+  00000002            00201 CHS0                         EQU     H'0002'
+  00000001            00202 GO                           EQU     H'0001'
+  00000001            00203 NOT_DONE                     EQU     H'0001'
+  00000001            00204 GO_DONE                      EQU     H'0001'
+  00000000            00205 ADON                         EQU     H'0000'
+                      00206 
+                      00207 ;----- OPTION Bits --------------------------------------------------------
+                      00208 
+  00000007            00209 NOT_GPPU                     EQU     H'0007'
+  00000006            00210 INTEDG                       EQU     H'0006'
+  00000005            00211 T0CS                         EQU     H'0005'
+  00000004            00212 T0SE                         EQU     H'0004'
+  00000003            00213 PSA                          EQU     H'0003'
+  00000002            00214 PS2                          EQU     H'0002'
+  00000001            00215 PS1                          EQU     H'0001'
+  00000000            00216 PS0                          EQU     H'0000'
+                      00217 
+                      00218 
+                      00219 ;----- PIE1 Bits ----------------------------------------------------------
+                      00220 
+  00000007            00221 EEIE                         EQU     H'0007'
+  00000006            00222 ADIE                         EQU     H'0006'
+  00000005            00223 CCP1IE                       EQU     H'0005'
+  00000003            00224 CMIE                         EQU     H'0003'
+  00000002            00225 OSFIE                        EQU     H'0002'
+  00000001            00226 T2IE                         EQU     H'0001'
+  00000001            00227 TMR2IE                       EQU     H'0001'
+  00000000            00228 T1IE                         EQU     H'0000'
+  00000000            00229 TMR1IE                       EQU     H'0000'
+                      00230 
+                      00231 ;----- PCON Bits ----------------------------------------------------------
+                      00232 
+  00000005            00233 ULPWUE                       EQU     H'0005'
+  00000004            00234 SBODEN                       EQU     H'0004'
+  00000001            00235 NOT_POR                      EQU     H'0001'
+  00000000            00236 NOT_BOD                      EQU     H'0000'
+                      00237 
+                      00238 ;----- OSCCON Bits --------------------------------------------------------
+                      00239 
+  00000006            00240 IRCF2                        EQU     H'0006'
+  00000005            00241 IRCF1                        EQU     H'0005'
+  00000004            00242 IRCF0                        EQU     H'0004'
+  00000003            00243 OSTS                         EQU     H'0003'
+  00000002            00244 HTS                          EQU     H'0002'
+  00000001            00245 LTS                          EQU     H'0001'
+  00000000            00246 SCS                          EQU     H'0000'
+                      00247 
+                      00248 ;----- OSCTUNE Bits -------------------------------------------------------
+gpasm-1.4.0 #1107 (Jan  9 2015) PWM_Switch_Pi   2-13-2016  00:49:20         PAGE  6
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+                      00249 
+  00000004            00250 TUN4                         EQU     H'0004'
+  00000003            00251 TUN3                         EQU     H'0003'
+  00000002            00252 TUN2                         EQU     H'0002'
+  00000001            00253 TUN1                         EQU     H'0001'
+  00000000            00254 TUN0                         EQU     H'0000'
+                      00255 
+                      00256 
+                      00257 ;----- IOC Bits ---------------------------------------------------------
+                      00258 
+  00000005            00259 IOC5                         EQU     H'0005'
+  00000004            00260 IOC4                         EQU     H'0004'
+  00000003            00261 IOC3                         EQU     H'0003'
+  00000002            00262 IOC2                         EQU     H'0002'
+  00000001            00263 IOC1                         EQU     H'0001'
+  00000000            00264 IOC0                         EQU     H'0000'
+                      00265 
+                      00266 ;----- IOCA Bits ---------------------------------------------------------
+                      00267 
+  00000005            00268 IOCA5                         EQU     H'0005'
+  00000004            00269 IOCA4                         EQU     H'0004'
+  00000003            00270 IOCA3                         EQU     H'0003'
+  00000002            00271 IOCA2                         EQU     H'0002'
+  00000001            00272 IOCA1                         EQU     H'0001'
+  00000000            00273 IOCA0                         EQU     H'0000'
+                      00274 
+                      00275 ;----- VRCON Bits ---------------------------------------------------------
+                      00276 
+  00000007            00277 VREN                         EQU     H'0007'
+  00000005            00278 VRR                          EQU     H'0005'
+  00000003            00279 VR3                          EQU     H'0003'
+  00000002            00280 VR2                          EQU     H'0002'
+  00000001            00281 VR1                          EQU     H'0001'
+  00000000            00282 VR0                          EQU     H'0000'
+                      00283 
+                      00284 ;----- EECON1 Bits --------------------------------------------------------
+                      00285 
+  00000003            00286 WRERR                        EQU     H'0003'
+  00000002            00287 WREN                         EQU     H'0002'
+  00000001            00288 WR                           EQU     H'0001'
+  00000000            00289 RD                           EQU     H'0000'
+                      00290 
+                      00291 ;----- ANSEL Bits ---------------------------------------------------------
+                      00292 
+  00000006            00293 ADCS2                        EQU     H'0006'
+  00000005            00294 ADCS1                        EQU     H'0005'
+  00000004            00295 ADCS0                        EQU     H'0004'
+  00000003            00296 ANS3                         EQU     H'0003'
+  00000002            00297 ANS2                         EQU     H'0002'
+  00000001            00298 ANS1                         EQU     H'0001'
+  00000000            00299 ANS0                         EQU     H'0000'
+                      00300 
+                      00301 ;==========================================================================
+gpasm-1.4.0 #1107 (Jan  9 2015) PWM_Switch_Pi   2-13-2016  00:49:20         PAGE  7
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+                      00302 ;
+                      00303 ;       RAM Definition
+                      00304 ;
+                      00305 ;==========================================================================
+                      00306 
+  000000FF            00307         __MAXRAM H'FF'
+                      00308         __BADRAM H'06', H'08'-H'09', H'0D', H'1B'-H'1D'
+                      00309         __BADRAM H'86', H'88'-H'89', H'8D', H'93'-H'94', H'97'-H'98', H'C0'-H'EF'
+                      00310 
+                      00311 ;==========================================================================
+                      00312 ;
+                      00313 ;       Configuration Bits
+                      00314 ;
+                      00315 ;==========================================================================
+                      00316                 
+  00003FFF            00317 _FCMEN_ON                    EQU     H'3FFF'
+  000037FF            00318 _FCMEN_OFF                   EQU     H'37FF'
+  00003FFF            00319 _IESO_ON                     EQU     H'3FFF'
+  00003BFF            00320 _IESO_OFF                    EQU     H'3BFF'
+  00003FFF            00321 _BOD_ON                      EQU     H'3FFF'
+  00003EFF            00322 _BOD_NSLEEP                  EQU     H'3EFF'
+  00003DFF            00323 _BOD_SBODEN                  EQU     H'3DFF'
+  00003CFF            00324 _BOD_OFF                     EQU     H'3CFF'
+  00003F7F            00325 _CPD_ON                      EQU     H'3F7F'
+  00003FFF            00326 _CPD_OFF                     EQU     H'3FFF'
+  00003FBF            00327 _CP_ON                       EQU     H'3FBF'
+  00003FFF            00328 _CP_OFF                      EQU     H'3FFF'
+  00003FFF            00329 _MCLRE_ON                    EQU     H'3FFF'
+  00003FDF            00330 _MCLRE_OFF                   EQU     H'3FDF'
+  00003FFF            00331 _PWRTE_OFF                   EQU     H'3FFF'
+  00003FEF            00332 _PWRTE_ON                    EQU     H'3FEF'
+  00003FFF            00333 _WDT_ON                      EQU     H'3FFF'
+  00003FF7            00334 _WDT_OFF                     EQU     H'3FF7'
+  00003FF8            00335 _LP_OSC                      EQU     H'3FF8'
+  00003FF9            00336 _XT_OSC                      EQU     H'3FF9'
+  00003FFA            00337 _HS_OSC                      EQU     H'3FFA'
+  00003FFB            00338 _EC_OSC                      EQU     H'3FFB'
+  00003FFC            00339 _INTRC_OSC_NOCLKOUT          EQU     H'3FFC'
+  00003FFC            00340 _INTOSCIO                    EQU     H'3FFC'
+  00003FFD            00341 _INTRC_OSC_CLKOUT            EQU     H'3FFD'
+  00003FFD            00342 _INTOSC                      EQU     H'3FFD'
+  00003FFE            00343 _EXTRC_OSC_NOCLKOUT          EQU     H'3FFE'
+  00003FFE            00344 _EXTRCIO                     EQU     H'3FFE'
+  00003FFF            00345 _EXTRC_OSC_CLKOUT            EQU     H'3FFF'
+  00003FFF            00346 _EXTRC                       EQU     H'3FFF'
+                      00347 
+                      00348         LIST
+                      00018 
+2007   32C4           00019    __config _INTOSCIO & _WDT_OFF & _PWRTE_ON & _MCLRE_OFF & _CP_OFF & _CPD_OFF & _BOD_NSLEEP & _IESO_OFF
+                             & _FCMEN_OFF
+                      00020 
+                      00021 ;*****[ Data Storage Reg's ]*****
+                      00022             CBLOCK  0x20        ; Assign each reg. from Bank 0 RAM area.
+gpasm-1.4.0 #1107 (Jan  9 2015) PWM_Switch_Pi   2-13-2016  00:49:20         PAGE  8
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+  00000020            00023             count1              
+  00000021            00024             count2             
+  00000022            00025             count3
+  00000023            00026             count4
+  00000024            00027             temp
+  00000025            00028             RESULTHI
+  00000026            00029             RESULTLO
+                      00030             ENDC                ; Conclude Bank 0 RAM assignments.
+                      00031 
+                      00032 ;**********************************************************************
+0000                  00033     ORG     0x000             ; processor reset vector
+0000   2804           00034     goto    setup              ; go to beginning of program
+                      00035     
+0004                  00036     ORG     0x004             ; interrupt vector location
+                      00037     
+                      00038 ;**********************************************************************
+                      00039             
+                      00040             
+                      00041             
+0004                  00042 setup
+0004   1683           00043         BANKSEL OSCCON          ; Switch to Bank 1.
+0005   3061           00044         MOVLW   b'01100001'     ; 4MHz Clk, IntOsc, SysClk via IntOsc
+0006   008F           00045         MOVWF   OSCCON
+                      00046 ;
+0007   1283           00047         BANKSEL CMCON0          ; Switch to Bank 0.
+0008   3007           00048         MOVLW   b'00000111'     ; Turn off Comparator.
+0009   0099           00049         MOVWF   CMCON0  
+                      00050  
+000A   1683           00051         BANKSEL ANSEL           ; Switch to Bank 1.
+000B   019F           00052         CLRF    ANSEL           ; Set I/O pins to Digital.
+                      00053 ;
+                      00054         ; Define inputs & outputs.
+000C   0185           00055         CLRF   TRISIO ; all output
+000D   1585           00056         BSF       TRISIO, GP3 ; GP3 input
+000E   1605           00057         BSF       TRISIO, GP4 
+                      00058 ;
+000F   1283           00059         BANKSEL GPIO            ; Switch to Bank 0.
+0010   0185           00060         CLRF    GPIO            
+                      00061 
+                      00062 ; This code block configures the ADC for polling, 
+                      00063 ; Vdd reference, Frc clock and GP0 input.
+                      00064 
+0011   1683           00065     BANKSEL TRISIO ; bank 1
+0012   1405           00066     BSF     TRISIO, 0 ; Set GP0 for ADC input
+0013   1683           00067     BANKSEL ANSEL ; 0x9F P32 
+0014   3071           00068     MOVLW   b'01110001' ; ADC Frc clock,
+0015   049F           00069     IORWF   ANSEL ; and GP0 as analog 
+0016   1283           00070     BANKSEL ADCON0 ; 0x1F
+0017   3001           00071     MOVLW   b'00000001' ; Left justify,
+0018   009F           00072     MOVWF   ADCON0 ; Vdd Vref, AN0, On
+0019   2032           00073     CALL    delay_1ms ; Acquisiton delay
+                      00074 
+                      00075 
+gpasm-1.4.0 #1107 (Jan  9 2015) PWM_Switch_Pi   2-13-2016  00:49:20         PAGE  9
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+                      00076 
+                      00077 
+                      00078 ; setup PWM
+                      00079 ; CCP1CON in bank 0 bits 4-5 are LSB of 10-bit PWM
+                      00080 
+                      00081 
+001A   3007           00082     movlw    b'00000111'
+001B   0092           00083     movwf    T2CON ; turn on TMR2 prescale 16 - frequency
+001C   307F           00084     movlw    d'127' ; duty cycle = TMR2 = CCPR1L:CCP1CON<5:4>
+                      00085 
+001D   0093           00086     movwf    CCPR1L
+001E   300E           00087     movlw    b'00001110'
+001F   0095           00088     movwf    CCP1CON     ; turn on PWM 
+                      00089         
+0020   2821           00090         goto loop
+                      00091 ;
+                      00092 ;==================================================================================
+                      00093 
+0021                  00094 loop
+0021   2056           00095     CALL  ADCtoPWM
+0022   1D85           00096     BTFSS GPIO, GP3 ; SW1
+0023   205A           00097     CALL  toggleGP1
+0024   1D85           00098     BTFSS GPIO, GP3
+0025   2824           00099     GOTO $-1 ; wait for release
+                      00100 
+0026   1E05           00101     BTFSS GPIO, GP4
+0027   205E           00102     CALL  toggleGP5
+0028   1E05           00103     BTFSS GPIO, GP4
+0029   2828           00104     GOTO $-1 ; wait for release
+                      00105 
+                      00106 ;    If GP1 is LOW AND GP5 is LOW PWM turned off.
+002A   1885           00107     BTFSC GPIO, 1
+002B   2830           00108     goto $+5
+002C   1A85           00109     BTFSC GPIO, 5
+002D   2830           00110     goto $+3
+002E   2040           00111     CALL PWMOFF
+002F   2821           00112     goto loop
+0030   2045           00113     Call PWMON
+                      00114 
+Warning[203]: Found opcode in column 1: "goto"
+0031   2821           00115 goto loop
+                      00116         
+                      00117 ; delay routines *************************************
+                      00118 
+                      00119 ; Calculating a 1mSec delay. 4mHz is divided by 4 internally to
+                      00120 ; 1,000,000. Take reciprocal divide 1mSec by 1uSec = 1000.
+                      00121 ; GOTO uses 2 cycles DECFSZ 1 cycle = 3 cycles or 3uSec.
+                      00122 ; 3 * 167 * 2 = 1000uSec. or 1mSec.
+                      00123 
+                      00124 
+0032                  00125 delay_1ms
+                      00126     ; 4 mHz crystal
+0032   3002           00127     movlw D'2'
+gpasm-1.4.0 #1107 (Jan  9 2015) PWM_Switch_Pi   2-13-2016  00:49:20         PAGE 10
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+0033   00A0           00128     movwf count1
+0034   30A7           00129 aa    movlw D'167'
+0035   0BA1           00130     decfsz count2, F
+0036   2835           00131     goto $-1 ; two cycles
+0037   0BA0           00132     decfsz count1, F
+0038   2834           00133     goto aa 
+0039   0008           00134     return
+                      00135 
+                      00136 
+003A                  00137 delay_100ms
+003A   3064           00138     movlw d'100'
+003B   00A2           00139     movwf count3
+003C   2032           00140 bb    call delay_1ms
+003D   0BA2           00141     decfsz count3, F
+003E   283C           00142     goto bb
+003F   0008           00143     return
+                      00144 ;============================================================    
+                      00145 
+0040                  00146 PWMOFF
+0040   1683           00147     BANKSEL TRISIO
+0041   1505           00148     BSF TRISIO, GP2
+0042   1283           00149     BANKSEL GPIO
+0043   2032           00150     CALL delay_1ms
+0044   0008           00151     RETURN
+                      00152 
+0045                  00153 PWMON
+0045   1683           00154     BANKSEL TRISIO
+0046   1105           00155     BCF TRISIO, GP2
+0047   1283           00156     BANKSEL GPIO
+0048   2032           00157     CALL delay_1ms
+0049   0008           00158     RETURN
+                      00159     
+                      00160 ;####################################
+                      00161 
+004A                  00162 readADC0
+004A   149F           00163     BSF     ADCON0,GO  ;Start conversion
+004B   189F           00164     BTFSC   ADCON0,GO ;Is conversion done?
+004C   284B           00165     GOTO    $-1  ;No, test again
+004D   081E           00166     MOVF    ADRESH,W ;Read upper 8 bits
+004E   00A5           00167     MOVWF   RESULTHI ;Store in GPR space
+                      00168 ; ADRESL bits 6, 7 LSB of ADC
+004F   1683           00169     BANKSEL ADRESL
+0050   081E           00170     MOVFW   ADRESL
+0051   1283           00171     BANKSEL ADRESH ; bank 0
+                      00172 ; right shift bits 7, 6 to bits 4, 5
+0052   00A6           00173     MOVWF   RESULTLO
+0053   0CA6           00174     RRF     RESULTLO, f
+0054   0CA6           00175     RRF     RESULTLO, f
+0055   0008           00176     return    
+                      00177 
+                      00178 ;######################################
+                      00179 
+0056                  00180 ADCtoPWM
+gpasm-1.4.0 #1107 (Jan  9 2015) PWM_Switch_Pi   2-13-2016  00:49:20         PAGE 11
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+0056   204A           00181     CALL  readADC0
+0057   0825           00182     MOVFW RESULTHI
+0058   0093           00183     MOVWF CCPR1L
+                      00184 ; RESULTLO bits 5, 4 LSB of ADC
+                      00185 ; CCP1CON bit 5,4 LSB PWM
+                      00186 
+                      00187     ;MOVLW    b'00001110'
+                      00188     ;IORWF  RESULTLO, w
+                      00189     ;MOVWF    CCP1CON     ; turn on PWM 
+0059   0008           00190     return
+                      00191     
+                      00192 ;######################################
+                      00193 
+                      00194 ; XOR toggle
+005A                  00195 toggleGP1 ; LED on GP1
+005A   3002           00196     movlw 2
+005B   0685           00197     xorwf GPIO, f
+005C   2032           00198     CALL delay_1ms
+005D   0008           00199     return    
+                      00200 
+                      00201 
+                      00202 ; non-XOR toggle
+005E                  00203 toggleGP5 ; LED on GP5
+                      00204 
+005E   1E85           00205     BTFSS GPIO, 5
+005F   2862           00206     goto $+3
+0060   1285           00207     BCF GPIO, 5
+0061   2863           00208     goto $+2    
+0062   1685           00209     BSF GPIO, 5
+0063   2032           00210     CALL delay_1ms
+0064   0008           00211     return    
+                      00212     
+                      00213     
+Warning[205]: Found directive in column 1: "end"
+                      00214 end
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : X---XXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXX----------- ----------------
+2000 : -------X-------- ---------------- ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:    98
+Program Memory Words Free:  1950
+
+
+Errors   :     0
+Warnings :     2 reported,     0 suppressed
+Messages :     0 reported,    11 suppressed
+
+

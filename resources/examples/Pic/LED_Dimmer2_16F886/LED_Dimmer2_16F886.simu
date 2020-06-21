@@ -1,0 +1,51 @@
+<circuit speed="1000000" type="simulide_0.1" reactStep="50" noLinStep="10" noLinAcc="5" animate="0">
+ 
+Node-7: 
+<item valLabRot="0" id="Node-7" Show_id="false" valLabely="0" x="-76" labely="-24" valLabelx="0" vflip="1" itemtype="Node" labelrot="0" labelx="-16" objectName="Node-7" y="-180" hflip="1" rotation="0"/>
+ 
+Ground (0 V)-6: 
+<item valLabRot="0" id="Ground (0 V)-6" Show_id="false" valLabely="0" x="-76" labely="-24" valLabelx="0" vflip="1" itemtype="Ground" labelrot="0" labelx="-16" objectName="Ground (0 V)-6" y="-116" hflip="1" rotation="0"/>
+ 
+Resistor-5: 
+<item hflip="1" objectName="Resistor-5" itemtype="Resistor" valLabRot="0" x="-140" id="Resistor-5" Show_id="false" valLabelx="-11" rotation="0" vflip="1" Unit=" Ω" valLabely="7" Resistance="100" y="-180" Show_res="true" labely="-24" labelrot="0" labelx="-16"/>
+ 
+Resistor-4: 
+<item hflip="1" objectName="Resistor-4" itemtype="Resistor" valLabRot="0" x="-140" id="Resistor-4" Show_id="false" valLabelx="-13" rotation="0" vflip="1" Unit=" Ω" valLabely="-16" Resistance="100" y="-204" Show_res="true" labely="-24" labelrot="0" labelx="-16"/>
+ 
+Led-3: 
+<item hflip="1" objectName="Led-3" Color="0" itemtype="Led" valLabRot="0" x="-188" id="Led-3" Show_id="false" valLabelx="0" rotation="0" Threshold="2.3999999999999999" MaxCurrent="0.02" vflip="1" valLabely="0" y="-204" Resistance="0.59999999999999998" Grounded="false" labely="-24" labelrot="0" labelx="-16"/>
+ 
+Led-2: 
+<item hflip="1" objectName="Led-2" Color="0" itemtype="Led" valLabRot="0" x="-188" id="Led-2" Show_id="false" valLabelx="0" rotation="0" Threshold="2.3999999999999999" MaxCurrent="0.02" vflip="1" valLabely="0" y="-180" Resistance="0.59999999999999998" Grounded="false" labely="-24" labelrot="0" labelx="-16"/>
+ 
+pic16f886-1: 
+<item hflip="1" objectName="pic16f886-1" Ser_Monitor="false" itemtype="PIC" valLabRot="0" x="-276" id="pic16f886" Show_id="true" Program="LED_Dimmer2_16F886.hex" valLabelx="0" Ser_Port="false" rotation="0" vflip="1" valLabely="0" y="-228" labely="-17" labelrot="0" Mhz="16" labelx="-12"/>
+ 
+Connector-8: 
+<item hflip="1" objectName="Connector-8" itemtype="Connector" valLabRot="0" x="-172" id="Connector-8" Show_id="false" valLabelx="0" pointList="-172,-204,-156,-204" rotation="0" vflip="1" valLabely="0" endpinid="Resistor-4-lPin" y="-204" labely="-24" labelrot="0" enodeid="Circ_eNode-9" startpinid="Led-3-rPin" labelx="-16"/>
+ 
+Connector-10: 
+<item hflip="1" objectName="Connector-10" itemtype="Connector" valLabRot="0" x="-172" id="Connector-10" Show_id="false" valLabelx="0" pointList="-172,-180,-156,-180" rotation="0" vflip="1" valLabely="0" endpinid="Resistor-5-lPin" y="-180" labely="-24" labelrot="0" enodeid="Circ_eNode-11" startpinid="Led-2-rPin" labelx="-16"/>
+ 
+Connector-12: 
+<item hflip="1" objectName="Connector-12" itemtype="Connector" valLabRot="0" x="-124" id="Connector-12" Show_id="false" valLabelx="0" pointList="-124,-204,-76,-204,-76,-180" rotation="0" vflip="1" valLabely="0" endpinid="Node-7-0" y="-204" labely="-24" labelrot="0" enodeid="Circ_eNode-13" startpinid="Resistor-4-rPin" labelx="-16"/>
+ 
+Connector-14: 
+<item hflip="1" objectName="Connector-14" itemtype="Connector" valLabRot="0" x="-124" id="Connector-14" Show_id="false" valLabelx="0" pointList="-124,-180,-76,-180" rotation="0" vflip="1" valLabely="0" endpinid="Node-7-1" y="-180" labely="-24" labelrot="0" enodeid="Circ_eNode-13" startpinid="Resistor-5-rPin" labelx="-16"/>
+ 
+Connector-15: 
+<item hflip="1" objectName="Connector-15" itemtype="Connector" valLabRot="0" x="-76" id="Connector-15" Show_id="false" valLabelx="0" pointList="-76,-180,-76,-132" rotation="0" vflip="1" valLabely="0" endpinid="Ground (0 V)-6-Gnd" y="-180" labely="-24" labelrot="0" enodeid="Circ_eNode-13" startpinid="Node-7-2" labelx="-16"/>
+ 
+Connector-16: 
+<item hflip="1" objectName="Connector-16" itemtype="Connector" valLabRot="0" x="-204" id="Connector-16" Show_id="false" valLabelx="0" pointList="-204,-204,-236,-204" rotation="0" vflip="1" valLabely="0" endpinid="pic16f886-1-RB5" y="-204" labely="-24" labelrot="0" enodeid="Circ_eNode-17" startpinid="Led-3-lPin" labelx="-16"/>
+ 
+Connector-18: 
+<item hflip="1" objectName="Connector-18" itemtype="Connector" valLabRot="0" x="-204" id="Connector-18" Show_id="false" valLabelx="0" pointList="-204,-180,-244,-180" rotation="0" vflip="1" valLabely="0" endpinid="pic16f886-1-RB2" y="-180" labely="-24" labelrot="0" enodeid="Circ_eNode-19" startpinid="Led-2-lPin" labelx="-16"/>
+ 
+PlotterWidget-20: 
+<item windowModality="0" windowTitle="" maximumSize="" x="0" y="396" minimumWidth="200" windowModified="false" frameSize="" statusTip="" frameGeometry="" sizePolicy="" windowFilePath="" isActiveWindow="true" pos="" maximized="false" childrenRegion="" mouseTracking="false" objectName="PlotterWidget-20" accessibleDescription="" sizeIncrement="" toolTipDuration="-1" minimumHeight="200" toolTip="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumSize="" inputMethodHints="0" itemtype="Plotter" baseSize="" normalGeometry="" layoutDirection="0" sizeHint="" MinVolt="0" width="990" whatsThis="" size="" cursor="" modal="false" minimumSizeHint="" height="200" windowIcon="" windowIconText="" palette="" minimized="false" rect="" focusPolicy="0" styleSheet="" maximumWidth="1000" contextMenuPolicy="1" childrenRect="" updatesEnabled="true" maximumHeight="200" locale="" geometry="" autoFillBackground="false" visible="false" windowOpacity="1" MaxVolt="500" acceptDrops="false" fullScreen="false" accessibleName="" enabled="true" focus="false"/>
+ 
+SerialPortWidget-21: 
+<item windowModality="0" windowTitle="Configuracion" maximumSize="" x="0" y="0" SettingsProp="ttyS0,0,3,0,0,0" minimumWidth="0" windowModified="false" frameSize="" statusTip="" frameGeometry="" sizePolicy="" windowFilePath="" isActiveWindow="true" pos="" maximized="false" childrenRegion="" mouseTracking="false" objectName="SerialPortWidget-21" accessibleDescription="" sizeIncrement="" toolTipDuration="-1" minimumHeight="0" toolTip="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumSize="" inputMethodHints="0" itemtype="SerialPort" baseSize="" normalGeometry="" layoutDirection="0" sizeHint="" width="313" whatsThis="" size="" cursor="" modal="false" minimumSizeHint="" height="141" windowIcon="" windowIconText="" palette="" minimized="false" rect="" focusPolicy="0" styleSheet="" maximumWidth="450" contextMenuPolicy="1" childrenRect="" updatesEnabled="true" maximumHeight="170" locale="" geometry="" autoFillBackground="false" visible="false" windowOpacity="1" acceptDrops="false" fullScreen="false" accessibleName="" enabled="true" focus="false"/>
+ 
+</circuit>

@@ -1,0 +1,14 @@
+74HC04 - hex inverter gate
+
+Y = !A
+
+A  Y
+0  1
+1  0
+
+Pines:
+A = Entrada x 6
+Y = Salida x 6
+
+Ver help en:
+   ..share/simulide/data/examples/logic/74_series/Help_74HC04.simu

@@ -1,0 +1,7 @@
+Diode:
+
+Configurable diode.
+
+Use "Threshold" property to set forward threshold voltage.
+
+To configure as Zener diode just set "Zener Volt" property to a value > 0.

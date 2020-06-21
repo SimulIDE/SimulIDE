@@ -1,0 +1,49 @@
+
+
+
+'#define SER
+'#define OE
+'#define RCLK
+'#define SRCLK
+'#define SRCLR
+
+'#define delay595
+
+#define clear595 SRCLR = 0
+
+Sub init595
+    Dir SRCLR   out
+    Dir SRCLK   out
+    Dir RCLK    out
+    Dir OE      out
+    Dir SER     out
+    SRCLR = 0           'Clear shiht register
+    SRCLK = 0           '
+    RCLK  = 0           '
+    OE    = 0           'Enable outputs
+    SER   = 0
+    
+    SRCLR = 1
+End Sub  
+
+Sub shiftByte( in byteout as byte )    'LSB first
+    RCLK = 0
+    for num=0 to 7
+        SRCLK = 0
+        SER   = byteout.0
+        SRCLK = 1
+        rotate byteout right
+        #ifdef delay595
+        wait delay595 
+        #endif
+    next
+    RCLK = 1
+End Sub
+
+Sub shiftBit( in bitout as bit )
+    RCLK  = 0
+    SRCLK = 0
+    SER   = bitout.0
+    SRCLK = 1
+    RCLK  = 1
+End Sub

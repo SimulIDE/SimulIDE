@@ -1,0 +1,66 @@
+
+  #chip 16F876, 20
+  #option explicit
+
+  #include <i2ceeprom.h>
+  
+  HI2CMode Master
+
+  #define HI2C_BAUD_RATE 100
+  #define HI2C_DATA PORTC.4
+  #define HI2C_CLOCK PORTC.3
+
+  Dir HI2C_DATA in
+  Dir HI2C_CLOCK in
+
+
+ #define USART_BAUD_RATE 9600
+ Dir PORTc.6 Out
+ Dir PORTc.7 In
+ #define USART_TX_BLOCKING
+ wait 500 ms
+
+  #define eepDev 160                 'Change this ADDRESS to suit
+  #define EEpromPageSize 16
+
+  Dim adr as Word
+  Dim xxx as Byte
+  Dim eepAddr as byte
+  Dim datarray( 10 )
+
+  'Dim datarray( EEpromPageSize )
+  'Dim datastring as String * 16
+  HSerPrintCRLF 2
+  HSerPrint "HW I2C Mode"
+  HSerPrintCRLF 2
+  HSerPrint "  Write to EEPROM"
+  HSerPrintCRLF
+  
+  xxx = 0
+  for adr=1 to 10
+    xxx += 1
+    eeprom_wr_byte( eepDev, adr , xxx )
+    HSerPrint xxx
+    HSerPrint " "
+  next
+  HSerPrintCRLF 2
+
+  HSerPrint "  Read from EEPROM"
+  HSerPrintCRLF
+
+  xxx = 0
+  for adr=1 to 10
+    xxx += 1
+    eeprom_rd_byte( eepDev, adr , datarray( xxx ) )
+    HSerPrint datarray( xxx )
+    HSerPrint " "
+  next
+  HSerPrintCRLF
+  
+  'eeprom_wr_array( eepDev, EEpromPageSize, dat , dat, 10 )
+  'eeprom_rd_array( eepDev, eepAddr , datarray(), 10 )
+  'eeprom_wr_string( eepDev, EEpromPageSize, eepAddr , datastring(), datastring(0) )
+
+  do
+    wait 1000 ms
+  loop

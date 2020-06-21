@@ -1,0 +1,11 @@
+Subcircuito:
+
+Este es un componente hecho de varias partes.
+
+Contiene un circuito en su interior de manera similar a como lo hace un chip.
+
+Cada componente de Subcircuito se describe en 2 archivos: uno para el circuito y otro para el paquete.
+
+Hay una opción para usar un paquete tipo Chip o un símbolo lógico.
+
+Para cambiar entre ellos, utilice el "Símbolo lógico" que se indica arriba.

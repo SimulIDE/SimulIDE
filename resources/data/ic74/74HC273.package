@@ -1,0 +1,49 @@
+<!DOCTYPE SimulIDE>
+
+<!-- *************************************************************************** -->
+<!-- *   Copyright (C) 2017 by santiago González                               * -->
+<!-- *   santigoro@gmail.com                                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is free software; you can redistribute it and/or modify  * -->
+<!-- *   it under the terms of the GNU General Public License as published by  * -->
+<!-- *   the Free Software Foundation; either version 3 of the License, or     * -->
+<!-- *   (at your option) any later version.                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is distributed in the hope that it will be useful,       * -->
+<!-- *   but WITHOUT ANY WARRANTY; without even the implied warranty of        * -->
+<!-- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         * -->
+<!-- *   GNU General Public License for more details.                          * -->
+<!-- *                                                                         * -->
+<!-- *   You should have received a copy of the GNU General Public License     * -->
+<!-- *   along with this program; if not, see <http://www.gnu.org/licenses/>.  * -->
+<!-- *                                                                         * -->
+<!-- *************************************************************************** -->
+
+<package name="74HC273" pins="20" width="4" height="11">
+
+    <pin side="left" pos="1" type="" id="!MR" label="!MR" /><!-- packagePin1 -->
+    <pin side="left" pos="2" type="" id="Q0" label="Q0" /><!-- packagePin2 -->
+    <pin side="left" pos="3" type="" id="D0" label="D0" /><!-- packagePin3 -->
+    <pin side="left" pos="4" type="" id="D1" label="D1" /><!-- packagePin4 -->
+    <pin side="left" pos="5" type="" id="Q1" label="Q1" /><!-- packagePin5 -->
+    <pin side="left" pos="6" type="" id="Q2" label="Q2" /><!-- packagePin6 -->
+    <pin side="left" pos="7" type="" id="D2" label="D2" /><!-- packagePin7 -->
+    <pin side="left" pos="8" type="" id="D3" label="D3" /><!-- packagePin8 -->
+    <pin side="left" pos="9" type="" id="Q3" label="Q3" /><!-- packagePin9 -->
+    
+    <pin side="left" pos="10" type="unused" id="Gnd" label="Gnd" /><!-- packagePin10 -->
+
+    <pin side="right" pos="10" type="" id="CP" label="CP" /><!-- packagePin11 -->
+    <pin side="right" pos="9" type="" id="Q4" label="Q4" /><!-- packagePin12 -->
+    <pin side="right" pos="8" type="" id="D4" label="D4" /><!-- packagePin13 -->
+    <pin side="right" pos="7" type="" id="D5" label="D5" /><!-- packagePin14 -->
+    <pin side="right" pos="6" type="" id="Q5" label="Q5" /><!-- packagePin15 -->
+    <pin side="right" pos="5" type="" id="Q6" label="Q6" /><!-- packagePin16 -->
+    <pin side="right" pos="4" type="" id="D6" label="D6" /><!-- packagePin17 -->
+    <pin side="right" pos="3" type="" id="D7" label="D7" /><!-- packagePin18 -->
+    <pin side="right" pos="2" type="" id="Q7" label="Q7" /><!-- packagePin19 -->
+    
+    <pin side="right" pos="1" type="unused" id="Vcc" label="Vcc" /><!-- packagePin20 -->
+    
+ </package>
+

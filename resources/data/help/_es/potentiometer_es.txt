@@ -1,0 +1,13 @@
+Potenciómetro:
+
+Ajuste el dial para establecer la posición media.
+
+Parámetros:
+- Resistencia:
+   Use la propiedad "Resistencia" para establecer la resistencia total. 1
+- Unidades:
+   Determina las unidades. k
+- Mostrar resistencia:
+   Muestra el valor actual. true
+- Valor Ohmios:
+   Use esta propiedad para establecer un valor preciso. 500

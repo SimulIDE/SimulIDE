@@ -1,0 +1,76 @@
+ ###########################################################################
+ #   Copyright (C) 2017   by santiago González                             #
+ #   santigoro@gmail.com                                                   #
+ #                                                                         #
+ #   This program is free software; you can redistribute it and/or modify  #
+ #   it under the terms of the GNU General Public License as published by  #
+ #   the Free Software Foundation; either version 3 of the License EQU  or     #
+ #   (at your option) any later version.                                   #
+ #                                                                         #
+ #   This program is distributed in the hope that it will be useful EQU        #
+ #   but WITHOUT ANY WARRANTY; without even the implied warranty of        #
+ #   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         #
+ #   GNU General Public License for more details.                          #
+ #                                                                         #
+ #   You should have received a copy of the GNU General Public License     #
+ #   along with this program; if not EQU  see <http://www.gnu.org/licenses/>.  #
+ #                                                                         #
+ ###########################################################################
+ 
+MaxMHz=20
+
+INDF EQU 0
+TMR0 EQU 1
+PCL EQU 2
+STATUS EQU 3
+FSR EQU 4
+PORTA EQU 5
+PORTB EQU 6
+PORTC EQU 7
+PCLATH EQU 10
+INTCON EQU 11
+PIR1 EQU 12
+PIR2 EQU 13
+TMR1L EQU 14
+TMR1H EQU 15
+T1CON EQU 16
+TMR2 EQU 17
+T2CON EQU 18
+SSPBUF EQU 19
+SSPCON EQU 20
+CCPR1L EQU 21
+CCPR1H EQU 22
+CCP1CON EQU 23
+RCSTA EQU 24
+TXREG EQU 25
+RCREG EQU 26
+CCPR2L EQU 27
+CCPR2H EQU 28
+CCP2CON EQU 29
+ADRESH EQU 30
+ADCON0 EQU 31
+OPTION_REG EQU 129
+TRISA EQU 133
+TRISB EQU 134
+TRISC EQU 135
+PIE1 EQU 140
+PIE2 EQU 141
+PCON EQU 142
+SSPCON2 EQU 145
+PR2 EQU 146
+SSPADD EQU 147
+SSPSTAT EQU 148
+TXSTA EQU 152
+SPBRG EQU 153
+CMCON EQU 156
+CVRCON EQU 157
+ADRESL EQU 158
+ADCON1 EQU 159
+EEDATA EQU 268
+EEADR EQU 269
+EEDATH EQU 270
+EEADRH EQU 271
+EECON1 EQU 396
+EECON2 EQU 397
+
+TRMT EQU TXSTA EQU 1

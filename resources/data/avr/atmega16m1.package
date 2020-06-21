@@ -1,0 +1,60 @@
+<!DOCTYPE SimulIDE>
+
+<!-- *************************************************************************** -->
+<!-- *   Copyright (C) 2018 by santiago González                               * -->
+<!-- *   santigoro@gmail.com                                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is free software; you can redistribute it and/or modify  * -->
+<!-- *   it under the terms of the GNU General Public License as published by  * -->
+<!-- *   the Free Software Foundation; either version 3 of the License, or     * -->
+<!-- *   (at your option) any later version.                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is distributed in the hope that it will be useful,       * -->
+<!-- *   but WITHOUT ANY WARRANTY; without even the implied warranty of        * -->
+<!-- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         * -->
+<!-- *   GNU General Public License for more details.                          * -->
+<!-- *                                                                         * -->
+<!-- *   You should have received a copy of the GNU General Public License     * -->
+<!-- *   along with this program; if not, see <http://www.gnu.org/licenses/>.  * -->
+<!-- *                                                                         * -->
+<!-- *************************************************************************** -->
+
+<package name="atmega16m1" pins="32" width="11" height="11">
+
+    <pin side="left" pos="2"  type="bidir" id="PD2"  label="D2"/>
+    <pin side="left" pos="3"  type="bidir" id="PD3"  label="D3"/>
+    <pin side="left" pos="4"  type="bidir" id="PC1"  label="C1"/>
+    <pin side="left" pos="5"  type="vcc"   id="VCC"  label="Vcc"/>
+    <pin side="left" pos="6"  type="gnd"   id="GND0" label="Gnd"/>
+    <pin side="left" pos="7"  type="bidir" id="PC2"  label="C2"/>
+    <pin side="left" pos="8"  type="bidir" id="PC3"  label="C3"/>
+    <pin side="left" pos="9"  type="bidir" id="PB0"  label="B0"/>
+
+    <pin side="bottom" pos="2"  type="bidir" id="PB1"  label="B1"/>
+    <pin side="bottom" pos="3"  type="bidir" id="PE1"  label="E1"/>
+    <pin side="bottom" pos="4"  type="adc0"  id="PE2"  label="E2"/>
+    <pin side="bottom" pos="5"  type="adc1"  id="PD4"  label="D4"/>
+    <pin side="bottom" pos="6"  type="adc2"  id="PD5"  label="D5"/>
+    <pin side="bottom" pos="7"  type="adc3"  id="PD6"  label="D6"/>
+    <pin side="bottom" pos="8"  type="bidir" id="PD7"  label="D7"/>
+    <pin side="bottom" pos="9"  type="adc5"  id="PB2"  label="B2"/>
+    
+    <pin side="right" pos="9"  type="adc8"  id="PC4"  label="C4"/>
+    <pin side="right" pos="8"  type="adc9"  id="PC5"  label="C5"/>
+    <pin side="right" pos="7"  type="avcc"  id="AVCC" label="AVcc"/>
+    <pin side="right" pos="6"  type="gnd"   id="GND1" label="AGnd"/>
+    <pin side="right" pos="5"  type="aref"  id="AREF" label="Aref"/>
+    <pin side="right" pos="4"  type="adc10" id="PC6"  label="C6"/>
+    <pin side="right" pos="3"  type="bidir" id="PB3"  label="B3"/>
+    <pin side="right" pos="2"  type="bidir" id="PB4"  label="B4"/>
+
+    <pin side="top" pos="9"  type="bidir" id="PC7"  label="C7"/>
+    <pin side="top" pos="8"  type="adc6"  id="PB5"  label="B5"/>
+    <pin side="top" pos="7"  type="adc7"  id="PB6"  label="B6"/>
+    <pin side="top" pos="6"  type="adc4"  id="PB7"  label="B7"/>
+    <pin side="top" pos="5"  type="bidir" id="PD0"  label="D0"/>
+    <pin side="top" pos="4"  type="bidir" id="PC0"  label="C0"/>
+    <pin side="top" pos="3"  type="bidir" id="PE0"  label="E0"/>
+    <pin side="top" pos="2"  type="bidir" id="PD1"  label="D1"/>
+    
+</package>

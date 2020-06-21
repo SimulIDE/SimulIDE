@@ -1,0 +1,15 @@
+74XX01 - Quad 2-input NAND gate, open Drain Outputs
+
+A  B  Y
+0  0  1
+1  0  1
+0  1  1
+1  1  0
+
+Pines:
+A = Entrada x 4
+B = Entrada x 4
+Y = Salida x 4
+
+Ver help en:
+   ..share/simulide/data/examples/logic/74_series/Help_74XX01.simu

@@ -1,0 +1,17 @@
+MosFET:
+
+Transistor de efecto de campo.
+
+Parametros:
+- RDSon:
+   RDSon representa la resistencia DS en la parte inferior de la región lineal cuando se conduce:
+     VGS> Vth y VDS <(VGS - Vth)
+
+- Umbral:
+   1
+- Canal P:
+   Determina si es canl P o N. false
+- Deplexion:
+   false
+
+Es posible configurarlo como canal P o N, así como un mosFET de agotamiento.

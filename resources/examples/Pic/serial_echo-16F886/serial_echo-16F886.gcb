@@ -1,0 +1,28 @@
+
+#chip 16F886, 16 	
+
+#define USART_BAUD_RATE 9600
+#define USART_BLOCKING
+#define SerInPort PORTc.7
+#define SerOutPort PORTc.6
+
+Dir SerOutPort Out
+Dir SerInPort In
+
+HSerPrint "Serial Echo Test"
+HSerPrintCRLF
+
+wait 200 ms
+
+Do
+
+  InChar = HSerReceive
+
+  If InChar <> 255 Then
+    HSerSend InChar
+  End If
+
+Loop
+
+
+

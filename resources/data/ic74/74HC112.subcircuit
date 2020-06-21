@@ -1,0 +1,43 @@
+<!DOCTYPE SimulIDE>
+
+<subcircuit enodes="0">
+
+    <item itemtype="eFlipFlopJK"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "true"
+        sRInverted = "true"
+        connections="
+        input0-Package_1J
+        input2-Package_1!S
+        clock-Package_1!CP
+        input3-Package_1!R
+        output0-Package_1Q
+        output1-Package_1!Q
+        input1-Package_1K" >
+    </item>
+
+    <item itemtype="eFlipFlopJK"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "true"
+        sRInverted = "true"
+        connections="
+        input3-Package_2!R
+        clock-Package_2!CP
+        input0-Package_2J
+        output1-Package_2!Q
+        input2-Package_2!S
+        output0-Package_2Q
+        input1-Package_2K" >
+    </item>
+
+</subcircuit>

@@ -1,0 +1,31 @@
+Matriz LED:
+
+Los pines de la izquierda están conectados a los ánodos de las filas.
+Los pines inferiores están conectados a los cátodos de las columnas.
+
+Matriz LED configurable con las mismas propiedades que los LEDs.
+
+Propiedades:
+- Color:
+    Color del LED: amarillo, rojo, verde, azul, naranja o púrpura. Yellow
+
+- Filas:
+   Determina la cantidad de filas. 8
+
+- Columnas:
+   Determina la cantidad de columnas. 8
+
+- Vertical Pins:
+   false
+
+- Umbral:
+    Tensión umbral del LED, debajo de esta tensión no conducen. 2.4
+
+- Coriente Max:
+    Corriente máxima soportada. Al superar este valor LED se quema. LED parpadea cuando se excede la maxima corriente en aprox 40%. 0.03
+
+- Resistencia:
+    La resistencia interna, como un truco que es posible sustituir resistencia externa. 0.6
+    
+Mas información:
+   http://simulide.blogspot.com/p/leds.html

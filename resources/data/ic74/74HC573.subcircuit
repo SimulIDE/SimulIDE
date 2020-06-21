@@ -1,0 +1,50 @@
+<!DOCTYPE SimulIDE>
+
+<!-- *************************************************************************** -->
+<!-- *   Copyright (C) 2017 by santiago González                               * -->
+<!-- *   santigoro@gmail.com                                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is free software; you can redistribute it and/or modify  * -->
+<!-- *   it under the terms of the GNU General Public License as published by  * -->
+<!-- *   the Free Software Foundation; either version 3 of the License, or     * -->
+<!-- *   (at your option) any later version.                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is distributed in the hope that it will be useful,       * -->
+<!-- *   but WITHOUT ANY WARRANTY; without even the implied warranty of        * -->
+<!-- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         * -->
+<!-- *   GNU General Public License for more details.                          * -->
+<!-- *                                                                         * -->
+<!-- *   You should have received a copy of the GNU General Public License     * -->
+<!-- *   along with this program; if not, see <http://www.gnu.org/licenses/>.  * -->
+<!-- *                                                                         * -->
+<!-- *************************************************************************** -->
+
+<subcircuit enodes="0">
+
+    <item itemtype="eLatchD" 
+    channels="8"
+    inputEnable="true"
+    tristate="true"
+    connections="
+    outEnable-Package_!OE
+    input0-Package_D0 
+    input1-Package_D1 
+    input2-Package_D2
+    input3-Package_D3 
+    input4-Package_D4 
+    input5-Package_D5 
+    input6-Package_D6 
+    input7-Package_D7
+    output0-Package_Q0 
+    output1-Package_Q1 
+    output2-Package_Q2
+    output3-Package_Q3 
+    output4-Package_Q4 
+    output5-Package_Q5 
+    output6-Package_Q6 
+    output7-Package_Q7 
+    inputEnable-Package_IE" >
+    </item>
+    
+</subcircuit>
+

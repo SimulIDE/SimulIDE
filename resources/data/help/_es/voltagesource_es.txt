@@ -1,0 +1,9 @@
+Fuente de Voltage:
+
+Esta es una fuente de voltaje variable.
+
+Se puede activar/desactivar con el botón en la parte inferior.
+
+El voltaje se puede ajustar de 0V a máx. voltaje usando el dial.
+
+La etiqueta del botón muestra el valor de salida de voltaje.

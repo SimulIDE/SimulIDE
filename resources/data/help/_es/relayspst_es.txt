@@ -1,0 +1,15 @@
+Rele:
+
+Relé electromagnético configurable.
+
+Parámetros:
+- Res. Bobina:
+   Determina la resistencia de la bobina. 100
+- Int. Disparo:
+   Determina de corriente de disparo. 0.02
+- Polos:
+   Establecer el número de polos. 1
+- DT:
+   Se puede configurar como simle o doble contacto. false
+- Norm. Cerrado:
+   Determina si es normal cerrado (NC) o normal abierto: false.

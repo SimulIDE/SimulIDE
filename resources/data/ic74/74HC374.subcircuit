@@ -1,0 +1,37 @@
+<!DOCTYPE SimulIDE>
+
+<subcircuit enodes="0">
+
+    <item itemtype="eLatchD"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        channels = "8"
+        tristate = "true"
+        inverted = "false"
+        trigger = "1"
+        connections="
+        output0-Package_Q0
+        output1-Package_Q1
+        output2-Package_Q2
+        output3-Package_Q3
+        output4-Package_Q7
+        output5-Package_Q6
+        output6-Package_Q5
+        output7-Package_Q4
+        input0-Package_D0
+        input1-Package_D1
+        input2-Package_D2
+        input3-Package_D3
+        input4-Package_D7
+        input5-Package_D6
+        input6-Package_D5
+        input7-Package_D4
+        clock-Package_CP
+        outEnable-Package_!OE" >
+    </item>
+
+</subcircuit>

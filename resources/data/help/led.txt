@@ -1,0 +1,10 @@
+Led:
+
+To simplify the circuit you can set "Gronded" property to true.
+This creates a virtual connection from diode cathode to ground.
+Cathode pin will dissapear deleting any wire connected to it.
+
+Led will blink white when the maximun current is exedeed by aprox 40%.
+
+More Info:
+ http://simulide.blogspot.com/p/leds.html

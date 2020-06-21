@@ -1,0 +1,20 @@
+Copyright (C) 2018 by hovercraft: https://github.com/hovercraft-github
+This work is under the terms of the GNU General Public License (GPL 2)
+ 
+This is the pre-set timer using pic16f689 processor.
+This application is driven by interrupts from the timer1 PIC peripgeral module,
+interrupts frequiency is 200Hz.
+Clock is 4MHz derived from the PICs internal calibrated 8MHz generator with prescaler 2.
+Application is writen in C language,
+optimized for SDCC free compiler,
+piklab IDE was used during development.
+
+How it works:
+Right after turn-up it switchs all the loads on
+and starts to count-down the preset time (in minuts).
+When reachs zero, it switchs loads off, 
+blinks with display and beeps with buzzer.
+To change the preset time, press KEY_TOGGLE and ajust
+value in the blinking position using KEY_UP & KEY_DOWN.
+Switch blinking position with KEY_TOGGLE.
+Press KEY_OK to store new setting into EEPROM.

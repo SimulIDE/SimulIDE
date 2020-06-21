@@ -1,0 +1,20 @@
+
+Circuit: wave_gen.simu
+
+Bill of Materials:
+
+Capacitor-16 : Capacitor 500 nF
+Capacitor-26 : Capacitor 570 nF
+Capacitor-6 : Capacitor 10 nF
+Follower : OpAmp   
+Follower : OpAmp   
+Inductor-34 : Inductor 100 mH
+Integrator : OpAmp   
+OpAmp-9 : OpAmp   
+Resistor-11 : Resistor 75 kΩ
+Resistor-15 : Resistor 450 Ω
+Resistor-29 : Resistor 5 kΩ
+Resistor-30 : Resistor 5 kΩ
+Resistor-4 : Resistor 10 kΩ
+Resistor-7 : Resistor 10 kΩ
+Resistor-8 : Resistor 10 kΩ

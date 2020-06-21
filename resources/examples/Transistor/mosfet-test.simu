@@ -1,0 +1,42 @@
+<circuit speed="1000000" animate="0" type="simulide_0.1" noLinAcc="5" reactStep="50" noLinStep="10">
+ 
+Probe-7: 
+<item rotation="-45" valLabely="0" PlotterCh="0" Show_id="false" itemtype="Probe" labelrot="45" id="Probe-1" x="-404" labely="-16" y="-236" vflip="1" Show_volt="true" objectName="Probe-7" valLabRot="45" labelx="16" valLabelx="16" hflip="1"/>
+ 
+Volt. Source-6: 
+<item valLabely="10" Show_id="false" rotation="0" vflip="1" Show_Volt="true" x="-468" id="Volt. Source-2" Unit=" V" objectName="Volt. Source-6" labelrot="0" hflip="1" y="-220" valLabelx="-26" Voltage="10" labely="-24" labelx="-16" valLabRot="0" itemtype="Voltage Source"/>
+ 
+Ground (0 V)-5: 
+<item rotation="0" valLabely="0" Show_id="false" itemtype="Ground" labelrot="0" id="Ground (0 V)-3" x="-364" labely="-24" y="-140" vflip="1" objectName="Ground (0 V)-5" valLabRot="0" labelx="-16" valLabelx="0" hflip="1"/>
+ 
+Amperimeter-4: 
+<item rotation="0" valLabely="-22" Show_id="false" itemtype="Amperimeter" labelrot="0" id="Amperimeter-4" x="-372" labely="-24" y="-332" vflip="1" objectName="Amperimeter-4" valLabRot="0" labelx="-12" valLabelx="-20" hflip="1"/>
+ 
+Volt. Source-3: 
+<item valLabely="10" Show_id="false" rotation="0" vflip="1" Show_Volt="true" x="-468" id="Volt. Source-5" Unit=" V" objectName="Volt. Source-3" labelrot="0" hflip="1" y="-316" valLabelx="-26" Voltage="15" labely="-24" labelx="-16" valLabRot="0" itemtype="Voltage Source"/>
+ 
+Mosfet-2: 
+<item valLabely="0" Show_id="false" rotation="0" vflip="1" Depletion="false" x="-372" id="Mosfet-6" objectName="Mosfet-2" Threshold="3" labelrot="0" hflip="1" y="-220" valLabelx="0" P_Channel="false" labely="-24" RDSon="1" labelx="-16" valLabRot="0" itemtype="Mosfet"/>
+ 
+Probe-1: 
+<item rotation="-45" valLabely="0" PlotterCh="0" Show_id="false" itemtype="Probe" labelrot="45" id="Probe-7" x="-348" labely="-16" y="-292" vflip="1" Show_volt="true" objectName="Probe-1" valLabRot="45" labelx="16" valLabelx="16" hflip="1"/>
+ 
+Connector-8: 
+<item startpinid="Volt. Source-3-outPin" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-452" id="Connector-8" enodeid="Circ_eNode-9" objectName="Connector-8" pointList="-452,-316,-380,-316" labelrot="0" hflip="1" endpinid="Amperimeter-4-lPin" y="-316" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-10: 
+<item startpinid="Ground (0 V)-5-Gnd" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-364" id="Connector-10" enodeid="Circ_eNode-11" objectName="Connector-10" pointList="-364,-156,-364,-204" labelrot="0" hflip="1" endpinid="Mosfet-2-Sour" y="-156" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-12: 
+<item startpinid="Amperimeter-4-rPin" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-364" id="Connector-12" enodeid="Circ_eNode-13" objectName="Connector-12" pointList="-364,-316,-364,-236" labelrot="0" hflip="1" endpinid="Mosfet-2-Dren" y="-316" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-14: 
+<item startpinid="Volt. Source-6-outPin" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-452" id="Connector-14" enodeid="Circ_eNode-15" objectName="Connector-14" pointList="-452,-220,-388,-220" labelrot="0" hflip="1" endpinid="Mosfet-2-Gate" y="-220" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+PlotterWidget-57: 
+<item frameSize="" toolTipDuration="-1" maximumSize="" sizeHint="" pos="" baseSize="" maximumWidth="1000" normalGeometry="" maximized="false" minimumWidth="200" maximumHeight="200" windowFilePath="" windowModality="0" inputMethodHints="0" toolTip="" updatesEnabled="true" palette="" whatsThis="" autoFillBackground="false" minimized="false" itemtype="Plotter" windowOpacity="1" cursor="" styleSheet="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumHeight="200" isActiveWindow="true" minimumSize="" height="200" y="520" childrenRegion="" windowTitle="" contextMenuPolicy="1" x="0" focus="false" windowModified="false" mouseTracking="false" size="" accessibleName="" sizePolicy="" MinVolt="-500" childrenRect="" minimumSizeHint="" width="619" acceptDrops="false" windowIcon="" Tracks="1" objectName="PlotterWidget-57" windowIconText="" geometry="" rect="" locale="" modal="false" Scale="2" frameGeometry="" sizeIncrement="" focusPolicy="0" accessibleDescription="" layoutDirection="0" visible="false" fullScreen="false" MaxVolt="500" enabled="true" statusTip=""/>
+ 
+SerialPortWidget-58: 
+<item frameSize="" toolTipDuration="-1" maximumSize="" sizeHint="" pos="" baseSize="" maximumWidth="450" normalGeometry="" maximized="false" minimumWidth="0" maximumHeight="170" windowFilePath="" SettingsProp="ttyS0,0,3,0,0,0" windowModality="0" inputMethodHints="0" toolTip="" updatesEnabled="true" palette="" whatsThis="" autoFillBackground="false" minimized="false" itemtype="SerialPort" windowOpacity="1" cursor="" styleSheet="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumHeight="0" isActiveWindow="true" minimumSize="" height="147" y="573" childrenRegion="" windowTitle="Configuracion" contextMenuPolicy="1" x="153" focus="false" windowModified="false" mouseTracking="false" size="" accessibleName="" sizePolicy="" childrenRect="" minimumSizeHint="" width="450" acceptDrops="false" windowIcon="" objectName="SerialPortWidget-58" windowIconText="" geometry="" rect="" locale="" modal="false" frameGeometry="" sizeIncrement="" focusPolicy="0" accessibleDescription="" layoutDirection="0" visible="false" fullScreen="false" enabled="true" statusTip=""/>
+ 
+</circuit>

@@ -1,0 +1,9 @@
+Resistencia
+
+Parámetros:
+- Resistencia:
+   Valor actual de resistencia. 100
+- Unidades:
+   Determina las unidades.
+- Mostrar Resistencia:
+   Muestra o no el valor actual. true

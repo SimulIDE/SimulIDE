@@ -1,0 +1,25 @@
+<!DOCTYPE SimulIDE>
+
+<package name="74HC160" pins="16" width="4" height="9">
+
+    <pin side="left" pos="1"  type="" id="!R"  label="!R" /><!-- packagePin1 -->
+    <pin side="left" pos="2"  type="" id="C"  label="C" /><!-- packagePin2 -->
+    <pin side="left" pos="3"  type="" id="DA"  label="DA" /><!-- packagePin3 -->
+    <pin side="left" pos="4"  type="" id="DB"  label="DB" /><!-- packagePin4 -->
+    <pin side="left" pos="5"  type="" id="DC"  label="DC" /><!-- packagePin5 -->
+    <pin side="left" pos="6"  type="" id="DD"  label="DD" /><!-- packagePin6 -->
+    <pin side="left" pos="7"  type="" id="ENP"  label="ENP" /><!-- packagePin7 -->
+    
+    <pin side="left" pos="8"  type="unused" id="GND" label="GND"/><!-- packagePin8 -->
+
+    <pin side="right" pos="8" type="" id="!LD"  label="!LD" /><!-- packagePin9 -->
+    <pin side="right" pos="7" type="" id="ENT"  label="ENT" /><!-- packagePin10 -->
+    <pin side="right" pos="6" type="" id="QD"  label="QD" /><!-- packagePin11 -->
+    <pin side="right" pos="5" type="" id="QC"  label="QC" /><!-- packagePin12 -->
+    <pin side="right" pos="4" type="" id="QB"  label="QB" /><!-- packagePin13 -->
+    <pin side="right" pos="3" type="" id="QA"  label="QA" /><!-- packagePin14 -->
+    <pin side="right" pos="2" type="" id="RCO"  label="RCO" /><!-- packagePin15 -->
+    
+    <pin side="right" pos="1" type="unused" id="Vcc" label="Vcc"/><!-- packagePin16 -->
+
+</package>

@@ -1,0 +1,26 @@
+
+ #chip 16f1825,8
+ #config INTOSC , WDTE_OFF , PWRTE_OFF , MCLRE_OFF , CP_ON , CPD_OFF , BOREN_ON , CLKOUTEN_OFF , IESO_OFF
+ #config WRT_OFF , PLLEN_OFF , STVREN_OFF , LVP_OFF
+
+dir portc.5 out    ; CCP1
+dir portc.3 out    ; CCP2
+dir porta.2 out    ; CCP3
+dir portc.1 out    ; CCP4
+
+dim PWM1 as byte
+
+do
+    PWM1 = ReadAD( AN0 )
+    if PWM1 > 127 then PWM2 = PWM1-127
+    if PWM1 < 127 then PWM2 = 255-(127-PWM1)
+    PWM3 = 255-PWM1
+    PWM4 = 255-PWM2
+    
+    HPWM 1, 40, PWM1
+    HPWM 2, 40, PWM2
+    HPWM 3, 40, PWM3
+    HPWM 4, 40, PWM4
+    
+    wait 5 ms
+loop

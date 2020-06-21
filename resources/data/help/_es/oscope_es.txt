@@ -1,0 +1,21 @@
+Oscilloscopio:
+Instrumento que muestra la forma de onda. Tiene dos canales directo (+) e inverso (-).
+
+Por defecto, use la autoescala para señalizar frecuencia y amplitud.
+
+Para configurar manualmente Escala y Posición, desactive la casilla de verificación "Auto".
+
+Los controles están ordenados en dos columnas: Horizontal y vertical.
+Y dos filas: Escala y posición.
+    
+Por ejemplo, para establecer la Escala horizontal, use el control en la fila "Escala" y la columna "H".
+
+Parámetros:
+- Filtro:
+   0.3
+
+Videos Relacionados: 
+   https://youtu.be/4RwjZUXs9YU
+   
+Mas información:
+   https://simulide.blogspot.com/p/oscope.html

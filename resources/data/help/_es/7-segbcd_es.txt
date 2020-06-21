@@ -1,0 +1,18 @@
+7 segmentos + BCD
+
+Esto es equivalente a un 7seg normal con un convertidor BCD a 7seg integrado.
+
+Está en el grupo "Lógica" y tiene 4 pines, correspondientes a un bit en un número binario de 4 bits.
+
+El bit 0 está en el pin derecho, el bit 3 es el izquierdo.
+
+Normalmente este se usa en circuitos lógicos con alto> 2,5V y bajo <2,5V.
+
+Esta pantalla no acepta PWM o multiplexación como la "normal".
+
+Videos Relacionados:
+   https://www.youtube.com/watch?v=c7SFryRa5hs
+   https://www.youtube.com/watch?v=pOOIZnZ2lQ4
+   
+Mas información:
+   https://simulide.blogspot.com/p/seven-segment-display.html

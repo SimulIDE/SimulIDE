@@ -1,0 +1,5 @@
+Servo Motor:
+
+- Configurable speed.
+
+

@@ -1,0 +1,26 @@
+<!DOCTYPE SimulIDE>
+
+
+<package name="ULN2804" pins="18" width="4" height="10">
+
+    <pin side="left" pos="1" type="" id="IN1" label="IN1" /><!-- packagePin1 -->
+    <pin side="left" pos="2" type="" id="IN2" label="IN2" /><!-- packagePin2 -->
+    <pin side="left" pos="3" type="" id="IN3" label="IN3" /><!-- packagePin3 -->
+    <pin side="left" pos="4" type="" id="IN4" label="IN4" /><!-- packagePin4 -->
+    <pin side="left" pos="5" type="" id="IN5" label="IN5" /><!-- packagePin5 -->
+    <pin side="left" pos="6" type="" id="IN6" label="IN6" /><!-- packagePin6 -->
+    <pin side="left" pos="7" type="" id="IN7" label="IN7" /><!-- packagePin7 -->
+    <pin side="left" pos="8" type="" id="IN8" label="IN8" /><!-- packagePin8 -->
+    <pin side="left" pos="9" type="unused" id="GND" label="GND" /><!-- packagePin9 -->
+    
+    <pin side="right" pos="9" type="unused" id="COM" label="COM" /><!-- packagePin10 -->
+    <pin side="right" pos="8" type="" id="OUT8" label="OUT8" /><!-- packagePin11 -->
+    <pin side="right" pos="7" type="" id="OUT7" label="OUT7" /><!-- packagePin12 -->
+    <pin side="right" pos="6" type="" id="OUT6" label="OUT6" /><!-- packagePin13 -->
+    <pin side="right" pos="5" type="" id="OUT5" label="OUT5" /><!-- packagePin14 -->
+    <pin side="right" pos="4" type="" id="OUT4" label="OUT4" /><!-- packagePin15 -->
+    <pin side="right" pos="3" type="" id="OUT3" label="OUT3" /><!-- packagePin16 -->
+    <pin side="right" pos="2" type="" id="OUT2" label="OUT2" /><!-- packagePin17 -->
+    <pin side="right" pos="1" type="" id="OUT1" label="OUT1" /><!-- packagePin18 -->
+ </package>
+

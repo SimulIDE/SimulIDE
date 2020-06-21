@@ -1,0 +1,5 @@
+Push Button:
+
+This is a non latching switch.
+
+It can be configured as normally closed or normally opened using the "Norm Close" property.

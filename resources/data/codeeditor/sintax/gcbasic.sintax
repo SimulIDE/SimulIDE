@@ -1,0 +1,65 @@
+ ###########################################################################
+ #   Copyright (C) 2012   by santiago González                             #
+ #   santigoro@gmail.com                                                   #
+ #                                                                         #
+ #   This program is free software; you can redistribute it and/or modify  #
+ #   it under the terms of the GNU General Public License as published by  #
+ #   the Free Software Foundation; either version 3 of the License, or     #
+ #   (at your option) any later version.                                   #
+ #                                                                         #
+ #   This program is distributed in the hope that it will be useful,       #
+ #   but WITHOUT ANY WARRANTY; without even the implied warranty of        #
+ #   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         #
+ #   GNU General Public License for more details.                          #
+ #                                                                         #
+ #   You should have received a copy of the GNU General Public License     #
+ #   along with this program; if not, see <http://www.gnu.org/licenses/>.  #
+ #                                                                         #
+ ###########################################################################
+
+##############  MUST BE DEFINED in ORDER:  #########################
+#
+# keywords: list of keyword types
+#
+# keyword-style: foregroundColor backgroundColor bold italic
+# Keyword: in a single line 
+#
+##############  AVAILABLE OPTIONS:  ################################
+#
+# Colors:  { default | #XXXXXX }
+# Bold:    { true | false }
+# Italic:  { true | false }
+#
+# RegExp: must be quotated, example: "#[a-zA-Z]+\b"
+#
+#####################################################################
+
+
+keywords: modifiers keyword1 number preprocessor lineComment2 lineComment htmlTag quotation
+
+
+modifiers-style: #326432 default true false
+modifiers: bit byte word integer array string optional off on out in right left simple ms s sec us
+
+keyword1-style: #141446 default true false
+keyword1: and as call case const dim dir do else end exit for function goto gosub if interrupt intoff inton loop macro next not or return peek poke pulseout readtable repeat rotate set select step stop sub then to until wait when while xor
+
+preprocessor-style: #414164 default true false
+preprocessor: "#[chip|config|define|endif|ifdef|ifndef|include|mem|script|startup]+[^\n]*"
+
+number-style: #3030B8 default false false
+number: "\b[0-9]+\b"
+
+htmlTag-style: #303078 default false false
+htmlTag: "<.*>" 
+
+quotation-style: #505050 default false false
+quotation: "\"(\\.|[^\"])*\""
+
+lineComment-style: #646464 default false true
+lineComment: "'[^\n]*"
+
+lineComment2-style: #646464 default false true
+lineComment2: ";[^\n]*"
+
+

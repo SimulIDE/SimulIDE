@@ -1,0 +1,60 @@
+<!DOCTYPE SimulIDE>
+
+<!-- *************************************************************************** -->
+<!-- *   Copyright (C) 2017 by santiago González                               * -->
+<!-- *   santigoro@gmail.com                                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is free software; you can redistribute it and/or modify  * -->
+<!-- *   it under the terms of the GNU General Public License as published by  * -->
+<!-- *   the Free Software Foundation; either version 3 of the License, or     * -->
+<!-- *   (at your option) any later version.                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is distributed in the hope that it will be useful,       * -->
+<!-- *   but WITHOUT ANY WARRANTY; without even the implied warranty of        * -->
+<!-- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         * -->
+<!-- *   GNU General Public License for more details.                          * -->
+<!-- *                                                                         * -->
+<!-- *   You should have received a copy of the GNU General Public License     * -->
+<!-- *   along with this program; if not, see <http://www.gnu.org/licenses/>.  * -->
+<!-- *                                                                         * -->
+<!-- *************************************************************************** -->
+
+<package name="pic18f2550" pins="28" width="4" height="15">
+
+    <pin side="left"  pos="1"  type="bidir" id="RE3" label="E3"/>
+    <pin side="left"  pos="2"  type="bidir" id="RA0" label="A0"/>
+    <pin side="left"  pos="3"  type="bidir" id="RA1" label="A1"/>
+    <pin side="left"  pos="4"  type="bidir" id="RA2" label="A2"/>
+    <pin side="left"  pos="5"  type="bidir" id="RA3" label="A3"/>
+    <pin side="left"  pos="6"  type="bidir" id="RA4" label="A4"/>
+    <pin side="left"  pos="7"  type="bidir" id="RA5" label="A5"/>
+    
+    <pin side="left"  pos="8"  type="gnd"   id="VSS"  label="Vss"/>
+    <pin side="left"  pos="9"  type="bidir" id="RA7"  label="A7"/>
+    <pin side="left"  pos="10" type="bidir" id="RA6"  label="A6"/>
+    
+    <pin side="left"  pos="11" type="bidir" id="RC0"  label="C0"/>
+    <pin side="left"  pos="12" type="bidir" id="RC1"  label="C1"/>
+    <pin side="left"  pos="13" type="bidir" id="RC2"  label="C2"/>
+    <pin side="left"  pos="14" type="bidir" id="RC3"  label="C3"/>
+    
+    
+    <pin side="right" pos="14" type="bidir" id="RC4" label="C4"/>
+    <pin side="right" pos="13" type="bidir" id="RC5" label="C5"/>
+    <pin side="right" pos="12" type="bidir" id="RC6" label="C6"/>
+    <pin side="right" pos="11" type="avcc"  id="RC7" label="C7"/>
+    
+    <pin side="right" pos="10" type="gnd"   id="VSS" label="Vss"/>
+    <pin side="right" pos="9"  type="vdd"   id="VDD" label="Vdd"/>
+    
+    <pin side="right" pos="8"  type="bidir" id="RB0" label="B0"/>
+    <pin side="right" pos="7"  type="bidir" id="RB1" label="B1"/>
+    <pin side="right" pos="6"  type="bidir" id="RB2" label="B2"/>
+    <pin side="right" pos="5"  type="open"  id="RB3" label="B3"/>
+    <pin side="right" pos="4"  type="bidir" id="RB4" label="B4"/>
+    <pin side="right" pos="3"  type="bidir" id="RB5" label="B5"/>
+    <pin side="right" pos="2"  type="bidir" id="RB6" label="B6"/>
+    <pin side="right" pos="1"  type="bidir" id="RB7" label="B7"/>
+    
+</package>
+

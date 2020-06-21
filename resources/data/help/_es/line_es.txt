@@ -1,0 +1,17 @@
+Linea
+
+Dibuja una linea.
+
+Parámetros:
+- Tamaño Horiz:
+   Determina el tamaño horizontal. 50
+- Tamaño Vert:
+   Determina el tamaño vertical. 30
+- Borde:
+   Determina el grosor de borde. 2
+- Color:
+   Determina color de fondo. #a0a0a4
+- Opacidad:
+   Determina opcidad. 1
+- Valor Z:
+   Determina la profundidad. Si esta encina o debajo de otros objetos. -1

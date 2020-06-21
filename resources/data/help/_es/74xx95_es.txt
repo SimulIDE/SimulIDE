@@ -1,0 +1,6 @@
+74HC95 - 4-bit parallel-access shift register
+
+Pronto...
+
+Ver help en:
+   ..share/simulide/data/examples/logic/74_series/Help_74HC95.simu

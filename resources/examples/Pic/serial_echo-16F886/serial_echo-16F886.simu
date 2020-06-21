@@ -1,0 +1,12 @@
+<circuit reactStep="50" noLinAcc="5" type="simulide_0.4" speed="1000000" animate="0">
+ 
+pic16f886-1: 
+<item Logic_Symbol="false" labely="-20" Auto_PcLink="false" Program="serial_echo-16F886.hex" y="-380" PcLink_Port="" valLabely="0" x="-684" itemtype="PIC" rotation="0" labelx="0" vflip="1" valLabRot="0" labelrot="0" valLabelx="0" Mhz="16" Show_id="true" eeprom="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" Auto_Load="false" PcLink_Command="socat -d -d PTY,link=/tmp/ttyS1,echo=0 PTY,link=/tmp/ttyS2,echo=0" hflip="1" objectName="pic16f886-1" id="pic16f886-1"/>
+ 
+SerialTerm-5: 
+<item labely="-24" posy="509" y="-380" valLabely="0" Mcu_Uart="1" x="-684" itemtype="SerialTerm" sizey="200" rotation="0" labelx="-16" sizex="469" vflip="1" valLabRot="0" labelrot="0" valLabelx="0" posx="814" Show_id="false" hflip="1" objectName="SerialTerm-5" id="SerialTerm-5"/>
+ 
+PlotterWidget-2: 
+<item height="200" enabled="true" objectName="PlotterWidget-2" modal="false" contextMenuPolicy="1" minimumHeight="200" windowIconText="" y="0" acceptDrops="false" MaxVolt="500" minimumSizeHint="" toolTip="" baseSize="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" fullScreen="false" sizeHint="" minimumWidth="200" accessibleName="" styleSheet="" childrenRect="" maximumWidth="1000" cursor="" pos="" maximumHeight="200" visible="false" normalGeometry="" windowFilePath="" windowModified="false" mouseTracking="false" statusTip="" width="200" whatsThis="" rect="" geometry="" inputMethodHints="0" size="" autoFillBackground="false" layoutDirection="0" x="0" Tracks="1" windowModality="0" palette="" minimumSize="" updatesEnabled="true" tabletTracking="false" minimized="false" frameSize="" maximumSize="" windowIcon="" sizePolicy="" Scale="1" isActiveWindow="true" windowTitle="" maximized="false" itemtype="Plotter" focusPolicy="0" MinVolt="0" childrenRegion="" sizeIncrement="" locale="" windowOpacity="1" accessibleDescription="" toolTipDuration="-1" frameGeometry="" focus="false"/>
+ 
+</circuit>

@@ -1,0 +1,19 @@
+TextComponent
+
+- Fuente:
+   Determina el tipo de fuente: Helvetica [Cronyx]
+
+- Tamaño Texto:
+   Determina el tamaño de fuente. 10
+   
+- Ancho Fijo:
+   Determina si es o no de ancho fijo. true
+   
+- Margen:
+   Determina el margen. 5
+   
+- Borde:
+   Determina el grosor de borde. 1
+   
+- Opacidad:
+   Opacidad de todo el bloque respecto al fondo. 1

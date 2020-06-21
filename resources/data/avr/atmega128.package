@@ -1,0 +1,92 @@
+<!DOCTYPE SimulIDE>
+
+<!-- *************************************************************************** -->
+<!-- *   Copyright (C) 2017 by santiago González                               * -->
+<!-- *   santigoro@gmail.com                                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is free software; you can redistribute it and/or modify  * -->
+<!-- *   it under the terms of the GNU General Public License as published by  * -->
+<!-- *   the Free Software Foundation; either version 3 of the License, or     * -->
+<!-- *   (at your option) any later version.                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is distributed in the hope that it will be useful,       * -->
+<!-- *   but WITHOUT ANY WARRANTY; without even the implied warranty of        * -->
+<!-- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         * -->
+<!-- *   GNU General Public License for more details.                          * -->
+<!-- *                                                                         * -->
+<!-- *   You should have received a copy of the GNU General Public License     * -->
+<!-- *   along with this program; if not, see <http://www.gnu.org/licenses/>.  * -->
+<!-- *                                                                         * -->
+<!-- *************************************************************************** -->
+
+<package name="atmega128" pins="64" width="19" height="19">
+
+    <pin side="left" pos="2"  type="bidir" id="PEN" label="EN"/>
+    <pin side="left" pos="3"  type="bidir" id="PE0" label="E0"/>
+    <pin side="left" pos="4"  type="bidir" id="PE1" label="E1"/>
+    <pin side="left" pos="5"  type="bidir" id="PE2" label="E2"/>
+    <pin side="left" pos="6"  type="bidir" id="PE3" label="E3"/>
+    <pin side="left" pos="7"  type="bidir" id="PE4" label="E4"/>
+    <pin side="left" pos="8"  type="bidir" id="PE5" label="E5"/>
+    <pin side="left" pos="9"  type="bidir" id="PE6" label="E6"/>
+    <pin side="left" pos="10" type="bidir" id="PE7" label="E7"/>
+    <pin side="left" pos="11" type="bidir" id="PB0" label="B0"/>
+    <pin side="left" pos="12" type="bidir" id="PB1" label="B1"/>
+    <pin side="left" pos="13" type="bidir" id="PB2" label="B2"/>
+    <pin side="left" pos="14" type="bidir" id="PB3" label="B3"/>
+    <pin side="left" pos="15" type="bidir" id="PB4" label="B4"/>
+    <pin side="left" pos="16" type="bidir" id="PB5" label="B5"/>
+    <pin side="left" pos="17" type="bidir" id="PB6" label="B6"/>
+
+    <pin side="bottom" pos="2"  type="bidir" id="PB7" label="B7"/>
+    <pin side="bottom" pos="3"  type="bidir" id="PG3" label="G3"/>
+    <pin side="bottom" pos="4"  type="bidir" id="PG4" label="G4"/>
+    <pin side="bottom" pos="5"  type="reset" id="RST" label="Rst"/>
+    <pin side="bottom" pos="6"  type="vcc"   id="VCC1" label="Vcc"/>
+    <pin side="bottom" pos="7"  type="gnd"   id="GND1" label="Gnd"/>
+    <pin side="bottom" pos="8"  type="bidir" id="XTAL2" label="XTAL2"/>
+    <pin side="bottom" pos="9"  type="bidir" id="XTAL1" label="XTAL1"/>
+    <pin side="bottom" pos="10" type="bidir,scl" id="PD0" label="D0"/>
+    <pin side="bottom" pos="11" type="bidir,sda" id="PD1" label="D1"/>
+    <pin side="bottom" pos="12" type="bidir" id="PD2" label="D2"/>
+    <pin side="bottom" pos="13" type="bidir" id="PD3" label="D3"/>
+    <pin side="bottom" pos="14" type="bidir" id="PD4" label="D4"/>
+    <pin side="bottom" pos="15" type="bidir" id="PD5" label="D5"/>
+    <pin side="bottom" pos="16" type="bidir" id="PD6" label="D6"/>
+    <pin side="bottom" pos="17" type="bidir" id="PD7" label="D7"/>
+
+    <pin side="right" pos="2" type="bidir" id="PG0" label="G0"/>
+    <pin side="right" pos="3" type="bidir" id="PG1" label="G1"/>
+    <pin side="right" pos="4" type="bidir" id="PC0" label="C0"/>
+    <pin side="right" pos="5" type="bidir" id="PC1" label="C1"/>
+    <pin side="right" pos="6" type="bidir" id="PC2" label="C2"/>
+    <pin side="right" pos="7" type="bidir" id="PC3" label="C3"/>
+    <pin side="right" pos="8" type="bidir" id="PC4" label="C4"/>
+    <pin side="right" pos="9" type="bidir" id="PC5" label="C5"/>
+    <pin side="right" pos="10" type="bidir" id="PC6" label="C6"/>
+    <pin side="right" pos="11" type="bidir" id="PC7" label="C7"/>
+    <pin side="right" pos="12" type="bidir" id="PG2" label="G2"/>
+    <pin side="right" pos="13" type="bidir" id="PA7" label="A7"/>
+    <pin side="right" pos="14" type="bidir" id="PA6" label="A6"/>
+    <pin side="right" pos="15" type="bidir" id="PA5" label="A5"/>
+    <pin side="right" pos="16" type="bidir" id="PA4" label="A4"/>
+    <pin side="right" pos="17" type="bidir" id="PA3" label="A3"/>
+                             
+    <pin side="top" pos="17" type="bidir" id="PA2" label="A2"/>
+    <pin side="top" pos="16" type="bidir" id="PA1" label="A1"/>
+    <pin side="top" pos="15" type="bidir" id="PA0" label="A0"/>
+    <pin side="top" pos="14" type="vcc" id="VCC2" label="Vcc"/>
+    <pin side="top" pos="13" type="gnd" id="GND2" label="Gnd"/>
+    <pin side="top" pos="12" type="adc7" id="PF7" label="F7"/>
+    <pin side="top" pos="11" type="adc6" id="PF6" label="F6"/>
+    <pin side="top" pos="10"  type="adc5" id="PF5" label="F5"/>
+    <pin side="top" pos="9"  type="adc4" id="PF4" label="F4"/>
+    <pin side="top" pos="8"  type="adc3" id="PF3" label="F3"/>
+    <pin side="top" pos="7"  type="adc2" id="PF2" label="F2"/>
+    <pin side="top" pos="6"  type="adc1" id="PF1" label="F1"/>
+    <pin side="top" pos="5"  type="adc0" id="PF0" label="F0"/>
+    <pin side="top" pos="4"  type="aref" id="AREF" label="Aref"/>
+    <pin side="top" pos="3"  type="gnd" id="GND3" label="Gnd"/>
+    <pin side="top" pos="2"  type="avcc" id="AVCC" label="Avcc"/>
+    
+</package>

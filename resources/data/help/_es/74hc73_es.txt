@@ -1,0 +1,19 @@
+74HC73 - Dual JK flip-flop, asyncrhronous clear
+
+J  K !R  Q  !Q
+0  0  1  No cambian
+1  0  1  1   0
+0  1  1  0   1
+1  1  1  Cambian
+x  x  0  0   1
+
+Pines:
+J = Entrada
+K = Entrada
+Q = Salida
+!Q = Salida (negada)
+!R = Reset (LOW)
+!CP = Clock
+
+Ver help en:
+   ..share/simulide/data/examples/logic/74_series/Help_74HC73.simu

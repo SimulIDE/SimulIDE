@@ -1,0 +1,14 @@
+Reloj:
+Esta es una fuente de reloj simple.
+
+Se puede activar/desactivar la salida con el botón en el lado izquierdo.
+
+Parámetros:
+- Voltaje:
+   Determina la amplitud de onda. 5
+- Unidades:
+   Determina las unidades. V
+- Mostrar voltaje:
+   Muestra (true) o no (false) la amplitud de onda. true
+- Freq.:
+   Ajusta la frecuencia. 1000

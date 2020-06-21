@@ -1,0 +1,122 @@
+/***************************************************************************
+ *   Copyright (C) 2017 by santiago González                               *
+ *   santigoro@gmail.com                                                   *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 3 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, see <http://www.gnu.org/licenses/>.  *
+ *                                                                         *
+ ***************************************************************************/
+ 
+MaxMHz=20
+
+ADCSRB EQU 91
+ACSR EQU 48
+DIDR1 EQU 95
+UDR0 EQU 166
+UCSR0A EQU 160
+UCSR0B EQU 161
+UCSR0C EQU 162
+UBRR0L EQU 164
+UBRR0H EQU 165
+PORTA EQU 2
+DDRA EQU 1
+PORTB EQU 5
+DDRB EQU 4
+PINB EQU 3
+PORTC EQU 8
+DDRC EQU 7
+PINC EQU 6
+PORTD EQU 11
+DDRD EQU 10
+PIND EQU 9
+OCR0B EQU 40
+OCR0A EQU 39
+TCNT0 EQU 38
+TCCR0B EQU 37
+TCCR0A EQU 36
+TIMSK0 EQU 78
+TIFR0 EQU 21
+GTCCR EQU 35
+TIMSK2 EQU 80
+TIFR2 EQU 23
+TCCR2A EQU 144
+TCCR2B EQU 145
+TCNT2 EQU 146
+OCR2B EQU 148
+OCR2A EQU 147
+ASSR EQU 150
+GTCCR EQU 35
+WDTCSR EQU 64
+OCDR EQU 49
+MCUCR EQU 53
+MCUSR EQU 52
+SPMCSR EQU 55
+EICRA EQU 73
+EIMSK EQU 29
+EIFR EQU 28
+PCMSK3 EQU 83
+PCMSK2 EQU 77
+PCMSK1 EQU 76
+PCMSK0 EQU 75
+PCIFR EQU 27
+PCICR EQU 72
+ADMUX EQU 92
+ADCL EQU 88
+ADCH EQU 89
+ADCSRA EQU 90
+ADCSRB EQU 91
+DIDR0 EQU 94
+TIMSK1 EQU 79
+TIFR1 EQU 22
+TCCR1A EQU 96
+TCCR1B EQU 97
+TCCR1C EQU 98
+TCNT1L EQU 100
+TCNT1H EQU 101
+OCR1AL EQU 104
+OCR1AH EQU 105
+OCR1BL EQU 106
+OCR1BH EQU 107
+ICR1L EQU 102
+ICR1H EQU 103
+EEARL EQU 33
+EEARH EQU 34
+EEDR EQU 32
+EECR EQU 31
+SPDR0 EQU 46
+SPSR0 EQU 45
+SPCR0 EQU 44
+TWAMR EQU 157
+TWBR EQU 152
+TWCR EQU 156
+TWSR EQU 153
+TWDR EQU 155
+TWAR EQU 154
+UDR1 EQU 174
+UCSR1A EQU 168
+UCSR1B EQU 169
+UCSR1C EQU 170
+UBRR1L EQU 172
+UBRR1H EQU 173
+SREG EQU 63
+SPL EQU 61
+SPH EQU 62
+MCUCR EQU 53
+MCUSR EQU 52
+OSCCAL EQU 70
+CLKPR EQU 65
+SMCR EQU 51
+GPIOR2 EQU 43
+GPIOR1 EQU 42
+GPIOR0 EQU 30
+PRR0 EQU 68

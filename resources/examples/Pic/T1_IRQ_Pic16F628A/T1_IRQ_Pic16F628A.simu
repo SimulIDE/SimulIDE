@@ -1,0 +1,24 @@
+<circuit type="simulide_0.1">
+ 
+Ground (0 V)-4: 
+<item itemtype="Ground" labelx="0" id="Ground (0 V)-4" rotation="0" hflip="1" Show_id="false" labely="-24" valLabRot="0" vflip="1" y="-92" valLabely="0" valLabelx="0" objectName="Ground (0 V)-4" x="-372" labelrot="0"/>
+ 
+Resistor-3: 
+<item x="-316" vflip="1" id="Resistor-3" hflip="1" labelrot="0" valLabRot="0" valLabelx="-20" Resistance="100" Show_id="false" Unit=" Ω" y="-156" labely="-24" itemtype="Resistor" labelx="0" objectName="Resistor-3" valLabely="-28" rotation="0" Show_res="true"/>
+ 
+Led-2: 
+<item x="-244" MaxCurrent="0.02" Grounded="false" vflip="1" id="Led-2" hflip="1" labelrot="-180" valLabRot="0" valLabelx="0" Resistance="0.10000000000000001" Show_id="false" y="-156" labely="-24" itemtype="Led" labelx="0" threshold="2.3999999999999999" objectName="Led-2" valLabely="0" rotation="-180"/>
+ 
+pic16f628a-1: 
+<item itemtype="PIC" labelx="-26" id="pic16f628a" rotation="0" hflip="1" Show_id="true" labely="-25" valLabRot="0" vflip="1" y="-188" valLabely="0" valLabelx="0" Mhz="20" program="T1_IRQ_Pic16F628A.hex" objectName="pic16f628a-1" x="-196" labelrot="0"/>
+ 
+Connector-5: 
+<item endpinid="pic16f628a-1-RA5" x="-228" vflip="1" id="Connector-5" hflip="1" labelrot="0" valLabRot="0" valLabelx="0" enodeid="Circ_eNode-6" Show_id="false" startpinid="Led-2-lPin" pointList="-228,-156,-204,-156" y="-156" labely="-24" itemtype="Connector" labelx="0" objectName="Connector-5" valLabely="0" rotation="0"/>
+ 
+Connector-7: 
+<item endpinid="Led-2-rPin" x="-300" vflip="1" id="Connector-7" hflip="1" labelrot="0" valLabRot="0" valLabelx="0" enodeid="Circ_eNode-8" Show_id="false" startpinid="Resistor-3-rPin" pointList="-300,-156,-260,-156" y="-156" labely="-24" itemtype="Connector" labelx="0" objectName="Connector-7" valLabely="0" rotation="0"/>
+ 
+Connector-9: 
+<item endpinid="Resistor-3-lPin" x="-372" vflip="1" id="Connector-9" hflip="1" labelrot="0" valLabRot="0" valLabelx="0" enodeid="Circ_eNode-10" Show_id="false" startpinid="Ground (0 V)-4-Gnd" pointList="-372,-108,-372,-156,-332,-156" y="-108" labely="-24" itemtype="Connector" labelx="0" objectName="Connector-9" valLabely="0" rotation="0"/>
+ 
+</circuit>

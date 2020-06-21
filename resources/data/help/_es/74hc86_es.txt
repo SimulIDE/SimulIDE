@@ -1,0 +1,15 @@
+74HC86 - Quad 2-input XOR gate
+
+A  B  Y
+0  0  0
+1  0  1
+0  1  1
+1  1  0
+
+Pines:
+A = Entrada x 4
+B = Entrada x 4
+Y = Salida x 4
+
+Ver help en:
+   ..share/simulide/data/examples/logic/74_series/Help_74HC86.simu

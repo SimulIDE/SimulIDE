@@ -1,0 +1,14 @@
+
+#chip 16F628, 4 'mhz
+
+Dir PORTA.4 out
+
+Do 
+
+    PORTA.4 = 1
+    wait 500 ms
+    
+    PORTA.4 = 0
+    wait 500 ms
+
+Loop

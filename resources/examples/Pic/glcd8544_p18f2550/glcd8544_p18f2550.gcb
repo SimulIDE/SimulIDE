@@ -1,0 +1,126 @@
+#chip p18f2550,16
+
+#include "glcd8544.h"
+
+#define GLCD_RESET PORTB.7   ' LCD RST .... 
+#define GLCD_DC    PORTB.6   ' LCD Dat/Com. 
+#define GLCD_SDIN  PORTB.5   ' LCD SPIDat . 
+#define GLCD_SCLK  PORTB.4   ' LCD SPIClk . 
+#define GLCD_CS1   PORTB.3   ' Select Display 1
+#define GLCD_CS2   PORTB.2   ' Select Display 2
+
+#define USART_BAUD_RATE 115200
+#define USART_BLOCKING false
+
+SelectDisplays
+InitGlcd
+
+Repeat 3
+    SelectDisplay1
+    GlcdClear
+    wait 500 ms
+    
+    SelectDisplay2
+    GlcdClear
+    wait 500 ms
+    
+    SelectDisplay1
+    GlcdClear
+    GlcdDrawFrame
+    GlcdGotoXY( 1, 1 )
+    GlcdPrint( "  Display-1" )
+    wait 500 ms
+    
+    SelectDisplay2
+    GlcdClear
+    GlcdDrawFrame
+    GlcdDrawFrame
+    GlcdGotoXY( 1, 1 )
+    GlcdPrint( "  Display-2" )
+    wait 500 ms
+End Repeat
+wait 1 S
+
+cc_x = 0
+c_x = 0
+c_y = 0
+d_x = 0
+d_y = 0
+
+Do
+    Set PORTB.0 on
+    animate
+    wait 200 ms
+    
+    Set PORTB.0 off
+    animate
+    wait 200 ms
+Loop
+
+Sub animate
+    if c_x > 78 then
+        if display = 1 then SelectDisplay2
+    else
+        if display = 2 then SelectDisplay1
+    end if
+    GlcdGotoXY( cc_x, c_y )
+    GlcdPrint( " " )
+    
+    if d_x = 0 then
+        c_x += 6
+    else
+        c_x -= 6
+    end if
+    
+    if d_y = 0 then
+        c_y += 1
+    else
+        c_y -= 1
+    end if
+    
+    if c_y = 5 then 
+        d_y = 1
+    end if
+    if c_y = 0 then 
+        d_y = 0
+    end if
+    
+    if c_x = 162 then 
+        d_x = 1
+    end if
+    if c_x = 0 then 
+        d_x = 0
+    end if
+    
+    if c_x > 78 then
+        cc_x = c_x-84
+        if display = 1 then SelectDisplay2
+    else
+        cc_x = c_x
+        if display = 2 then SelectDisplay1
+    end if
+    GlcdGotoXY( cc_x, c_y )
+    GlcdPrint( "*" )
+    HSerPrint "*"
+End Sub
+
+Macro SelectDisplay1
+    GLCD_CS1 = 0
+    GLCD_CS2 = 1
+    display = 1
+    HSerPrint "Printing Display: 1"
+    HSerSend 10
+End Macro
+
+Macro SelectDisplay2
+    GLCD_CS1 = 1
+    GLCD_CS2 = 0
+    display = 2
+    HSerPrint "Printing Display: 2"
+    HSerSend 10
+End Macro
+
+Macro SelectDisplays
+    GLCD_CS1 = 0
+    GLCD_CS2 = 0
+End Macro

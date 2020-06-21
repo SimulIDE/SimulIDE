@@ -1,0 +1,5 @@
+0  NOP
+1  NOT
+2  LDI 4
+3  INC
+4  JPI 1

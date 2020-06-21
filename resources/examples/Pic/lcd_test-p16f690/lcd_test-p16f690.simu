@@ -1,0 +1,27 @@
+<circuit type="simulide_0.1">
+ 
+Hd44780-2: 
+<item itemtype="Hd44780" labelx="70" id="Hd44780" rotation="0" hflip="1" Show_id="true" labely="-82" valLabRot="0" vflip="1" Cols="16" y="-196" valLabely="0" valLabelx="0" objectName="Hd44780-2" x="-308" labelrot="0" Rows="2"/>
+ 
+pic16f690-1: 
+<item itemtype="PIC" labelx="-13" id="pic16f690" rotation="0" hflip="1" Show_id="true" labely="-19" valLabRot="0" vflip="1" y="-140" valLabely="0" valLabelx="0" Mhz="20" program="lcd_test-p16f690.hex" objectName="pic16f690-1" x="-180" labelrot="0"/>
+ 
+Connector-3: 
+<item endpinid="pic16f690-1-RB7" x="-292" vflip="1" id="Connector-3" hflip="1" labelrot="0" valLabRot="0" valLabelx="0" enodeid="Circ_eNode-4" Show_id="false" startpinid="Hd44780-2-PinRS" pointList="-292,-188,-292,-60,-188,-60" y="-188" labely="-24" itemtype="Connector" labelx="-16" objectName="Connector-3" valLabely="0" rotation="0"/>
+ 
+Connector-5: 
+<item endpinid="pic16f690-1-RC7" x="-276" vflip="1" id="Connector-5" hflip="1" labelrot="0" valLabRot="0" valLabelx="0" enodeid="Circ_eNode-6" Show_id="false" startpinid="Hd44780-2-PinEn" pointList="-276,-188,-276,-68,-188,-68" y="-188" labely="-24" itemtype="Connector" labelx="-16" objectName="Connector-5" valLabely="0" rotation="0"/>
+ 
+Connector-7: 
+<item endpinid="pic16f690-1-RC6" x="-236" vflip="1" id="Connector-7" hflip="1" labelrot="0" valLabRot="0" valLabelx="0" enodeid="Circ_eNode-8" Show_id="false" startpinid="Hd44780-2-dataPin4" pointList="-236,-188,-236,-76,-188,-76" y="-188" labely="-24" itemtype="Connector" labelx="-16" objectName="Connector-7" valLabely="0" rotation="0"/>
+ 
+Connector-9: 
+<item endpinid="Hd44780-2-dataPin5" x="-188" vflip="1" id="Connector-9" hflip="1" labelrot="0" valLabRot="0" valLabelx="0" enodeid="Circ_eNode-10" Show_id="false" startpinid="pic16f690-1-RC3" pointList="-188,-84,-228,-84,-228,-188" y="-84" labely="-24" itemtype="Connector" labelx="-16" objectName="Connector-9" valLabely="0" rotation="0"/>
+ 
+Connector-11: 
+<item endpinid="Hd44780-2-dataPin6" x="-188" vflip="1" id="Connector-11" hflip="1" labelrot="0" valLabRot="0" valLabelx="0" enodeid="Circ_eNode-12" Show_id="false" startpinid="pic16f690-1-RC4" pointList="-188,-92,-220,-92,-220,-188" y="-92" labely="-24" itemtype="Connector" labelx="-16" objectName="Connector-11" valLabely="0" rotation="0"/>
+ 
+Connector-13: 
+<item endpinid="Hd44780-2-dataPin7" x="-188" vflip="1" id="Connector-13" hflip="1" labelrot="0" valLabRot="0" valLabelx="0" enodeid="Circ_eNode-14" Show_id="false" startpinid="pic16f690-1-RC5" pointList="-188,-100,-212,-100,-212,-188" y="-100" labely="-24" itemtype="Connector" labelx="-16" objectName="Connector-13" valLabely="0" rotation="0"/>
+ 
+</circuit>

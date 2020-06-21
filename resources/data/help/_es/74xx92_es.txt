@@ -1,0 +1,11 @@
+74XX92 - devide-by-12 counter (separate divide-by-2 an divide-by-6 sections)
+
+Cuenta de 0 a 11 en binario. Contiene cuatro flip-flops maestro-esclavo y compuerta adicional para proporcionar un contador dividido por dos y un contador binario de tres etapas para el cual la duración del ciclo de conteo es dividida por seis.
+
+MR1 MR2 Q
+x   0   Cuenta
+0   x   Cuenta
+1   1   0
+
+Ver help en:
+   ..share/simulide/data/examples/logic/74_series/Help_74XX92.simu

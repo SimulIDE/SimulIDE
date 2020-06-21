@@ -1,0 +1,60 @@
+<circuit type="simulide_0.1">
+ 
+pic16f886-9: 
+<item itemtype="PIC" Ser_Port="false" labely="-18" labelx="-11" id="pic16f886-9" valLabely="0" hflip="1" valLabelx="0" objectName="pic16f886-9" valLabRot="0" Ser_Monitor="false" x="-588" y="-356" Mhz="20" vflip="1" labelrot="0" Show_id="true" Program="song_16F886.hex" rotation="0"/>
+ 
+Salida Audio-8: 
+<item Impedance="8" id="Salida Audio-8" Show_id="false" vflip="1" labelx="-12" valLabelx="0" rotation="0" x="-644" objectName="Salida Audio-8" hflip="-1" y="-244" labely="-24" valLabRot="0" itemtype="AudioOut" valLabely="0" labelrot="0"/>
+ 
+Tierra-7: 
+<item id="Tierra-7" Show_id="false" vflip="1" labelx="-16" valLabelx="0" rotation="0" x="-620" objectName="Tierra-7" hflip="1" y="-180" labely="-24" valLabRot="0" itemtype="Ground" valLabely="0" labelrot="0"/>
+ 
+Rail.-6: 
+<item itemtype="Rail" labely="-24" labelx="-64" id="Rail.-6" valLabely="8" hflip="1" valLabelx="-16" objectName="Rail.-6" valLabRot="0" x="-620" y="-420" Voltage="5" Show_Volt="true" vflip="1" labelrot="0" Unit=" V" Show_id="false" rotation="0"/>
+ 
+Pulsador-5: 
+<item id="Play Song" Show_id="true" vflip="1" labelx="-4" valLabelx="0" rotation="90" x="-516" objectName="Pulsador-5" hflip="-1" y="-260" labely="24" valLabRot="0" itemtype="Push" valLabely="0" labelrot="90"/>
+ 
+Node-4: 
+<item id="Node-4" Show_id="false" vflip="1" labelx="-16" valLabelx="0" rotation="0" x="-620" objectName="Node-4" hflip="1" y="-212" labely="-24" valLabRot="0" itemtype="Node" valLabely="0" labelrot="0"/>
+ 
+Reistencia-3: 
+<item Show_res="true" itemtype="Resistor" labely="-24" labelx="-12" id="Reistencia-3" valLabely="-18" hflip="1" valLabelx="-12" objectName="Reistencia-3" valLabRot="0" Resistance="10" x="-516" y="-372" vflip="1" labelrot="0" Unit=" kΩ" Show_id="false" rotation="90"/>
+ 
+Node-2: 
+<item id="Node-2" Show_id="false" vflip="1" labelx="-16" valLabelx="0" rotation="0" x="-516" objectName="Node-2" hflip="1" y="-292" labely="-24" valLabRot="0" itemtype="Node" valLabely="0" labelrot="0"/>
+ 
+Sonda Voltaje.-1: 
+<item id="Sonda Voltaje.-1" Show_id="false" vflip="1" labelx="16" valLabelx="16" rotation="-45" x="-500" objectName="Sonda Voltaje.-1" hflip="1" y="-340" labely="-16" valLabRot="45" itemtype="Probe" valLabely="0" labelrot="45" PlotterCh="0" Show_volt="true"/>
+ 
+Connector-10: 
+<item itemtype="Connector" labely="-24" labelx="-16" id="Connector-10" valLabely="0" hflip="1" valLabelx="0" objectName="Connector-10" endpinid="Salida Audio-8-lPin" valLabRot="0" x="-596" pointList="-596,-252,-628,-252" y="-252" vflip="1" labelrot="0" startpinid="pic16f886-9-RC2" enodeid="Circ_eNode-11" Show_id="false" rotation="0"/>
+ 
+Connector-12: 
+<item itemtype="Connector" labely="-24" labelx="-16" id="Connector-12" valLabely="0" hflip="1" valLabelx="0" objectName="Connector-12" endpinid="Node-4-0" valLabRot="0" x="-620" pointList="-620,-196,-620,-212" y="-196" vflip="1" labelrot="0" startpinid="Tierra-7-Gnd" enodeid="Circ_eNode-13" Show_id="false" rotation="0"/>
+ 
+Connector-14: 
+<item itemtype="Connector" labely="-24" labelx="-16" id="Connector-14" valLabely="0" hflip="1" valLabelx="0" objectName="Connector-14" endpinid="Node-2-0" valLabRot="0" x="-548" pointList="-548,-292,-516,-292" y="-292" vflip="1" labelrot="0" startpinid="pic16f886-9-RB0" enodeid="Circ_eNode-15" Show_id="false" rotation="0"/>
+ 
+Connector-16: 
+<item itemtype="Connector" labely="-24" labelx="-16" id="Connector-16" valLabely="0" hflip="1" valLabelx="0" objectName="Connector-16" endpinid="Node-4-1" valLabRot="0" x="-516" pointList="-516,-244,-516,-212,-620,-212" y="-244" vflip="1" labelrot="0" startpinid="Pulsador-5-rnod" enodeid="Circ_eNode-13" Show_id="false" rotation="0"/>
+ 
+Connector-17: 
+<item itemtype="Connector" labely="-24" labelx="-16" id="Connector-17" valLabely="0" hflip="1" valLabelx="0" objectName="Connector-17" endpinid="Salida Audio-8-rPin" valLabRot="0" x="-620" pointList="-620,-212,-620,-244,-628,-244" y="-212" vflip="1" labelrot="0" startpinid="Node-4-2" enodeid="Circ_eNode-13" Show_id="false" rotation="0"/>
+ 
+Connector-18: 
+<item itemtype="Connector" labely="-24" labelx="-16" id="Connector-18" valLabely="0" hflip="1" valLabelx="0" objectName="Connector-18" endpinid="Reistencia-3-lPin" valLabRot="0" x="-604" pointList="-604,-420,-516,-420,-516,-388" y="-420" vflip="1" labelrot="0" startpinid="Rail.-6-outnod" enodeid="Circ_eNode-19" Show_id="false" rotation="0"/>
+ 
+Connector-20: 
+<item itemtype="Connector" labely="-24" labelx="-16" id="Connector-20" valLabely="0" hflip="1" valLabelx="0" objectName="Connector-20" endpinid="Node-2-1" valLabRot="0" x="-516" pointList="-516,-356,-516,-292" y="-356" vflip="1" labelrot="0" startpinid="Reistencia-3-rPin" enodeid="Circ_eNode-15" Show_id="false" rotation="0"/>
+ 
+Connector-21: 
+<item itemtype="Connector" labely="-24" labelx="-16" id="Connector-21" valLabely="0" hflip="1" valLabelx="0" objectName="Connector-21" endpinid="Pulsador-5-lnod" valLabRot="0" x="-516" pointList="-516,-292,-516,-276" y="-292" vflip="1" labelrot="0" startpinid="Node-2-2" enodeid="Circ_eNode-15" Show_id="false" rotation="0"/>
+ 
+PlotterWidget-22: 
+<item contextMenuPolicy="1" frameSize="" minimumWidth="200" cursor="" sizeHint="" styleSheet="" windowModality="0" windowIcon="" windowFilePath="" modal="false" isActiveWindow="true" layoutDirection="0" enabled="true" objectName="PlotterWidget-22" minimumSizeHint="" minimumSize="" geometry="" height="200" focusPolicy="0" MinVolt="-500" MaxVolt="500" font="Sans Serif,9,-1,5,50,0,0,0,0,0" size="" palette="" fullScreen="false" visible="false" sizeIncrement="" whatsThis="" locale="" childrenRect="" updatesEnabled="true" itemtype="Plotter" acceptDrops="false" toolTip="" baseSize="" mouseTracking="false" normalGeometry="" maximized="false" autoFillBackground="false" maximumWidth="1000" windowOpacity="1" accessibleName="" focus="false" minimumHeight="200" pos="" statusTip="" inputMethodHints="0" y="0" x="0" rect="" accessibleDescription="" minimized="false" toolTipDuration="-1" childrenRegion="" windowIconText="" sizePolicy="" windowModified="false" width="200" windowTitle="" frameGeometry="" maximumSize="" maximumHeight="200"/>
+ 
+SerialPortWidget-23: 
+<item contextMenuPolicy="1" frameSize="" minimumWidth="0" cursor="" sizeHint="" styleSheet="" windowModality="0" SettingsProp="ttyS0,0,3,0,0,0" windowIcon="" windowFilePath="" modal="false" isActiveWindow="true" layoutDirection="0" enabled="true" objectName="SerialPortWidget-23" minimumSizeHint="" minimumSize="" geometry="" height="141" focusPolicy="0" font="Sans Serif,9,-1,5,50,0,0,0,0,0" size="" palette="" fullScreen="false" visible="false" sizeIncrement="" whatsThis="" locale="" childrenRect="" updatesEnabled="true" itemtype="SerialPort" acceptDrops="false" toolTip="" baseSize="" mouseTracking="false" normalGeometry="" maximized="false" autoFillBackground="false" maximumWidth="450" windowOpacity="1" accessibleName="" focus="false" minimumHeight="0" pos="" statusTip="" inputMethodHints="0" y="0" x="0" rect="" accessibleDescription="" minimized="false" toolTipDuration="-1" childrenRegion="" windowIconText="" sizePolicy="" windowModified="false" width="313" windowTitle="Configuracion" frameGeometry="" maximumSize="" maximumHeight="170"/>
+ 
+</circuit>

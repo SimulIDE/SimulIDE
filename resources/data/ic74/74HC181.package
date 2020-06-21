@@ -1,0 +1,35 @@
+<!DOCTYPE SimulIDE>
+
+
+
+<package name="74HC154" pins="24" width="4" height="13">
+
+    <pin side="left" pos="1"  type="" id="!B0"  label="!B0" /><!-- packagePin1 -->
+    <pin side="left" pos="2"  type="" id="!A0"  label="!A0" /><!-- packagePin2 -->
+    <pin side="left" pos="3"  type="" id="S3"   label="S3"  /><!-- packagePin3 -->
+    <pin side="left" pos="4"  type="" id="S2"   label="S2"  /><!-- packagePin4 -->
+    <pin side="left" pos="5"  type="" id="S1"   label="S1"  /><!-- packagePin5 -->
+    <pin side="left" pos="6"  type="" id="S0"   label="S0"  /><!-- packagePin6 -->
+    <pin side="left" pos="7"  type="" id="Cn"   label="Cn"  /><!-- packagePin7 -->
+    <pin side="left" pos="8"  type="" id="M"    label="M"   /><!-- packagePin8 -->
+    <pin side="left" pos="9"  type="" id="!F0"  label="!F0" /><!-- packagePin9 -->
+    <pin side="left" pos="10" type="" id="!F1"  label="!F1" /><!-- packagePin10 -->
+    <pin side="left" pos="11" type="" id="!F2"  label="!F2" /><!-- packagePin11 -->
+
+    <pin side="left" pos="12" type="" id="Gnd" label="Gnd" /><!-- packagePin12 -->
+
+    <pin side="right" pos="12" type="" id="!F3" label="!F3" /><!-- packagePin13 -->
+    <pin side="right" pos="11" type="" id="A=B" label="A=B" /><!-- packagePin14 -->
+    <pin side="right" pos="10" type="" id="!P" label="!P" /><!-- packagePin15 -->
+    <pin side="right" pos="9"  type="" id="Cn+4" label="Cn+4" /><!-- packagePin16 -->
+    <pin side="right" pos="8"  type="" id="!G" label="!G" /><!-- packagePin17 -->
+    <pin side="right" pos="7"  type="" id="!B3"  label="!B3"  /><!-- packagePin18 -->
+    <pin side="right" pos="6"  type="" id="!A3"  label="!A3"  /><!-- packagePin19 -->
+    <pin side="right" pos="5"  type="" id="!B2"   label="!B2"   /><!-- packagePin20 -->
+    <pin side="right" pos="4"  type="" id="!A2"   label="!A2"   /><!-- packagePin21 -->
+    <pin side="right" pos="3"  type="" id="!B1"   label="!B1"   /><!-- packagePin22 -->
+    <pin side="right" pos="2"  type="" id="!A1"   label="!A1"   /><!-- packagePin23 -->
+    <pin side="right" pos="1"  type="" id="Vcc"  label="Vcc"  /><!-- packagePin24 -->
+
+ </package>
+

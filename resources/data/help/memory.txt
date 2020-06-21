@@ -1,0 +1,14 @@
+Ram/Rom:
+
+This component can be configured as Ram or Rom, just adding persistance the data will be saved to circuit file acting as a EEPROM.
+You must save the circuit to get data persistance.
+
+It is possible to save memory data to a file and load from file.
+
+It is also configurable in size:
+
+- Address Bits: size in words = 2^Address_Bits.
+
+- Data Bits: size of word in bits.
+
+By default it is a 256 bytes Ram ( 8 address bits, 8 data bits, no persistance ).

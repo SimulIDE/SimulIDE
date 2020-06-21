@@ -1,0 +1,82 @@
+/***************************************************************************
+ *   Copyright (C) 2019 by santiago González                               *
+ *   santigoro@gmail.com                                                   *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 3 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, see <http://www.gnu.org/licenses/>.  *
+ *                                                                         *
+ ***************************************************************************/
+ 
+MaxMHz=16
+
+SFIOR EQU 48
+ACSR EQU 8
+SPDR EQU 15
+SPSR EQU 14
+SPCR EQU 13
+GICR EQU 59
+GIFR EQU 58
+MCUCR EQU 53
+TIMSK EQU 57
+TIFR EQU 56
+TCCR0 EQU 51
+TCNT0 EQU 50
+ADCSRA EQU 6
+ADCH EQU 5
+TCCR1A EQU 47
+TCCR1B EQU 46
+TCNT1L EQU 44
+TCNT1H EQU 45
+OCR1AL EQU 42
+OCR1AH EQU 43
+OCR1BL EQU 40
+OCR1BH EQU 41
+ICR1L EQU 38
+ICR1H EQU 39
+ADMUX EQU 7
+SPMCR EQU 55
+TCCR2 EQU 37
+TCNT2 EQU 36
+OCR2 EQU 35
+ASSR EQU 34
+TWBR EQU 0
+UDR EQU 12
+UCSRA EQU 11
+UCSRB EQU 10
+UCSRC EQU 32
+UBRRH EQU 32
+UBRRL EQU 9
+TWCR EQU 54
+TWSR EQU 1
+TWDR EQU 3
+TWAR EQU 2
+WDTCR EQU 33
+PORTB EQU 24
+DDRB EQU 23
+PINB EQU 22
+PORTC EQU 21
+DDRC EQU 20
+PINC EQU 19
+PORTD EQU 18
+DDRD EQU 17
+PIND EQU 16
+EEARL EQU 30
+EEARH EQU 31
+EEDR EQU 29
+EECR EQU 28
+SREG EQU 63
+SPL EQU 61
+SPH EQU 62
+ADCL EQU 4
+MCUCSR EQU 52
+OSCCAL EQU 49

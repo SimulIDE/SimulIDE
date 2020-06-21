@@ -1,0 +1,42 @@
+<circuit speed="1000000" animate="0" type="simulide_0.1" noLinAcc="5" reactStep="50" noLinStep="10">
+ 
+Ground (0 V)-6: 
+<item rotation="0" valLabely="0" Show_id="false" itemtype="Ground" labelrot="0" id="Ground (0 V)-1" x="-228" labely="-24" y="-12" vflip="1" objectName="Ground (0 V)-6" valLabRot="0" labelx="-16" valLabelx="0" hflip="1"/>
+ 
+Stepper-5: 
+<item valLabely="0" Show_id="false" rotation="0" vflip="1" x="-148" Resistance="100" id="Stepper-2" Unit=" kΩ" objectName="Stepper-5" labelrot="0" hflip="1" y="-92" Steps="32" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Stepper"/>
+ 
+Fixed Volt.-4: 
+<item valLabely="-9" Show_id="false" rotation="0" vflip="1" Show_Volt="true" x="-260" id="Fixed Volt.-3" Unit=" V" objectName="Fixed Volt.-4" labelrot="0" hflip="1" y="-124" valLabelx="-57" Voltage="5" labely="-24" labelx="-64" valLabRot="0" itemtype="Fixed Voltage"/>
+ 
+Fixed Volt.-3: 
+<item valLabely="-10" Show_id="false" rotation="0" vflip="1" Show_Volt="true" x="-260" id="Fixed Volt.-4" Unit=" V" objectName="Fixed Volt.-3" labelrot="0" hflip="1" y="-108" valLabelx="-58" Voltage="5" labely="-24" labelx="-64" valLabRot="0" itemtype="Fixed Voltage"/>
+ 
+Fixed Volt.-2: 
+<item valLabely="-10" Show_id="false" rotation="0" vflip="1" Show_Volt="true" x="-260" id="Fixed Volt.-5" Unit=" V" objectName="Fixed Volt.-2" labelrot="0" hflip="1" y="-76" valLabelx="-57" Voltage="5" labely="-24" labelx="-64" valLabRot="0" itemtype="Fixed Voltage"/>
+ 
+Fixed Volt.-1: 
+<item valLabely="-9" Show_id="false" rotation="0" vflip="1" Show_Volt="true" x="-260" id="Fixed Volt.-6" Unit=" V" objectName="Fixed Volt.-1" labelrot="0" hflip="1" y="-60" valLabelx="-57" Voltage="5" labely="-24" labelx="-64" valLabRot="0" itemtype="Fixed Voltage"/>
+ 
+Connector-7: 
+<item startpinid="Fixed Volt.-4-outnod" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-244" id="Connector-7" enodeid="Circ_eNode-8" objectName="Connector-7" pointList="-244,-124,-220,-124" labelrot="0" hflip="1" endpinid="Stepper-5-PinA1" y="-124" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-9: 
+<item startpinid="Fixed Volt.-3-outnod" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-244" id="Connector-9" enodeid="Circ_eNode-10" objectName="Connector-9" pointList="-244,-108,-220,-108" labelrot="0" hflip="1" endpinid="Stepper-5-PinB1" y="-108" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-11: 
+<item startpinid="Fixed Volt.-2-outnod" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-244" id="Connector-11" enodeid="Circ_eNode-12" objectName="Connector-11" pointList="-244,-76,-220,-76" labelrot="0" hflip="1" endpinid="Stepper-5-PinA2" y="-76" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-13: 
+<item startpinid="Fixed Volt.-1-outnod" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-244" id="Connector-13" enodeid="Circ_eNode-14" objectName="Connector-13" pointList="-244,-60,-220,-60" labelrot="0" hflip="1" endpinid="Stepper-5-PinB2" y="-60" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-15: 
+<item startpinid="Ground (0 V)-6-Gnd" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-228" id="Connector-15" enodeid="Circ_eNode-16" objectName="Connector-15" pointList="-228,-28,-228,-92,-220,-92" labelrot="0" hflip="1" endpinid="Stepper-5-PinCo" y="-28" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+PlotterWidget-65: 
+<item frameSize="" toolTipDuration="-1" maximumSize="" sizeHint="" pos="" baseSize="" maximumWidth="1000" normalGeometry="" maximized="false" minimumWidth="200" maximumHeight="200" windowFilePath="" windowModality="0" inputMethodHints="0" toolTip="" updatesEnabled="true" palette="" whatsThis="" autoFillBackground="false" minimized="false" itemtype="Plotter" windowOpacity="1" cursor="" styleSheet="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumHeight="200" isActiveWindow="true" minimumSize="" height="200" y="520" childrenRegion="" windowTitle="" contextMenuPolicy="1" x="0" focus="false" windowModified="false" mouseTracking="false" size="" accessibleName="" sizePolicy="" MinVolt="-500" childrenRect="" minimumSizeHint="" width="619" acceptDrops="false" windowIcon="" Tracks="1" objectName="PlotterWidget-65" windowIconText="" geometry="" rect="" locale="" modal="false" Scale="1" frameGeometry="" sizeIncrement="" focusPolicy="0" accessibleDescription="" layoutDirection="0" visible="false" fullScreen="false" MaxVolt="500" enabled="true" statusTip=""/>
+ 
+SerialPortWidget-66: 
+<item frameSize="" toolTipDuration="-1" maximumSize="" sizeHint="" pos="" baseSize="" maximumWidth="450" normalGeometry="" maximized="false" minimumWidth="0" maximumHeight="170" windowFilePath="" SettingsProp="ttyS0,0,3,0,0,0" windowModality="0" inputMethodHints="0" toolTip="" updatesEnabled="true" palette="" whatsThis="" autoFillBackground="false" minimized="false" itemtype="SerialPort" windowOpacity="1" cursor="" styleSheet="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumHeight="0" isActiveWindow="true" minimumSize="" height="147" y="573" childrenRegion="" windowTitle="Configuracion" contextMenuPolicy="1" x="153" focus="false" windowModified="false" mouseTracking="false" size="" accessibleName="" sizePolicy="" childrenRect="" minimumSizeHint="" width="450" acceptDrops="false" windowIcon="" objectName="SerialPortWidget-66" windowIconText="" geometry="" rect="" locale="" modal="false" frameGeometry="" sizeIncrement="" focusPolicy="0" accessibleDescription="" layoutDirection="0" visible="false" fullScreen="false" enabled="true" statusTip=""/>
+ 
+</circuit>

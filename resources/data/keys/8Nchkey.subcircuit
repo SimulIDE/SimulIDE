@@ -1,0 +1,93 @@
+<!DOCTYPE SimulIDE>
+
+<subcircuit enodes="0">
+
+    <item itemtype="eMosfet"
+        rDSon = "0.20000000000000001"
+        threshold = "3"
+        pChannel = "false"
+        depletion = "false"
+        connections="
+        Sour-Package_GND
+        Gate-Package_G7
+        Dren-Package_D7" >
+    </item>
+
+    <item itemtype="eMosfet"
+        rDSon = "0.20000000000000001"
+        threshold = "3"
+        pChannel = "false"
+        depletion = "false"
+        connections="
+        Sour-Package_GND
+        Gate-Package_G6
+        Dren-Package_D6" >
+    </item>
+
+    <item itemtype="eMosfet"
+        rDSon = "0.20000000000000001"
+        threshold = "3"
+        pChannel = "false"
+        depletion = "false"
+        connections="
+        Sour-Package_GND
+        Gate-Package_G5
+        Dren-Package_D5" >
+    </item>
+
+    <item itemtype="eMosfet"
+        rDSon = "0.20000000000000001"
+        threshold = "3"
+        pChannel = "false"
+        depletion = "false"
+        connections="
+        Sour-Package_GND
+        Gate-Package_G4
+        Dren-Package_D4" >
+    </item>
+
+    <item itemtype="eMosfet"
+        rDSon = "0.20000000000000001"
+        threshold = "3"
+        pChannel = "false"
+        depletion = "false"
+        connections="
+        Sour-Package_GND
+        Gate-Package_G3
+        Dren-Package_D3" >
+    </item>
+
+    <item itemtype="eMosfet"
+        rDSon = "0.20000000000000001"
+        threshold = "3"
+        pChannel = "false"
+        depletion = "false"
+        connections="
+        Sour-Package_GND
+        Gate-Package_G2
+        Dren-Package_D2" >
+    </item>
+
+    <item itemtype="eMosfet"
+        rDSon = "0.20000000000000001"
+        threshold = "3"
+        pChannel = "false"
+        depletion = "false"
+        connections="
+        Sour-Package_GND
+        Gate-Package_G1
+        Dren-Package_D1" >
+    </item>
+
+    <item itemtype="eMosfet"
+        rDSon = "0.20000000000000001"
+        threshold = "3"
+        pChannel = "false"
+        depletion = "false"
+        connections="
+        Sour-Package_GND
+        Gate-Package_G8
+        Dren-Package_D8" >
+    </item>
+
+</subcircuit>

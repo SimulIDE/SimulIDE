@@ -1,0 +1,60 @@
+<circuit animate="0" speed="1000000" reactStep="50" type="simulide_0.4" noLinAcc="5">
+ 
+Ks0108-3: 
+<item rotation="0" labely="-72" CS_Active_Low="true" x="-372" valLabelx="0" y="-300" valLabRot="0" itemtype="Ks0108" labelrot="0" labelx="-29" objectName="Ks0108-3" valLabely="0" vflip="1" id="Ks0108" Show_id="true" hflip="1"/>
+ 
+pic16f877a-2: 
+<item Logic_Symbol="false" valLabely="0" Program="KS0108_16f877a.hex" rotation="0" x="-252" labely="-17" itemtype="PIC" Mhz="16" labelrot="0" eeprom="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" PcLink_Command="socat -d -d PTY,link=/tmp/ttyS1,echo=0 PTY,link=/tmp/ttyS2,echo=0" y="-300" hflip="1" PcLink_Port="" id="pic16f877a" valLabelx="0" Auto_Load="false" labelx="-8" vflip="1" Show_id="true" valLabRot="0" objectName="pic16f877a-2" Auto_PcLink="false"/>
+ 
+Rail.-1: 
+<item Show_Volt="true" valLabely="-22" Voltage="5" rotation="0" x="-236" labely="-24" itemtype="Rail" labelrot="0" Unit=" V" y="-348" hflip="-1" id="Rail.-38" valLabelx="8" labelx="-64" vflip="1" Show_id="false" valLabRot="0" objectName="Rail.-1"/>
+ 
+Connector-4: 
+<item valLabely="0" rotation="0" x="-260" labely="-24" itemtype="Connector" enodeid="Circ_eNode-5" labelrot="0" pointList="-260,-164,-428,-164,-428,-244" y="-164" hflip="1" startpinid="pic16f877a-2-RC2" id="Connector-3" valLabelx="0" endpinid="Ks0108-3-PinRst" labelx="-16" vflip="1" Show_id="false" valLabRot="0" objectName="Connector-4"/>
+ 
+Connector-6: 
+<item valLabely="0" rotation="0" x="-260" labely="-24" itemtype="Connector" enodeid="Circ_eNode-7" labelrot="0" pointList="-260,-148,-348,-148,-348,-244" y="-148" hflip="1" startpinid="pic16f877a-2-RD0" id="Connector-5" valLabelx="0" endpinid="Ks0108-3-dataPin0" labelx="-16" vflip="1" Show_id="false" valLabRot="0" objectName="Connector-6"/>
+ 
+Connector-8: 
+<item valLabely="0" rotation="0" x="-260" labely="-24" itemtype="Connector" enodeid="Circ_eNode-9" labelrot="0" pointList="-260,-140,-356,-140,-356,-244" y="-140" hflip="1" startpinid="pic16f877a-2-RD1" id="Connector-7" valLabelx="0" endpinid="Ks0108-3-dataPin1" labelx="-16" vflip="1" Show_id="false" valLabRot="0" objectName="Connector-8"/>
+ 
+Connector-10: 
+<item valLabely="0" rotation="0" x="-196" labely="-24" itemtype="Connector" enodeid="Circ_eNode-11" labelrot="0" pointList="-196,-140,-196,-124,-364,-124,-364,-244" y="-140" hflip="1" startpinid="pic16f877a-2-RD2" id="Connector-9" valLabelx="0" endpinid="Ks0108-3-dataPin2" labelx="-16" vflip="1" Show_id="false" valLabRot="0" objectName="Connector-10"/>
+ 
+Connector-12: 
+<item valLabely="0" rotation="0" x="-372" labely="-24" itemtype="Connector" enodeid="Circ_eNode-13" labelrot="0" pointList="-372,-244,-372,-116,-188,-116,-188,-148,-196,-148" y="-244" hflip="1" startpinid="Ks0108-3-dataPin3" id="Connector-11" valLabelx="0" endpinid="pic16f877a-2-RD3" labelx="-16" vflip="1" Show_id="false" valLabRot="0" objectName="Connector-12"/>
+ 
+Connector-14: 
+<item valLabely="0" rotation="0" x="-196" labely="-24" itemtype="Connector" enodeid="Circ_eNode-15" labelrot="0" pointList="-196,-204,-164,-204,-164,-92,-396,-92,-396,-244" y="-204" hflip="1" startpinid="pic16f877a-2-RD6" id="Connector-13" valLabelx="0" endpinid="Ks0108-3-dataPin6" labelx="-16" vflip="1" Show_id="false" valLabRot="0" objectName="Connector-14"/>
+ 
+Connector-16: 
+<item valLabely="0" rotation="0" x="-196" labely="-24" itemtype="Connector" enodeid="Circ_eNode-17" labelrot="0" pointList="-196,-188,-180,-188,-180,-108,-380,-108,-380,-244" y="-188" hflip="1" startpinid="pic16f877a-2-RD4" id="Connector-15" valLabelx="0" endpinid="Ks0108-3-dataPin4" labelx="-16" vflip="1" Show_id="false" valLabRot="0" objectName="Connector-16"/>
+ 
+Connector-18: 
+<item valLabely="0" rotation="0" x="-388" labely="-24" itemtype="Connector" enodeid="Circ_eNode-19" labelrot="0" pointList="-388,-244,-388,-100,-172,-100,-172,-196,-196,-196" y="-244" hflip="1" startpinid="Ks0108-3-dataPin5" id="Connector-17" valLabelx="0" endpinid="pic16f877a-2-RD5" labelx="-16" vflip="1" Show_id="false" valLabRot="0" objectName="Connector-18"/>
+ 
+Connector-20: 
+<item valLabely="0" rotation="0" x="-324" labely="-24" itemtype="Connector" enodeid="Circ_eNode-21" labelrot="0" pointList="-324,-244,-324,-236,-260,-236" y="-244" hflip="1" startpinid="Ks0108-3-PinDC" id="Connector-19" valLabelx="0" endpinid="pic16f877a-2-RE0" labelx="-16" vflip="1" Show_id="false" valLabRot="0" objectName="Connector-20"/>
+ 
+Connector-22: 
+<item valLabely="0" rotation="0" x="-332" labely="-24" itemtype="Connector" enodeid="Circ_eNode-23" labelrot="0" pointList="-332,-244,-332,-228,-260,-228" y="-244" hflip="1" startpinid="Ks0108-3-PinRW" id="Connector-21" valLabelx="0" endpinid="pic16f877a-2-RE1" labelx="-16" vflip="1" Show_id="false" valLabRot="0" objectName="Connector-22"/>
+ 
+Connector-24: 
+<item valLabely="0" rotation="0" x="-340" labely="-24" itemtype="Connector" enodeid="Circ_eNode-25" labelrot="0" pointList="-340,-244,-340,-220,-260,-220" y="-244" hflip="1" startpinid="Ks0108-3-PinEn" id="Connector-23" valLabelx="0" endpinid="pic16f877a-2-RE2" labelx="-16" vflip="1" Show_id="false" valLabRot="0" objectName="Connector-24"/>
+ 
+Connector-26: 
+<item valLabely="0" rotation="0" x="-404" labely="-24" itemtype="Connector" enodeid="Circ_eNode-27" labelrot="0" pointList="-404,-244,-404,-84,-156,-84,-156,-212,-196,-212" y="-244" hflip="1" startpinid="Ks0108-3-dataPin7" id="Connector-25" valLabelx="0" endpinid="pic16f877a-2-RD7" labelx="-16" vflip="1" Show_id="false" valLabRot="0" objectName="Connector-26"/>
+ 
+Connector-28: 
+<item valLabely="0" rotation="0" x="-420" labely="-24" itemtype="Connector" enodeid="Circ_eNode-29" labelrot="0" pointList="-420,-244,-420,-172,-260,-172" y="-244" hflip="1" startpinid="Ks0108-3-PinCs2" id="Connector-27" valLabelx="0" endpinid="pic16f877a-2-RC1" labelx="-16" vflip="1" Show_id="false" valLabRot="0" objectName="Connector-28"/>
+ 
+Connector-30: 
+<item valLabely="0" rotation="0" x="-260" labely="-24" itemtype="Connector" enodeid="Circ_eNode-31" labelrot="0" pointList="-260,-180,-412,-180,-412,-244" y="-180" hflip="1" startpinid="pic16f877a-2-RC0" id="Connector-29" valLabelx="0" endpinid="Ks0108-3-PinCs1" labelx="-16" vflip="1" Show_id="false" valLabRot="0" objectName="Connector-30"/>
+ 
+Connector-32: 
+<item valLabely="0" rotation="0" x="-252" labely="-24" itemtype="Connector" enodeid="Circ_eNode-33" labelrot="0" pointList="-252,-348,-276,-348,-276,-292,-260,-292" y="-348" hflip="1" startpinid="Rail.-1-outnod" id="Connector-39" valLabelx="0" endpinid="pic16f877a-2-MCLR" labelx="-16" vflip="1" Show_id="false" valLabRot="0" objectName="Connector-32"/>
+ 
+PlotterWidget-36: 
+<item font="Sans Serif,9,-1,5,50,0,0,0,0,0" tabletTracking="false" maximized="false" geometry="" enabled="true" whatsThis="" accessibleName="" MaxVolt="500" minimumSizeHint="" mouseTracking="false" layoutDirection="0" focusPolicy="0" minimumSize="" locale="" minimumHeight="200" minimized="false" cursor="" windowFilePath="" contextMenuPolicy="1" childrenRect="" size="" visible="false" height="200" itemtype="Plotter" windowModified="false" pos="" fullScreen="false" Scale="1" focus="false" autoFillBackground="false" y="0" sizeHint="" windowIconText="" windowModality="0" windowTitle="" windowIcon="" toolTipDuration="-1" normalGeometry="" accessibleDescription="" objectName="PlotterWidget-36" minimumWidth="200" sizePolicy="" frameSize="" childrenRegion="" sizeIncrement="" baseSize="" x="0" frameGeometry="" styleSheet="" inputMethodHints="0" rect="" windowOpacity="1" toolTip="" acceptDrops="false" width="200" statusTip="" MinVolt="0" palette="" Tracks="1" modal="false" updatesEnabled="true" maximumHeight="200" maximumSize="" maximumWidth="1000" isActiveWindow="true"/>
+ 
+</circuit>

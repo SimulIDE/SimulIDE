@@ -1,0 +1,10 @@
+Switch Dip:
+
+Resizable set of switches in a DIP configuration.
+
+Use "Size" property to set number of switches
+
+Click on individual "buttons" to turn ON/OFF:
+ - Green = On
+ - Gray  = Off
+ 

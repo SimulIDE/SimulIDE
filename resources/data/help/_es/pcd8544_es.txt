@@ -1,0 +1,5 @@
+PCD8544 LCD grafico:
+
+LCD de matriz de 48x84 píxeles basado en el controlador PCD8544.
+
+El PCD8544 interactúa con los microcontroladores a través de una interfaz de bus serie.

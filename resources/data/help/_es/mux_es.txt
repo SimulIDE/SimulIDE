@@ -1,0 +1,26 @@
+Multiplexor de entrada
+
+Teniendo ocho (8) entrada D0..D7, en la salida se reflejara (Y + !Y) la que seleccionemos con S0..S2.
+
+Pines:
+D0..D7 = Señales de entrada
+S0..S2 = Selector de puerta (000 = D0, 100 = D1, etc)
+!OE = Habilitación de la salida. GND
+Y = Salida
+!Y = Salidas invertida
+
+Propiedades:
+- Volt Alto Entrada:
+   2.5
+- Volt Bajo Entrada:
+   2.5
+- Impedancia Entrada:
+   1e+14
+- Volt Alto Salida:
+   5
+- Volt Bajo Salida:
+   0
+- Impedancia Salida:
+   40
+- Invertir Entradas:
+   false

@@ -1,0 +1,9 @@
+Seven Segment Display:
+
+Configurable led Display with same properties as leds.
+
+- Customizable in size ( number of displays ).
+- Common Cathode or Anode.
+
+More Info:
+ https://simulide.blogspot.com/p/seven-segment-display.html

@@ -1,0 +1,66 @@
+ ###########################################################################
+ #   Copyright (C) 2012   by santiago González                             #
+ #   santigoro@gmail.com                                                   #
+ #                                                                         #
+ #   This program is free software; you can redistribute it and/or modify  #
+ #   it under the terms of the GNU General Public License as published by  #
+ #   the Free Software Foundation; either version 3 of the License, or     #
+ #   (at your option) any later version.                                   #
+ #                                                                         #
+ #   This program is distributed in the hope that it will be useful,       #
+ #   but WITHOUT ANY WARRANTY; without even the implied warranty of        #
+ #   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         #
+ #   GNU General Public License for more details.                          #
+ #                                                                         #
+ #   You should have received a copy of the GNU General Public License     #
+ #   along with this program; if not, see <http://www.gnu.org/licenses/>.  #
+ #                                                                         #
+ ###########################################################################
+
+##############  MUST BE DEFINED in ORDER:  #########################
+#
+# keywords: list of keyword types
+#
+# keyword-style: foregroundColor backgroundColor bold italic
+# Keyword: in a single line 
+#
+##############  AVAILABLE OPTIONS:  ################################
+#
+# Colors:  { default | #XXXXXX }
+# Bold:    { true | false }
+# Italic:  { true | false }
+#
+# RegExp: must be quotated, example: "#[a-zA-Z]+\b"
+#
+#####################################################################
+
+
+keywords: data keyword1 keyword2 number preprocessor lineComment multiLineComment htmlTag quotation function
+
+
+data-style: #500030 default true false
+data: byte double float int uint long short signed char const enum static struct union unsigned  virtual void volatile bool
+
+keyword1-style: #202060 default true false
+keyword1: class explicit friend inline namespace operator private protected public signals slots template typedef typename
+
+keyword2-style: #300050 default true false
+keyword2: for if else while continue break switch case return true false this new delete
+
+preprocessor-style: #414164 default true false
+preprocessor: "#[define|endif|ifdef|ifndef|include]+[^\n]*"
+
+number-style: #3030B8 default false false
+number: "\b[0-9]+\b"
+
+htmlTag-style: #303078 default false false
+htmlTag: "<.*>" 
+
+quotation-style: #205010 default false false
+quotation: "\"(\\.|[^\"])*\""
+
+lineComment-style: #646464 default false true
+lineComment: "//[^\n]*"
+
+function-style: #202030 default false true
+function: "\\b[A-Za-z0-9_]+(?=\\()"

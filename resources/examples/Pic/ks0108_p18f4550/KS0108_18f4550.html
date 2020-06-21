@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Compilation Report</title>
+</head>
+<body>
+<h1>Compilation Report</h1>
+<p>Compiler Version (DD/MM/YYYY): 0.96.<<>> 2016-12-14</p>
+<h2>Chip resource usage:</h2>
+<p>Chip Model: 18F4550</p>
+<p>Program Memory: 1783/16384 words (10.88%)</p>
+<p>RAM: 43/2048 bytes (2.1%)</p>
+<h2>RAM Allocation</h2>
+<table border="1">
+</table>
+<h2>Subroutines</h2>
+<table border="1">
+<tr><th>Name</th><th>Code Size (lines)</th><th>Compiled Size (words)</th><th>Outgoing calls</th></tr>
+<tr><td>Main</td><td>43</td><td>66</td><td>SYSCOMPLESSTHAN16(4), INITGLCD_KS0108(33), Delay_MS(2), GLCDBMPLOAD(2), GLCDCLS_KS0108(2), INITSYS(1)</td></tr>
+<tr><td>GLCDBMPLOAD</td><td>106</td><td>622</td><td>SYSCOMPEQUAL(1), SYSDIVSUB(4), SYSCOMPLESSTHAN(8), SYSCOMPEQUAL16(15), PSET_KS0108(4), GLCDWRITEBYTE_KS0108(3)</td></tr>
+<tr><td>INITGLCD_KS0108</td><td>25</td><td>44</td><td>Delay_MS(2), GLCDCLS_KS0108(1), GLCDWRITEBYTE_KS0108(2)</td></tr>
+<tr><td>GLCDCLS_KS0108</td><td>21</td><td>46</td><td>GLCDWRITEBYTE_KS0108(3)</td></tr>
+<tr><td>PSET_KS0108</td><td>48</td><td>91</td><td>SYSDIVSUB(1), GLCDREADBYTE_KS0108(2), GLCDWRITEBYTE_KS0108(4)</td></tr>
+<tr><td>GLCDWRITEBYTE_KS0108</td><td>45</td><td>74</td><td>GLCDREADBYTE_KS0108(1)</td></tr>
+<tr><td>GLCDREADBYTE_KS0108</td><td>21</td><td>46</td><td></td></tr>
+<tr><td>INITSYS</td><td>579</td><td>17</td><td></td></tr>
+<tr><td>SYSDIVSUB</td><td>48</td><td>22</td><td></td></tr>
+<tr><td>SYSCOMPEQUAL</td><td>20</td><td>5</td><td></td></tr>
+<tr><td>SYSCOMPEQUAL16</td><td>34</td><td>9</td><td></td></tr>
+<tr><td>SYSCOMPLESSTHAN</td><td>23</td><td>5</td><td></td></tr>
+<tr><td>SYSCOMPLESSTHAN16</td><td>38</td><td>14</td><td></td></tr>
+<tr><td>Delay_MS</td><td>0</td><td>18</td><td></td></tr>
+<tr><td>GLCDTABLE1</td><td>0</td><td>265</td><td></td></tr>
+<tr><td>GLCDTABLE1_H</td><td>0</td><td>23</td><td></td></tr>
+<tr><td>GLCDTABLE2</td><td>0</td><td>348</td><td></td></tr>
+<tr><td>GLCDTABLE2_H</td><td>0</td><td>23</td><td></td></tr>
+<tr><td>GLCDTABLE3</td><td>0</td><td>15</td><td></td></tr>
+<tr><td>GLCDTABLE4</td><td>0</td><td>15</td><td></td></tr>
+<tr><td>GLCDTABLE5</td><td>0</td><td>15</td><td></td></tr>
+</table>
+</body>
+</html>

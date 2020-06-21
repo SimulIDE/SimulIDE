@@ -1,0 +1,9 @@
+Fuente de corriente:
+
+Esta es una fuente de corriente variable.
+
+La corriente se puede ajustar de 0A a máx. actual usando el dial.
+
+Se puede activar/desactivar con el botón en la parte inferior.
+
+La etiqueta del botón muestra el valor de salida actual.

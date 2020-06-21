@@ -1,0 +1,15 @@
+Memoria RAM/ROM:
+
+Este componente se puede configurar como memoria RAM o ROM, solo agregando persistencia, los datos se guardarán en un archivo de circuito que actúa como una memoria EEPROM.
+
+Debe guardar el circuito para obtener persistencia de datos.
+
+Es posible guardar datos de memoria en un archivo y cargar desde un archivo.
+
+También es configurable en tamaño:
+
+- Bits de dirección: tamaño en palabras = 2 ^ Bits de dirección.
+
+- Bits de datos: tamaño de la palabra en bits.
+
+Por defecto es un RAM de 256 bytes (8 bits de dirección, 8 bits de datos, sin persistencia).

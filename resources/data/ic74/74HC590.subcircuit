@@ -1,0 +1,668 @@
+<!DOCTYPE SimulIDE>
+
+<subcircuit enodes="30">
+
+    <item itemtype="eFlipFlopJK"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "true"
+        sRInverted = "true"
+        connections="
+        input0-eNode0
+        input2-eNode0
+        input1-eNode0
+        output0-eNode8
+        input3-Package_!MCR
+        clock-eNode29" >
+    </item>
+
+    <item itemtype="eFlipFlopD"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "false"
+        sRInverted = "true"
+        connections="
+        input1-eNode0
+        input2-eNode0
+        clock-Package_CPR
+        input0-eNode8
+        output0-eNode27" >
+    </item>
+
+    <item itemtype="eFlipFlopD"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "false"
+        sRInverted = "true"
+        connections="
+        input1-eNode0
+        input2-eNode0
+        input0-eNode1
+        clock-Package_CPR
+        output0-eNode26" >
+    </item>
+
+    <item itemtype="eFlipFlopJK"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "true"
+        sRInverted = "true"
+        connections="
+        input2-eNode0
+        input0-eNode0
+        input1-eNode0
+        output0-eNode1
+        input3-Package_!MCR
+        clock-eNode13" >
+    </item>
+
+    <item itemtype="eFlipFlopD"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "false"
+        sRInverted = "true"
+        connections="
+        input2-eNode0
+        input1-eNode0
+        input0-eNode3
+        clock-Package_CPR
+        output0-eNode24" >
+    </item>
+
+    <item itemtype="eFlipFlopD"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "false"
+        sRInverted = "true"
+        connections="
+        input1-eNode0
+        input2-eNode0
+        input0-eNode2
+        clock-Package_CPR
+        output0-eNode25" >
+    </item>
+
+    <item itemtype="eFlipFlopJK"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "true"
+        sRInverted = "true"
+        connections="
+        input0-eNode0
+        input2-eNode0
+        input1-eNode0
+        output0-eNode3
+        input3-Package_!MCR
+        clock-eNode15" >
+    </item>
+
+    <item itemtype="eFlipFlopJK"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "true"
+        sRInverted = "true"
+        connections="
+        input2-eNode0
+        input0-eNode0
+        input1-eNode0
+        output0-eNode2
+        input3-Package_!MCR
+        clock-eNode14" >
+    </item>
+
+    <item itemtype="eFlipFlopD"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "false"
+        sRInverted = "true"
+        connections="
+        input1-eNode0
+        input2-eNode0
+        input0-eNode7
+        clock-Package_CPR
+        output0-eNode20" >
+    </item>
+
+    <item itemtype="eFlipFlopD"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "false"
+        sRInverted = "true"
+        connections="
+        input2-eNode0
+        input1-eNode0
+        input0-eNode5
+        clock-Package_CPR
+        output0-eNode23" >
+    </item>
+
+    <item itemtype="eFlipFlopD"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "false"
+        sRInverted = "true"
+        connections="
+        input2-eNode0
+        input1-eNode0
+        input0-eNode6
+        clock-Package_CPR
+        output0-eNode22" >
+    </item>
+
+    <item itemtype="eFlipFlopJK"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "true"
+        sRInverted = "true"
+        connections="
+        input0-eNode0
+        input2-eNode0
+        input1-eNode0
+        output0-eNode5
+        input3-Package_!MCR
+        clock-eNode16" >
+    </item>
+
+    <item itemtype="eFlipFlopJK"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "true"
+        sRInverted = "true"
+        connections="
+        input1-eNode0
+        input2-eNode0
+        input0-eNode0
+        output0-eNode7
+        input3-Package_!MCR
+        clock-eNode19" >
+    </item>
+
+    <item itemtype="eFlipFlopD"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "false"
+        sRInverted = "true"
+        connections="
+        input2-eNode0
+        input1-eNode0
+        input0-eNode4
+        clock-Package_CPR
+        output0-eNode21" >
+    </item>
+
+    <item itemtype="eFlipFlopJK"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "true"
+        sRInverted = "true"
+        connections="
+        input0-eNode0
+        input2-eNode0
+        input1-eNode0
+        output0-eNode6
+        input3-Package_!MCR
+        clock-eNode17" >
+    </item>
+
+    <item itemtype="eFlipFlopJK"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "true"
+        sRInverted = "true"
+        connections="
+        input2-eNode0
+        input0-eNode0
+        input1-eNode0
+        output0-eNode4
+        input3-Package_!MCR
+        clock-eNode18" >
+    </item>
+
+    <item itemtype="eRail"
+        voltage = "5"
+        unit = " V"
+        connections="
+        outnod-eNode0" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "true"
+        openCollector = "false"
+        numInputs = "8"
+        connections="
+        input6-eNode1
+        input5-eNode2
+        input4-eNode3
+        input1-eNode4
+        input3-eNode5
+        input2-eNode6
+        input0-eNode7
+        input7-eNode8
+        output0-Package_!RCO" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        numInputs = "3"
+        connections="
+        input0-eNode1
+        input1-eNode8
+        output0-eNode14
+        input2-eNode29" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        numInputs = "4"
+        connections="
+        input1-eNode1
+        input0-eNode2
+        input2-eNode8
+        output0-eNode15
+        input3-eNode29" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        numInputs = "5"
+        connections="
+        input2-eNode1
+        input1-eNode2
+        input0-eNode3
+        input3-eNode8
+        output0-eNode16
+        input4-eNode29" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        numInputs = "6"
+        connections="
+        input3-eNode1
+        input2-eNode2
+        input1-eNode3
+        input0-eNode5
+        input4-eNode8
+        output0-eNode17
+        input5-eNode29" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        numInputs = "7"
+        connections="
+        input4-eNode1
+        input3-eNode2
+        input2-eNode3
+        input1-eNode5
+        input0-eNode6
+        input5-eNode8
+        output0-eNode18
+        input6-eNode29" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        numInputs = "8"
+        connections="
+        input5-eNode1
+        input4-eNode2
+        input3-eNode3
+        input0-eNode4
+        input2-eNode5
+        input1-eNode6
+        input6-eNode8
+        output0-eNode19
+        input7-eNode29" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        numInputs = "2"
+        connections="
+        input0-eNode8
+        output0-eNode13
+        input1-eNode29" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        numInputs = "2"
+        connections="
+        output0-eNode9
+        input1-eNode10
+        input0-eNode11" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "true"
+        openCollector = "false"
+        numInputs = "2"
+        connections="
+        input0-eNode9
+        input1-Package_CPC
+        output0-eNode29" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "true"
+        openCollector = "false"
+        tristate = "false"
+        connections="
+        input0-Package_CPC
+        output0-eNode10" >
+    </item>
+
+    <item itemtype="eOrGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        numInputs = "2"
+        connections="
+        output0-eNode11
+        input1-eNode12
+        input0-eNode28" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "true"
+        openCollector = "false"
+        tristate = "false"
+        connections="
+        output0-eNode12
+        input0-Package_!CE" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        tristate = "true"
+        connections="
+        input0-eNode20
+        output0-Package_QH
+        outEnable-Package_!OE" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        tristate = "true"
+        connections="
+        output0-Package_QG
+        input0-eNode21
+        outEnable-Package_!OE" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        tristate = "true"
+        connections="
+        output0-Package_QF
+        input0-eNode22
+        outEnable-Package_!OE" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        tristate = "true"
+        connections="
+        output0-Package_QE
+        input0-eNode23
+        outEnable-Package_!OE" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        tristate = "true"
+        connections="
+        output0-Package_QD
+        input0-eNode24
+        outEnable-Package_!OE" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        tristate = "true"
+        connections="
+        output0-Package_QC
+        input0-eNode25
+        outEnable-Package_!OE" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        tristate = "true"
+        connections="
+        output0-Package_QB
+        input0-eNode26
+        outEnable-Package_!OE" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        openCollector = "false"
+        tristate = "true"
+        connections="
+        output0-Package_QA
+        input0-eNode27
+        outEnable-Package_!OE" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "true"
+        openCollector = "false"
+        tristate = "false"
+        connections="
+        output0-eNode28
+        input0-eNode29" >
+    </item>
+
+</subcircuit>

@@ -1,0 +1,632 @@
+gpasm-0.13.7 beta               TRM0_IRQ_Pic16F628A.asm2-7-2016  15:16:53           PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+ 
+               00001 
+               00002 
+               00003 ;**********************************************************************
+               00004 ; Filename: TMR0_IRQ.asm
+               00005 ; Date:  Nov. 11, 2013 
+               00006 ; Author: Lewis Loflin 
+               00007 ; Demonstrates how to use interrupts with TMR0                                                       
+               00008 ; State of LED on Ra0 is inverted by toggle every 61 interrupts
+               00009 ; PIC16F628A and 16 mHz crystal                                                     
+               00010 ;**********************************************************************
+               00011 
+               00012 
+               00013 
+               00014 
+               00015         list      p=16f628A           ; list directive to define processor
+               00016         #include <p16F628A.inc>       ; processor specific variable definitions
+Warning [231] : found lower case match for include filename
+               00001         LIST
+               00002 ; P16F628A.INC  Standard Header File, Version 1.10    Microchip Technology, Inc.
+               00003         NOLIST
+               00004 
+               00005 ; This header file defines configurations, registers, and other useful bits of
+               00006 ; information for the PIC16F628A microcontroller.  These names are taken to match
+               00007 ; the data sheets as closely as possible.
+               00008 
+               00009 ; Note that the processor must be selected before this file is
+               00010 ; included.  The processor may be selected the following ways:
+               00011 
+               00012 ;       1. Command line switch:
+               00013 ;               C:\ MPASM MYFILE.ASM /PIC16F628A
+               00014 ;       2. LIST directive in the source file
+               00015 ;               LIST   P=PIC16F628A
+               00016 ;       3. Processor Type entry in the MPASM full-screen interface
+               00017 
+               00018 ;==========================================================================
+               00019 ;
+               00020 ;       Revision History
+               00021 ;
+               00022 ;==========================================================================
+               00023 
+               00024 ;Rev:   Date:    Reason:
+               00025 ;1.01   14 Nov 2002 Updated to reflect BOD terminology changed to BOR
+               00026 ;1.00   22 Aug 2002 Initial Release
+               00027 
+               00028 ;==========================================================================
+               00029 ;
+               00030 ;       Verify Processor
+               00031 ;
+               00032 ;==========================================================================
+               00033 
+               00034         IFNDEF __16F628A
+               00035            MESSG "Processor-header file mismatch.  Verify selected processor."
+               00036         ENDIF
+               00037 
+gpasm-0.13.7 beta               TRM0_IRQ_Pic16F628A.asm2-7-2016  15:16:53           PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+ 
+               00038 ;==========================================================================
+               00039 ;
+               00040 ;       Register Definitions
+               00041 ;
+               00042 ;==========================================================================
+               00043 
+  00000000     00044 W                            EQU     H'0000'
+  00000001     00045 F                            EQU     H'0001'
+               00046 
+               00047 ;----- Register Files------------------------------------------------------
+               00048 
+  00000000     00049 INDF                         EQU     H'0000'
+  00000001     00050 TMR0                         EQU     H'0001'
+  00000002     00051 PCL                          EQU     H'0002'
+  00000003     00052 STATUS                       EQU     H'0003'
+  00000004     00053 FSR                          EQU     H'0004'
+  00000005     00054 PORTA                        EQU     H'0005'
+  00000006     00055 PORTB                        EQU     H'0006'
+  0000000A     00056 PCLATH                       EQU     H'000A'
+  0000000B     00057 INTCON                       EQU     H'000B'
+  0000000C     00058 PIR1                         EQU     H'000C'
+  0000000E     00059 TMR1L                        EQU     H'000E'
+  0000000F     00060 TMR1H                        EQU     H'000F'
+  00000010     00061 T1CON                        EQU     H'0010'
+  00000011     00062 TMR2                         EQU     H'0011'
+  00000012     00063 T2CON                        EQU     H'0012'
+  00000015     00064 CCPR1L                       EQU     H'0015'
+  00000016     00065 CCPR1H                       EQU     H'0016'
+  00000017     00066 CCP1CON                      EQU     H'0017'
+  00000018     00067 RCSTA                        EQU     H'0018'
+  00000019     00068 TXREG                        EQU     H'0019'
+  0000001A     00069 RCREG                        EQU     H'001A'
+  0000001F     00070 CMCON                        EQU     H'001F'
+               00071 
+  00000081     00072 OPTION_REG                   EQU     H'0081'
+  00000085     00073 TRISA                        EQU     H'0085'
+  00000086     00074 TRISB                        EQU     H'0086'
+  0000008C     00075 PIE1                         EQU     H'008C'
+  0000008E     00076 PCON                         EQU     H'008E'
+  00000092     00077 PR2                          EQU     H'0092'
+  00000098     00078 TXSTA                        EQU     H'0098'
+  00000099     00079 SPBRG                        EQU     H'0099'
+  0000009A     00080 EEDATA                       EQU     H'009A'
+  0000009B     00081 EEADR                        EQU     H'009B'
+  0000009C     00082 EECON1                       EQU     H'009C'
+  0000009D     00083 EECON2                       EQU     H'009D'
+  0000009F     00084 VRCON                        EQU     H'009F'
+               00085 
+               00086 ;----- STATUS Bits --------------------------------------------------------
+               00087 
+  00000007     00088 IRP                          EQU     H'0007'
+  00000006     00089 RP1                          EQU     H'0006'
+  00000005     00090 RP0                          EQU     H'0005'
+  00000004     00091 NOT_TO                       EQU     H'0004'
+gpasm-0.13.7 beta               TRM0_IRQ_Pic16F628A.asm2-7-2016  15:16:53           PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+ 
+  00000003     00092 NOT_PD                       EQU     H'0003'
+  00000002     00093 Z                            EQU     H'0002'
+  00000001     00094 DC                           EQU     H'0001'
+  00000000     00095 C                            EQU     H'0000'
+               00096 
+               00097 ;----- INTCON Bits --------------------------------------------------------
+               00098 
+  00000007     00099 GIE                          EQU     H'0007'
+  00000006     00100 PEIE                         EQU     H'0006'
+  00000005     00101 T0IE                         EQU     H'0005'
+  00000004     00102 INTE                         EQU     H'0004'
+  00000003     00103 RBIE                         EQU     H'0003'
+  00000002     00104 T0IF                         EQU     H'0002'
+  00000001     00105 INTF                         EQU     H'0001'
+  00000000     00106 RBIF                         EQU     H'0000'
+               00107 
+               00108 ;----- PIR1 Bits ----------------------------------------------------------
+               00109 
+  00000007     00110 EEIF                         EQU     H'0007'
+  00000006     00111 CMIF                         EQU     H'0006'
+  00000005     00112 RCIF                         EQU     H'0005'
+  00000004     00113 TXIF                         EQU     H'0004'
+  00000002     00114 CCP1IF                       EQU     H'0002'
+  00000001     00115 TMR2IF                       EQU     H'0001'
+  00000000     00116 TMR1IF                       EQU     H'0000'
+               00117 
+               00118 ;----- T1CON Bits ---------------------------------------------------------
+  00000005     00119 T1CKPS1                      EQU     H'0005'
+  00000004     00120 T1CKPS0                      EQU     H'0004'
+  00000003     00121 T1OSCEN                      EQU     H'0003'
+  00000002     00122 NOT_T1SYNC                   EQU     H'0002'
+  00000001     00123 TMR1CS                       EQU     H'0001'
+  00000000     00124 TMR1ON                       EQU     H'0000'
+               00125 
+               00126 ;----- T2CON Bits ---------------------------------------------------------
+  00000006     00127 TOUTPS3                      EQU     H'0006'
+  00000005     00128 TOUTPS2                      EQU     H'0005'
+  00000004     00129 TOUTPS1                      EQU     H'0004'
+  00000003     00130 TOUTPS0                      EQU     H'0003'
+  00000002     00131 TMR2ON                       EQU     H'0002'
+  00000001     00132 T2CKPS1                      EQU     H'0001'
+  00000000     00133 T2CKPS0                      EQU     H'0000'
+               00134 
+               00135 ;----- CCP1CON Bits ---------------------------------------------------------
+  00000005     00136 CCP1X                        EQU     H'0005'
+  00000004     00137 CCP1Y                        EQU     H'0004'
+  00000003     00138 CCP1M3                       EQU     H'0003'
+  00000002     00139 CCP1M2                       EQU     H'0002'
+  00000001     00140 CCP1M1                       EQU     H'0001'
+  00000000     00141 CCP1M0                       EQU     H'0000'
+               00142 
+               00143 ;----- RCSTA Bits ---------------------------------------------------------
+  00000007     00144 SPEN                         EQU     H'0007'
+  00000006     00145 RX9                          EQU     H'0006'
+gpasm-0.13.7 beta               TRM0_IRQ_Pic16F628A.asm2-7-2016  15:16:53           PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+ 
+  00000005     00146 SREN                         EQU     H'0005'
+  00000004     00147 CREN                         EQU     H'0004'
+  00000003     00148 ADEN                         EQU     H'0003'
+  00000002     00149 FERR                         EQU     H'0002'
+  00000001     00150 OERR                         EQU     H'0001'
+  00000000     00151 RX9D                         EQU     H'0000'
+               00152 
+               00153 ;----- CMCON Bits ---------------------------------------------------------
+               00154 
+  00000007     00155 C2OUT                        EQU     H'0007'
+  00000006     00156 C1OUT                        EQU     H'0006'
+  00000005     00157 C2INV                        EQU     H'0005'
+  00000004     00158 C1INV                        EQU     H'0004'
+  00000003     00159 CIS                          EQU     H'0003'
+  00000002     00160 CM2                          EQU     H'0002'
+  00000001     00161 CM1                          EQU     H'0001'
+  00000000     00162 CM0                          EQU     H'0000'
+               00163 
+               00164 ;----- OPTION Bits --------------------------------------------------------
+               00165 
+  00000007     00166 NOT_RBPU                     EQU     H'0007'
+  00000006     00167 INTEDG                       EQU     H'0006'
+  00000005     00168 T0CS                         EQU     H'0005'
+  00000004     00169 T0SE                         EQU     H'0004'
+  00000003     00170 PSA                          EQU     H'0003'
+  00000002     00171 PS2                          EQU     H'0002'
+  00000001     00172 PS1                          EQU     H'0001'
+  00000000     00173 PS0                          EQU     H'0000'
+               00174 
+               00175 ;----- PIE1 Bits ----------------------------------------------------------
+               00176 
+  00000007     00177 EEIE                         EQU     H'0007'
+  00000006     00178 CMIE                         EQU     H'0006'
+  00000005     00179 RCIE                         EQU     H'0005'
+  00000004     00180 TXIE                         EQU     H'0004'
+  00000002     00181 CCP1IE                       EQU     H'0002'
+  00000001     00182 TMR2IE                       EQU     H'0001'
+  00000000     00183 TMR1IE                       EQU     H'0000'
+               00184 
+               00185 ;----- PCON Bits ----------------------------------------------------------
+               00186 
+  00000003     00187 OSCF                         EQU     H'0003'
+  00000001     00188 NOT_POR                      EQU     H'0001'
+  00000000     00189 NOT_BO                       EQU     H'0000'
+  00000000     00190 NOT_BOR                      EQU     H'0000'
+  00000000     00191 NOT_BOD                      EQU     H'0000' ;Backwards compatability to 16F62X
+               00192 
+               00193 ;----- TXSTA Bits ----------------------------------------------------------
+  00000007     00194 CSRC                         EQU     H'0007'
+  00000006     00195 TX9                          EQU     H'0006'
+  00000005     00196 TXEN                         EQU     H'0005'
+  00000004     00197 SYNC                         EQU     H'0004'
+  00000002     00198 BRGH                         EQU     H'0002'
+  00000001     00199 TRMT                         EQU     H'0001'
+gpasm-0.13.7 beta               TRM0_IRQ_Pic16F628A.asm2-7-2016  15:16:53           PAGE  5
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+ 
+  00000000     00200 TX9D                         EQU     H'0000'
+               00201 
+               00202 ;----- EECON1 Bits ---------------------------------------------------------
+  00000003     00203 WRERR                        EQU     H'0003'
+  00000002     00204 WREN                         EQU     H'0002'
+  00000001     00205 WR                           EQU     H'0001'
+  00000000     00206 RD                           EQU     H'0000'
+               00207 
+               00208 ;----- VRCON Bits ---------------------------------------------------------
+               00209 
+  00000007     00210 VREN                         EQU     H'0007'
+  00000006     00211 VROE                         EQU     H'0006'
+  00000005     00212 VRR                          EQU     H'0005'
+  00000003     00213 VR3                          EQU     H'0003'
+  00000002     00214 VR2                          EQU     H'0002'
+  00000001     00215 VR1                          EQU     H'0001'
+  00000000     00216 VR0                          EQU     H'0000'
+               00217 
+               00218 ;==========================================================================
+               00219 ;
+               00220 ;       RAM Definition
+               00221 ;
+               00222 ;==========================================================================
+               00223 
+               00224     __MAXRAM H'01FF'
+               00225     __BADRAM H'07'-H'09', H'0D', H'13'-H'14', H'1B'-H'1E'
+               00226     __BADRAM H'87'-H'89', H'8D', H'8F'-H'91', H'93'-H'97', H'9E'
+               00227     __BADRAM H'105', H'107'-H'109', H'10C'-H'11F', H'150'-H'16F'
+               00228     __BADRAM H'185', H'187'-H'189', H'18C'-H'1EF'
+               00229 
+               00230 ;==========================================================================
+               00231 ;
+               00232 ;       Configuration Bits
+               00233 ;
+               00234 ;==========================================================================
+               00235 
+  00003FFF     00236 _BODEN_ON                    EQU     H'3FFF' ;Backwards compatability to 16F62X
+  00003FBF     00237 _BODEN_OFF                   EQU     H'3FBF' ;Backwards compatability to 16F62X
+  00003FFF     00238 _BOREN_ON                    EQU     H'3FFF'
+  00003FBF     00239 _BOREN_OFF                   EQU     H'3FBF'
+  00001FFF     00240 _CP_ON                       EQU     H'1FFF'
+  00003FFF     00241 _CP_OFF                      EQU     H'3FFF'
+  00003EFF     00242 _DATA_CP_ON                  EQU     H'3EFF'
+  00003FFF     00243 _DATA_CP_OFF                 EQU     H'3FFF'
+  00003FFF     00244 _PWRTE_OFF                   EQU     H'3FFF'
+  00003FF7     00245 _PWRTE_ON                    EQU     H'3FF7'
+  00003FFF     00246 _WDT_ON                      EQU     H'3FFF'
+  00003FFB     00247 _WDT_OFF                     EQU     H'3FFB'
+  00003FFF     00248 _LVP_ON                      EQU     H'3FFF'
+  00003F7F     00249 _LVP_OFF                     EQU     H'3F7F'
+  00003FFF     00250 _MCLRE_ON                    EQU     H'3FFF'
+  00003FDF     00251 _MCLRE_OFF                   EQU     H'3FDF'
+  00003FFF     00252 _RC_OSC_CLKOUT               EQU     H'3FFF'
+  00003FFE     00253 _RC_OSC_NOCLKOUT             EQU     H'3FFE'
+gpasm-0.13.7 beta               TRM0_IRQ_Pic16F628A.asm2-7-2016  15:16:53           PAGE  6
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+ 
+  00003FFF     00254 _ER_OSC_CLKOUT               EQU     H'3FFF' ;Backwards compatability to 16F62X
+  00003FFE     00255 _ER_OSC_NOCLKOUT             EQU     H'3FFE' ;Backwards compatability to 16F62X
+  00003FFD     00256 _INTOSC_OSC_CLKOUT           EQU     H'3FFD'
+  00003FFC     00257 _INTOSC_OSC_NOCLKOUT         EQU     H'3FFC'    
+  00003FFD     00258 _INTRC_OSC_CLKOUT            EQU     H'3FFD' ;Backwards compatability to 16F62X
+  00003FFC     00259 _INTRC_OSC_NOCLKOUT          EQU     H'3FFC' ;Backwards compatability to 16F62X
+  00003FEF     00260 _EXTCLK_OSC                  EQU     H'3FEF'
+  00003FEE     00261 _HS_OSC                      EQU     H'3FEE'
+  00003FED     00262 _XT_OSC                      EQU     H'3FED'
+  00003FEC     00263 _LP_OSC                      EQU     H'3FEC'
+               00264 
+               00265         LIST
+               00266 
+               00017         errorlevel  -302              ; suppress message 302 from list file
+               00018 
+Warning [205] : Found directive in column 1.
+002007 3F02    00019 __CONFIG   _CP_OFF & _LVP_OFF & _BOREN_OFF & _MCLRE_OFF & _WDT_OFF & _PWRTE_ON & _HS_OSC 
+               00020         
+               00021 ; Use  _INTOSC_OSC_NOCLKOUT  for 
+               00022 ; internal 4 mHz osc and no ext reset, use pin Ra5 as an input
+               00023 ; Use _HS_OSC for a 16 mHz ext crystal. 
+               00024 ; Use _XT_OSC for 4 mHz ext crystal. Page 95 in spec sheet. 
+               00025 
+               00026 
+               00027         cblock 0x20     ; Begin General Purpose-Register
+               00028         count1
+               00029         count2
+               00030         count3
+               00031         CNT
+               00032         endc
+               00033 
+               00034 
+               00035         ;***** VARIABLE DEFINITIONS
+  00000071     00036 w_temp        EQU     0x71        ; variable used for context saving 
+  00000072     00037 status_temp   EQU     0x72        ; variable used for context saving
+               00038 
+               00039 ;-----------------------------------------------
+  00000000     00040 RA0       EQU     0 ;
+               00041 
+               00042 ;**********************************************************************
+0000           00043         ORG     0x000             ; processor reset vector
+0000 2815      00044         goto    setup              ; go to beginning of program
+               00045         
+0004           00046         ORG     0x004             ; interrupt vector location
+0004 00F1      00047         movwf   w_temp            ; save off current W register contents
+0005 0803      00048         movf    STATUS,w          ; move status register into W register
+0006 00F2      00049         movwf   status_temp       ; save off contents of STATUS register
+               00050 ; isr code can go here or be located as a call subroutine elsewhere
+               00051 
+0007 303D      00052         movlw d'61' 
+               00053         ; approx 61 interrupts = 1 sec. at 16 mHz crystal
+0008 0223      00054         subwf CNT, w
+0009 1D03      00055         btfss STATUS, Z ; i = 10
+000A 280E      00056         goto $+4
+gpasm-0.13.7 beta               TRM0_IRQ_Pic16F628A.asm2-7-2016  15:16:53           PAGE  7
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+ 
+000B 202C      00057         call toggle ; state = !state PORTA, 0
+000C 01A3      00058         clrf CNT
+000D 280F      00059         goto $+2
+000E 0AA3      00060         incf CNT
+000F 110B      00061         bcf INTCON, T0IF ; clr TMR0 interrupt flag      
+               00062 
+0010 0872      00063         movf    status_temp,w     ; retrieve copy of STATUS register
+0011 0083      00064         movwf   STATUS            ; restore pre-isr STATUS register contents
+0012 0EF1      00065         swapf   w_temp,f
+0013 0E71      00066         swapf   w_temp,w          ; restore pre-isr W register contents
+0014 0009      00067         retfie                    ; return from interrupt
+               00068 
+               00069 ;**********************************************************************
+               00070 
+0015 00071 setup ; init PIC16F628A
+               00072 
+0015 3007      00073         movlw   0x07            ; Turn comparators off and enable pins for I/O 
+0016 009F      00074         movwf   CMCON
+0017 1683 1303 00075         banksel TRISA    ; BSF  STATUS,RP0 Jump to bank 1 use BANKSEL instead
+0019 0185      00076         clrf    TRISA
+001A 0186      00077         clrf    TRISB
+001B 1283 1303 00078         banksel INTCON ; back to bank 0
+001D 0185      00079         clrf    PORTA
+001E 0186      00080         clrf    PORTB
+               00081 
+               00082         ; setp TMR0 interrupts
+001F 1683 1303 00083         banksel OPTION_REG ; Reg. 0x81 BANK1
+0021 3087      00084         movlw b'10000111' ; internal clock, pos edge, prescale 256
+0022 0081      00085         movwf OPTION_REG
+0023 1283 1303 00086         banksel INTCON ; 
+0025 178B      00087         bsf INTCON, GIE ; enable global interrupt
+0026 170B      00088         bsf INTCON, PEIE ; enable all unmasked interrupts
+0027 168B      00089         bsf INTCON, T0IE ; enable TMR0 interrupt
+0028 110B      00090         bcf INTCON, T0IF ; clr TMR0 interrupt flag 
+               00091         ; to turn on, must be cleared after interrupt
+0029 01A3      00092         clrf    CNT ; RAM location 0x23
+               00093 
+Warning [203] : Found opcode in column 1.
+002A 282B      00094 goto main
+               00095 
+002B 00096 main
+               00097         ; do nothing
+002B 282B      00098         goto    main 
+               00099         
+               00100 ;************************************************************************
+               00101 
+002C 00102 toggle
+002C 1C05      00103         btfss PORTA, RA0
+002D 2830      00104         goto $+3
+002E 1005      00105         bcf PORTA, RA0
+002F 0008      00106         return  
+0030 1405      00107         bsf PORTA, RA0
+0031 0008      00108         return
+               00109         
+gpasm-0.13.7 beta               TRM0_IRQ_Pic16F628A.asm2-7-2016  15:16:53           PAGE  8
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ADEN                              00000003
+BRGH                              00000002
+C                                 00000000
+C1INV                             00000004
+C1OUT                             00000006
+C2INV                             00000005
+C2OUT                             00000007
+CCP1CON                           00000017
+CCP1IE                            00000002
+CCP1IF                            00000002
+CCP1M0                            00000000
+CCP1M1                            00000001
+CCP1M2                            00000002
+CCP1M3                            00000003
+CCP1X                             00000005
+CCP1Y                             00000004
+CCPR1H                            00000016
+CCPR1L                            00000015
+CIS                               00000003
+CM0                               00000000
+CM1                               00000001
+CM2                               00000002
+CMCON                             0000001F
+CMIE                              00000006
+CMIF                              00000006
+CNT                               00000023
+CREN                              00000004
+CSRC                              00000007
+DC                                00000001
+EEADR                             0000009B
+EECON1                            0000009C
+EECON2                            0000009D
+EEDATA                            0000009A
+EEIE                              00000007
+EEIF                              00000007
+F                                 00000001
+FERR                              00000002
+FSR                               00000004
+GIE                               00000007
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+NOT_BO                            00000000
+NOT_BOD                           00000000
+NOT_BOR                           00000000
+NOT_PD                            00000003
+NOT_POR                           00000001
+NOT_RBPU                          00000007
+NOT_T1SYNC                        00000002
+NOT_TO                            00000004
+gpasm-0.13.7 beta               TRM0_IRQ_Pic16F628A.asm2-7-2016  15:16:53           PAGE  9
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+ 
+OERR                              00000001
+OPTION_REG                        00000081
+OSCF                              00000003
+PCL                               00000002
+PCLATH                            0000000A
+PCON                              0000008E
+PEIE                              00000006
+PIE1                              0000008C
+PIR1                              0000000C
+PORTA                             00000005
+PORTB                             00000006
+PR2                               00000092
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+RA0                               00000000
+RBIE                              00000003
+RBIF                              00000000
+RCIE                              00000005
+RCIF                              00000005
+RCREG                             0000001A
+RCSTA                             00000018
+RD                                00000000
+RP0                               00000005
+RP1                               00000006
+RX9                               00000006
+RX9D                              00000000
+SPBRG                             00000099
+SPEN                              00000007
+SREN                              00000005
+STATUS                            00000003
+SYNC                              00000004
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+T1CKPS0                           00000004
+T1CKPS1                           00000005
+T1CON                             00000010
+T1OSCEN                           00000003
+T2CKPS0                           00000000
+T2CKPS1                           00000001
+T2CON                             00000012
+TMR0                              00000001
+TMR1CS                            00000001
+TMR1H                             0000000F
+TMR1IE                            00000000
+TMR1IF                            00000000
+TMR1L                             0000000E
+TMR1ON                            00000000
+TMR2                              00000011
+TMR2IE                            00000001
+TMR2IF                            00000001
+gpasm-0.13.7 beta               TRM0_IRQ_Pic16F628A.asm2-7-2016  15:16:53           PAGE 10
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+ 
+TMR2ON                            00000002
+TOUTPS0                           00000003
+TOUTPS1                           00000004
+TOUTPS2                           00000005
+TOUTPS3                           00000006
+TRISA                             00000085
+TRISB                             00000086
+TRMT                              00000001
+TX9                               00000006
+TX9D                              00000000
+TXEN                              00000005
+TXIE                              00000004
+TXIF                              00000004
+TXREG                             00000019
+TXSTA                             00000098
+VR0                               00000000
+VR1                               00000001
+VR2                               00000002
+VR3                               00000003
+VRCON                             0000009F
+VREN                              00000007
+VROE                              00000006
+VRR                               00000005
+W                                 00000000
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+Z                                 00000002
+_BODEN_OFF                        00003FBF
+_BODEN_ON                         00003FFF
+_BOREN_OFF                        00003FBF
+_BOREN_ON                         00003FFF
+_CP_OFF                           00003FFF
+_CP_ON                            00001FFF
+_DATA_CP_OFF                      00003FFF
+_DATA_CP_ON                       00003EFF
+_ER_OSC_CLKOUT                    00003FFF
+_ER_OSC_NOCLKOUT                  00003FFE
+_EXTCLK_OSC                       00003FEF
+_HS_OSC                           00003FEE
+_INTOSC_OSC_CLKOUT                00003FFD
+_INTOSC_OSC_NOCLKOUT              00003FFC
+_INTRC_OSC_CLKOUT                 00003FFD
+_INTRC_OSC_NOCLKOUT               00003FFC
+_LP_OSC                           00003FEC
+_LVP_OFF                          00003F7F
+_LVP_ON                           00003FFF
+_MCLRE_OFF                        00003FDF
+_MCLRE_ON                         00003FFF
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC_CLKOUT                    00003FFF
+_RC_OSC_NOCLKOUT                  00003FFE
+_WDT_OFF                          00003FFB
+gpasm-0.13.7 beta               TRM0_IRQ_Pic16F628A.asm2-7-2016  15:16:53           PAGE 11
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+ 
+_WDT_ON                           00003FFF
+_XT_OSC                           00003FED
+__16F628A                         00000001
+count1                            00000020
+count2                            00000021
+count3                            00000022
+main                              0000002B
+setup                             00000015
+status_temp                       00000072
+toggle                            0000002C
+w_temp                            00000071
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+00000000 : X---XXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XX--------------
+00002000 : -------X-------- ---------------- ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used: 48
+
+
+Errors   :       0
+Warnings :       3 reported,       0 suppressed
+Messages :       0 reported,       4 suppressed
+

@@ -1,0 +1,47 @@
+<!DOCTYPE SimulIDE>
+
+<!-- *************************************************************************** -->
+<!-- *   Copyright (C) 2017 by santiago González                               * -->
+<!-- *   santigoro@gmail.com                                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is free software; you can redistribute it and/or modify  * -->
+<!-- *   it under the terms of the GNU General Public License as published by  * -->
+<!-- *   the Free Software Foundation; either version 3 of the License, or     * -->
+<!-- *   (at your option) any later version.                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is distributed in the hope that it will be useful,       * -->
+<!-- *   but WITHOUT ANY WARRANTY; without even the implied warranty of        * -->
+<!-- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         * -->
+<!-- *   GNU General Public License for more details.                          * -->
+<!-- *                                                                         * -->
+<!-- *   You should have received a copy of the GNU General Public License     * -->
+<!-- *   along with this program; if not, see <http://www.gnu.org/licenses/>.  * -->
+<!-- *                                                                         * -->
+<!-- *************************************************************************** -->
+
+<package name="attyny2313" pins="20" width="4" height="11">
+
+    <pin side="left"  pos="1"  type="bidir" id="PA2"  label="A2"/>
+    <pin side="left"  pos="2"  type="bidir" id="PD0"  label="D0"/>
+    <pin side="left"  pos="3"  type="bidir" id="PD1"  label="D1"/>
+    <pin side="left"  pos="4"  type="bidir" id="PA1"  label="A1"/>
+    <pin side="left"  pos="5"  type="bidir" id="PA0"  label="A0"/>
+    <pin side="left"  pos="6"  type="bidir" id="PD2"  label="D2"/>
+    <pin side="left"  pos="7"  type="bidir" id="PD3"  label="D3"/>
+    <pin side="left"  pos="8"  type="bidir" id="PD4"  label="D4"/>
+    <pin side="left"  pos="9"  type="pwm0B" id="PD5"  label="D5"/>
+    <pin side="left"  pos="10" type="gnd"   id="GND"  label="Gnd"/>
+    
+    <pin side="right" pos="10" type="bidir" id="PD6"  label="D6"/>
+    <pin side="right" pos="9"  type="bidir" id="PB0"  label="B0"/>
+    <pin side="right" pos="8"  type="bidir" id="PB1"  label="B1"/>
+    <pin side="right" pos="7"  type="bidir" id="PB2"  label="B2"/>
+    <pin side="right" pos="6"  type="pwm1B" id="PB3"  label="B3"/>
+    <pin side="right" pos="5"  type="pwm1A" id="PB4"  label="B4"/>
+    <pin side="right" pos="4"  type="pwm0A" id="PB5"  label="B5"/>
+    <pin side="right" pos="3"  type="ain1"  id="PB6"  label="B6"/>
+    <pin side="right" pos="2"  type="ain0"  id="PB7"  label="B7"/>
+    <pin side="right" pos="1"  type="vcc"   id="VCC"  label="Vcc"/>
+    
+</package>
+

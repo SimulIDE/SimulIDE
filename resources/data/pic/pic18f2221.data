@@ -1,0 +1,142 @@
+ ###########################################################################
+ #   Copyright (C) 2017   by santiago González                             #
+ #   santigoro@gmail.com                                                   #
+ #                                                                         #
+ #   This program is free software; you can redistribute it and/or modify  #
+ #   it under the terms of the GNU General Public License as published by  #
+ #   the Free Software Foundation; either version 3 of the License, or     #
+ #   (at your option) any later version.                                   #
+ #                                                                         #
+ #   This program is distributed in the hope that it will be useful,       #
+ #   but WITHOUT ANY WARRANTY; without even the implied warranty of        #
+ #   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         #
+ #   GNU General Public License for more details.                          #
+ #                                                                         #
+ #   You should have received a copy of the GNU General Public License     #
+ #   along with this program; if not, see <http://www.gnu.org/licenses/>.  #
+ #                                                                         #
+ ###########################################################################
+ 
+MaxMHz=40
+
+PORTA EQU 3968
+PORTB EQU 3969
+PORTC EQU 3970
+PORTE EQU 3972
+LATA EQU 3977
+LATB EQU 3978
+LATC EQU 3979
+DDRA EQU 3986
+TRISA EQU 3986
+DDRB EQU 3987
+TRISB EQU 3987
+DDRC EQU 3988
+TRISC EQU 3988
+OSCTUNE EQU 3995
+PIE1 EQU 3997
+PIR1 EQU 3998
+IPR1 EQU 3999
+PIE2 EQU 4000
+PIR2 EQU 4001
+IPR2 EQU 4002
+EECON1 EQU 4006
+EECON2 EQU 4007
+EEDATA EQU 4008
+EEADR EQU 4009
+RCSTA EQU 4011
+TXSTA EQU 4012
+TXREG EQU 4013
+RCREG EQU 4014
+SPBRG EQU 4015
+SPBRGH EQU 4016
+T3CON EQU 4017
+TMR3 EQU 4018
+TMR3L EQU 4018
+TMR3H EQU 4019
+CMCON EQU 4020
+CVRCON EQU 4021
+ECCP1AS EQU 4022
+ECCP1DEL EQU 4023
+PWM1CON EQU 4023
+BAUDCON EQU 4024
+BAUDCTL EQU 4024
+CCP2CON EQU 4026
+CCPR2 EQU 4027
+CCPR2L EQU 4027
+CCPR2H EQU 4028
+CCP1CON EQU 4029
+ECCP1CON EQU 4029
+CCPR1 EQU 4030
+CCPR1L EQU 4030
+CCPR1H EQU 4031
+ADCON2 EQU 4032
+ADCON1 EQU 4033
+ADCON0 EQU 4034
+ADRES EQU 4035
+ADRESL EQU 4035
+ADRESH EQU 4036
+SSPCON2 EQU 4037
+SSPCON1 EQU 4038
+SSPSTAT EQU 4039
+SSPADD EQU 4040
+SSPBUF EQU 4041
+T2CON EQU 4042
+PR2 EQU 4043
+TMR2 EQU 4044
+T1CON EQU 4045
+TMR1 EQU 4046
+TMR1L EQU 4046
+TMR1H EQU 4047
+RCON EQU 4048
+WDTCON EQU 4049
+HLVDCON EQU 4050
+LVDCON EQU 4050
+OSCCON EQU 4051
+T0CON EQU 4053
+TMR0 EQU 4054
+TMR0L EQU 4054
+TMR0H EQU 4055
+STATUS EQU 4056
+FSR2L EQU 4057
+FSR2H EQU 4058
+PLUSW2 EQU 4059
+PREINC2 EQU 4060
+POSTDEC2 EQU 4061
+POSTINC2 EQU 4062
+INDF2 EQU 4063
+BSR EQU 4064
+FSR1L EQU 4065
+FSR1H EQU 4066
+PLUSW1 EQU 4067
+PREINC1 EQU 4068
+POSTDEC1 EQU 4069
+POSTINC1 EQU 4070
+INDF1 EQU 4071
+WREG EQU 4072
+FSR0L EQU 4073
+FSR0H EQU 4074
+PLUSW0 EQU 4075
+PREINC0 EQU 4076
+POSTDEC0 EQU 4077
+POSTINC0 EQU 4078
+INDF0 EQU 4079
+INTCON3 EQU 4080
+INTCON2 EQU 4081
+INTCON EQU 4082
+PROD EQU 4083
+PRODL EQU 4083
+PRODH EQU 4084
+TABLAT EQU 4085
+TBLPTR EQU 4086
+TBLPTRL EQU 4086
+TBLPTRH EQU 4087
+TBLPTRU EQU 4088
+PC EQU 4089
+PCL EQU 4089
+PCLATH EQU 4090
+PCLATU EQU 4091
+STKPTR EQU 4092
+TOS EQU 4093
+TOSL EQU 4093
+TOSH EQU 4094
+TOSU EQU 4095

@@ -1,0 +1,7 @@
+Fixed Voltage:
+
+This is a simple voltage source.
+
+It can be turned On/Off with the buttton on the left side.
+
+It is also possible to change voltage in "Voltage" property above.

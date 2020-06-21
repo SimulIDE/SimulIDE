@@ -1,0 +1,25 @@
+<!DOCTYPE SimulIDE>
+
+
+
+<package name="74HC40103" pins="16" width="4" height="9">
+
+    <pin side="left" pos="1"  type="" id="CLK"   label="CLK" /><!-- packagePin1 -->
+    <pin side="left" pos="2"  type="" id="!CLR"  label="!CLR" /><!-- packagePin2 -->
+    <pin side="left" pos="3"  type="" id="!Ci"   label="!Ci" /><!-- packagePin3 -->
+    <pin side="left" pos="4"  type="" id="J0"    label="J0" /><!-- packagePin4 -->
+    <pin side="left" pos="5"  type="" id="J1"    label="J1" /><!-- packagePin5 -->
+    <pin side="left" pos="6"  type="" id="J2"    label="J2" /><!-- packagePin6 -->
+    <pin side="left" pos="7"  type="" id="J3"    label="J3" /><!-- packagePin7 -->
+    <pin side="left" pos="8"  type="unused" id="GND" label="GND"/><!-- packagePin8 -->
+
+    <pin side="right" pos="8" type="" id="!APE"  label="!APE" /><!-- packagePin9 -->
+    <pin side="right" pos="7" type="" id="J4"    label="J4" /><!-- packagePin10 -->
+    <pin side="right" pos="6" type="" id="J5"    label="J5" /><!-- packagePin11 -->
+    <pin side="right" pos="5" type="" id="J6"    label="J6" /><!-- packagePin12 -->
+    <pin side="right" pos="4" type="" id="J7"    label="J7" /><!-- packagePin13 -->
+    <pin side="right" pos="3" type="" id="!Co"   label="!Co" /><!-- packagePin14 -->
+    <pin side="right" pos="2" type="" id="!SPE"  label="!SPE" /><!-- packagePin15 -->
+    <pin side="right" pos="1" type="unused" id="Vcc" label="Vcc"/><!-- packagePin16 -->
+
+</package>

@@ -1,0 +1,11 @@
+DIP de resistencias;
+
+Parámetros:
+- Size:
+   Determina el numero de resitencias. 8
+- Resistencia:
+   Valor actual de resistencia. 100
+- Unidades:
+   Determina las unidades.
+- Mostrar Resistencia:
+   Muestra o no el valor actual. true

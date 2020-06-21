@@ -1,0 +1,5 @@
+HD44780 LCD:
+
+5x8 dot-matrix liquid crystal display based on Hitachi HD44780 LCD controller.
+
+Configurable in characters rows and columns.

@@ -1,0 +1,51 @@
+MCU: ATmega8
+ Package: 28-pin-PDIP
+
+ 1: Reset
+ 2: PD0 RXD0
+ 3: PD1 TXD0
+ 4: PD2 INT0
+ 5: PD3 INT1
+ 6: PD4 T0     XCK0
+ 7: Vcc
+ 8: Gnd
+ 9: PB6 TOSC1  XTAL1
+10: PB7 TOSC2  XTAL2
+11: PD5 T1
+12: PD6 AIN0
+13: PD7 AIN1   
+14: PB0 ICP1
+15: PB1 OC1A
+16: PB2 !SS    OC1B
+17: PB3 MOSI   OC2A
+18: PB4 MISO
+19: PB5 USCK
+20: AVCC
+21: AREF
+22: Gnd
+23: PC0 ADC0
+24: PC1 ADC1
+25: PC2 ADC2
+26: PC3 ADC3
+27: PC4 ADC4   SDA
+28: PC5 ADC5   SCL
+
+Summary:
+The high-performance Microchip picoPower 8-bit AVR RISC-based microcontroller 
+8 KB ISP flash memory with read-while-write capabilities, 
+512 B EEPROM, 
+1024 B SRAM, 
+23 general purpose I/O lines, 
+32 general purpose working registers, 
+2 x 8-bit, 1 x 16-bit timer/counters with compare modes, 
+3-channel PWM,
+1 comparators,
+internal and external interrupts,
+1 serial programmable USART, 
+1 byte-oriented 2-wire serial interface, 
+1 SPI serial port, 
+4-channel 10-bit A/D converter,
+2-channel 8-bit A/D converter, 
+programmable watchdog timer with internal oscillator, 
+5 software selectable power saving modes. 
+The device operates between 4.5-5.5 volts.

@@ -1,0 +1,7 @@
+Sensor HC-SR04
+
+Pines:
+- Vcc: Alimentación (5V)
+- Trig:
+- Echo:
+- Gnd: tierra

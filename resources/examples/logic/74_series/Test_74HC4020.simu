@@ -1,0 +1,45 @@
+<circuit speed="1000000" animate="0" type="simulide_0.1" noLinAcc="5" reactStep="50" noLinStep="10">
+ 
+7 Seg BCD-5: 
+<item rotation="0" valLabely="0" Show_id="false" itemtype="7-Seg BCD" labelrot="0" id="7 Seg BCD-1" x="-428" labely="-24" y="-108" vflip="1" objectName="7 Seg BCD-5" valLabRot="0" labelx="-16" valLabelx="0" hflip="1"/>
+ 
+Probe-4: 
+<item rotation="-45" valLabely="0" PlotterCh="0" Show_id="false" itemtype="Probe" labelrot="45" id="Probe-2" x="-268" labely="-16" y="-28" vflip="1" Show_volt="true" objectName="Probe-4" valLabRot="45" labelx="16" valLabelx="16" hflip="1"/>
+ 
+Fixed Volt.-3: 
+<item valLabely="8" Show_id="false" rotation="0" vflip="1" Show_Volt="true" x="-332" id="Fixed Volt.-3" Unit=" V" objectName="Fixed Volt.-3" labelrot="0" hflip="1" y="52" valLabelx="-16" Voltage="5" labely="-24" labelx="-64" valLabRot="0" itemtype="Fixed Voltage"/>
+ 
+Clock-2: 
+<item valLabely="8" Show_id="false" rotation="0" vflip="1" Show_Volt="true" x="-380" id="Clock-4" Unit=" V" objectName="Clock-2" labelrot="0" hflip="1" y="28" Freq="10" valLabelx="-16" Voltage="5" labely="-24" labelx="-64" valLabRot="0" Running="true" itemtype="Clock"/>
+ 
+74HC4020-1: 
+<item rotation="0" valLabely="0" Show_id="true" itemtype="Subcircuit" labelrot="0" id="74HC4020-5" x="-388" labely="-18" y="-76" Logic_Symbol="false" vflip="1" objectName="74HC4020-1" valLabRot="0" labelx="-9" valLabelx="0" hflip="1"/>
+ 
+Connector-6: 
+<item startpinid="Clock-2-outnod" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-364" id="Connector-6" enodeid="Circ_eNode-7" objectName="Connector-6" pointList="-364,28,-324,28,-324,-20,-348,-20" labelrot="0" hflip="1" endpinid="74HC4020-1-!CP" y="28" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-8: 
+<item startpinid="Fixed Volt.-3-outnod" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-316" id="Connector-8" enodeid="Circ_eNode-9" objectName="Connector-8" pointList="-316,52,-316,-28,-348,-28" labelrot="0" hflip="1" endpinid="74HC4020-1-MR" y="52" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-10: 
+<item startpinid="Probe-4-inpin" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-284" id="Connector-10" enodeid="Circ_eNode-11" objectName="Connector-10" pointList="-284,-12,-348,-12" labelrot="0" hflip="1" endpinid="74HC4020-1-Q0" y="-12" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-12: 
+<item startpinid="7 Seg BCD-5-ePin-input0" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-412" id="Connector-12" enodeid="Circ_eNode-13" objectName="Connector-12" pointList="-412,-76,-412,-20,-396,-20" labelrot="0" hflip="1" endpinid="74HC4020-1-Q3" y="-76" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-14: 
+<item startpinid="7 Seg BCD-5-ePin-input1" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-420" id="Connector-14" enodeid="Circ_eNode-15" objectName="Connector-14" pointList="-420,-76,-420,-36,-396,-36" labelrot="0" hflip="1" endpinid="74HC4020-1-Q4" y="-76" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-16: 
+<item startpinid="7 Seg BCD-5-ePin-input2" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-428" id="Connector-16" enodeid="Circ_eNode-17" objectName="Connector-16" pointList="-428,-76,-428,-44,-396,-44" labelrot="0" hflip="1" endpinid="74HC4020-1-Q5" y="-76" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-18: 
+<item startpinid="7 Seg BCD-5-ePin-input3" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-436" id="Connector-18" enodeid="Circ_eNode-19" objectName="Connector-18" pointList="-436,-76,-436,-28,-396,-28" labelrot="0" hflip="1" endpinid="74HC4020-1-Q6" y="-76" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+PlotterWidget-20: 
+<item frameSize="" toolTipDuration="-1" maximumSize="" sizeHint="" pos="" baseSize="" maximumWidth="1000" normalGeometry="" maximized="false" minimumWidth="200" maximumHeight="200" windowFilePath="" windowModality="0" inputMethodHints="0" toolTip="" updatesEnabled="true" palette="" whatsThis="" autoFillBackground="false" minimized="false" itemtype="Plotter" windowOpacity="1" cursor="" styleSheet="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumHeight="200" isActiveWindow="true" minimumSize="" height="200" y="520" childrenRegion="" windowTitle="" contextMenuPolicy="1" x="0" focus="false" windowModified="false" mouseTracking="false" size="" accessibleName="" sizePolicy="" MinVolt="-500" childrenRect="" minimumSizeHint="" width="619" acceptDrops="false" windowIcon="" Tracks="1" objectName="PlotterWidget-20" windowIconText="" geometry="" rect="" locale="" modal="false" Scale="1" frameGeometry="" sizeIncrement="" focusPolicy="0" accessibleDescription="" layoutDirection="0" visible="false" fullScreen="false" MaxVolt="500" enabled="true" statusTip=""/>
+ 
+SerialPortWidget-21: 
+<item frameSize="" toolTipDuration="-1" maximumSize="" sizeHint="" pos="" baseSize="" maximumWidth="450" normalGeometry="" maximized="false" minimumWidth="0" maximumHeight="170" windowFilePath="" SettingsProp="ttyS0,0,3,0,0,0" windowModality="0" inputMethodHints="0" toolTip="" updatesEnabled="true" palette="" whatsThis="" autoFillBackground="false" minimized="false" itemtype="SerialPort" windowOpacity="1" cursor="" styleSheet="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumHeight="0" isActiveWindow="true" minimumSize="" height="147" y="573" childrenRegion="" windowTitle="Configuracion" contextMenuPolicy="1" x="153" focus="false" windowModified="false" mouseTracking="false" size="" accessibleName="" sizePolicy="" childrenRect="" minimumSizeHint="" width="450" acceptDrops="false" windowIcon="" objectName="SerialPortWidget-21" windowIconText="" geometry="" rect="" locale="" modal="false" frameGeometry="" sizeIncrement="" focusPolicy="0" accessibleDescription="" layoutDirection="0" visible="false" fullScreen="false" enabled="true" statusTip=""/>
+ 
+</circuit>

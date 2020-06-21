@@ -1,0 +1,72 @@
+<circuit speed="1000000" animate="0" type="simulide_0.1" noLinAcc="5" reactStep="50" noLinStep="10">
+ 
+Node-7: 
+<item rotation="0" valLabely="0" Show_id="false" itemtype="Node" labelrot="0" id="Node-1" x="-252" labely="-24" y="-228" vflip="1" objectName="Node-7" valLabRot="0" labelx="-16" valLabelx="0" hflip="1"/>
+ 
+Node-6: 
+<item rotation="0" valLabely="0" Show_id="false" itemtype="Node" labelrot="0" id="Node-2" x="-220" labely="-24" y="-220" vflip="1" objectName="Node-6" valLabRot="0" labelx="-16" valLabelx="0" hflip="1"/>
+ 
+Node-5: 
+<item rotation="0" valLabely="0" Show_id="false" itemtype="Node" labelrot="0" id="Node-3" x="-204" labely="-24" y="-212" vflip="1" objectName="Node-5" valLabRot="0" labelx="-16" valLabelx="0" hflip="1"/>
+ 
+Node-4: 
+<item rotation="0" valLabely="0" Show_id="false" itemtype="Node" labelrot="0" id="Node-4" x="-188" labely="-24" y="-204" vflip="1" objectName="Node-4" valLabRot="0" labelx="-16" valLabelx="0" hflip="1"/>
+ 
+Pcd8544-3: 
+<item rotation="0" valLabely="0" Show_id="true" itemtype="Pcd8544" labelrot="0" id="Display-2" x="-116" labely="-68" y="-276" vflip="1" objectName="Pcd8544-3" valLabRot="0" labelx="-28" valLabelx="0" hflip="1"/>
+ 
+Pcd8544-2: 
+<item rotation="0" valLabely="0" Show_id="true" itemtype="Pcd8544" labelrot="0" id="Display-1" x="-220" labely="-69" y="-276" vflip="1" objectName="Pcd8544-2" valLabRot="0" labelx="-27" valLabelx="0" hflip="1"/>
+ 
+atmega168-1: 
+<item valLabely="0" Show_id="true" rotation="0" vflip="1" x="-356" Ser_Port="false" Ser_Monitor="false" id="atmega168" objectName="atmega168-1" labelrot="0" hflip="1" y="-292" valLabelx="0" labely="-19" Logic_Symbol="false" Program="glcd8544_mega168.hex" labelx="-18" Mhz="16" valLabRot="0" eeprom="255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255" itemtype="AVR"/>
+ 
+Connector-8: 
+<item startpinid="atmega168-1-PB6" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-364" id="Connector-8" enodeid="Circ_eNode-9" objectName="Connector-8" pointList="-364,-220,-380,-220,-380,-148,-292,-148,-292,-220,-220,-220" labelrot="0" hflip="1" endpinid="Node-6-0" y="-220" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-10: 
+<item startpinid="atmega168-1-PB5" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-316" id="Connector-10" enodeid="Circ_eNode-11" objectName="Connector-10" pointList="-316,-212,-204,-212" labelrot="0" hflip="1" endpinid="Node-5-0" y="-212" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-12: 
+<item startpinid="atmega168-1-PB4" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-316" id="Connector-12" enodeid="Circ_eNode-13" objectName="Connector-12" pointList="-316,-204,-188,-204" labelrot="0" hflip="1" endpinid="Node-4-0" y="-204" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-14: 
+<item startpinid="Node-4-2" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-188" id="Connector-14" enodeid="Circ_eNode-13" objectName="Connector-14" pointList="-188,-204,-188,-236" labelrot="0" hflip="1" endpinid="Pcd8544-2-PinScl" y="-204" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-15: 
+<item startpinid="Node-4-1" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-188" id="Connector-15" enodeid="Circ_eNode-13" objectName="Connector-15" pointList="-188,-204,-84,-204,-84,-236" labelrot="0" hflip="1" endpinid="Pcd8544-3-PinScl" y="-204" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-16: 
+<item startpinid="Node-5-2" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-204" id="Connector-16" enodeid="Circ_eNode-11" objectName="Connector-16" pointList="-204,-212,-204,-236" labelrot="0" hflip="1" endpinid="Pcd8544-2-PinSi" y="-212" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-17: 
+<item startpinid="Node-5-1" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-204" id="Connector-17" enodeid="Circ_eNode-11" objectName="Connector-17" pointList="-204,-212,-100,-212,-100,-236" labelrot="0" hflip="1" endpinid="Pcd8544-3-PinSi" y="-212" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-18: 
+<item startpinid="Node-6-2" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-220" id="Connector-18" enodeid="Circ_eNode-9" objectName="Connector-18" pointList="-220,-220,-220,-236" labelrot="0" hflip="1" endpinid="Pcd8544-2-PinDc" y="-220" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-19: 
+<item startpinid="Node-6-1" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-220" id="Connector-19" enodeid="Circ_eNode-9" objectName="Connector-19" pointList="-220,-220,-116,-220,-116,-236" labelrot="0" hflip="1" endpinid="Pcd8544-3-PinDc" y="-220" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-20: 
+<item startpinid="atmega168-1-PB3" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-316" id="Connector-20" enodeid="Circ_eNode-21" objectName="Connector-20" pointList="-316,-196,-236,-196,-236,-236" labelrot="0" hflip="1" endpinid="Pcd8544-2-PinCs" y="-196" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-22: 
+<item startpinid="atmega168-1-PB7" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-364" id="Connector-22" enodeid="Circ_eNode-23" objectName="Connector-22" pointList="-364,-212,-372,-212,-372,-156,-300,-156,-300,-228,-252,-228" labelrot="0" hflip="1" endpinid="Node-7-0" y="-212" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-24: 
+<item startpinid="Node-7-2" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-252" id="Connector-24" enodeid="Circ_eNode-23" objectName="Connector-24" pointList="-252,-228,-252,-236" labelrot="0" hflip="1" endpinid="Pcd8544-2-PinRst" y="-228" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-25: 
+<item startpinid="Node-7-1" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-252" id="Connector-25" enodeid="Circ_eNode-23" objectName="Connector-25" pointList="-252,-228,-148,-228,-148,-236" labelrot="0" hflip="1" endpinid="Pcd8544-3-PinRst" y="-228" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-26: 
+<item startpinid="atmega168-1-PB2" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-316" id="Connector-26" enodeid="Circ_eNode-27" objectName="Connector-26" pointList="-316,-188,-132,-188,-132,-236" labelrot="0" hflip="1" endpinid="Pcd8544-3-PinCs" y="-188" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+PlotterWidget-50: 
+<item frameSize="" toolTipDuration="-1" maximumSize="" sizeHint="" pos="" baseSize="" maximumWidth="1000" normalGeometry="" maximized="false" minimumWidth="200" maximumHeight="200" windowFilePath="" windowModality="0" inputMethodHints="0" toolTip="" updatesEnabled="true" palette="" whatsThis="" autoFillBackground="false" minimized="false" itemtype="Plotter" windowOpacity="1" cursor="" styleSheet="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumHeight="200" isActiveWindow="true" minimumSize="" height="200" y="520" childrenRegion="" windowTitle="" contextMenuPolicy="1" x="0" focus="false" windowModified="false" mouseTracking="false" size="" accessibleName="" sizePolicy="" MinVolt="0" childrenRect="" minimumSizeHint="" width="756" acceptDrops="false" windowIcon="" Tracks="1" objectName="PlotterWidget-50" windowIconText="" geometry="" rect="" locale="" modal="false" Scale="1" frameGeometry="" sizeIncrement="" focusPolicy="0" accessibleDescription="" layoutDirection="0" visible="false" fullScreen="false" MaxVolt="500" enabled="true" statusTip=""/>
+ 
+SerialPortWidget-51: 
+<item frameSize="" toolTipDuration="-1" maximumSize="" sizeHint="" pos="" baseSize="" maximumWidth="450" normalGeometry="" maximized="false" minimumWidth="0" maximumHeight="170" windowFilePath="" SettingsProp="ttyS0,0,3,0,0,0" windowModality="0" inputMethodHints="0" toolTip="" updatesEnabled="true" palette="" whatsThis="" autoFillBackground="false" minimized="false" itemtype="SerialPort" windowOpacity="1" cursor="" styleSheet="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumHeight="0" isActiveWindow="true" minimumSize="" height="147" y="573" childrenRegion="" windowTitle="Configuracion" contextMenuPolicy="1" x="153" focus="false" windowModified="false" mouseTracking="false" size="" accessibleName="" sizePolicy="" childrenRect="" minimumSizeHint="" width="450" acceptDrops="false" windowIcon="" objectName="SerialPortWidget-51" windowIconText="" geometry="" rect="" locale="" modal="false" frameGeometry="" sizeIncrement="" focusPolicy="0" accessibleDescription="" layoutDirection="0" visible="false" fullScreen="false" enabled="true" statusTip=""/>
+ 
+</circuit>

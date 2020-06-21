@@ -1,0 +1,60 @@
+<circuit type="simulide_0.1">
+ 
+Node-11: 
+<item Show_id="false" labelx="-16" valLabRot="0" valLabelx="0" rotation="0" x="-252" id="Node-11" itemtype="Node" labelrot="0" hflip="1" y="-84" vflip="1" labely="-24" objectName="Node-11" valLabely="0"/>
+ 
+Ground (0 V)-10: 
+<item Show_id="false" labelx="-16" valLabRot="0" valLabelx="0" rotation="0" x="-252" id="Ground (0 V)-10" itemtype="Ground" labelrot="0" hflip="1" y="-52" vflip="1" labely="-24" objectName="Ground (0 V)-10" valLabely="0"/>
+ 
+Push-9: 
+<item Show_id="true" labelx="-20" valLabRot="0" valLabelx="0" rotation="180" x="-220" id="Mode" itemtype="Push" labelrot="-180" hflip="-1" y="-124" vflip="1" labely="38" objectName="Push-9" valLabely="0"/>
+ 
+Push-8: 
+<item Show_id="true" labelx="-9" valLabRot="0" valLabelx="0" rotation="0" x="-276" id="Init" itemtype="Push" labelrot="0" hflip="1" y="-124" vflip="-1" labely="39" objectName="Push-8" valLabely="0"/>
+ 
+Ground (0 V)-7: 
+<item Show_id="false" labelx="-16" valLabRot="0" valLabelx="0" rotation="0" x="-260" id="Ground (0 V)-7" itemtype="Ground" labelrot="0" hflip="1" y="-220" vflip="1" labely="-24" objectName="Ground (0 V)-7" valLabely="0"/>
+ 
+Pcd8544-6: 
+<item Show_id="true" labelx="-28" valLabRot="0" valLabelx="0" rotation="0" x="-244" id="Pcd8544" itemtype="Pcd8544" labelrot="0" hflip="1" y="-292" vflip="1" labely="-71" objectName="Pcd8544-6" valLabely="0"/>
+ 
+pic16f628a-5: 
+<item vflip="1" x="-356" valLabelx="0" Ser_Port="false" labelx="-14" id="pic16f628a" Program="Nokia5110LCDtester16F628A.hex" valLabely="0" valLabRot="0" hflip="1" rotation="0" y="-212" labely="-19" Ser_Monitor="false" Show_id="true" itemtype="PIC" objectName="pic16f628a-5" Mhz="20" labelrot="0"/>
+ 
+Connector-14: 
+<item vflip="1" x="-316" valLabelx="0" labelx="-16" id="Connector-14" endpinid="Pcd8544-6-PinRst" startpinid="pic16f628a-5-RA6" valLabely="0" valLabRot="0" enodeid="Circ_eNode-15" hflip="1" rotation="0" y="-180" pointList="-316,-180,-276,-180,-276,-252" labely="-24" Show_id="false" itemtype="Connector" objectName="Connector-14" labelrot="0"/>
+ 
+Connector-16: 
+<item vflip="1" x="-244" valLabelx="0" labelx="-16" id="Connector-16" endpinid="pic16f628a-5-RA7" startpinid="Pcd8544-6-PinDc" valLabely="0" valLabRot="0" enodeid="Circ_eNode-17" hflip="1" rotation="0" y="-252" pointList="-244,-252,-244,-188,-316,-188" labely="-24" Show_id="false" itemtype="Connector" objectName="Connector-16" labelrot="0"/>
+ 
+Connector-18: 
+<item vflip="1" x="-228" valLabelx="0" labelx="-16" id="Connector-18" endpinid="pic16f628a-5-RA0" startpinid="Pcd8544-6-PinSi" valLabely="0" valLabRot="0" enodeid="Circ_eNode-19" hflip="1" rotation="0" y="-252" pointList="-228,-252,-228,-196,-316,-196" labely="-24" Show_id="false" itemtype="Connector" objectName="Connector-18" labelrot="0"/>
+ 
+Connector-20: 
+<item vflip="1" x="-212" valLabelx="0" labelx="-16" id="Connector-20" endpinid="pic16f628a-5-RA1" startpinid="Pcd8544-6-PinScl" valLabely="0" valLabRot="0" enodeid="Circ_eNode-21" hflip="1" rotation="0" y="-252" pointList="-212,-252,-212,-204,-316,-204" labely="-24" Show_id="false" itemtype="Connector" objectName="Connector-20" labelrot="0"/>
+ 
+Connector-22: 
+<item vflip="1" x="-260" valLabelx="0" labelx="-16" id="Connector-22" endpinid="Pcd8544-6-PinCs" startpinid="Ground (0 V)-7-Gnd" valLabely="0" valLabRot="0" enodeid="Circ_eNode-23" hflip="1" rotation="0" y="-236" pointList="-260,-236,-260,-252" labely="-24" Show_id="false" itemtype="Connector" objectName="Connector-22" labelrot="0"/>
+ 
+Connector-26: 
+<item vflip="1" x="-252" valLabelx="0" labelx="-16" id="Connector-26" endpinid="Node-11-0" startpinid="Ground (0 V)-10-Gnd" valLabely="0" valLabRot="0" enodeid="Circ_eNode-27" hflip="1" rotation="0" y="-68" pointList="-252,-68,-252,-84" labely="-24" Show_id="false" itemtype="Connector" objectName="Connector-26" labelrot="0"/>
+ 
+Connector-30: 
+<item vflip="1" x="-204" valLabelx="0" labelx="-16" id="Connector-30" endpinid="Node-11-1" startpinid="Push-9-rnod" valLabely="0" valLabRot="0" enodeid="Circ_eNode-27" hflip="1" rotation="0" y="-124" pointList="-204,-124,-188,-124,-188,-84,-252,-84" labely="-24" Show_id="false" itemtype="Connector" objectName="Connector-30" labelrot="0"/>
+ 
+Connector-31: 
+<item vflip="1" x="-252" valLabelx="0" labelx="-16" id="Connector-31" endpinid="Push-8-rnod" startpinid="Node-11-2" valLabely="0" valLabRot="0" enodeid="Circ_eNode-27" hflip="1" rotation="0" y="-84" pointList="-252,-84,-252,-124,-260,-124" labely="-24" Show_id="false" itemtype="Connector" objectName="Connector-31" labelrot="0"/>
+ 
+Connector-28: 
+<item vflip="1" x="-364" valLabelx="0" labelx="-16" id="Connector-28" endpinid="Push-9-lnod" startpinid="pic16f628a-5-RB2" valLabely="0" valLabRot="0" enodeid="enode-28" hflip="1" rotation="0" y="-148" pointList="-364,-148,-412,-148,-412,-100,-236,-100,-236,-124" labely="-24" Show_id="false" itemtype="Connector" objectName="Connector-28" labelrot="0"/>
+ 
+Connector-24: 
+<item vflip="1" x="-292" valLabelx="0" labelx="-16" id="Connector-24" endpinid="pic16f628a-5-RB3" startpinid="Push-8-lnod" valLabely="0" valLabRot="0" enodeid="enode-24" hflip="1" rotation="0" y="-124" pointList="-292,-124,-388,-124,-388,-140,-364,-140" labely="-24" Show_id="false" itemtype="Connector" objectName="Connector-24" labelrot="0"/>
+ 
+PlotterWidget: 
+<item isActiveWindow="true" normalGeometry="" frameSize="" childrenRegion="" palette="" size="" childrenRect="" windowFilePath="" baseSize="" maximized="false" minimumSizeHint="" rect="" minimized="false" modal="false" width="200" contextMenuPolicy="1" maximumWidth="1000" windowOpacity="1" windowIcon="" styleSheet="" whatsThis="" windowModified="false" height="200" inputMethodHints="0" MaxVolt="500" autoFillBackground="false" focusPolicy="0" windowTitle="" sizeHint="" pos="" windowModality="0" statusTip="" sizeIncrement="" y="0" enabled="true" windowIconText="" fullScreen="false" itemtype="Plotter" updatesEnabled="true" frameGeometry="" minimumHeight="200" objectName="PlotterWidget" maximumHeight="200" geometry="" toolTip="" mouseTracking="false" toolTipDuration="-1" minimumSize="" minimumWidth="200" accessibleDescription="" visible="false" MinVolt="-500" focus="false" cursor="" x="0" acceptDrops="false" font="Sans Serif,9,-1,5,50,0,0,0,0,0" maximumSize="" sizePolicy="" layoutDirection="0" locale="" accessibleName=""/>
+ 
+SerialPortWidget: 
+<item isActiveWindow="true" normalGeometry="" frameSize="" childrenRegion="" palette="" size="" childrenRect="" windowFilePath="" baseSize="" maximized="false" minimumSizeHint="" rect="" minimized="false" modal="false" width="313" contextMenuPolicy="1" maximumWidth="450" windowOpacity="1" windowIcon="" styleSheet="" whatsThis="" windowModified="false" height="141" inputMethodHints="0" autoFillBackground="false" focusPolicy="0" windowTitle="Configuracion" sizeHint="" pos="" windowModality="0" statusTip="" sizeIncrement="" y="0" enabled="true" windowIconText="" fullScreen="false" itemtype="SerialPort" updatesEnabled="true" frameGeometry="" minimumHeight="0" objectName="SerialPortWidget" maximumHeight="170" geometry="" toolTip="" mouseTracking="false" toolTipDuration="-1" minimumSize="" minimumWidth="0" accessibleDescription="" visible="false" focus="false" cursor="" x="0" acceptDrops="false" SettingsProp="ttyS0,0,3,0,0,0" font="Sans Serif,9,-1,5,50,0,0,0,0,0" maximumSize="" sizePolicy="" layoutDirection="0" locale="" accessibleName=""/>
+ 
+</circuit>

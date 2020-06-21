@@ -1,0 +1,50 @@
+'''A demonstration program for GCGB and GCB.
+'''--------------------------------------------------------------------------------------------------------------------------------
+'''This program will count from 0 to 9 on a 7 segment LED display.
+'''The 7 Segment display is connected to PortB.0-6 for segments A-G respectively.
+'''The 7 Segment display enable pin connected to PortD.1.
+'''@author 	EvanV plus works of HughC
+'''@licence	GPL
+'''@version	1.0a
+'''@date   	31.01.2015
+'''********************************************************************************
+
+; ----- Configuration
+
+  #chip mega328p, 16
+
+; ----- Define Hardware settings
+  Dir PORTB Out
+  DIR PORTD.1 out
+
+; ----- Constants
+  ; You need to specify the port settings
+  #define DISP_SEG_A PORTB.0
+  #define DISP_SEG_B PORTB.1
+  #define DISP_SEG_C PORTB.2
+  #define DISP_SEG_D PORTB.3
+  #define DISP_SEG_E PORTB.4
+  #define DISP_SEG_F PORTB.5
+  #define DISP_SEG_G PORTB.6
+  #define DISP_SEL_1 PORTD.1
+
+; ----- Variables
+  Temp = 0
+
+; ----- Main body of program commences here.
+
+
+  Main:
+    ' Push number to 7 Segment Display
+    DisplayValue 1, Temp
+    Wait 250 ms
+    Wait 250 ms
+    Temp = Temp + 1
+    if Temp > 9 then
+        Wait 250 ms
+        Wait 250 ms
+       Temp = 0
+    end if
+  goto Main
+  end
+

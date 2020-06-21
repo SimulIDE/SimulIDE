@@ -1,0 +1,83 @@
+ ###########################################################################
+ #   Copyright (C) 2017   by santiago González                             #
+ #   santigoro@gmail.com                                                   #
+ #                                                                         #
+ #   This program is free software; you can redistribute it and/or modify  #
+ #   it under the terms of the GNU General Public License as published by  #
+ #   the Free Software Foundation; either version 3 of the License, or     #
+ #   (at your option) any later version.                                   #
+ #                                                                         #
+ #   This program is distributed in the hope that it will be useful,       #
+ #   but WITHOUT ANY WARRANTY; without even the implied warranty of        #
+ #   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         #
+ #   GNU General Public License for more details.                          #
+ #                                                                         #
+ #   You should have received a copy of the GNU General Public License     #
+ #   along with this program; if not, see <http://www.gnu.org/licenses/>.  #
+ #                                                                         #
+ ###########################################################################
+ 
+MaxMHz=20
+
+INDF EQU 0
+TMR0 EQU 1
+PCL EQU 2
+STATUS EQU 3
+FSR EQU 4
+PORTA EQU 5
+PORTB EQU 6
+PORTC EQU 7
+PCLATH EQU 10
+INTCON EQU 11
+PIR1 EQU 12
+PIR2 EQU 13
+TMR1L EQU 14
+TMR1H EQU 15
+T1CON EQU 16
+SSPBUF EQU 19
+SSPCON EQU 20
+RCSTA EQU 24
+TXREG EQU 25
+RCREG EQU 26
+ADRESH EQU 30
+ADCON0 EQU 31
+OPTION_REG EQU 129
+TRISA EQU 133
+TRISB EQU 134
+TRISC EQU 135
+PIE1 EQU 140
+PIE2 EQU 141
+PCON EQU 142
+OSCCON EQU 143
+OSCTUNE EQU 144
+SSPADD EQU 147
+MSK EQU 147
+SSPMSK EQU 147
+SSPSTAT EQU 148
+WPU EQU 149
+WPUA EQU 149
+IOC EQU 150
+IOCA EQU 150
+WDTCON EQU 151
+TXSTA EQU 152
+SPBRG EQU 153
+SPBRGH EQU 154
+BAUDCTL EQU 155
+ADRESL EQU 158
+ADCON1 EQU 159
+EEDAT EQU 268
+EEDATA EQU 268
+EEADR EQU 269
+EEDATH EQU 270
+EEADRH EQU 271
+WPUB EQU 277
+IOCB EQU 278
+VRCON EQU 280
+CM1CON0 EQU 281
+CM2CON0 EQU 282
+CM2CON1 EQU 283
+ANSEL EQU 286
+ANSELH EQU 287
+EECON1 EQU 396
+EECON2 EQU 397
+SRCON EQU 414

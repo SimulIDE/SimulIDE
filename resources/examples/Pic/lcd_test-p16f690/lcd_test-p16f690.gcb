@@ -1,0 +1,111 @@
+'''A demonstration program for GCGB and GCB.
+'''--------------------------------------------------------------------------------------------------------------------------------
+'''This program demonstrates the capabilities of a LCD display.
+'''The LCD is using an 4-bit bus for connectivity.
+'''For the LCD connection - please refer to the program.
+'''@author 	WilliamR
+'''@licence	GPL
+'''@version	1.0a
+'''@date   	21.01.2015
+'''********************************************************************************
+;Set chip model required:
+
+ #chip 16F690, 20
+ 
+
+  ;Setup LCD Parameters
+  #define LCD_IO 4
+  #define LCD_NO_RW
+  ;#define LCD_Speed fast
+
+; ----- Define Hardware settings
+  #define LCD_RS PORTB.7
+  #define LCD_Enable PORTC.7
+  #define LCD_DB4 PORTC.6
+  #define LCD_DB5 PORTC.3
+  #define LCD_DB6 PORTC.4
+  #define LCD_DB7 PORTC.5
+
+
+; ----- Main body of program commences here.
+    Do Forever
+        CLS
+        WAIT 1 s
+        PRINT "START TEST"
+        locate 1,0
+        PRINT "DISPLAY ON"
+        wait 3 s
+
+        CLS
+        Locate 0,0
+        Print "Cursor ON"
+        Locate 1,0
+        LCDcursor CursorOn
+        wait 3 S
+
+        CLS
+        LCDcursor CursorOFF
+        locate 0,0
+        Print "Cursor OFF"
+        wait 3 s
+
+        CLS
+        Locate 0,0
+        Print "FLASH ON"
+        Locate 1,0
+        LCDcursor CursorOn
+        LCDcursor FLASHON
+        wait 3 s
+
+        CLS
+        locate 0,0
+        Print "FLASH OFF"
+        Locate 1,0
+        LCDCURSOR FLASHOFF
+        wait 3 sec
+
+        Locate 0,0
+        Print "CURSR & FLSH ON"
+        locate 1,0
+        LCDCURSOR CURSORON
+        LCDCURSOR FLASHON
+        Wait 3 sec
+
+        Locate 0,0
+        Print "CURSR & FLSH OFF"
+        locate 1,0
+        LCDCURSOR CursorOFF
+        LCDCURSOR FLASHOFF
+        Wait 3 sec
+
+        CLS
+        Locate 0,4
+        PRINT "Flashing"
+        Locate 1,4
+        Print "Display"
+        wait 500 ms
+
+        repeat 10
+            LCDCURSOR LCDOFF
+            wait 500 ms
+            LCDCURSOR LCDON
+            wait 500 ms
+        end repeat
+
+        CLS
+        Locate 0,0
+        Print "DISPLAY OFF"
+        Locate 1,0
+        Print "FOR 5 SEC"
+        Wait 2 SEC
+        LCDCURSOR LCDOFF
+        WAIT 5 s
+
+        CLS
+        Locate 0,0
+        LCDCURSOR LCDON
+        Print "END TEST"
+        wait 3 s
+
+    loop
+

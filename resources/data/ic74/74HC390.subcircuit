@@ -1,0 +1,249 @@
+<!DOCTYPE SimulIDE>
+
+<subcircuit enodes="16">
+
+    <item itemtype="eFlipFlopD"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "true"
+        sRInverted = "true"
+        connections="
+        output0-Package_QAa
+        output1-eNode0
+        input0-eNode0
+        input2-eNode2
+        clock-Package_!C1a
+        input1-eNode7" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        numInputs = "2"
+        connections="
+        input0-Package_QBa
+        input1-Package_QCa
+        output0-eNode3" >
+    </item>
+
+    <item itemtype="eFlipFlopD"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "true"
+        sRInverted = "true"
+        connections="
+        output0-Package_QBa
+        input2-eNode2
+        clock-Package_!C2a
+        input0-eNode4
+        output1-eNode5
+        input1-eNode7" >
+    </item>
+
+    <item itemtype="eFlipFlopD"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "true"
+        sRInverted = "true"
+        connections="
+        clock-Package_QBa
+        output0-Package_QCa
+        output1-eNode1
+        input0-eNode1
+        input2-eNode2
+        input1-eNode7" >
+    </item>
+
+    <item itemtype="eFlipFlopD"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "true"
+        sRInverted = "true"
+        connections="
+        output0-Package_QDa
+        input2-eNode2
+        clock-Package_!C2a
+        input0-eNode3
+        output1-eNode6
+        input1-eNode7" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "true"
+        connections="
+        output0-eNode2
+        input0-Package_!Ra" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        numInputs = "2"
+        connections="
+        output0-eNode4
+        input0-eNode5
+        input1-eNode6" >
+    </item>
+
+    <item itemtype="eRail"
+        voltage = "5"
+        unit = " V"
+        connections="
+        outnod-eNode7" >
+    </item>
+
+    <item itemtype="eBuffer"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "true"
+        connections="
+        output0-eNode8
+        input0-Package_!Rb" >
+    </item>
+
+    <item itemtype="eFlipFlopD"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "true"
+        sRInverted = "true"
+        connections="
+        input2-eNode8
+        output1-eNode9
+        input0-eNode9
+        input1-eNode10
+        output0-Package_QAb
+        clock-Package_!C1b" >
+    </item>
+
+    <item itemtype="eFlipFlopD"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "true"
+        sRInverted = "true"
+        connections="
+        input2-eNode8
+        output0-Package_QBb
+        input1-eNode10
+        clock-Package_!C2b
+        output1-eNode11
+        input0-eNode12" >
+    </item>
+
+    <item itemtype="eFlipFlopD"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "true"
+        sRInverted = "true"
+        connections="
+        input2-eNode8
+        input1-eNode10
+        clock-Package_!C2b
+        output0-Package_QDb
+        input0-eNode14
+        output1-eNode15" >
+    </item>
+
+    <item itemtype="eFlipFlopD"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        clockInverted = "true"
+        sRInverted = "true"
+        connections="
+        input2-eNode8
+        clock-Package_QBb
+        input1-eNode10
+        output0-Package_QCb
+        output1-eNode13
+        input0-eNode13" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        numInputs = "2"
+        connections="
+        input0-Package_QBb
+        input1-Package_QCb
+        output0-eNode14" >
+    </item>
+
+    <item itemtype="eRail"
+        voltage = "5"
+        unit = " V"
+        connections="
+        outnod-eNode10" >
+    </item>
+
+    <item itemtype="eAndGate"
+        inputHighV = "2.5"
+        inputLowV = "2.5"
+        inputImped = "100000000000000"
+        outHighV = "5"
+        outLowV = "0"
+        outImped = "40"
+        inverted = "false"
+        numInputs = "2"
+        connections="
+        input0-eNode11
+        output0-eNode12
+        input1-eNode15" >
+    </item>
+
+</subcircuit>

@@ -1,0 +1,21 @@
+
+#chip mega328P, 16
+
+#include "74hc595.gcb"
+
+#define SER     portb.1
+#define OE      portb.2
+#define RCLK    portb.3
+#define SRCLK   portb.4
+#define SRCLR   portb.5
+
+init595
+do
+    shiftBit( 1 )
+    wait 500 ms
+    
+    for index=1 to 7
+        shiftBit( 0 )
+        wait 500 ms
+    next
+loop

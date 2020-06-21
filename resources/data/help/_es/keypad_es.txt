@@ -1,0 +1,14 @@
+Teclado:
+
+Es personalizable en tamaño (filas y columnas) y etiquetas clave.
+
+Parámetros:
+- Filas:
+   Determina el numero de filas. 4
+- Columnas:
+   Determina el numero de columnas. 3
+- Texto en Teclas:
+   Determina el texto en las teclas. 123456789*0#
+
+Mas información:
+ http://simulide.blogspot.com/p/blog-page_22.html

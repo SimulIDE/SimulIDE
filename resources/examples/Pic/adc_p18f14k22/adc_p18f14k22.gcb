@@ -1,0 +1,105 @@
+'''A demonstration program for GCGB and GCB.
+'''--------------------------------------------------------------------------------------------------------------------------------
+'''This program will demonstrate reading the analog to digital converter (ADC or A/D) module.
+'''This is implemented within Great Cow Basic to support 8-bit, 10-bit and 12-bit read operations.
+'''This is supported for Single channel measurement mode and Differential Channel Measurement mode.
+''':
+'''This is a Single channel measurement mode, or normal mode demonstration.
+''':
+'''Great Cow Basic will configure the analog to digitalconverter clock source, the programmed acquisition time and justification of the returned value.
+'''The response can be a byte, word or integer (as defined in the Great Cow Basic method) these are 8-bit, 10-bit and 12-bit values respectively.
+''':
+'''This demonstration show the usage for normal or Single channel measurement of the ADC.
+'''See the Help for connectivity but essential the source device is connected to the appropiate ADC (ANx) pin.
+''':
+'''This demonstation assumes you have a 10k POT connected to AN9 port of the microchip processor.
+'''***  Note ***
+'''AN0 is pin 19 on 18F14K22
+'''Check datasheet for your specific chip
+''':
+'''
+'''@author	Bill Roth
+'''@licence	GPL
+'''@version	1.0a
+'''@date   	21.12.2015
+'''********************************************************************************
+
+; ----- Configuration
+
+     #Chip 18F14K22, 4
+     #Config XINST OFF
+     #config MCLRE = OFF
+
+; ----- Constants
+
+; ----- Define Hardware settings
+
+      ;Setup LCD Parameters
+      #define LCD_IO 4
+      #define LCD_NO_RW
+      #define LCD_Speed fast
+
+      ; ----- Define Hardware settings
+      #define LCD_RS PORTC.0
+      #define LCD_Enable PORTC.1
+      #define LCD_DB4 PORTB.4
+      #define LCD_DB5 PORTB.5
+      #define LCD_DB6 PORTB.6
+      #define LCD_DB7 PORTB.7
+
+; ----- Variables
+    DIM ad_val as integer 'lets read negative values also!
+
+
+; ----- Main body of program commences here.
+    'Show start up message
+    SPLASH
+
+    Wait 1 S
+    CLS
+
+    'Display fixed messages to display
+    Locate 0,0: Print  "ReadAD:"
+    Locate 1,0 : Print "ReadAD10:"
+    Locate 2,0 : Print "ReadAD12:"
+
+
+    '***  Note ***
+    'Check datasheet for you specific chip
+
+
+    Do
+
+      'read 8-bit value to Variable
+      ad_val = Readad(an0)
+      Locate 0,10
+      Print ad_val
+      Print "   "
+      wait 20 ms
+
+     'read 10-bit value to Variable
+      ad_val = ReadAd10(an0)
+      Locate 1,10
+      Print ad_val
+      Print "   "
+      wait 20 ms
+
+      'read 12-bit value to Variable
+      ad_val = ReadAD12(an0)
+      Locate 2,10
+      Print ad_val
+      Print "   "
+      wait 20 ms
+
+    loop
+
+    End
+
+; ----- Support methods.  Subroutines and Functions
+
+    Sub Splash
+      Locate 0,0 : Print "CHIP: ": Print ChipNameStr
+      Locate 1,0 : Print "RAM: ": Print  ChipRam: Print " Bytes"
+      Locate 2,0 : Print "MEMORY:" : Print ChipWords: Print " Words"
+    End sub
+

@@ -1,0 +1,60 @@
+<circuit speed="1000000" animate="0" type="simulide_0.1" noLinAcc="5" reactStep="50" noLinStep="10">
+ 
+Probe-9: 
+<item rotation="-45" valLabely="0" PlotterCh="0" Show_id="false" itemtype="Probe" labelrot="45" id="Probe-1" x="-92" labely="-16" y="-180" vflip="1" Show_volt="true" objectName="Probe-9" valLabRot="45" labelx="16" valLabelx="16" hflip="1"/>
+ 
+Node-8: 
+<item rotation="0" valLabely="0" Show_id="false" itemtype="Node" labelrot="0" id="Node-2" x="-108" labely="-24" y="-148" vflip="1" objectName="Node-8" valLabRot="0" labelx="-16" valLabelx="0" hflip="1"/>
+ 
+Oscope-7: 
+<item rotation="0" valLabely="0" Show_id="false" Filter="0.29999999999999999" itemtype="Oscope" labelrot="0" id="Oscope-3" x="-212" labely="-24" y="-276" vflip="1" objectName="Oscope-7" valLabRot="0" labelx="-16" valLabelx="0" hflip="1"/>
+ 
+Rail.-6: 
+<item valLabely="-23" Show_id="false" rotation="0" vflip="1" Show_Volt="true" x="-300" id="Rail.-4" Unit=" V" objectName="Rail.-6" labelrot="0" hflip="1" y="-156" valLabelx="-12" Voltage="2.5" labely="-24" labelx="-64" valLabRot="0" itemtype="Rail"/>
+ 
+Clock-5: 
+<item valLabely="10" Show_id="false" rotation="0" vflip="1" Show_Volt="true" x="-292" id="Clock-5" Unit=" V" objectName="Clock-5" labelrot="0" hflip="1" y="-108" Freq="200" valLabelx="-12" Voltage="5" labely="-24" labelx="-64" valLabRot="0" Running="true" itemtype="Clock"/>
+ 
+OpAmp-4: 
+<item rotation="0" valLabely="0" Show_id="true" itemtype="opAmp" labelrot="0" Power_Pins="false" id="OpAmp&#xa;Integrator" x="-156" labely="-48" y="-148" vflip="1" Gain="1000" objectName="OpAmp-4" valLabRot="0" labelx="-28" valLabelx="0" hflip="1"/>
+ 
+Resistor-3: 
+<item Show_res="true" valLabely="6" Show_id="false" rotation="0" vflip="1" x="-236" Resistance="1" id="Resistor-7" Unit=" kΩ" objectName="Resistor-3" labelrot="0" hflip="1" y="-108" valLabelx="-14" labely="-24" labelx="0" valLabRot="0" itemtype="Resistor"/>
+ 
+Capacitor-2: 
+<item valLabely="9" Show_id="false" rotation="0" Capacitance="2" vflip="1" x="-148" id="Capacitor-8" Unit=" uF" objectName="Capacitor-2" labelrot="0" hflip="1" y="-108" valLabelx="-15" labely="-24" labelx="0" Show_Cap="true" valLabRot="0" itemtype="Capacitor"/>
+ 
+Node-1: 
+<item rotation="0" valLabely="0" Show_id="false" itemtype="Node" labelrot="0" id="Node-9" x="-204" labely="-18" y="-108" vflip="1" objectName="Node-1" valLabRot="0" labelx="6" valLabelx="0" hflip="1"/>
+ 
+Connector-10: 
+<item startpinid="Resistor-3-rPin" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-220" id="Connector-10" enodeid="Circ_eNode-11" objectName="Connector-10" pointList="-220,-108,-204,-108" labelrot="0" hflip="1" endpinid="Node-1-0" y="-108" valLabelx="0" labely="-24" labelx="0" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-12: 
+<item startpinid="Node-1-2" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-204" id="Connector-12" enodeid="Circ_eNode-11" objectName="Connector-12" pointList="-204,-108,-204,-140,-180,-140" labelrot="0" hflip="1" endpinid="OpAmp-4-inputInv" y="-108" valLabelx="0" labely="-24" labelx="0" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-13: 
+<item startpinid="Node-1-1" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-204" id="Connector-13" enodeid="Circ_eNode-11" objectName="Connector-13" pointList="-204,-108,-164,-108" labelrot="0" hflip="1" endpinid="Capacitor-2-lPin" y="-108" valLabelx="0" labely="-24" labelx="0" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-14: 
+<item startpinid="Clock-5-outnod" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-276" id="Connector-14" enodeid="Circ_eNode-15" objectName="Connector-14" pointList="-276,-108,-252,-108" labelrot="0" hflip="1" endpinid="Resistor-3-lPin" y="-108" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-16: 
+<item startpinid="Rail.-6-outnod" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-284" id="Connector-16" enodeid="Circ_eNode-17" objectName="Connector-16" pointList="-284,-156,-180,-156" labelrot="0" hflip="1" endpinid="OpAmp-4-inputNinv" y="-156" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-18: 
+<item startpinid="OpAmp-4-output" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-132" id="Connector-18" enodeid="Circ_eNode-19" objectName="Connector-18" pointList="-132,-148,-108,-148" labelrot="0" hflip="1" endpinid="Node-8-0" y="-148" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-20: 
+<item startpinid="Oscope-7-PinP" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-332" id="Connector-20" enodeid="Circ_eNode-19" objectName="Connector-20" pointList="-332,-276,-348,-276,-348,-204,-108,-204,-108,-148" labelrot="0" hflip="1" endpinid="Node-8-1" y="-276" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-21: 
+<item startpinid="Node-8-2" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-108" id="Connector-21" enodeid="Circ_eNode-19" objectName="Connector-21" pointList="-108,-148,-108,-108,-132,-108" labelrot="0" hflip="1" endpinid="Capacitor-2-rPin" y="-148" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+PlotterWidget-22: 
+<item frameSize="" toolTipDuration="-1" maximumSize="" sizeHint="" pos="" baseSize="" maximumWidth="1000" normalGeometry="" maximized="false" minimumWidth="200" maximumHeight="200" windowFilePath="" windowModality="0" inputMethodHints="0" toolTip="" updatesEnabled="true" palette="" whatsThis="" autoFillBackground="false" minimized="false" itemtype="Plotter" windowOpacity="1" cursor="" styleSheet="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumHeight="200" isActiveWindow="true" minimumSize="" height="200" y="520" childrenRegion="" windowTitle="" contextMenuPolicy="1" x="0" focus="false" windowModified="false" mouseTracking="false" size="" accessibleName="" sizePolicy="" MinVolt="0" childrenRect="" minimumSizeHint="" width="619" acceptDrops="false" windowIcon="" Tracks="1" objectName="PlotterWidget-22" windowIconText="" geometry="" rect="" locale="" modal="false" Scale="1" frameGeometry="" sizeIncrement="" focusPolicy="0" accessibleDescription="" layoutDirection="0" visible="false" fullScreen="false" MaxVolt="500" enabled="true" statusTip=""/>
+ 
+SerialPortWidget-23: 
+<item frameSize="" toolTipDuration="-1" maximumSize="" sizeHint="" pos="" baseSize="" maximumWidth="450" normalGeometry="" maximized="false" minimumWidth="0" maximumHeight="170" windowFilePath="" SettingsProp="ttyS0,0,3,0,0,0" windowModality="0" inputMethodHints="0" toolTip="" updatesEnabled="true" palette="" whatsThis="" autoFillBackground="false" minimized="false" itemtype="SerialPort" windowOpacity="1" cursor="" styleSheet="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumHeight="0" isActiveWindow="true" minimumSize="" height="147" y="573" childrenRegion="" windowTitle="Configuracion" contextMenuPolicy="1" x="153" focus="false" windowModified="false" mouseTracking="false" size="" accessibleName="" sizePolicy="" childrenRect="" minimumSizeHint="" width="450" acceptDrops="false" windowIcon="" objectName="SerialPortWidget-23" windowIconText="" geometry="" rect="" locale="" modal="false" frameGeometry="" sizeIncrement="" focusPolicy="0" accessibleDescription="" layoutDirection="0" visible="false" fullScreen="false" enabled="true" statusTip=""/>
+ 
+</circuit>

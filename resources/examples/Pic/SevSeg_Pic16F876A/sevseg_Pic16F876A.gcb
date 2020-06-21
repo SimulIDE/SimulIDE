@@ -1,0 +1,55 @@
+'''A demonstration program for GCGB and GCB.
+'''--------------------------------------------------------------------------------------------------------------------------------
+'''This program will display the value of a potentiometer, respresenting a light sensor, on a 7 Segment display.
+'''The 7 Segment display is connected to connection PORTB7-PORTB0 for segments A-G respectively.
+'''The 7 Segment display enable pin connected to PORTC.7.
+'''A potentiometer is connected to port A0.
+'''@author 	EvanV plus works of HughC
+'''@licence	GPL
+'''@version	1.0a
+'''@date   	31.01.2015
+'''********************************************************************************
+
+''' Modified by Santiago Gonzalez
+
+
+; ----- Configuration
+
+  #chip 16F876a, 16
+  #config HS_OSC, WDT_OFF, LVP_OFF
+
+; ----- Define Hardware settings
+  Dir PORTB   Out
+  DIR PORTA.0 In
+  DIR PORTC.7 Out
+
+; ----- Constants
+  ; You need to specify the port settings
+  #define DISP_COUNT 1
+  #define DISP_SEG_A PORTB.7
+  #define DISP_SEG_B PORTB.6
+  #define DISP_SEG_C PORTB.5
+  #define DISP_SEG_D PORTB.4
+  #define DISP_SEG_E PORTB.3
+  #define DISP_SEG_F PORTB.2
+  #define DISP_SEG_G PORTB.1
+  #define DISP_SEG_DOT PORTB.0
+  #define DISP_SEL_1 PORTC.7
+  
+; ----- Variables
+  ' No Variables specified in this example. All byte variables are defined upon use.
+
+
+; ----- Main body of program commences her
+
+  Main:
+    Value = ReadAD(AN0)/26
+    DisplayValue( 1, Value )
+    wait 10 ms
+  goto Main
+
+
+
+
+
+

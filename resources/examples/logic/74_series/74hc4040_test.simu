@@ -1,0 +1,48 @@
+<circuit speed="1000000" animate="0" type="simulide_0.1" noLinAcc="5" reactStep="50" noLinStep="10">
+ 
+Probe-7: 
+<item rotation="-45" valLabely="0" PlotterCh="0" Show_id="false" itemtype="Probe" labelrot="45" id="Probe-1" x="-308" labely="-16" y="-228" vflip="1" Show_volt="true" objectName="Probe-7" valLabRot="45" labelx="16" valLabelx="16" hflip="1"/>
+ 
+Probe-6: 
+<item rotation="-45" valLabely="0" PlotterCh="0" Show_id="false" itemtype="Probe" labelrot="45" id="Probe-2" x="-308" labely="-16" y="-204" vflip="1" Show_volt="true" objectName="Probe-6" valLabRot="45" labelx="16" valLabelx="16" hflip="1"/>
+ 
+Probe-5: 
+<item rotation="-45" valLabely="0" PlotterCh="0" Show_id="false" itemtype="Probe" labelrot="45" id="Probe-3" x="-308" labely="-16" y="-164" vflip="1" Show_volt="true" objectName="Probe-5" valLabRot="45" labelx="16" valLabelx="16" hflip="1"/>
+ 
+Probe-4: 
+<item rotation="-45" valLabely="0" PlotterCh="0" Show_id="false" itemtype="Probe" labelrot="45" id="Probe-4" x="-308" labely="-16" y="-132" vflip="1" Show_volt="true" objectName="Probe-4" valLabRot="45" labelx="16" valLabelx="16" hflip="1"/>
+ 
+Fixed Volt.-3: 
+<item valLabely="21" Show_id="false" rotation="-180" vflip="1" Show_Volt="true" x="-260" id="Fixed Volt.-5" Unit=" V" objectName="Fixed Volt.-3" labelrot="0" hflip="1" y="-92" valLabelx="8" Voltage="5" labely="-24" labelx="-64" valLabRot="-180" itemtype="Fixed Voltage"/>
+ 
+Clock-2: 
+<item valLabely="8" Show_id="false" rotation="0" vflip="1" Show_Volt="true" x="-420" id="Clock-6" Unit=" V" objectName="Clock-2" labelrot="0" hflip="1" y="-28" Freq="4" valLabelx="-16" Voltage="5" labely="-24" labelx="-64" valLabRot="0" Running="true" itemtype="Clock"/>
+ 
+74HC4040-1: 
+<item rotation="0" valLabely="0" Show_id="true" itemtype="Subcircuit" labelrot="0" id="74HC4040-7" x="-436" labely="-20" y="-140" Logic_Symbol="false" vflip="1" objectName="74HC4040-1" valLabRot="0" labelx="0" valLabelx="0" hflip="1"/>
+ 
+Connector-8: 
+<item startpinid="Clock-2-outnod" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-404" id="Connector-8" enodeid="Circ_eNode-9" objectName="Connector-8" pointList="-404,-28,-356,-28,-356,-84,-396,-84" labelrot="0" hflip="1" endpinid="74HC4040-1-!CP" y="-28" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-10: 
+<item startpinid="Fixed Volt.-3-outnod" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-276" id="Connector-10" enodeid="Circ_eNode-11" objectName="Connector-10" pointList="-276,-92,-396,-92" labelrot="0" hflip="1" endpinid="74HC4040-1-MR" y="-92" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-12: 
+<item startpinid="Probe-4-inpin" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-324" id="Connector-12" enodeid="Circ_eNode-13" objectName="Connector-12" pointList="-324,-116,-324,-76,-396,-76" labelrot="0" hflip="1" endpinid="74HC4040-1-Q0" y="-116" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-14: 
+<item startpinid="Probe-5-inpin" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-324" id="Connector-14" enodeid="Circ_eNode-15" objectName="Connector-14" pointList="-324,-148,-324,-172,-468,-172,-468,-84,-444,-84" labelrot="0" hflip="1" endpinid="74HC4040-1-Q1" y="-148" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-16: 
+<item startpinid="Probe-6-inpin" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-324" id="Connector-16" enodeid="Circ_eNode-17" objectName="Connector-16" pointList="-324,-188,-476,-188,-476,-92,-444,-92" labelrot="0" hflip="1" endpinid="74HC4040-1-Q2" y="-188" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-18: 
+<item startpinid="Probe-7-inpin" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-324" id="Connector-18" enodeid="Circ_eNode-19" objectName="Connector-18" pointList="-324,-212,-484,-212,-484,-100,-444,-100" labelrot="0" hflip="1" endpinid="74HC4040-1-Q3" y="-212" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+PlotterWidget-20: 
+<item frameSize="" toolTipDuration="-1" maximumSize="" sizeHint="" pos="" baseSize="" maximumWidth="1000" normalGeometry="" maximized="false" minimumWidth="200" maximumHeight="200" windowFilePath="" windowModality="0" inputMethodHints="0" toolTip="" updatesEnabled="true" palette="" whatsThis="" autoFillBackground="false" minimized="false" itemtype="Plotter" windowOpacity="1" cursor="" styleSheet="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumHeight="200" isActiveWindow="true" minimumSize="" height="200" y="520" childrenRegion="" windowTitle="" contextMenuPolicy="1" x="0" focus="false" windowModified="false" mouseTracking="false" size="" accessibleName="" sizePolicy="" MinVolt="-500" childrenRect="" minimumSizeHint="" width="619" acceptDrops="false" windowIcon="" Tracks="1" objectName="PlotterWidget-20" windowIconText="" geometry="" rect="" locale="" modal="false" Scale="1" frameGeometry="" sizeIncrement="" focusPolicy="0" accessibleDescription="" layoutDirection="0" visible="false" fullScreen="false" MaxVolt="500" enabled="true" statusTip=""/>
+ 
+SerialPortWidget-21: 
+<item frameSize="" toolTipDuration="-1" maximumSize="" sizeHint="" pos="" baseSize="" maximumWidth="450" normalGeometry="" maximized="false" minimumWidth="0" maximumHeight="170" windowFilePath="" SettingsProp="ttyS0,0,3,0,0,0" windowModality="0" inputMethodHints="0" toolTip="" updatesEnabled="true" palette="" whatsThis="" autoFillBackground="false" minimized="false" itemtype="SerialPort" windowOpacity="1" cursor="" styleSheet="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumHeight="0" isActiveWindow="true" minimumSize="" height="147" y="573" childrenRegion="" windowTitle="Configuracion" contextMenuPolicy="1" x="153" focus="false" windowModified="false" mouseTracking="false" size="" accessibleName="" sizePolicy="" childrenRect="" minimumSizeHint="" width="450" acceptDrops="false" windowIcon="" objectName="SerialPortWidget-21" windowIconText="" geometry="" rect="" locale="" modal="false" frameGeometry="" sizeIncrement="" focusPolicy="0" accessibleDescription="" layoutDirection="0" visible="false" fullScreen="false" enabled="true" statusTip=""/>
+ 
+</circuit>

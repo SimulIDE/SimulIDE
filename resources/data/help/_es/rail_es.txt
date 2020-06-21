@@ -1,0 +1,13 @@
+Rail:
+
+Esta es una fuente de voltaje simple.
+
+Siempre está encendido.
+
+Parámetros:
+- Voltaje;
+   Determina el voltaje de salida. 5
+- Unidades:
+   Determina las unidades. V
+- Mostrar Voltaje:
+   Muestra (true) o no la tensión de salida. true

@@ -1,0 +1,7 @@
+Frequencimeter:
+
+Connect left pin to a wire
+to see signal frequency.
+
+Minimum frequency: 2Hz.
+

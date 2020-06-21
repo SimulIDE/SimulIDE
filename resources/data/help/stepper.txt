@@ -1,0 +1,8 @@
+Stepper Motor:
+
+Step by step Motor.
+
+- Configurable number of steps per revolution.
+- Configurable coil resistance.
+
+For simplicity and speed, Motor Coils are modelled as resistors.

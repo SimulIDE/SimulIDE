@@ -1,0 +1,15 @@
+HD44780 LCD:
+
+Pantalla de cristal líquido de matriz de puntos de 16x2 basada en el controlador LCD Hitachi HD44780.
+
+Pines:
+- RS
+- RW
+- En
+- D0..D7
+
+Parámetros:
+- Columnas:
+   Determina el numero de columnas. 16
+- Filas:
+   Determina el numero de filas. 2

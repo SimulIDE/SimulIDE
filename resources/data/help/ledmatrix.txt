@@ -1,0 +1,7 @@
+Led Matrix:
+
+Configurable led matrix with same properties as leds.
+Also customizable in size ( rows and columns ).
+
+More Info:
+ http://simulide.blogspot.com/p/leds.html

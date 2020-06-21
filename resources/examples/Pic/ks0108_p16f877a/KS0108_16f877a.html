@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Compilation Report</title>
+</head>
+<body>
+<h1>Compilation Report</h1>
+<p>Compiler Version (DD/MM/YYYY): 0.96.<<>> 2016-12-14</p>
+<h2>Chip resource usage:</h2>
+<p>Chip Model: 16F877A</p>
+<p>Program Memory: 2399/8192 words (29.28%)</p>
+<p>RAM: 133/368 bytes (36.14%)</p>
+<h2>RAM Allocation</h2>
+<table border="1">
+</table>
+<h2>Subroutines</h2>
+<table border="1">
+<tr><th>Name</th><th>Code Size (lines)</th><th>Compiled Size (words)</th><th>Page</th><th>Outgoing calls</th></tr>
+<tr><td>Main</td><td>38</td><td>177</td><td>1</td><td>INITGLCD_KS0108(25), SYSREADSTRING(2), Delay_S(3), PSET_KS0108(1), LINE(1), GLCDDRAWCHAR(1), STR(1), BOX(1), GLCDPRINT(3), GLCDCLS_KS0108(1), INITSYS(1)</td></tr>
+<tr><td>GLCDPRINT</td><td>10</td><td>61</td><td>1</td><td>SYSMULTSUB(1), GLCDDRAWCHAR(1)</td></tr>
+<tr><td>GLCDDRAWCHAR</td><td>45</td><td>202</td><td>1</td><td>SYSCOMPLESSTHAN(2), SYSCOMPEQUAL16(1), PSET_KS0108(2)</td></tr>
+<tr><td>BOX</td><td>19</td><td>143</td><td>1</td><td>SYSCOMPLESSTHAN16(6), PSET_KS0108(4)</td></tr>
+<tr><td>LINE</td><td>55</td><td>332</td><td>1</td><td>SYSMULTSUBINT(4), SYSCOMPLESSTHANINT(5), SYSCOMPEQUAL16(2), PSET_KS0108(4)</td></tr>
+<tr><td>INITGLCD_KS0108</td><td>25</td><td>55</td><td>1</td><td>Delay_MS(2), GLCDCLS_KS0108(1), GLCDWRITEBYTE_KS0108(2)</td></tr>
+<tr><td>GLCDCLS_KS0108</td><td>21</td><td>54</td><td>2</td><td>GLCDWRITEBYTE_KS0108(3)</td></tr>
+<tr><td>PSET_KS0108</td><td>48</td><td>87</td><td>1</td><td>SYSDIVSUB(1), GLCDREADBYTE_KS0108(2), GLCDWRITEBYTE_KS0108(4)</td></tr>
+<tr><td>GLCDWRITEBYTE_KS0108</td><td>45</td><td>68</td><td>1</td><td>GLCDREADBYTE_KS0108(1)</td></tr>
+<tr><td>GLCDREADBYTE_KS0108</td><td>21</td><td>50</td><td>2</td><td></td></tr>
+<tr><td>INITSYS</td><td>579</td><td>22</td><td>2</td><td></td></tr>
+<tr><td>SYSREADSTRING</td><td>101</td><td>28</td><td>2</td><td></td></tr>
+<tr><td>SYSMULTSUB</td><td>39</td><td>12</td><td>2</td><td></td></tr>
+<tr><td>SYSMULTSUB16</td><td>73</td><td>42</td><td>2</td><td>SYSCOMPLESSTHAN16(1)</td></tr>
+<tr><td>SYSMULTSUBINT</td><td>13</td><td>26</td><td>2</td><td>SYSMULTSUB16(1)</td></tr>
+<tr><td>SYSDIVSUB</td><td>48</td><td>20</td><td>2</td><td></td></tr>
+<tr><td>SYSDIVSUB16</td><td>38</td><td>60</td><td>1</td><td>SYSCOMPEQUAL16(1)</td></tr>
+<tr><td>SYSCOMPEQUAL16</td><td>34</td><td>11</td><td>2</td><td></td></tr>
+<tr><td>SYSCOMPLESSTHAN</td><td>23</td><td>7</td><td>2</td><td></td></tr>
+<tr><td>SYSCOMPLESSTHAN16</td><td>38</td><td>15</td><td>1</td><td></td></tr>
+<tr><td>SYSCOMPLESSTHANINT</td><td>48</td><td>42</td><td>2</td><td></td></tr>
+<tr><td>STR</td><td>36</td><td>211</td><td>1</td><td>SYSDIVSUB16(4), SYSCOMPLESSTHAN16(4)</td></tr>
+<tr><td>Delay_MS</td><td>0</td><td>14</td><td>2</td><td></td></tr>
+<tr><td>Delay_S</td><td>0</td><td>8</td><td>2</td><td>Delay_MS(1)</td></tr>
+<tr><td>SysStringTables</td><td>0</td><td>22</td><td>2</td><td></td></tr>
+<tr><td>GLCDCHARCOL3</td><td>0</td><td>126</td><td>1</td><td></td></tr>
+<tr><td>GLCDCHARCOL4</td><td>0</td><td>126</td><td>1</td><td></td></tr>
+<tr><td>GLCDCHARCOL5</td><td>0</td><td>126</td><td>1</td><td></td></tr>
+<tr><td>GLCDCHARCOL6</td><td>0</td><td>126</td><td>1</td><td></td></tr>
+<tr><td>GLCDCHARCOL7</td><td>0</td><td>126</td><td>1</td><td></td></tr>
+</table>
+</body>
+</html>

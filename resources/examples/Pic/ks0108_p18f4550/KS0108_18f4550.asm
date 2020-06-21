@@ -1,0 +1,1267 @@
+;Program compiled by Great Cow BASIC (0.96.<<>> 2016-12-14)
+;Need help? See the GCBASIC forums at http://sourceforge.net/projects/gcbasic/forums,
+;check the documentation or email w_cholmondeley at users dot sourceforge dot net.
+
+;********************************************************************************
+
+;Set up the assembler options (Chip type, clock source, other bits and pieces)
+ LIST p=18F4550, r=DEC
+#include <P18F4550.inc>
+ CONFIG LVP = OFF, MCLRE = OFF, WDT = OFF, FOSC = HS
+
+;********************************************************************************
+
+;Set aside memory locations for variables
+CURRCHARROW	EQU	11
+CURRCOL	EQU	12
+CURRPAGE	EQU	13
+DELAYTEMP	EQU	0
+DELAYTEMP2	EQU	1
+GLCDBACKGROUND	EQU	14
+GLCDBACKGROUND_H	EQU	15
+GLCDBITNO	EQU	16
+GLCDCHANGE	EQU	17
+GLCDCOLOUR	EQU	18
+GLCDCOLOUR_H	EQU	19
+GLCDDATATEMP	EQU	20
+GLCDFNTDEFAULT	EQU	21
+GLCDFNTDEFAULTSIZE	EQU	22
+GLCDFONTWIDTH	EQU	23
+GLCDFOREGROUND	EQU	24
+GLCDFOREGROUND_H	EQU	25
+GLCDREADBYTE_KS0108	EQU	26
+GLCDX	EQU	27
+GLCDXPOS	EQU	28
+GLCDY	EQU	29
+GLCDYPOS	EQU	30
+GLCD_COUNT	EQU	31
+GLCD_YORDINATE	EQU	32
+GLCD_YORDINATE_H	EQU	33
+HCOUNT	EQU	34
+LASTIMG	EQU	35
+LCDBYTE	EQU	36
+MAXHEIGHT	EQU	37
+OBJHEIGHT	EQU	38
+OBJWIDTH	EQU	39
+OLDGLCDXPOS	EQU	40
+ONPAGEBOUNDARY	EQU	41
+OPTMISEGLCDDRAW	EQU	42
+SELECTEDTABLE	EQU	43
+SELECTEDTABLE_H	EQU	44
+SYSBITVAR0	EQU	45
+SYSBYTETEMPA	EQU	5
+SYSBYTETEMPB	EQU	9
+SYSBYTETEMPX	EQU	0
+SYSDIVLOOP	EQU	4
+SYSREPEATTEMP1	EQU	46
+SYSSTRINGA	EQU	7
+SYSSTRINGA_H	EQU	8
+SYSTEMP1	EQU	47
+SYSTEMP2	EQU	48
+SYSWAITTEMPMS	EQU	2
+SYSWAITTEMPMS_H	EQU	3
+SYSWAITTEMPUS	EQU	5
+SYSWAITTEMPUS_H	EQU	6
+SYSWORDTEMPA	EQU	5
+SYSWORDTEMPA_H	EQU	6
+SYSWORDTEMPB	EQU	9
+SYSWORDTEMPB_H	EQU	10
+TABLEREADPOSITION	EQU	49
+TABLEREADPOSITION_H	EQU	50
+WBYTE	EQU	51
+WHOLEYBYTES	EQU	52
+WIDTHCOUNT	EQU	53
+
+;********************************************************************************
+
+;Vectors
+	ORG	0
+	goto	BASPROGRAMSTART
+	ORG	8
+	retfie
+
+;********************************************************************************
+
+;Start of program memory page 0
+	ORG	12
+BASPROGRAMSTART
+;Call initialisation routines
+	call	INITSYS
+	call	INITGLCD_KS0108
+;Automatic pin direction setting
+	bsf	TRISB,0,ACCESS
+
+;Start of the main program
+	clrf	OPTMISEGLCDDRAW,BANKED
+	movlw	2
+	movwf	LASTIMG,BANKED
+SysDoLoop_S1
+	btfsc	PORTB,0,ACCESS
+	bra	ENDIF1
+	movf	LASTIMG,F,BANKED
+	btfsc	STATUS, Z,ACCESS
+	bra	ENDIF3
+	rcall	GLCDCLS_KS0108
+
+	movlw	34
+	movwf	GLCDXPOS,BANKED
+	clrf	GLCDYPOS,BANKED
+	movlw	low(GLCDTABLE1)
+	movwf	SELECTEDTABLE,BANKED
+	movlw	high(GLCDTABLE1)
+	movwf	SELECTEDTABLE_H,BANKED
+	rcall	GLCDBMPLOAD
+
+	movlw	238
+	movwf	SysWaitTempMS,ACCESS
+	movlw	2
+	movwf	SysWaitTempMS_H,ACCESS
+	rcall	Delay_MS
+ENDIF3
+	clrf	LASTIMG,BANKED
+ENDIF1
+	btfss	PORTB,0,ACCESS
+	bra	ENDIF2
+	decf	LASTIMG,W,BANKED
+	btfsc	STATUS, Z,ACCESS
+	bra	ENDIF4
+	rcall	GLCDCLS_KS0108
+
+	movlw	20
+	movwf	GLCDXPOS,BANKED
+	clrf	GLCDYPOS,BANKED
+	movlw	low(GLCDTABLE2)
+	movwf	SELECTEDTABLE,BANKED
+	movlw	high(GLCDTABLE2)
+	movwf	SELECTEDTABLE_H,BANKED
+	rcall	GLCDBMPLOAD
+
+	movlw	238
+	movwf	SysWaitTempMS,ACCESS
+	movlw	2
+	movwf	SysWaitTempMS_H,ACCESS
+	rcall	Delay_MS
+ENDIF4
+	movlw	1
+	movwf	LASTIMG,BANKED
+ENDIF2
+	bra	SysDoLoop_S1
+SysDoLoop_E1
+	bra	BASPROGRAMEND
+BASPROGRAMEND
+	sleep
+	bra	BASPROGRAMEND
+
+;********************************************************************************
+
+Delay_MS
+	incf	SysWaitTempMS_H, F,ACCESS
+DMS_START
+	movlw	227
+	movwf	DELAYTEMP2,ACCESS
+DMS_OUTER
+	movlw	6
+	movwf	DELAYTEMP,ACCESS
+DMS_INNER
+	decfsz	DELAYTEMP, F,ACCESS
+	bra	DMS_INNER
+	decfsz	DELAYTEMP2, F,ACCESS
+	bra	DMS_OUTER
+	decfsz	SysWaitTempMS, F,ACCESS
+	bra	DMS_START
+	decfsz	SysWaitTempMS_H, F,ACCESS
+	bra	DMS_START
+	return
+
+;********************************************************************************
+
+GLCDBMPLOAD
+	movlw	1
+	movwf	TABLEREADPOSITION,BANKED
+	clrf	TABLEREADPOSITION_H,BANKED
+SysSelect1Case1
+	movff	SELECTEDTABLE,SysWORDTempA
+	movff	SELECTEDTABLE_H,SysWORDTempA_H
+	movlw	low(GLCDTABLE1)
+	movwf	SysWORDTempB,ACCESS
+	movlw	high(GLCDTABLE1)
+	movwf	SysWORDTempB_H,ACCESS
+	call	SysCompEqual16
+	btfss	SysByteTempX,0,ACCESS
+	bra	SysSelect1Case2
+	movff	TABLEREADPOSITION,SYSSTRINGA
+	movff	TABLEREADPOSITION_H,SYSSTRINGA_H
+	rcall	GLCDTABLE1
+	movwf	OBJWIDTH,BANKED
+	incf	TABLEREADPOSITION,F,BANKED
+	btfsc	STATUS,Z,ACCESS
+	incf	TABLEREADPOSITION_H,F,BANKED
+	movff	TABLEREADPOSITION,SYSSTRINGA
+	movff	TABLEREADPOSITION_H,SYSSTRINGA_H
+	rcall	GLCDTABLE1
+	movwf	OBJHEIGHT,BANKED
+	bra	SysSelectEnd1
+SysSelect1Case2
+	movff	SELECTEDTABLE,SysWORDTempA
+	movff	SELECTEDTABLE_H,SysWORDTempA_H
+	movlw	low(GLCDTABLE2)
+	movwf	SysWORDTempB,ACCESS
+	movlw	high(GLCDTABLE2)
+	movwf	SysWORDTempB_H,ACCESS
+	call	SysCompEqual16
+	btfss	SysByteTempX,0,ACCESS
+	bra	SysSelect1Case3
+	movff	TABLEREADPOSITION,SYSSTRINGA
+	movff	TABLEREADPOSITION_H,SYSSTRINGA_H
+	rcall	GLCDTABLE2
+	movwf	OBJWIDTH,BANKED
+	incf	TABLEREADPOSITION,F,BANKED
+	btfsc	STATUS,Z,ACCESS
+	incf	TABLEREADPOSITION_H,F,BANKED
+	movff	TABLEREADPOSITION,SYSSTRINGA
+	movff	TABLEREADPOSITION_H,SYSSTRINGA_H
+	rcall	GLCDTABLE2
+	movwf	OBJHEIGHT,BANKED
+	bra	SysSelectEnd1
+SysSelect1Case3
+	movff	SELECTEDTABLE,SysWORDTempA
+	movff	SELECTEDTABLE_H,SysWORDTempA_H
+	movlw	low(GLCDTABLE3)
+	movwf	SysWORDTempB,ACCESS
+	movlw	high(GLCDTABLE3)
+	movwf	SysWORDTempB_H,ACCESS
+	call	SysCompEqual16
+	btfss	SysByteTempX,0,ACCESS
+	bra	SysSelect1Case4
+	movff	TABLEREADPOSITION,SYSSTRINGA
+	call	GLCDTABLE3
+	movwf	OBJWIDTH,BANKED
+	incf	TABLEREADPOSITION,F,BANKED
+	btfsc	STATUS,Z,ACCESS
+	incf	TABLEREADPOSITION_H,F,BANKED
+	movff	TABLEREADPOSITION,SYSSTRINGA
+	call	GLCDTABLE3
+	movwf	OBJHEIGHT,BANKED
+	bra	SysSelectEnd1
+SysSelect1Case4
+	movff	SELECTEDTABLE,SysWORDTempA
+	movff	SELECTEDTABLE_H,SysWORDTempA_H
+	movlw	low(GLCDTABLE4)
+	movwf	SysWORDTempB,ACCESS
+	movlw	high(GLCDTABLE4)
+	movwf	SysWORDTempB_H,ACCESS
+	call	SysCompEqual16
+	btfss	SysByteTempX,0,ACCESS
+	bra	SysSelect1Case5
+	movff	TABLEREADPOSITION,SYSSTRINGA
+	call	GLCDTABLE4
+	movwf	OBJWIDTH,BANKED
+	incf	TABLEREADPOSITION,F,BANKED
+	btfsc	STATUS,Z,ACCESS
+	incf	TABLEREADPOSITION_H,F,BANKED
+	movff	TABLEREADPOSITION,SYSSTRINGA
+	call	GLCDTABLE4
+	movwf	OBJHEIGHT,BANKED
+	bra	SysSelectEnd1
+SysSelect1Case5
+	movff	SELECTEDTABLE,SysWORDTempA
+	movff	SELECTEDTABLE_H,SysWORDTempA_H
+	movlw	low(GLCDTABLE5)
+	movwf	SysWORDTempB,ACCESS
+	movlw	high(GLCDTABLE5)
+	movwf	SysWORDTempB_H,ACCESS
+	call	SysCompEqual16
+	btfss	SysByteTempX,0,ACCESS
+	bra	SysSelect1Case6
+	movff	TABLEREADPOSITION,SYSSTRINGA
+	call	GLCDTABLE5
+	movwf	OBJWIDTH,BANKED
+	incf	TABLEREADPOSITION,F,BANKED
+	btfsc	STATUS,Z,ACCESS
+	incf	TABLEREADPOSITION_H,F,BANKED
+	movff	TABLEREADPOSITION,SYSSTRINGA
+	call	GLCDTABLE5
+	movwf	OBJHEIGHT,BANKED
+SysSelect1Case6
+SysSelectEnd1
+	movff	GLCDXPOS,OLDGLCDXPOS
+	movlw	3
+	movwf	TABLEREADPOSITION,BANKED
+	clrf	TABLEREADPOSITION_H,BANKED
+	movff	OBJHEIGHT,SysBYTETempA
+	movlw	8
+	movwf	SysBYTETempB,ACCESS
+	call	SysDivSub
+	movff	SysBYTETempA,WHOLEYBYTES
+	movff	GLCDYPOS,SysBYTETempA
+	movlw	8
+	movwf	SysBYTETempB,ACCESS
+	call	SysDivSub
+	movff	SysBYTETempX,SysTemp1
+	movff	SysTemp1,SysBYTETempA
+	clrf	SysBYTETempB,ACCESS
+	call	SysCompEqual
+	movff	SysByteTempX,ONPAGEBOUNDARY
+	movf	WHOLEYBYTES,F,BANKED
+	btfsc	STATUS, Z,ACCESS
+	bra	ENDIF5
+	setf	HCOUNT,BANKED
+	decf	WHOLEYBYTES,W,BANKED
+	movwf	SysTemp1,BANKED
+	clrf	SysBYTETempB,ACCESS
+	movff	SysTemp1,SysBYTETempA
+	call	SysCompLessThan
+	btfsc	SysByteTempX,0,ACCESS
+	bra	SysForLoopEnd1
+SysForLoop1
+	incf	HCOUNT,F,BANKED
+	movf	HCOUNT,W,BANKED
+	addwf	GLCDYPOS,W,BANKED
+	movwf	GLCDY,BANKED
+	setf	WIDTHCOUNT,BANKED
+	decf	OBJWIDTH,W,BANKED
+	movwf	SysTemp1,BANKED
+	clrf	SysBYTETempB,ACCESS
+	movff	SysTemp1,SysBYTETempA
+	call	SysCompLessThan
+	btfsc	SysByteTempX,0,ACCESS
+	bra	SysForLoopEnd2
+SysForLoop2
+	incf	WIDTHCOUNT,F,BANKED
+SysSelect2Case1
+	movff	SELECTEDTABLE,SysWORDTempA
+	movff	SELECTEDTABLE_H,SysWORDTempA_H
+	movlw	low(GLCDTABLE1)
+	movwf	SysWORDTempB,ACCESS
+	movlw	high(GLCDTABLE1)
+	movwf	SysWORDTempB_H,ACCESS
+	call	SysCompEqual16
+	btfss	SysByteTempX,0,ACCESS
+	bra	SysSelect2Case2
+	movff	TABLEREADPOSITION,SYSSTRINGA
+	movff	TABLEREADPOSITION_H,SYSSTRINGA_H
+	rcall	GLCDTABLE1
+	movwf	WBYTE,BANKED
+	bra	SysSelectEnd2
+SysSelect2Case2
+	movff	SELECTEDTABLE,SysWORDTempA
+	movff	SELECTEDTABLE_H,SysWORDTempA_H
+	movlw	low(GLCDTABLE2)
+	movwf	SysWORDTempB,ACCESS
+	movlw	high(GLCDTABLE2)
+	movwf	SysWORDTempB_H,ACCESS
+	call	SysCompEqual16
+	btfss	SysByteTempX,0,ACCESS
+	bra	SysSelect2Case3
+	movff	TABLEREADPOSITION,SYSSTRINGA
+	movff	TABLEREADPOSITION_H,SYSSTRINGA_H
+	rcall	GLCDTABLE2
+	movwf	WBYTE,BANKED
+	bra	SysSelectEnd2
+SysSelect2Case3
+	movff	SELECTEDTABLE,SysWORDTempA
+	movff	SELECTEDTABLE_H,SysWORDTempA_H
+	movlw	low(GLCDTABLE3)
+	movwf	SysWORDTempB,ACCESS
+	movlw	high(GLCDTABLE3)
+	movwf	SysWORDTempB_H,ACCESS
+	call	SysCompEqual16
+	btfss	SysByteTempX,0,ACCESS
+	bra	SysSelect2Case4
+	movff	TABLEREADPOSITION,SYSSTRINGA
+	call	GLCDTABLE3
+	movwf	WBYTE,BANKED
+	bra	SysSelectEnd2
+SysSelect2Case4
+	movff	SELECTEDTABLE,SysWORDTempA
+	movff	SELECTEDTABLE_H,SysWORDTempA_H
+	movlw	low(GLCDTABLE4)
+	movwf	SysWORDTempB,ACCESS
+	movlw	high(GLCDTABLE4)
+	movwf	SysWORDTempB_H,ACCESS
+	call	SysCompEqual16
+	btfss	SysByteTempX,0,ACCESS
+	bra	SysSelect2Case5
+	movff	TABLEREADPOSITION,SYSSTRINGA
+	call	GLCDTABLE4
+	movwf	WBYTE,BANKED
+	bra	SysSelectEnd2
+SysSelect2Case5
+	movff	SELECTEDTABLE,SysWORDTempA
+	movff	SELECTEDTABLE_H,SysWORDTempA_H
+	movlw	low(GLCDTABLE5)
+	movwf	SysWORDTempB,ACCESS
+	movlw	high(GLCDTABLE5)
+	movwf	SysWORDTempB_H,ACCESS
+	call	SysCompEqual16
+	btfss	SysByteTempX,0,ACCESS
+	bra	SysSelect2Case6
+	movff	TABLEREADPOSITION,SYSSTRINGA
+	call	GLCDTABLE5
+	movwf	WBYTE,BANKED
+SysSelect2Case6
+SysSelectEnd2
+	incf	TABLEREADPOSITION,F,BANKED
+	btfsc	STATUS,Z,ACCESS
+	incf	TABLEREADPOSITION_H,F,BANKED
+	movf	OPTMISEGLCDDRAW,W,BANKED
+	subwf	WBYTE,W,BANKED
+	btfsc	STATUS, Z,ACCESS
+	bra	ENDIF9
+	incf	ONPAGEBOUNDARY,W,BANKED
+	btfss	STATUS, Z,ACCESS
+	bra	ELSE17_1
+	movf	WIDTHCOUNT,W,BANKED
+	addwf	GLCDXPOS,W,BANKED
+	movwf	GLCDX,BANKED
+	btfsc	GLCDX,6,BANKED
+	bra	ENDIF18
+	bsf	LATC,1,ACCESS
+	bcf	LATC,0,ACCESS
+ENDIF18
+	btfss	GLCDX,6,BANKED
+	bra	ENDIF19
+	bsf	LATC,0,ACCESS
+	movlw	64
+	subwf	GLCDX,F,BANKED
+	bcf	LATC,1,ACCESS
+ENDIF19
+	movff	GLCDY,SysBYTETempA
+	movlw	8
+	movwf	SysBYTETempB,ACCESS
+	call	SysDivSub
+	movff	SysBYTETempA,CURRPAGE
+	bcf	LATE,0,ACCESS
+	movlw	184
+	iorwf	CURRPAGE,W,BANKED
+	movwf	LCDBYTE,BANKED
+	call	GLCDWRITEBYTE_KS0108
+
+	movlw	64
+	iorwf	GLCDX,W,BANKED
+	movwf	LCDBYTE,BANKED
+	rcall	GLCDWRITEBYTE_KS0108
+
+	bsf	LATE,0,ACCESS
+	movff	WBYTE,LCDBYTE
+	rcall	GLCDWRITEBYTE_KS0108
+
+	bra	ENDIF17
+ELSE17_1
+	setf	CURRCHARROW,BANKED
+SysForLoop3
+	incf	CURRCHARROW,F,BANKED
+	btfsc	WBYTE,0,BANKED
+	bra	ELSE20_1
+	movf	WIDTHCOUNT,W,BANKED
+	addwf	GLCDXPOS,W,BANKED
+	movwf	GLCDX,BANKED
+	movf	GLCDYPOS,W,BANKED
+	addwf	CURRCHARROW,W,BANKED
+	movwf	GLCDY,BANKED
+	movff	GLCDBACKGROUND,GLCDCOLOUR
+	movff	GLCDBACKGROUND_H,GLCDCOLOUR_H
+	call	PSET_KS0108
+
+	bra	ENDIF20
+ELSE20_1
+	movf	WIDTHCOUNT,W,BANKED
+	addwf	GLCDXPOS,W,BANKED
+	movwf	GLCDX,BANKED
+	movf	GLCDYPOS,W,BANKED
+	addwf	CURRCHARROW,W,BANKED
+	movwf	GLCDY,BANKED
+	movff	GLCDFOREGROUND,GLCDCOLOUR
+	movff	GLCDFOREGROUND_H,GLCDCOLOUR_H
+	call	PSET_KS0108
+
+ENDIF20
+	rrcf	WBYTE,F,BANKED
+	movlw	7
+	subwf	CURRCHARROW,W,BANKED
+	btfss	STATUS, C,ACCESS
+	bra	SysForLoop3
+SysForLoopEnd3
+ENDIF17
+ENDIF9
+	decf	OBJWIDTH,W,BANKED
+	movwf	SysTemp1,BANKED
+	movff	WIDTHCOUNT,SysBYTETempA
+	movff	SysTemp1,SysBYTETempB
+	call	SysCompLessThan
+	btfsc	SysByteTempX,0,ACCESS
+	bra	SysForLoop2
+SysForLoopEnd2
+	movff	OLDGLCDXPOS,GLCDXPOS
+	movlw	8
+	addwf	GLCDYPOS,F,BANKED
+	decf	WHOLEYBYTES,W,BANKED
+	movwf	SysTemp1,BANKED
+	movff	HCOUNT,SysBYTETempA
+	movff	SysTemp1,SysBYTETempB
+	call	SysCompLessThan
+	btfsc	SysByteTempX,0,ACCESS
+	bra	SysForLoop1
+SysForLoopEnd1
+ENDIF5
+	movff	OBJHEIGHT,SysBYTETempA
+	movlw	8
+	movwf	SysBYTETempB,ACCESS
+	call	SysDivSub
+	movff	SysBYTETempX,MAXHEIGHT
+	movf	MAXHEIGHT,F,BANKED
+	btfsc	STATUS, Z,ACCESS
+	bra	ENDIF6
+	setf	WIDTHCOUNT,BANKED
+	decf	OBJWIDTH,W,BANKED
+	movwf	SysTemp1,BANKED
+	clrf	SysBYTETempB,ACCESS
+	movff	SysTemp1,SysBYTETempA
+	call	SysCompLessThan
+	btfsc	SysByteTempX,0,ACCESS
+	bra	SysForLoopEnd4
+SysForLoop4
+	incf	WIDTHCOUNT,F,BANKED
+SysSelect3Case1
+	movff	SELECTEDTABLE,SysWORDTempA
+	movff	SELECTEDTABLE_H,SysWORDTempA_H
+	movlw	low(GLCDTABLE1)
+	movwf	SysWORDTempB,ACCESS
+	movlw	high(GLCDTABLE1)
+	movwf	SysWORDTempB_H,ACCESS
+	call	SysCompEqual16
+	btfss	SysByteTempX,0,ACCESS
+	bra	SysSelect3Case2
+	movff	TABLEREADPOSITION,SYSSTRINGA
+	movff	TABLEREADPOSITION_H,SYSSTRINGA_H
+	rcall	GLCDTABLE1
+	movwf	WBYTE,BANKED
+	bra	SysSelectEnd3
+SysSelect3Case2
+	movff	SELECTEDTABLE,SysWORDTempA
+	movff	SELECTEDTABLE_H,SysWORDTempA_H
+	movlw	low(GLCDTABLE2)
+	movwf	SysWORDTempB,ACCESS
+	movlw	high(GLCDTABLE2)
+	movwf	SysWORDTempB_H,ACCESS
+	call	SysCompEqual16
+	btfss	SysByteTempX,0,ACCESS
+	bra	SysSelect3Case3
+	movff	TABLEREADPOSITION,SYSSTRINGA
+	movff	TABLEREADPOSITION_H,SYSSTRINGA_H
+	rcall	GLCDTABLE2
+	movwf	WBYTE,BANKED
+	bra	SysSelectEnd3
+SysSelect3Case3
+	movff	SELECTEDTABLE,SysWORDTempA
+	movff	SELECTEDTABLE_H,SysWORDTempA_H
+	movlw	low(GLCDTABLE3)
+	movwf	SysWORDTempB,ACCESS
+	movlw	high(GLCDTABLE3)
+	movwf	SysWORDTempB_H,ACCESS
+	call	SysCompEqual16
+	btfss	SysByteTempX,0,ACCESS
+	bra	SysSelect3Case4
+	movff	TABLEREADPOSITION,SYSSTRINGA
+	rcall	GLCDTABLE3
+	movwf	WBYTE,BANKED
+	bra	SysSelectEnd3
+SysSelect3Case4
+	movff	SELECTEDTABLE,SysWORDTempA
+	movff	SELECTEDTABLE_H,SysWORDTempA_H
+	movlw	low(GLCDTABLE4)
+	movwf	SysWORDTempB,ACCESS
+	movlw	high(GLCDTABLE4)
+	movwf	SysWORDTempB_H,ACCESS
+	call	SysCompEqual16
+	btfss	SysByteTempX,0,ACCESS
+	bra	SysSelect3Case5
+	movff	TABLEREADPOSITION,SYSSTRINGA
+	rcall	GLCDTABLE4
+	movwf	WBYTE,BANKED
+	bra	SysSelectEnd3
+SysSelect3Case5
+	movff	SELECTEDTABLE,SysWORDTempA
+	movff	SELECTEDTABLE_H,SysWORDTempA_H
+	movlw	low(GLCDTABLE5)
+	movwf	SysWORDTempB,ACCESS
+	movlw	high(GLCDTABLE5)
+	movwf	SysWORDTempB_H,ACCESS
+	call	SysCompEqual16
+	btfss	SysByteTempX,0,ACCESS
+	bra	SysSelect3Case6
+	movff	TABLEREADPOSITION,SYSSTRINGA
+	rcall	GLCDTABLE5
+	movwf	WBYTE,BANKED
+SysSelect3Case6
+SysSelectEnd3
+	incf	TABLEREADPOSITION,F,BANKED
+	btfsc	STATUS,Z,ACCESS
+	incf	TABLEREADPOSITION_H,F,BANKED
+	setf	CURRCHARROW,BANKED
+	decf	MAXHEIGHT,W,BANKED
+	movwf	SysTemp1,BANKED
+	clrf	SysBYTETempB,ACCESS
+	movff	SysTemp1,SysBYTETempA
+	call	SysCompLessThan
+	btfsc	SysByteTempX,0,ACCESS
+	bra	SysForLoopEnd5
+SysForLoop5
+	incf	CURRCHARROW,F,BANKED
+	btfsc	WBYTE,0,BANKED
+	bra	ELSE14_1
+	movf	WIDTHCOUNT,W,BANKED
+	addwf	GLCDXPOS,W,BANKED
+	movwf	GLCDX,BANKED
+	movf	GLCDYPOS,W,BANKED
+	addwf	CURRCHARROW,W,BANKED
+	movwf	GLCDY,BANKED
+	movff	GLCDBACKGROUND,GLCDCOLOUR
+	movff	GLCDBACKGROUND_H,GLCDCOLOUR_H
+	rcall	PSET_KS0108
+
+	bra	ENDIF14
+ELSE14_1
+	movf	WIDTHCOUNT,W,BANKED
+	addwf	GLCDXPOS,W,BANKED
+	movwf	GLCDX,BANKED
+	movf	GLCDYPOS,W,BANKED
+	addwf	CURRCHARROW,W,BANKED
+	movwf	GLCDY,BANKED
+	movff	GLCDFOREGROUND,GLCDCOLOUR
+	movff	GLCDFOREGROUND_H,GLCDCOLOUR_H
+	rcall	PSET_KS0108
+
+ENDIF14
+	rrcf	WBYTE,F,BANKED
+	decf	MAXHEIGHT,W,BANKED
+	movwf	SysTemp1,BANKED
+	movff	CURRCHARROW,SysBYTETempA
+	movff	SysTemp1,SysBYTETempB
+	rcall	SysCompLessThan
+	btfsc	SysByteTempX,0,ACCESS
+	bra	SysForLoop5
+SysForLoopEnd5
+	decf	OBJWIDTH,W,BANKED
+	movwf	SysTemp1,BANKED
+	movff	WIDTHCOUNT,SysBYTETempA
+	movff	SysTemp1,SysBYTETempB
+	rcall	SysCompLessThan
+	btfsc	SysByteTempX,0,ACCESS
+	bra	SysForLoop4
+SysForLoopEnd4
+ENDIF6
+	bcf	LATC,0,ACCESS
+	bcf	LATC,1,ACCESS
+	return
+
+;********************************************************************************
+
+GLCDCLS_KS0108
+	clrf	GLCD_YORDINATE,BANKED
+	clrf	GLCD_YORDINATE_H,BANKED
+	bsf	LATC,0,ACCESS
+	bcf	LATC,1,ACCESS
+	clrf	GLCD_COUNT,BANKED
+SysForLoop6
+	incf	GLCD_COUNT,F,BANKED
+	setf	CURRPAGE,BANKED
+SysForLoop7
+	incf	CURRPAGE,F,BANKED
+	bcf	LATE,0,ACCESS
+	movlw	184
+	iorwf	CURRPAGE,W,BANKED
+	movwf	LCDBYTE,BANKED
+	rcall	GLCDWRITEBYTE_KS0108
+
+	setf	CURRCOL,BANKED
+SysForLoop8
+	incf	CURRCOL,F,BANKED
+	bcf	LATE,0,ACCESS
+	movlw	64
+	iorwf	CURRCOL,W,BANKED
+	movwf	LCDBYTE,BANKED
+	rcall	GLCDWRITEBYTE_KS0108
+
+	bsf	LATE,0,ACCESS
+	clrf	LCDBYTE,BANKED
+	rcall	GLCDWRITEBYTE_KS0108
+
+	movlw	63
+	subwf	CURRCOL,W,BANKED
+	btfss	STATUS, C,ACCESS
+	bra	SysForLoop8
+SysForLoopEnd8
+	movlw	7
+	subwf	CURRPAGE,W,BANKED
+	btfss	STATUS, C,ACCESS
+	bra	SysForLoop7
+SysForLoopEnd7
+	bcf	LATC,0,ACCESS
+	bsf	LATC,1,ACCESS
+	movlw	2
+	subwf	GLCD_COUNT,W,BANKED
+	btfss	STATUS, C,ACCESS
+	bra	SysForLoop6
+SysForLoopEnd6
+	bcf	LATC,0,ACCESS
+	bcf	LATC,1,ACCESS
+	return
+
+;********************************************************************************
+
+FN_GLCDREADBYTE_KS0108
+	bsf	TRISD,7,ACCESS
+	bsf	TRISD,6,ACCESS
+	bsf	TRISD,5,ACCESS
+	bsf	TRISD,4,ACCESS
+	bsf	TRISD,3,ACCESS
+	bsf	TRISD,2,ACCESS
+	bsf	TRISD,1,ACCESS
+	bsf	TRISD,0,ACCESS
+	bsf	LATE,1,ACCESS
+	bsf	LATE,2,ACCESS
+	movlw	15
+	movwf	DELAYTEMP,ACCESS
+DelayUS4
+	decfsz	DELAYTEMP,F,ACCESS
+	bra	DelayUS4
+	bcf	GLCDREADBYTE_KS0108,7,BANKED
+	btfsc	PORTD,7,ACCESS
+	bsf	GLCDREADBYTE_KS0108,7,BANKED
+	bcf	GLCDREADBYTE_KS0108,6,BANKED
+	btfsc	PORTD,6,ACCESS
+	bsf	GLCDREADBYTE_KS0108,6,BANKED
+	bcf	GLCDREADBYTE_KS0108,5,BANKED
+	btfsc	PORTD,5,ACCESS
+	bsf	GLCDREADBYTE_KS0108,5,BANKED
+	bcf	GLCDREADBYTE_KS0108,4,BANKED
+	btfsc	PORTD,4,ACCESS
+	bsf	GLCDREADBYTE_KS0108,4,BANKED
+	bcf	GLCDREADBYTE_KS0108,3,BANKED
+	btfsc	PORTD,3,ACCESS
+	bsf	GLCDREADBYTE_KS0108,3,BANKED
+	bcf	GLCDREADBYTE_KS0108,2,BANKED
+	btfsc	PORTD,2,ACCESS
+	bsf	GLCDREADBYTE_KS0108,2,BANKED
+	bcf	GLCDREADBYTE_KS0108,1,BANKED
+	btfsc	PORTD,1,ACCESS
+	bsf	GLCDREADBYTE_KS0108,1,BANKED
+	bcf	GLCDREADBYTE_KS0108,0,BANKED
+	btfsc	PORTD,0,ACCESS
+	bsf	GLCDREADBYTE_KS0108,0,BANKED
+	bcf	LATE,2,ACCESS
+	movlw	15
+	movwf	DELAYTEMP,ACCESS
+DelayUS5
+	decfsz	DELAYTEMP,F,ACCESS
+	bra	DelayUS5
+	return
+
+;********************************************************************************
+
+GLCDTABLE1
+	movff	SYSSTRINGA,SysWORDTempA
+	movff	SYSSTRINGA_H,SysWORDTempA_H
+	movlw	227
+	movwf	SysWORDTempB,ACCESS
+	movlw	1
+	movwf	SysWORDTempB_H,ACCESS
+	rcall	SysCompLessThan16
+	btfss	SysByteTempX,0,ACCESS
+	retlw	0
+	movf	SysStringA, W,ACCESS
+	addlw	low TableGLCDTABLE1
+	movwf	TBLPTRL,ACCESS
+	movlw	high TableGLCDTABLE1
+	btfsc	STATUS, C,ACCESS
+	addlw	1
+	addwf	SysStringA_H, W,ACCESS
+	movwf	TBLPTRH,ACCESS
+	tblrd*
+	movf	TABLAT, W,ACCESS
+	return
+TableGLCDTABLE1
+	db	226,60,64,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	db	128,224,0,192,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,64,192,176,96,192,128,0
+	db	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,192,112,222,115,28,7,1,0,0,0,0
+	db	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,3,6,13,27,62,236,24,16,16,16,24,24,8
+	db	8,12,12,12,4,4,4,6,6,2,2,2,3,3,1,1,3,15,28,112,224,128,0,0,0,0,0,0,0,0,0,0,0,0
+	db	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,255,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	db	0,0,0,0,0,0,0,1,7,14,56,112,192,128,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	db	0,0,255,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,128,192,99
+	db	54,28,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,12,8,24,16,48,48,32,96,64
+	db	192,192,128,128,0,0,0,0,0,0,0,0,0,0,0,0,128,192,112,56,28,14,3,1,0,0,0,0,0,0,0,0
+	db	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,192,32,192,0,0,0,0,0,0,0,0,0,0,0,0,1,1,3,3,2,6,4
+	db	12,236,8,12,6,3,1,0,0,32,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,192
+	db	56,22,17,16,17,22,56,192,0,255,2,1,1,1,254,0,0,126,129,129,129,129,126,0,0,255
+	db	66,129,129,129,126,0,0,255,0,0,127,128,128,128,64,255,0,0,255,2,1,1,1,254,2,1,1,1
+	db	254
+
+;********************************************************************************
+
+GLCDTABLE1_H
+	movff	SYSSTRINGA,SysWORDTempA
+	movff	SYSSTRINGA_H,SysWORDTempA_H
+	movlw	1
+	movwf	SysWORDTempB,ACCESS
+	clrf	SysWORDTempB_H,ACCESS
+	rcall	SysCompLessThan16
+	btfss	SysByteTempX,0,ACCESS
+	retlw	0
+	movf	SysStringA, W,ACCESS
+	addlw	low TableGLCDTABLE1_H
+	movwf	TBLPTRL,ACCESS
+	movlw	high TableGLCDTABLE1_H
+	btfsc	STATUS, C,ACCESS
+	addlw	1
+	addwf	SysStringA_H, W,ACCESS
+	movwf	TBLPTRH,ACCESS
+	tblrd*
+	movf	TABLAT, W,ACCESS
+	return
+TableGLCDTABLE1_H
+	db	1
+
+;********************************************************************************
+
+GLCDTABLE2
+	movff	SYSSTRINGA,SysWORDTempA
+	movff	SYSSTRINGA_H,SysWORDTempA_H
+	movlw	137
+	movwf	SysWORDTempB,ACCESS
+	movlw	2
+	movwf	SysWORDTempB_H,ACCESS
+	rcall	SysCompLessThan16
+	btfss	SysByteTempX,0,ACCESS
+	retlw	0
+	movf	SysStringA, W,ACCESS
+	addlw	low TableGLCDTABLE2
+	movwf	TBLPTRL,ACCESS
+	movlw	high TableGLCDTABLE2
+	btfsc	STATUS, C,ACCESS
+	addlw	1
+	addwf	SysStringA_H, W,ACCESS
+	movwf	TBLPTRH,ACCESS
+	tblrd*
+	movf	TABLAT, W,ACCESS
+	return
+TableGLCDTABLE2
+	db	162,84,63,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	db	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,32,96,192,128,128,192
+	db	224,224,224,240,184,222,192,128,0,0,0,0,0,0,0,0,0,0,0,0,0,128,192,224,240,248
+	db	248,248,248,248,248,248,240,240,240,240,240,224,224,224,224,224,224,224,224,224
+	db	224,224,224,224,224,224,224,224,224,240,240,240,240,240,248,248,248,248,252,252
+	db	252,252,252,252,252,252,254,254,254,254,254,254,254,254,255,255,255,255,255,255
+	db	255,255,255,255,255,241,192,128,0,0,0,0,0,0,0,0,0,248,254,255,255,255,255,255
+	db	255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255
+	db	255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255
+	db	255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255
+	db	255,255,255,127,63,63,63,63,30,12,0,0,0,0,0,0,224,255,7,63,255,255,255,255,255,255
+	db	255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255
+	db	255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255
+	db	255,255,255,255,255,255,255,255,255,255,255,63,63,63,25,0,0,0,0,0,0,0,0,0,0,0,0,0
+	db	0,0,0,0,128,252,255,255,0,0,1,15,255,255,255,255,255,255,255,255,255,255,255,255
+	db	255,255,127,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255
+	db	127,127,127,255,255,255,255,255,255,255,255,255,255,255,255,127,63,31,15,7,3,1
+	db	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,128,255,255,255,31,0,0,240,252,255,255
+	db	255,255,255,255,255,15,31,15,7,15,1,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,255
+	db	255,63,15,3,0,47,255,255,255,127,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	db	0,0,0,0,0,0,3,3,1,0,0,0,0,255,255,255,7,1,7,31,255,255,240,192,128,0,0,0,0,0,0,0
+	db	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,31,31,31,16,0,0,0,0,255,255,255,192,128,0,0,0
+	db	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,12,63,127,127
+	db	120,0,0,0,3,3,7,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+	db	0,1,1,1,1
+
+;********************************************************************************
+
+GLCDTABLE2_H
+	movff	SYSSTRINGA,SysWORDTempA
+	movff	SYSSTRINGA_H,SysWORDTempA_H
+	movlw	1
+	movwf	SysWORDTempB,ACCESS
+	clrf	SysWORDTempB_H,ACCESS
+	rcall	SysCompLessThan16
+	btfss	SysByteTempX,0,ACCESS
+	retlw	0
+	movf	SysStringA, W,ACCESS
+	addlw	low TableGLCDTABLE2_H
+	movwf	TBLPTRL,ACCESS
+	movlw	high TableGLCDTABLE2_H
+	btfsc	STATUS, C,ACCESS
+	addlw	1
+	addwf	SysStringA_H, W,ACCESS
+	movwf	TBLPTRH,ACCESS
+	tblrd*
+	movf	TABLAT, W,ACCESS
+	return
+TableGLCDTABLE2_H
+	db	2
+
+;********************************************************************************
+
+GLCDTABLE3
+	movlw	4
+	cpfslt	SysStringA,ACCESS
+	retlw	0
+	movf	SysStringA, W,ACCESS
+	addlw	low TableGLCDTABLE3
+	movwf	TBLPTRL,ACCESS
+	movlw	high TableGLCDTABLE3
+	btfsc	STATUS, C,ACCESS
+	addlw	1
+	movwf	TBLPTRH,ACCESS
+	tblrd*
+	movf	TABLAT, W,ACCESS
+	return
+TableGLCDTABLE3
+	db	3,1,0,255
+
+;********************************************************************************
+
+GLCDTABLE4
+	movlw	4
+	cpfslt	SysStringA,ACCESS
+	retlw	0
+	movf	SysStringA, W,ACCESS
+	addlw	low TableGLCDTABLE4
+	movwf	TBLPTRL,ACCESS
+	movlw	high TableGLCDTABLE4
+	btfsc	STATUS, C,ACCESS
+	addlw	1
+	movwf	TBLPTRH,ACCESS
+	tblrd*
+	movf	TABLAT, W,ACCESS
+	return
+TableGLCDTABLE4
+	db	3,1,0,255
+
+;********************************************************************************
+
+GLCDTABLE5
+	movlw	4
+	cpfslt	SysStringA,ACCESS
+	retlw	0
+	movf	SysStringA, W,ACCESS
+	addlw	low TableGLCDTABLE5
+	movwf	TBLPTRL,ACCESS
+	movlw	high TableGLCDTABLE5
+	btfsc	STATUS, C,ACCESS
+	addlw	1
+	movwf	TBLPTRH,ACCESS
+	tblrd*
+	movf	TABLAT, W,ACCESS
+	return
+TableGLCDTABLE5
+	db	3,1,0,255
+
+;********************************************************************************
+
+GLCDWRITEBYTE_KS0108
+	bcf	SYSBITVAR0,0,BANKED
+	btfsc	PORTE,0,ACCESS
+	bsf	SYSBITVAR0,0,BANKED
+	bcf	SYSBITVAR0,1,BANKED
+	btfsc	PORTC,1,ACCESS
+	bsf	SYSBITVAR0,1,BANKED
+	btfsc	PORTC,0,ACCESS
+	bcf	LATC,1,ACCESS
+	bcf	LATE,0,ACCESS
+SysWaitLoop1
+	rcall	FN_GLCDREADBYTE_KS0108
+	btfsc	GLCDREADBYTE_KS0108,7,BANKED
+	bra	SysWaitLoop1
+	bcf	LATE,0,ACCESS
+	btfsc	SYSBITVAR0,0,BANKED
+	bsf	LATE,0,ACCESS
+	bcf	LATC,1,ACCESS
+	btfsc	SYSBITVAR0,1,BANKED
+	bsf	LATC,1,ACCESS
+	bcf	LATE,1,ACCESS
+	bcf	TRISD,0,ACCESS
+	bcf	TRISD,1,ACCESS
+	bcf	TRISD,2,ACCESS
+	bcf	TRISD,3,ACCESS
+	bcf	TRISD,4,ACCESS
+	bcf	TRISD,5,ACCESS
+	bcf	TRISD,6,ACCESS
+	bcf	TRISD,7,ACCESS
+	bcf	LATD,7,ACCESS
+	btfsc	LCDBYTE,7,BANKED
+	bsf	LATD,7,ACCESS
+	bcf	LATD,6,ACCESS
+	btfsc	LCDBYTE,6,BANKED
+	bsf	LATD,6,ACCESS
+	bcf	LATD,5,ACCESS
+	btfsc	LCDBYTE,5,BANKED
+	bsf	LATD,5,ACCESS
+	bcf	LATD,4,ACCESS
+	btfsc	LCDBYTE,4,BANKED
+	bsf	LATD,4,ACCESS
+	bcf	LATD,3,ACCESS
+	btfsc	LCDBYTE,3,BANKED
+	bsf	LATD,3,ACCESS
+	bcf	LATD,2,ACCESS
+	btfsc	LCDBYTE,2,BANKED
+	bsf	LATD,2,ACCESS
+	bcf	LATD,1,ACCESS
+	btfsc	LCDBYTE,1,BANKED
+	bsf	LATD,1,ACCESS
+	bcf	LATD,0,ACCESS
+	btfsc	LCDBYTE,0,BANKED
+	bsf	LATD,0,ACCESS
+	movlw	1
+	movwf	DELAYTEMP,ACCESS
+DelayUS1
+	decfsz	DELAYTEMP,F,ACCESS
+	bra	DelayUS1
+	nop
+	bsf	LATE,2,ACCESS
+	movlw	1
+	movwf	DELAYTEMP,ACCESS
+DelayUS2
+	decfsz	DELAYTEMP,F,ACCESS
+	bra	DelayUS2
+	nop
+	bcf	LATE,2,ACCESS
+	movlw	1
+	movwf	DELAYTEMP,ACCESS
+DelayUS3
+	decfsz	DELAYTEMP,F,ACCESS
+	bra	DelayUS3
+	nop
+	return
+
+;********************************************************************************
+
+INITGLCD_KS0108
+	bcf	TRISE,0,ACCESS
+	bcf	TRISE,1,ACCESS
+	bcf	TRISE,2,ACCESS
+	bcf	TRISC,0,ACCESS
+	bcf	TRISC,1,ACCESS
+	bcf	TRISC,2,ACCESS
+	bcf	LATC,2,ACCESS
+	movlw	1
+	movwf	SysWaitTempMS,ACCESS
+	clrf	SysWaitTempMS_H,ACCESS
+	call	Delay_MS
+	bsf	LATC,2,ACCESS
+	movlw	1
+	movwf	SysWaitTempMS,ACCESS
+	clrf	SysWaitTempMS_H,ACCESS
+	call	Delay_MS
+	bsf	LATC,0,ACCESS
+	bsf	LATC,1,ACCESS
+	bcf	LATE,0,ACCESS
+	movlw	63
+	movwf	LCDBYTE,BANKED
+	rcall	GLCDWRITEBYTE_KS0108
+
+	movlw	192
+	movwf	LCDBYTE,BANKED
+	rcall	GLCDWRITEBYTE_KS0108
+
+	bcf	LATC,0,ACCESS
+	bcf	LATC,1,ACCESS
+	clrf	GLCDBACKGROUND,BANKED
+	clrf	GLCDBACKGROUND_H,BANKED
+	movlw	1
+	movwf	GLCDFOREGROUND,BANKED
+	clrf	GLCDFOREGROUND_H,BANKED
+	movlw	6
+	movwf	GLCDFONTWIDTH,BANKED
+	clrf	GLCDFNTDEFAULT,BANKED
+	movlw	1
+	movwf	GLCDFNTDEFAULTSIZE,BANKED
+	rcall	GLCDCLS_KS0108
+
+	return
+
+;********************************************************************************
+
+INITSYS
+	nop
+	clrf	BSR,ACCESS
+	clrf	TBLPTRU,ACCESS
+	bcf	ADCON2,ADFM,ACCESS
+	bcf	ADCON0,ADON,ACCESS
+	bsf	ADCON1,PCFG3,ACCESS
+	bsf	ADCON1,PCFG2,ACCESS
+	bsf	ADCON1,PCFG1,ACCESS
+	bsf	ADCON1,PCFG0,ACCESS
+	movlw	7
+	movwf	CMCON,ACCESS
+	clrf	PORTA,ACCESS
+	clrf	PORTB,ACCESS
+	clrf	PORTC,ACCESS
+	clrf	PORTD,ACCESS
+	clrf	PORTE,ACCESS
+	return
+
+;********************************************************************************
+
+PSET_KS0108
+	btfsc	GLCDX,6,BANKED
+	bra	ENDIF26
+	bsf	LATC,1,ACCESS
+	bcf	LATC,0,ACCESS
+ENDIF26
+	btfss	GLCDX,6,BANKED
+	bra	ENDIF27
+	bsf	LATC,0,ACCESS
+	movlw	64
+	subwf	GLCDX,F,BANKED
+	bcf	LATC,1,ACCESS
+ENDIF27
+	movff	GLCDY,SysBYTETempA
+	movlw	8
+	movwf	SysBYTETempB,ACCESS
+	rcall	SysDivSub
+	movff	SysBYTETempA,CURRPAGE
+	bcf	LATE,0,ACCESS
+	movlw	184
+	iorwf	CURRPAGE,W,BANKED
+	movwf	LCDBYTE,BANKED
+	rcall	GLCDWRITEBYTE_KS0108
+
+	bcf	LATE,0,ACCESS
+	movlw	64
+	iorwf	GLCDX,W,BANKED
+	movwf	LCDBYTE,BANKED
+	rcall	GLCDWRITEBYTE_KS0108
+
+	bsf	LATE,0,ACCESS
+	rcall	FN_GLCDREADBYTE_KS0108
+	movff	GLCDREADBYTE_KS0108,GLCDDATATEMP
+	bsf	LATE,0,ACCESS
+	rcall	FN_GLCDREADBYTE_KS0108
+	movff	GLCDREADBYTE_KS0108,GLCDDATATEMP
+	movlw	7
+	andwf	GLCDY,W,BANKED
+	movwf	GLCDBITNO,BANKED
+	btfsc	GLCDCOLOUR,0,BANKED
+	bra	ELSE28_1
+	movlw	254
+	movwf	GLCDCHANGE,BANKED
+	bsf	STATUS,C,ACCESS
+	bra	ENDIF28
+ELSE28_1
+	movlw	1
+	movwf	GLCDCHANGE,BANKED
+	bcf	STATUS,C,ACCESS
+ENDIF28
+	movff	GLCDBITNO,SysRepeatTemp1
+	movf	SYSREPEATTEMP1,F,BANKED
+	btfsc	STATUS, Z,ACCESS
+	bra	SysRepeatLoopEnd1
+SysRepeatLoop1
+	rlcf	GLCDCHANGE,F,BANKED
+	decfsz	SysRepeatTemp1,F,BANKED
+	bra	SysRepeatLoop1
+SysRepeatLoopEnd1
+	btfsc	GLCDCOLOUR,0,BANKED
+	bra	ELSE29_1
+	movf	GLCDDATATEMP,W,BANKED
+	andwf	GLCDCHANGE,W,BANKED
+	movwf	GLCDDATATEMP,BANKED
+	bra	ENDIF29
+ELSE29_1
+	movf	GLCDDATATEMP,W,BANKED
+	iorwf	GLCDCHANGE,W,BANKED
+	movwf	GLCDDATATEMP,BANKED
+ENDIF29
+	bcf	LATE,0,ACCESS
+	movlw	64
+	iorwf	GLCDX,W,BANKED
+	movwf	LCDBYTE,BANKED
+	rcall	GLCDWRITEBYTE_KS0108
+
+	bsf	LATE,0,ACCESS
+	movff	GLCDDATATEMP,LCDBYTE
+	rcall	GLCDWRITEBYTE_KS0108
+
+	bcf	LATC,0,ACCESS
+	bcf	LATC,1,ACCESS
+	return
+
+;********************************************************************************
+
+SYSCOMPEQUAL
+	setf	SYSBYTETEMPX,ACCESS
+	movf	SYSBYTETEMPB, W,ACCESS
+	cpfseq	SYSBYTETEMPA,ACCESS
+	clrf	SYSBYTETEMPX,ACCESS
+	return
+
+;********************************************************************************
+
+SYSCOMPEQUAL16
+	clrf	SYSBYTETEMPX,ACCESS
+	movf	SYSWORDTEMPB, W,ACCESS
+	cpfseq	SYSWORDTEMPA,ACCESS
+	return
+	movf	SYSWORDTEMPB_H, W,ACCESS
+	cpfseq	SYSWORDTEMPA_H,ACCESS
+	return
+	setf	SYSBYTETEMPX,ACCESS
+	return
+
+;********************************************************************************
+
+SYSCOMPLESSTHAN
+	setf	SYSBYTETEMPX,ACCESS
+	movf	SYSBYTETEMPB, W,ACCESS
+	cpfslt	SYSBYTETEMPA,ACCESS
+	clrf	SYSBYTETEMPX,ACCESS
+	return
+
+;********************************************************************************
+
+SYSCOMPLESSTHAN16
+	clrf	SYSBYTETEMPX,ACCESS
+	movf	SYSWORDTEMPA_H,W,ACCESS
+	subwf	SYSWORDTEMPB_H,W,ACCESS
+	btfss	STATUS,C,ACCESS
+	return
+	movf	SYSWORDTEMPB_H,W,ACCESS
+	subwf	SYSWORDTEMPA_H,W,ACCESS
+	bnc	SCLT16TRUE
+	movf	SYSWORDTEMPB,W,ACCESS
+	subwf	SYSWORDTEMPA,W,ACCESS
+	btfsc	STATUS,C,ACCESS
+	return
+SCLT16TRUE
+	comf	SYSBYTETEMPX,F,ACCESS
+	return
+
+;********************************************************************************
+
+SYSDIVSUB
+	movf	SYSBYTETEMPB, F,ACCESS
+	btfsc	STATUS, Z,ACCESS
+	return
+	clrf	SYSBYTETEMPX,ACCESS
+	movlw	8
+	movwf	SYSDIVLOOP,ACCESS
+SYSDIV8START
+	bcf	STATUS, C,ACCESS
+	rlcf	SYSBYTETEMPA, F,ACCESS
+	rlcf	SYSBYTETEMPX, F,ACCESS
+	movf	SYSBYTETEMPB, W,ACCESS
+	subwf	SYSBYTETEMPX, F,ACCESS
+	bsf	SYSBYTETEMPA, 0,ACCESS
+	btfsc	STATUS, C,ACCESS
+	bra	DIV8NOTNEG
+	bcf	SYSBYTETEMPA, 0,ACCESS
+	movf	SYSBYTETEMPB, W,ACCESS
+	addwf	SYSBYTETEMPX, F,ACCESS
+DIV8NOTNEG
+	decfsz	SYSDIVLOOP, F,ACCESS
+	bra	SYSDIV8START
+	return
+
+;********************************************************************************
+
+
+ END

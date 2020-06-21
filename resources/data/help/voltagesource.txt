@@ -1,0 +1,9 @@
+Voltage Source:
+
+This is a variable Voltage Source.
+
+Voltage can be adjusted from 0V to max. voltage using the dial.
+
+It can be turned On/Off with the buttton on the bottom side.
+
+Button label shows voltage output value.

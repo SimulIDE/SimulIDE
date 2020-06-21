@@ -1,0 +1,66 @@
+<!DOCTYPE SimulIDE>
+
+<!-- *************************************************************************** -->
+<!-- *   Copyright (C) 2017 by santiago González                               * -->
+<!-- *   santigoro@gmail.com                                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is free software; you can redistribute it and/or modify  * -->
+<!-- *   it under the terms of the GNU General Public License as published by  * -->
+<!-- *   the Free Software Foundation; either version 3 of the License, or     * -->
+<!-- *   (at your option) any later version.                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is distributed in the hope that it will be useful,       * -->
+<!-- *   but WITHOUT ANY WARRANTY; without even the implied warranty of        * -->
+<!-- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         * -->
+<!-- *   GNU General Public License for more details.                          * -->
+<!-- *                                                                         * -->
+<!-- *   You should have received a copy of the GNU General Public License     * -->
+<!-- *   along with this program; if not, see <http://www.gnu.org/licenses/>.  * -->
+<!-- *                                                                         * -->
+<!-- *************************************************************************** -->
+
+<itemlib>
+    
+    <itemset category="AVR/at" type="AVR">
+    <item name="at90usb162" package="avr/at90usb162"  data="avr/at90usb162"  device="at90usb162" ></item>
+    </itemset>
+    
+    <itemset category="AVR/attiny" type="AVR">
+    <item name="attiny13"   package="avr/attiny85"   data="avr/attiny13"   device="attiny13" ></item>
+    <item name="attiny24"   package="avr/attiny84"   data="avr/attiny84"   device="attiny24" ></item>
+    <item name="attiny25"   package="avr/attiny85"   data="avr/attiny85"   device="attiny25" ></item>
+    <item name="attiny44"   package="avr/attiny84"   data="avr/attiny84"   device="attiny44" ></item>
+    <item name="attiny45"   package="avr/attiny85"   data="avr/attiny85"   device="attiny45" ></item>
+    <item name="attiny84"   package="avr/attiny84"   data="avr/attiny84"   device="attiny84" ></item>
+    <item name="attiny85"   package="avr/attiny85"   data="avr/attiny85"   device="attiny85" ></item>
+    <item name="attiny2313" package="avr/attiny2313" data="avr/attiny2313" device="attiny2313" ></item>
+    <item name="attiny2313a"package="avr/attiny2313" data="avr/attiny2313a"device="attiny2313a"></item>
+    <item name="attiny4313" package="avr/attiny2313" data="avr/attiny2313a"device="attiny4313" ></item>
+    </itemset>
+    <itemset category="AVR/atmega" type="AVR">
+    <item name="atmega8"    package="avr/atmega328"  data="avr/atmega8"    device="atmega8" ></item>
+    <item name="atmega16"   package="avr/atmega32"   data="avr/atmega32"   device="atmega16" ></item>
+    <item name="atmega16m1" package="avr/atmega16m1" data="avr/atmega16m1" device="atmega16m1"></item>
+    <item name="atmega32"   package="avr/atmega32"   data="avr/atmega32"   device="atmega32" ></item>
+    <item name="atmega32u4" package="avr/atmega32u4" data="avr/atmega32u4" device="atmega32u4" ></item>
+    <item name="atmega48"   package="avr/atmega328"  data="avr/atmega328"  device="atmega48" ></item>
+    <item name="atmega64"   package="avr/atmega64"   data="avr/atmega64"   device="atmega64" ></item>
+    <item name="atmega88"   package="avr/atmega328"  data="avr/atmega328"  device="atmega88" ></item>
+    <item name="atmega128"  package="avr/atmega128"  data="avr/atmega128"  device="atmega128" ></item>
+    <item name="atmega128rfa1" package="avr/atmega128rfa1" data="avr/atmega128rfa1" device="atmega128rfa1" ></item>
+    <item name="atmega128rfr2" package="avr/atmega128rfa1" data="avr/atmega128rfr2" device="atmega128rfr2" ></item>
+    <item name="atmega164"  package="avr/atmega164"  data="avr/atmega164"  device="atmega164" ></item>
+    <item name="atmega168"  package="avr/atmega328"  data="avr/atmega328"  device="atmega168" ></item>
+    <item name="atmega169"  package="avr/atmega169"  data="avr/atmega169"  device="atmega169" ></item>
+    <item name="atmega324"  package="avr/atmega32"   data="avr/atmega324"  device="atmega324" ></item>
+    <item name="atmega324a" package="avr/atmega32"   data="avr/atmega324a" device="atmega324a"></item>
+    <item name="atmega328"  package="avr/atmega328"  data="avr/atmega328"  device="atmega328" ></item>
+    <item name="atmega644"  package="avr/atmega32"   data="avr/atmega32"   device="atmega644" ></item>
+    
+    <item name="atmega1280" package="avr/atmega1280" data="avr/atmega1280" device="atmega1280" ></item>
+    <item name="atmega1281" package="avr/atmega1280" data="avr/atmega1281" device="atmega1281" ></item>
+    <item name="atmega1284" package="avr/atmega32"   data="avr/atmega1284" device="atmega1284" ></item>
+    <item name="atmega2560" package="avr/atmega1280" data="avr/atmega2560" device="atmega2560" ></item>
+    
+    </itemset>
+</itemlib>

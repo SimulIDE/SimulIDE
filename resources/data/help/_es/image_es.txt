@@ -1,0 +1,18 @@
+Imágenes
+Agregar una imagen en el circuito
+
+Propiedades:
+- Tamaño Horiz:
+   Determina ancho. 80
+- Tamaño vert.:
+   Determina alto. 80
+- Borde:
+   Determina grosor de borde. 2
+- Color:
+   Determina el color del borde. #a0a0a4
+- Opacidad:
+   Determina opacidad. 1
+- Valor Z:
+   Determina ubicación en eje z. -1
+- Archivo de imagen:
+   Determina ruta y nombre de archivo de imagen. Debe ser *.png

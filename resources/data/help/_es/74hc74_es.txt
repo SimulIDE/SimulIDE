@@ -1,0 +1,19 @@
+74HC74 - Dual D flip-flop positive edge triggered, asyncrhronous preset and clear
+
+D !RD!SD  Q !Q
+0  1  1   0  1
+1  1  1   1  0
+x  0  0   1  1
+x  1  0   1  0
+x  0  1   0  1
+
+Pines:
+D = Entrada
+Q = Salida
+!Q = Salida (negada)
+!R = Reset (LOW)
+!S = Set (LOW)
+CP = Clock
+
+Ver help en:
+   ..share/simulide/data/examples/logic/74_series/Help_74HC74.simu

@@ -1,0 +1,81 @@
+;   FILE:           Interrupt driving LED via PWM - Timer2 - mega328p.gcb
+;   DATE:           30.08.2015
+;   VERSION:        1.0a
+;   AUTHOR:         Evan R. Venn
+;
+;    Description.
+'    A demonstration program for GCGB and GCB.
+'    This adjusts the power to the LED over 2.5 seconds, then to zero power again over 2.5 seconds.
+'    The LED is connected to Portb.5 via appropiate resistors.
+
+
+;    This file is part of the Great Cow Basic compiler.
+;
+;    This demonstration code is distributed in the hope that it will be useful,
+;    but WITHOUT ANY WARRANTY; without even the implied warranty of
+;    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;    GNU General Public License for more details.
+;
+; ----- Configuration
+
+#chip mega328p, 16
+#define LED PORTB.5
+dir LED out
+
+'Call the initialisation routine
+InitLEDControl
+
+
+'Main routine
+  Do
+      ;Increase LED to full over 2.5 seconds
+      For LEDSpeed = 0 to 100
+          Wait 25 ms
+      Next
+      ;Hold LEDPower
+      Wait 1 s
+      ;Decrease LED to zero over 2.5 seconds
+      For LEDSpeed = 100 to 0 step - 1
+          Wait 25 ms
+      Next
+      ;Hold LEDPower
+      Wait 1 s
+  Loop
+  end
+
+
+
+'Setup routine
+Sub InitLEDControl
+    set LED off
+    'Clear variables
+    LEDSpeed = 0
+    PWMCounter = 0
+
+'   Add the handler for the interrupt
+    On Interrupt Timer2Overflow Call PWMHandler
+
+    'Set up the timer
+    InitTimer2 Osc, PS_2_1
+    StartTimer 2
+
+End Sub
+
+
+'PWM sub
+'This will be called when the Timer overflows
+Sub PWMHandler
+
+    If LEDSpeed > PWMCounter Then
+        Set LED On
+    Else
+        Set LED Off
+    End If
+    PWMCounter += 1
+    If PWMCounter = 100 Then PWMCounter = 0
+
+End Sub
+
+
+
+

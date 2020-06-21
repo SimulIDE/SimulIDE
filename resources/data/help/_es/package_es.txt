@@ -1,0 +1,11 @@
+Empaquetado
+
+Parámetros:
+- Logic Symbol:
+   Se muestra o lo el simbolo logico. true
+- Package File:
+   Carpeta de ubicacion del archivo. ..share/simulide/data
+- Ancho:
+   Determina el ancho. 4
+- Alto:
+   Determina el alto. 8

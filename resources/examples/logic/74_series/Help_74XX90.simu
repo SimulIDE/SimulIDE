@@ -1,0 +1,39 @@
+<circuit reactStep="50" noLinAcc="5" animate="33" speed="1000000" type="simulide_0.4">
+ 
+Node-11: 
+<item rotation="0" x="-320" labely="-24" objectName="Node-11" Show_id="false" y="-412" valLabelx="0" itemtype="Node" id="Node-11" valLabRot="0" labelx="-16" valLabely="0" hflip="1" labelrot="0" vflip="1"/>
+ 
+Clock-8: 
+<item Running="true" valLabely="8" labely="-14" labelx="13" valLabelx="-16" labelrot="0" Show_Volt="false" objectName="Clock-8" hflip="1" vflip="1" rotation="0" Unit=" V" id="Clock" valLabRot="0" x="-508" Freq="1" y="-380" Voltage="5" itemtype="Clock" Show_id="true"/>
+ 
+7-Seg BCD-2: 
+<item rotation="0" x="-292" labely="-24" objectName="7-Seg BCD-2" Show_id="false" y="-464" valLabelx="0" itemtype="7-Seg BCD" id="7-Seg BCD-2" valLabRot="0" labelx="-16" valLabely="0" hflip="1" labelrot="0" vflip="1"/>
+ 
+74XX90-1: 
+<item rotation="0" x="-380" labely="-18" objectName="74XX90-1" Show_id="true" y="-436" valLabelx="0" itemtype="Subcircuit" id="74XX90" valLabRot="0" labelx="1" Logic_Symbol="true" valLabely="0" hflip="1" labelrot="0" vflip="1"/>
+ 
+Connector-4: 
+<item valLabely="0" labely="-24" labelx="-16" enodeid="enode-10" valLabelx="0" labelrot="0" objectName="Connector-4" hflip="1" vflip="1" rotation="0" pointList="-332,-412,-320,-412" id="Connector-4" valLabRot="0" x="-332" y="-412" endpinid="Node-11-0" startpinid="74XX90-1-Q0" itemtype="Connector" Show_id="false"/>
+ 
+Connector-5: 
+<item valLabely="0" labely="-24" labelx="-16" enodeid="enode-5" valLabelx="0" labelrot="0" objectName="Connector-5" hflip="1" vflip="1" rotation="0" pointList="-332,-404,-284,-404,-284,-432" id="Connector-5" valLabRot="0" x="-332" y="-404" endpinid="7-Seg BCD-2-in1" startpinid="74XX90-1-Q1" itemtype="Connector" Show_id="false"/>
+ 
+Connector-6: 
+<item valLabely="0" labely="-24" labelx="-16" enodeid="enode-6" valLabelx="0" labelrot="0" objectName="Connector-6" hflip="1" vflip="1" rotation="0" pointList="-332,-396,-292,-396,-292,-432" id="Connector-6" valLabRot="0" x="-332" y="-396" endpinid="7-Seg BCD-2-in2" startpinid="74XX90-1-Q2" itemtype="Connector" Show_id="false"/>
+ 
+Connector-7: 
+<item valLabely="0" labely="-24" labelx="-16" enodeid="enode-7" valLabelx="0" labelrot="0" objectName="Connector-7" hflip="1" vflip="1" rotation="0" pointList="-332,-388,-300,-388,-300,-432" id="Connector-7" valLabRot="0" x="-332" y="-388" endpinid="7-Seg BCD-2-in3" startpinid="74XX90-1-Q3" itemtype="Connector" Show_id="false"/>
+ 
+Connector-9: 
+<item valLabely="0" labely="-24" labelx="-16" enodeid="enode-9" valLabelx="0" labelrot="0" objectName="Connector-9" hflip="1" vflip="1" rotation="0" pointList="-492,-380,-388,-380" id="Connector-9" valLabRot="0" x="-492" y="-380" endpinid="74XX90-1-CP0" startpinid="Clock-8-outnod" itemtype="Connector" Show_id="false"/>
+ 
+Connector-10: 
+<item valLabely="0" labely="-24" labelx="-16" enodeid="enode-10" valLabelx="0" labelrot="0" objectName="Connector-10" hflip="1" vflip="1" rotation="0" pointList="-388,-372,-400,-372,-400,-348,-320,-348,-320,-412" id="Connector-10" valLabRot="0" x="-388" y="-372" endpinid="Node-11-1" startpinid="74XX90-1-CP1" itemtype="Connector" Show_id="false"/>
+ 
+Connector-12: 
+<item valLabely="0" labely="-24" labelx="-16" enodeid="enode-10" valLabelx="0" labelrot="0" objectName="Connector-12" hflip="1" vflip="1" rotation="0" pointList="-320,-412,-276,-412,-276,-432" id="Connector-12" valLabRot="0" x="-320" y="-412" endpinid="7-Seg BCD-2-in0" startpinid="Node-11-2" itemtype="Connector" Show_id="false"/>
+ 
+PlotterWidget-83: 
+<item maximumHeight="200" focusPolicy="0" maximized="false" windowIconText="" minimumSize="" toolTipDuration="-1" height="200" objectName="PlotterWidget-83" visible="false" frameSize="" palette="" pos="" maximumSize="" Scale="1" childrenRect="" frameGeometry="" styleSheet="" MaxVolt="500" minimumWidth="200" whatsThis="" locale="" focus="false" geometry="" acceptDrops="false" width="200" minimumHeight="200" windowOpacity="1" baseSize="" size="" childrenRegion="" Tracks="1" sizeIncrement="" cursor="" contextMenuPolicy="1" MinVolt="0" sizePolicy="" x="0" mouseTracking="false" enabled="true" minimumSizeHint="" minimized="false" fullScreen="false" windowFilePath="" maximumWidth="1000" windowModality="0" isActiveWindow="true" windowTitle="" normalGeometry="" accessibleDescription="" inputMethodHints="0" font="Sans Serif,9,-1,5,50,0,0,0,0,0" updatesEnabled="true" sizeHint="" modal="false" autoFillBackground="false" itemtype="Plotter" y="0" layoutDirection="0" windowModified="false" toolTip="" accessibleName="" windowIcon="" rect="" statusTip=""/>
+ 
+</circuit>

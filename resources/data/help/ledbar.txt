@@ -1,0 +1,8 @@
+Led Bar:
+
+Configurable led bar with same properties as leds plus "Size" to set number of leds.
+
+Leds are displaced to the cathode side.
+
+More Info:
+ http://simulide.blogspot.com/p/leds.html

@@ -1,0 +1,9 @@
+Bobina
+
+Parámetros:
+- Inductancia:
+   Determina la inductancia: 1
+- Unidades:
+   Determina las unidades. H
+- Mostrar inductancia:
+   Muestra su valor. true

@@ -1,0 +1,141 @@
+<!DOCTYPE SimulIDE>
+
+<subcircuit enodes="8">
+
+    <item itemtype="eBJT"
+        gain = "200"
+        threshold = "0.69999999999999996"
+        pNP = "false"
+        connections="
+        collector-packagePin11
+        base-eNode7
+        emiter-packagePin10" >
+    </item>
+
+    <item itemtype="eBJT"
+        gain = "200"
+        threshold = "0.69999999999999996"
+        pNP = "false"
+        connections="
+        collector-packagePin12
+        base-eNode6
+        emiter-packagePin10" >
+    </item>
+
+    <item itemtype="eBJT"
+        gain = "200"
+        threshold = "0.69999999999999996"
+        pNP = "false"
+        connections="
+        collector-packagePin13
+        base-eNode5
+        emiter-packagePin10" >
+    </item>
+
+    <item itemtype="eBJT"
+        gain = "200"
+        threshold = "0.69999999999999996"
+        pNP = "false"
+        connections="
+        collector-packagePin14
+        base-eNode4
+        emiter-packagePin10" >
+    </item>
+
+    <item itemtype="eBJT"
+        gain = "200"
+        threshold = "0.69999999999999996"
+        pNP = "false"
+        connections="
+        collector-packagePin15
+        base-eNode3
+        emiter-packagePin10" >
+    </item>
+
+    <item itemtype="eBJT"
+        gain = "200"
+        threshold = "0.69999999999999996"
+        pNP = "false"
+        connections="
+        collector-packagePin16
+        base-eNode2
+        emiter-packagePin10" >
+    </item>
+
+    <item itemtype="eBJT"
+        gain = "200"
+        threshold = "0.69999999999999996"
+        pNP = "false"
+        connections="
+        collector-packagePin17
+        base-eNode1
+        emiter-packagePin10" >
+    </item>
+
+    <item itemtype="eBJT"
+        gain = "200"
+        threshold = "0.69999999999999996"
+        pNP = "false"
+        connections="
+        collector-packagePin18
+        base-eNode0
+        emiter-packagePin10" >
+    </item>
+
+    <item itemtype="eResistor"
+        resistance = "1000"
+        connections="
+        lPin-packagePin1
+        rPin-eNode0" >
+    </item>
+
+    <item itemtype="eResistor"
+        resistance = "1000"
+        connections="
+        lPin-packagePin2
+        rPin-eNode1" >
+    </item>
+
+    <item itemtype="eResistor"
+        resistance = "1000"
+        connections="
+        lPin-packagePin3
+        rPin-eNode2" >
+    </item>
+
+    <item itemtype="eResistor"
+        resistance = "1000"
+        connections="
+        lPin-packagePin4
+        rPin-eNode3" >
+    </item>
+
+    <item itemtype="eResistor"
+        resistance = "1000"
+        connections="
+        lPin-packagePin5
+        rPin-eNode4" >
+    </item>
+
+    <item itemtype="eResistor"
+        resistance = "1000"
+        connections="
+        lPin-packagePin6
+        rPin-eNode5" >
+    </item>
+
+    <item itemtype="eResistor"
+        resistance = "1000"
+        connections="
+        lPin-packagePin7
+        rPin-eNode6" >
+    </item>
+
+    <item itemtype="eResistor"
+        resistance = "1000"
+        connections="
+        lPin-packagePin8
+        rPin-eNode7" >
+    </item>
+
+</subcircuit>

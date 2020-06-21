@@ -1,0 +1,18 @@
+74HC85 - 4-bit magnitude comparator
+
+Los comparadores son circuitos combinacionales capaces de comparar dos números binarios presentes en sus entradas indicando si son iguales o diferentes; en caso de ser diferentes, indican cuál de las dos es mayor. Tienen tres salidas que indican el resultado de la comparación: A=B, A<B y A>B.
+
+Nota: El primer CHIP siempre deberá tener el pin IA=B en 1.
+
+Números de mayor longitud se pueden comparar mediante la conexión de los comparadores en cascada.
+
+Existen 3 entradas en cascada (IA<B, IA=B y IA>B) que sirven para aumentar la capacidad del comparador, es decir para conectar otro comparador en cascada y comparar datos de 8 bits. El primer comparador compara los 4 bits menos significativos (LSB = parte baja del dato) y sus salidas se conectan a la entrada correspondiente del comparador superior, que compara los 4 bits más significativos (MSB = parte alta del dato). Así, si los datos de la parte alta son iguales el comparador de la parte baja informa si ésta es inferior, igual o superior.
+
+A  B  A<B  A=B  A>B
+0  0   0    1    0
+1  0   0    0    1
+0  1   1    0    0
+1  1   0    1    0
+
+Ver help en:
+   ..share/simulide/data/examples/logic/74_series/Help_74HC85.simu

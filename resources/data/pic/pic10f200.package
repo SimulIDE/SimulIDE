@@ -1,0 +1,35 @@
+<!DOCTYPE SimulIDE>
+
+<!-- *************************************************************************** -->
+<!-- *   Copyright (C) 2017 by santiago González                               * -->
+<!-- *   santigoro@gmail.com                                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is free software; you can redistribute it and/or modify  * -->
+<!-- *   it under the terms of the GNU General Public License as published by  * -->
+<!-- *   the Free Software Foundation; either version 3 of the License, or     * -->
+<!-- *   (at your option) any later version.                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is distributed in the hope that it will be useful,       * -->
+<!-- *   but WITHOUT ANY WARRANTY; without even the implied warranty of        * -->
+<!-- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         * -->
+<!-- *   GNU General Public License for more details.                          * -->
+<!-- *                                                                         * -->
+<!-- *   You should have received a copy of the GNU General Public License     * -->
+<!-- *   along with this program; if not, see <http://www.gnu.org/licenses/>.  * -->
+<!-- *                                                                         * -->
+<!-- *************************************************************************** -->
+
+<package name="dip08b" pins="8" width="4" height="5">
+
+    <pin side="left"  pos="1"  type="nc"    id="NC"  label="n/c"/>
+    <pin side="left"  pos="2"  type="vdd"   id="VDD" label="Vdd"/>
+    <pin side="left"  pos="3"  type="bidir" id="GP2" label="P2"/>
+    <pin side="left"  pos="4"  type="bidir" id="GP1" label="P1"/>
+    
+    <pin side="right" pos="4"  type="bidir" id="GP0" label="P0"/>
+    <pin side="right" pos="3"  type="nc"    id="NC"  label="n/c"/>
+    <pin side="right" pos="2"  type="gnd"   id="VSS" label="Vss"/>
+    <pin side="right" pos="1"  type="bidir" id="GP3" label="P3"/>
+
+</package>
+

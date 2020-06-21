@@ -1,0 +1,25 @@
+<!DOCTYPE SimulIDE>
+
+<package name="74HC191" pins="16" width="4" height="9">
+
+    <pin side="left" pos="1"  type="" id="D1"  label="D1" /><!-- packagePin1 -->
+    <pin side="left" pos="2"  type="" id="Q1"  label="Q1" /><!-- packagePin2 -->
+    <pin side="left" pos="3"  type="" id="Q0"  label="Q0" /><!-- packagePin3 -->
+    <pin side="left" pos="4"  type="" id="!CE"  label="!CE" /><!-- packagePin4 -->
+    <pin side="left" pos="5"  type="" id="!U/D"  label="!U/D" /><!-- packagePin5 -->
+    <pin side="left" pos="6"  type="" id="Q2"  label="Q2" /><!-- packagePin6 -->
+    <pin side="left" pos="7"  type="" id="Q3"  label="Q3" /><!-- packagePin7 -->
+    
+    <pin side="left" pos="8"  type="unused" id="GND" label="GND"/><!-- packagePin8 -->
+
+    <pin side="right" pos="8" type="" id="D3"  label="D3" /><!-- packagePin9 -->
+    <pin side="right" pos="7" type="" id="D2"  label="D2" /><!-- packagePin10 -->
+    <pin side="right" pos="6" type="" id="!PL"  label="!PL" /><!-- packagePin11 -->
+    <pin side="right" pos="5" type="" id="TC"  label="TC" /><!-- packagePin12 -->
+    <pin side="right" pos="4" type="" id="!RC"  label="!RC" /><!-- packagePin13 -->
+    <pin side="right" pos="3" type="" id="CP"  label="CP" /><!-- packagePin14 -->
+    <pin side="right" pos="2" type="" id="D0"  label="D0" /><!-- packagePin15 -->
+    
+    <pin side="right" pos="1" type="unused" id="Vcc" label="Vcc"/><!-- packagePin16 -->
+
+</package>

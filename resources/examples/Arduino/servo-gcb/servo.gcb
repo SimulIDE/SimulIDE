@@ -1,0 +1,42 @@
+'''A demonstration program for GCGB and GCB.
+'''--------------------------------------------------------------------------------------------------------------------------------
+'''Attach a servo motor to PORTB.0 - this program will make it sweep back and forth
+''':    Connect the potentiometer to AN0.
+''':    The position of the servo motor will be respresentive to the position of the potentiometer.
+'''@author      	EvanV plus works of ChuckH
+'''@licence	GPL
+'''@version	1.0a
+'''@date   	31.01.2015
+'''********************************************************************************
+
+; ----- Configuration
+  #chip mega328p, 16
+
+; ----- Define Hardware settings
+  ' No hardware configuration is required as outputs and inputs are set automatically within the methods used.
+
+; ----- Constants
+  ' No Constants specified in this example.
+
+; ----- Variables
+  ' No Variables specified in this example. All byte variables are defined upon use.
+
+
+; ----- Main body of program commences here.
+
+
+  main:
+
+    count = ReadAD(AN0)
+    'Limit CW travel
+    if count < 75 then
+        count = 75					
+    end if
+    'Limit CCW travel
+    if count > 225 then
+       count = 225					
+    end if
+    pulseout PORTB.0 ,count 10us
+    wait 20 ms
+
+  goto main

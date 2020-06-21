@@ -1,0 +1,60 @@
+<circuit speed="1000000" noLinAcc="5" noLinStep="10" animate="0" type="simulide_0.1" reactStep="50">
+ 
+Node-8: 
+<item valLabRot="0" labely="-24" itemtype="Node" Show_id="false" vflip="1" labelrot="0" labelx="-16" valLabelx="0" y="-124" valLabely="0" rotation="0" objectName="Node-8" id="Node-8" hflip="1" x="-276"/>
+ 
+Node-7: 
+<item valLabRot="0" labely="-24" itemtype="Node" Show_id="false" vflip="1" labelrot="0" labelx="-16" valLabelx="0" y="-196" valLabely="0" rotation="0" objectName="Node-7" id="Node-7" hflip="1" x="-300"/>
+ 
+Resistor-6: 
+<item valLabelx="-16" labelrot="0" labely="-24" vflip="1" hflip="1" y="-164" Resistance="10" Unit=" kΩ" itemtype="Resistor" id="Resistor-6" objectName="Resistor-6" valLabely="6" rotation="-450" Show_res="true" Show_id="false" valLabRot="0" labelx="-12" x="-276"/>
+ 
+pic16f876-5: 
+<item valLabelx="0" labelrot="0" Logic_Symbol="false" labely="-15" Mhz="20" vflip="1" hflip="1" y="-236" itemtype="PIC" id="pic16f876" objectName="pic16f876-5" valLabely="0" rotation="0" Program="pic_i2c-hw.hex" Show_id="true" Ser_Monitor="true" valLabRot="0" Ser_Port="false" labelx="-12" x="-372" eeprom="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
+ 
+I2CRam-4: 
+<item valLabelx="0" labelrot="0" Size_bytes="512" labely="-24" Persistent="false" vflip="1" hflip="1" y="-116" itemtype="I2CRam" id="I2CRam-4" objectName="I2CRam-4" Control_Code="80" valLabely="0" rotation="0" Show_id="false" valLabRot="0" labelx="-16" x="-244" Mem=""/>
+ 
+Rail-3: 
+<item valLabelx="-20" labelrot="0" labely="-24" vflip="1" hflip="1" y="-220" Voltage="5" Unit=" V" itemtype="Rail" id="Rail-3" objectName="Rail-3" valLabely="9" rotation="90" Show_Volt="true" Show_id="false" valLabRot="-90" labelx="-64" x="-300"/>
+ 
+Resistor-2: 
+<item valLabelx="-16" labelrot="0" labely="-24" vflip="1" hflip="1" y="-164" Resistance="10" Unit=" kΩ" itemtype="Resistor" id="Resistor-2" objectName="Resistor-2" valLabely="6" rotation="-450" Show_res="true" Show_id="false" valLabRot="0" labelx="-12" x="-300"/>
+ 
+Node-1: 
+<item valLabRot="0" labely="-24" itemtype="Node" Show_id="false" vflip="1" labelrot="0" labelx="-16" valLabelx="0" y="-108" valLabely="0" rotation="0" objectName="Node-1" id="Node-1" hflip="1" x="-300"/>
+ 
+Connector-9: 
+<item valLabelx="0" labelrot="0" labely="-24" endpinid="Node-8-0" vflip="1" hflip="1" y="-124" enodeid="Circ_eNode-10" itemtype="Connector" id="Connector-9" objectName="Connector-9" valLabely="0" rotation="0" Show_id="false" valLabRot="0" startpinid="pic16f876-5-RC4" pointList="-332,-124,-276,-124" labelx="-16" x="-332"/>
+ 
+Connector-11: 
+<item valLabelx="0" labelrot="0" labely="-24" endpinid="Node-1-0" vflip="1" hflip="1" y="-124" enodeid="Circ_eNode-12" itemtype="Connector" id="Connector-11" objectName="Connector-11" valLabely="0" rotation="0" Show_id="false" valLabRot="0" startpinid="pic16f876-5-RC3" pointList="-380,-124,-388,-124,-388,-108,-300,-108" labelx="-16" x="-380"/>
+ 
+Connector-13: 
+<item valLabelx="0" labelrot="0" labely="-24" endpinid="Node-1-1" vflip="1" hflip="1" y="-148" enodeid="Circ_eNode-12" itemtype="Connector" id="Connector-13" objectName="Connector-13" valLabely="0" rotation="0" Show_id="false" valLabRot="0" startpinid="Resistor-2-lPin" pointList="-300,-148,-300,-108" labelx="-16" x="-300"/>
+ 
+Connector-14: 
+<item valLabelx="0" labelrot="0" labely="-24" endpinid="I2CRam-4-ePin-clock" vflip="1" hflip="1" y="-108" enodeid="Circ_eNode-12" itemtype="Connector" id="Connector-14" objectName="Connector-14" valLabely="0" rotation="0" Show_id="false" valLabRot="0" startpinid="Node-1-2" pointList="-300,-108,-268,-108" labelx="-16" x="-300"/>
+ 
+Connector-15: 
+<item valLabelx="0" labelrot="0" labely="-24" endpinid="Rail-3-outnod" vflip="1" hflip="1" y="-196" enodeid="Circ_eNode-16" itemtype="Connector" id="Connector-15" objectName="Connector-15" valLabely="0" rotation="0" Show_id="false" valLabRot="0" startpinid="Node-7-2" pointList="-300,-196,-300,-204" labelx="-16" x="-300"/>
+ 
+Connector-17: 
+<item valLabelx="0" labelrot="0" labely="-24" endpinid="Resistor-6-rPin" vflip="1" hflip="1" y="-196" enodeid="Circ_eNode-16" itemtype="Connector" id="Connector-17" objectName="Connector-17" valLabely="0" rotation="0" Show_id="false" valLabRot="0" startpinid="Node-7-1" pointList="-300,-196,-276,-196,-276,-180" labelx="-16" x="-300"/>
+ 
+Connector-18: 
+<item valLabelx="0" labelrot="0" labely="-24" endpinid="Node-8-1" vflip="1" hflip="1" y="-148" enodeid="Circ_eNode-10" itemtype="Connector" id="Connector-18" objectName="Connector-18" valLabely="0" rotation="0" Show_id="false" valLabRot="0" startpinid="Resistor-6-lPin" pointList="-276,-148,-276,-124" labelx="-16" x="-276"/>
+ 
+Connector-19: 
+<item valLabelx="0" labelrot="0" labely="-24" endpinid="I2CRam-4-ePin-input0" vflip="1" hflip="1" y="-124" enodeid="Circ_eNode-10" itemtype="Connector" id="Connector-19" objectName="Connector-19" valLabely="0" rotation="0" Show_id="false" valLabRot="0" startpinid="Node-8-2" pointList="-276,-124,-268,-124" labelx="-16" x="-276"/>
+ 
+Connector-20: 
+<item valLabelx="0" labelrot="0" labely="-24" endpinid="Node-7-0" vflip="1" hflip="1" y="-180" enodeid="Circ_eNode-16" itemtype="Connector" id="Connector-20" objectName="Connector-20" valLabely="0" rotation="0" Show_id="false" valLabRot="0" startpinid="Resistor-2-rPin" pointList="-300,-180,-300,-196" labelx="-16" x="-300"/>
+ 
+PlotterWidget-21: 
+<item childrenRect="" focusPolicy="0" toolTipDuration="-1" palette="" visible="false" fullScreen="false" windowModified="false" Scale="1" windowOpacity="1" windowIcon="" baseSize="" width="200" objectName="PlotterWidget-21" x="0" minimumSizeHint="" pos="" whatsThis="" windowFilePath="" minimumSize="" modal="false" normalGeometry="" statusTip="" MaxVolt="500" maximumWidth="1000" height="200" updatesEnabled="true" sizeHint="" windowTitle="" sizePolicy="" MinVolt="0" minimumHeight="200" itemtype="Plotter" frameSize="" size="" Tracks="1" cursor="" acceptDrops="false" childrenRegion="" layoutDirection="0" frameGeometry="" autoFillBackground="false" locale="" y="0" font="Sans Serif,9,-1,5,50,0,0,0,0,0" styleSheet="" isActiveWindow="true" inputMethodHints="0" focus="false" sizeIncrement="" minimumWidth="200" maximumSize="" windowModality="0" mouseTracking="false" toolTip="" contextMenuPolicy="1" accessibleName="" accessibleDescription="" minimized="false" windowIconText="" enabled="true" rect="" geometry="" maximumHeight="200" maximized="false"/>
+ 
+SerialPortWidget-22: 
+<item childrenRect="" focusPolicy="0" toolTipDuration="-1" palette="" visible="false" fullScreen="false" windowModified="false" windowOpacity="1" windowIcon="" baseSize="" width="313" objectName="SerialPortWidget-22" x="0" minimumSizeHint="" pos="" whatsThis="" windowFilePath="" minimumSize="" modal="false" normalGeometry="" statusTip="" SettingsProp="ttyS0,0,3,0,0,0" maximumWidth="450" height="141" updatesEnabled="true" sizeHint="" windowTitle="Configuracion" sizePolicy="" minimumHeight="0" itemtype="SerialPort" frameSize="" size="" cursor="" acceptDrops="false" childrenRegion="" layoutDirection="0" frameGeometry="" autoFillBackground="false" locale="" y="0" font="Sans Serif,9,-1,5,50,0,0,0,0,0" styleSheet="" isActiveWindow="true" inputMethodHints="0" focus="false" sizeIncrement="" minimumWidth="0" maximumSize="" windowModality="0" mouseTracking="false" toolTip="" contextMenuPolicy="1" accessibleName="" accessibleDescription="" minimized="false" windowIconText="" enabled="true" rect="" geometry="" maximumHeight="170" maximized="false"/>
+ 
+</circuit>

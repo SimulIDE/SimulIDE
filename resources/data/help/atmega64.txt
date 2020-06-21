@@ -1,0 +1,87 @@
+MCU: ATmega64
+Package: 64 pin TQFP
+ 
+
+ 1: PEN
+ 2: PE0  PDI   RXD0
+ 3: PE1  PD0   TXD0
+ 4: PE2  AIN0  XCK0
+ 5: PE3  AIN1  OC3A
+ 6: PE4  INT4  OC3B
+ 7: PE5  INT5  OC3C
+ 8: PE6  INT6  T3
+ 9: PE7  INT7  ICP3
+10: PB0  !SS
+11: PB1  SCK
+12: PB2  MOSI
+13: PB3  MISO
+14: PB4  OC0A
+15: PB5  OC1A
+16: PB6  OC1B
+17: PB7  OC2A   OC1C
+18: PG3  TOSC2
+19: PG4  TOSC1
+20: Reset
+21: Vcc
+22: Gnd
+23: XTAL2
+24: XTAL1
+25: PD0  INT0  SCL
+26: PD1  INT1  SDA
+27: PD2  INT2  RXD1
+28: PD3  INT3  RXT1
+29: PD4  ICP1
+30: PD5  XCK1
+31: PD6  T1
+32: PD7  T2
+33: PG0  WR
+34: PG1  RD
+35: PC0  A8
+36: PC1  A9
+37: PC2  A10
+38: PC3  A11
+39: PC4  A12
+40: PC5  A13
+41: PC6  A14
+42: PC7  A15
+43: PG2  ALE
+44: PA7  AD7
+45: PA6  AD6
+46: PA5  AD5
+47: PA4  AD4
+48: PA3  AD3
+49: PA2  AD2
+50: PA1  AD1
+51: PA0  AD0
+52: Vcc
+53: Gnd
+54: PF7  ADC7  TDI
+55: PF6  ADC6  TDO
+56: PF5  ADC5  TMS
+57: PF4  ADC4  TCK
+58: PF3  ADC3
+59: PF2  ADC2
+60: PF1  ADC1
+61: PF0  ADC0
+62: AREF
+63: AGND
+64: AVCC
+
+Summary:
+The high-performance, low-power Microchip 8-bit AVR RISC-based microcontroller
+64 KB ISP flash memory with read-while-write capabilities, 
+2 KB EEPROM, 
+4 KB SRAM, 
+53 general purpose I/O lines, 
+32 general purpose working registers, 
+JTAG interface for boundary-scan and on-chip debugging/programming, 
+2 x 8-bit, 2 x 16-bit timer/counters with compare modes, 
+6+2 PWM ñhannels
+internal and external interrupts,
+serial programmable USART, 
+universal serial interface (USI) with start condition detector, 
+8-channel 10-bit A/D converter, 
+programmable watchdog timer with internal oscillator, 
+SPI serial port, 
+five software selectable power saving modes. 
+

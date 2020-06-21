@@ -1,0 +1,1277 @@
+gpasm-1.4.0 #1107 (Jan  9 2015) sevseg_Pic16F   2-19-2016  17:06:21         PAGE  1
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+                      00001 ;Program compiled by Great Cow BASIC (0.95 2016-01-24)
+                      00002 ;Need help? See the GCBASIC forums at http://sourceforge.net/projects/gcbasic/forums,
+                      00003 ;check the documentation or email w_cholmondeley at users dot sourceforge dot net.
+                      00004 
+                      00005 ;********************************************************************************
+                      00006 
+                      00007 ;Set up the assembler options (Chip type, clock source, other bits and pieces)
+                      00008  LIST p=16F876A, r=DEC
+                      00009 #include <P16F876A.inc>
+Warning[231]: Found lower case match for include filename.
+                      00001         LIST
+                      00002 ; P16F876A.INC  Standard Header File, Version 1.00    Microchip Technology, Inc.
+                      00003         NOLIST
+                      00004 
+                      00005 ; This header file defines configurations, registers, and other useful bits of
+                      00006 ; information for the PIC16F877A microcontroller.  These names are taken to match 
+                      00007 ; the data sheets as closely as possible.  
+                      00008 
+                      00009 ; Note that the processor must be selected before this file is 
+                      00010 ; included.  The processor may be selected the following ways:
+                      00011 
+                      00012 ;       1. Command line switch:
+                      00013 ;               C:\ MPASM MYFILE.ASM /PIC16F876A
+                      00014 ;       2. LIST directive in the source file
+                      00015 ;               LIST   P=PIC16F876A
+                      00016 ;       3. Processor Type entry in the MPASM full-screen interface
+                      00017 
+                      00018 ;==========================================================================
+                      00019 ;
+                      00020 ;       Revision History
+                      00021 ;
+                      00022 ;==========================================================================
+                      00023 
+                      00024 ;Rev:   Date:    Reason:
+                      00025 ;1.03   11/17/05 Added the INTCON bits TMR0IE and TMR0IF and the ADCON1 bit ADCS2.
+                      00026 ;1.02   05/28/02 Corrected values for _CP_ALL and _CP_OFF in Configuration Bits section.
+                      00027 ;1.01   10/03/01 Added the PIR2 bit CMIF and the PIE2 bit CMIE
+                      00028 ;1.00   04/19/01 Initial Release (BD - generated from PIC16F877.inc)
+                      00029 
+                      00030 ;==========================================================================
+                      00031 ;
+                      00032 ;       Verify Processor
+                      00033 ;
+                      00034 ;==========================================================================
+                      00035 
+                      00036         IFNDEF __16F876A
+                      00037            MESSG "Processor-header file mismatch.  Verify selected processor."
+                      00038         ENDIF
+                      00039 
+                      00040 ;==========================================================================
+                      00041 ;
+                      00042 ;       Register Definitions
+                      00043 ;
+gpasm-1.4.0 #1107 (Jan  9 2015) sevseg_Pic16F   2-19-2016  17:06:21         PAGE  2
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+                      00044 ;==========================================================================
+                      00045 
+  00000000            00046 W                            EQU     H'0000'
+  00000001            00047 F                            EQU     H'0001'
+                      00048 
+                      00049 ;----- Register Files------------------------------------------------------
+                      00050 
+  00000000            00051 INDF                         EQU     H'0000'
+  00000001            00052 TMR0                         EQU     H'0001'
+  00000002            00053 PCL                          EQU     H'0002'
+  00000003            00054 STATUS                       EQU     H'0003'
+  00000004            00055 FSR                          EQU     H'0004'
+  00000005            00056 PORTA                        EQU     H'0005'
+  00000006            00057 PORTB                        EQU     H'0006'
+  00000007            00058 PORTC                        EQU     H'0007'
+  0000000A            00059 PCLATH                       EQU     H'000A'
+  0000000B            00060 INTCON                       EQU     H'000B'
+  0000000C            00061 PIR1                         EQU     H'000C'
+  0000000D            00062 PIR2                         EQU     H'000D'
+  0000000E            00063 TMR1L                        EQU     H'000E'
+  0000000F            00064 TMR1H                        EQU     H'000F'
+  00000010            00065 T1CON                        EQU     H'0010'
+  00000011            00066 TMR2                         EQU     H'0011'
+  00000012            00067 T2CON                        EQU     H'0012'
+  00000013            00068 SSPBUF                       EQU     H'0013'
+  00000014            00069 SSPCON                       EQU     H'0014'
+  00000015            00070 CCPR1L                       EQU     H'0015'
+  00000016            00071 CCPR1H                       EQU     H'0016'
+  00000017            00072 CCP1CON                      EQU     H'0017'
+  00000018            00073 RCSTA                        EQU     H'0018'
+  00000019            00074 TXREG                        EQU     H'0019'
+  0000001A            00075 RCREG                        EQU     H'001A'
+  0000001B            00076 CCPR2L                       EQU     H'001B'
+  0000001C            00077 CCPR2H                       EQU     H'001C'
+  0000001D            00078 CCP2CON                      EQU     H'001D'
+  0000001E            00079 ADRESH                       EQU     H'001E'
+  0000001F            00080 ADCON0                       EQU     H'001F'
+                      00081 
+  00000081            00082 OPTION_REG                   EQU     H'0081'
+  00000085            00083 TRISA                        EQU     H'0085'
+  00000086            00084 TRISB                        EQU     H'0086'
+  00000087            00085 TRISC                        EQU     H'0087'
+  0000008C            00086 PIE1                         EQU     H'008C'
+  0000008D            00087 PIE2                         EQU     H'008D'
+  0000008E            00088 PCON                         EQU     H'008E'
+  00000091            00089 SSPCON2                      EQU     H'0091'
+  00000092            00090 PR2                          EQU     H'0092'
+  00000093            00091 SSPADD                       EQU     H'0093'
+  00000094            00092 SSPSTAT                      EQU     H'0094'
+  00000098            00093 TXSTA                        EQU     H'0098'
+  00000099            00094 SPBRG                        EQU     H'0099'
+  0000009C            00095 CMCON                        EQU     H'009C'
+  0000009D            00096 CVRCON                       EQU     H'009D'
+gpasm-1.4.0 #1107 (Jan  9 2015) sevseg_Pic16F   2-19-2016  17:06:21         PAGE  3
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+  0000009E            00097 ADRESL                       EQU     H'009E'
+  0000009F            00098 ADCON1                       EQU     H'009F'
+                      00099 
+  0000010C            00100 EEDATA                       EQU     H'010C'
+  0000010D            00101 EEADR                        EQU     H'010D'
+  0000010E            00102 EEDATH                       EQU     H'010E'
+  0000010F            00103 EEADRH                       EQU     H'010F'
+                      00104 
+  0000018C            00105 EECON1                       EQU     H'018C'
+  0000018D            00106 EECON2                       EQU     H'018D'
+                      00107 
+                      00108 ;----- STATUS Bits --------------------------------------------------------
+                      00109 
+  00000007            00110 IRP                          EQU     H'0007'
+  00000006            00111 RP1                          EQU     H'0006'
+  00000005            00112 RP0                          EQU     H'0005'
+  00000004            00113 NOT_TO                       EQU     H'0004'
+  00000003            00114 NOT_PD                       EQU     H'0003'
+  00000002            00115 Z                            EQU     H'0002'
+  00000001            00116 DC                           EQU     H'0001'
+  00000000            00117 C                            EQU     H'0000'
+                      00118 
+                      00119 ;----- INTCON Bits --------------------------------------------------------
+                      00120 
+  00000007            00121 GIE                          EQU     H'0007'
+  00000006            00122 PEIE                         EQU     H'0006'
+  00000005            00123 T0IE                         EQU     H'0005'
+  00000005            00124 TMR0IE                       EQU     H'0005'
+  00000004            00125 INTE                         EQU     H'0004'
+  00000003            00126 RBIE                         EQU     H'0003'
+  00000002            00127 T0IF                         EQU     H'0002'
+  00000002            00128 TMR0IF                       EQU     H'0002'
+  00000001            00129 INTF                         EQU     H'0001'
+  00000000            00130 RBIF                         EQU     H'0000'
+                      00131 
+                      00132 ;----- PIR1 Bits ----------------------------------------------------------
+                      00133 
+  00000006            00134 ADIF                         EQU     H'0006'
+  00000005            00135 RCIF                         EQU     H'0005'
+  00000004            00136 TXIF                         EQU     H'0004'
+  00000003            00137 SSPIF                        EQU     H'0003'
+  00000002            00138 CCP1IF                       EQU     H'0002'
+  00000001            00139 TMR2IF                       EQU     H'0001'
+  00000000            00140 TMR1IF                       EQU     H'0000'
+                      00141 
+                      00142 ;----- PIR2 Bits ----------------------------------------------------------
+                      00143 
+  00000006            00144 CMIF                         EQU     H'0006'
+  00000004            00145 EEIF                         EQU     H'0004'
+  00000003            00146 BCLIF                        EQU     H'0003'
+  00000000            00147 CCP2IF                       EQU     H'0000'
+                      00148 
+                      00149 ;----- T1CON Bits ---------------------------------------------------------
+gpasm-1.4.0 #1107 (Jan  9 2015) sevseg_Pic16F   2-19-2016  17:06:21         PAGE  4
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+                      00150 
+  00000005            00151 T1CKPS1                      EQU     H'0005'
+  00000004            00152 T1CKPS0                      EQU     H'0004'
+  00000003            00153 T1OSCEN                      EQU     H'0003'
+  00000002            00154 NOT_T1SYNC                   EQU     H'0002'
+  00000002            00155 T1INSYNC                     EQU     H'0002'    ; Backward compatibility only
+  00000002            00156 T1SYNC                       EQU     H'0002'
+  00000001            00157 TMR1CS                       EQU     H'0001'
+  00000000            00158 TMR1ON                       EQU     H'0000'
+                      00159 
+                      00160 ;----- T2CON Bits ---------------------------------------------------------
+                      00161 
+  00000006            00162 TOUTPS3                      EQU     H'0006'
+  00000005            00163 TOUTPS2                      EQU     H'0005'
+  00000004            00164 TOUTPS1                      EQU     H'0004'
+  00000003            00165 TOUTPS0                      EQU     H'0003'
+  00000002            00166 TMR2ON                       EQU     H'0002'
+  00000001            00167 T2CKPS1                      EQU     H'0001'
+  00000000            00168 T2CKPS0                      EQU     H'0000'
+                      00169 
+                      00170 ;----- SSPCON Bits --------------------------------------------------------
+                      00171 
+  00000007            00172 WCOL                         EQU     H'0007'
+  00000006            00173 SSPOV                        EQU     H'0006'
+  00000005            00174 SSPEN                        EQU     H'0005'
+  00000004            00175 CKP                          EQU     H'0004'
+  00000003            00176 SSPM3                        EQU     H'0003'
+  00000002            00177 SSPM2                        EQU     H'0002'
+  00000001            00178 SSPM1                        EQU     H'0001'
+  00000000            00179 SSPM0                        EQU     H'0000'
+                      00180 
+                      00181 ;----- CCP1CON Bits -------------------------------------------------------
+                      00182 
+  00000005            00183 CCP1X                        EQU     H'0005'
+  00000004            00184 CCP1Y                        EQU     H'0004'
+  00000003            00185 CCP1M3                       EQU     H'0003'
+  00000002            00186 CCP1M2                       EQU     H'0002'
+  00000001            00187 CCP1M1                       EQU     H'0001'
+  00000000            00188 CCP1M0                       EQU     H'0000'
+                      00189 
+                      00190 ;----- RCSTA Bits ---------------------------------------------------------
+                      00191 
+  00000007            00192 SPEN                         EQU     H'0007'
+  00000006            00193 RX9                          EQU     H'0006'
+  00000006            00194 RC9                          EQU     H'0006'    ; Backward compatibility only
+  00000006            00195 NOT_RC8                      EQU     H'0006'    ; Backward compatibility only
+  00000006            00196 RC8_9                        EQU     H'0006'    ; Backward compatibility only
+  00000005            00197 SREN                         EQU     H'0005'
+  00000004            00198 CREN                         EQU     H'0004'
+  00000003            00199 ADDEN                        EQU     H'0003'
+  00000002            00200 FERR                         EQU     H'0002'
+  00000001            00201 OERR                         EQU     H'0001'
+  00000000            00202 RX9D                         EQU     H'0000'
+gpasm-1.4.0 #1107 (Jan  9 2015) sevseg_Pic16F   2-19-2016  17:06:21         PAGE  5
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+  00000000            00203 RCD8                         EQU     H'0000'    ; Backward compatibility only
+                      00204 
+                      00205 ;----- CCP2CON Bits -------------------------------------------------------
+                      00206 
+  00000005            00207 CCP2X                        EQU     H'0005'
+  00000004            00208 CCP2Y                        EQU     H'0004'
+  00000003            00209 CCP2M3                       EQU     H'0003'
+  00000002            00210 CCP2M2                       EQU     H'0002'
+  00000001            00211 CCP2M1                       EQU     H'0001'
+  00000000            00212 CCP2M0                       EQU     H'0000'
+                      00213 
+                      00214 ;----- ADCON0 Bits --------------------------------------------------------
+                      00215 
+  00000007            00216 ADCS1                        EQU     H'0007'
+  00000006            00217 ADCS0                        EQU     H'0006'
+  00000005            00218 CHS2                         EQU     H'0005'
+  00000004            00219 CHS1                         EQU     H'0004'
+  00000003            00220 CHS0                         EQU     H'0003'
+  00000002            00221 GO                           EQU     H'0002'
+  00000002            00222 NOT_DONE                     EQU     H'0002'
+  00000002            00223 GO_DONE                      EQU     H'0002'
+  00000000            00224 ADON                         EQU     H'0000'
+                      00225 
+                      00226 ;----- OPTION_REG Bits -----------------------------------------------------
+                      00227 
+  00000007            00228 NOT_RBPU                     EQU     H'0007'
+  00000006            00229 INTEDG                       EQU     H'0006'
+  00000005            00230 T0CS                         EQU     H'0005'
+  00000004            00231 T0SE                         EQU     H'0004'
+  00000003            00232 PSA                          EQU     H'0003'
+  00000002            00233 PS2                          EQU     H'0002'
+  00000001            00234 PS1                          EQU     H'0001'
+  00000000            00235 PS0                          EQU     H'0000'
+                      00236 
+                      00237 ;----- PIE1 Bits ----------------------------------------------------------
+                      00238 
+  00000006            00239 ADIE                         EQU     H'0006'
+  00000005            00240 RCIE                         EQU     H'0005'
+  00000004            00241 TXIE                         EQU     H'0004'
+  00000003            00242 SSPIE                        EQU     H'0003'
+  00000002            00243 CCP1IE                       EQU     H'0002'
+  00000001            00244 TMR2IE                       EQU     H'0001'
+  00000000            00245 TMR1IE                       EQU     H'0000'
+                      00246 
+                      00247 ;----- PIE2 Bits ----------------------------------------------------------
+                      00248 
+  00000006            00249 CMIE                         EQU     H'0006'
+  00000004            00250 EEIE                         EQU     H'0004'
+  00000003            00251 BCLIE                        EQU     H'0003'
+  00000000            00252 CCP2IE                       EQU     H'0000'
+                      00253 
+                      00254 ;----- PCON Bits ----------------------------------------------------------
+                      00255 
+gpasm-1.4.0 #1107 (Jan  9 2015) sevseg_Pic16F   2-19-2016  17:06:21         PAGE  6
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+  00000001            00256 NOT_POR                      EQU     H'0001'
+  00000000            00257 NOT_BO                       EQU     H'0000'
+  00000000            00258 NOT_BOR                      EQU     H'0000'
+                      00259 
+                      00260 ;----- SSPCON2 Bits --------------------------------------------------------
+                      00261 
+  00000007            00262 GCEN                         EQU     H'0007'
+  00000006            00263 ACKSTAT                      EQU     H'0006'
+  00000005            00264 ACKDT                        EQU     H'0005'
+  00000004            00265 ACKEN                        EQU     H'0004'
+  00000003            00266 RCEN                         EQU     H'0003'
+  00000002            00267 PEN                          EQU     H'0002'
+  00000001            00268 RSEN                         EQU     H'0001'   
+  00000000            00269 SEN                          EQU     H'0000'   
+                      00270 
+                      00271 ;----- SSPSTAT Bits -------------------------------------------------------
+                      00272 
+  00000007            00273 SMP                          EQU     H'0007'
+  00000006            00274 CKE                          EQU     H'0006'
+  00000005            00275 D                            EQU     H'0005'
+  00000005            00276 I2C_DATA                     EQU     H'0005'
+  00000005            00277 NOT_A                        EQU     H'0005'
+  00000005            00278 NOT_ADDRESS                  EQU     H'0005'
+  00000005            00279 D_A                          EQU     H'0005'
+  00000005            00280 DATA_ADDRESS                 EQU     H'0005'
+  00000004            00281 P                            EQU     H'0004'
+  00000004            00282 I2C_STOP                     EQU     H'0004'
+  00000003            00283 S                            EQU     H'0003'
+  00000003            00284 I2C_START                    EQU     H'0003'
+  00000002            00285 R                            EQU     H'0002'
+  00000002            00286 I2C_READ                     EQU     H'0002'
+  00000002            00287 NOT_W                        EQU     H'0002'
+  00000002            00288 NOT_WRITE                    EQU     H'0002'
+  00000002            00289 R_W                          EQU     H'0002'
+  00000002            00290 READ_WRITE                   EQU     H'0002'
+  00000001            00291 UA                           EQU     H'0001'
+  00000000            00292 BF                           EQU     H'0000'
+                      00293 
+                      00294 ;----- TXSTA Bits ---------------------------------------------------------
+                      00295 
+  00000007            00296 CSRC                         EQU     H'0007'
+  00000006            00297 TX9                          EQU     H'0006'
+  00000006            00298 NOT_TX8                      EQU     H'0006'    ; Backward compatibility only
+  00000006            00299 TX8_9                        EQU     H'0006'    ; Backward compatibility only
+  00000005            00300 TXEN                         EQU     H'0005'
+  00000004            00301 SYNC                         EQU     H'0004'
+  00000002            00302 BRGH                         EQU     H'0002'
+  00000001            00303 TRMT                         EQU     H'0001'
+  00000000            00304 TX9D                         EQU     H'0000'
+  00000000            00305 TXD8                         EQU     H'0000'    ; Backward compatibility only
+                      00306 
+                      00307 
+                      00308 ;----- CMCON Bits ---------------------------------------------------------
+gpasm-1.4.0 #1107 (Jan  9 2015) sevseg_Pic16F   2-19-2016  17:06:21         PAGE  7
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+  00000007            00309 C2OUT                        EQU     H'0007'
+  00000006            00310 C1OUT                        EQU     H'0006'
+  00000005            00311 C2INV                        EQU     H'0005'
+  00000004            00312 C1INV                        EQU     H'0004'
+  00000003            00313 CIS                          EQU     H'0003'
+  00000002            00314 CM2                          EQU     H'0002'
+  00000001            00315 CM1                          EQU     H'0001'
+  00000000            00316 CM0                          EQU     H'0000'
+                      00317 
+                      00318 ;----- CVRCON Bits --------------------------------------------------------
+  00000007            00319 CVREN                        EQU     H'0007'
+  00000006            00320 CVROE                        EQU     H'0006'
+  00000005            00321 CVRR                         EQU     H'0005'
+  00000003            00322 CVR3                         EQU     H'0003'
+  00000002            00323 CVR2                         EQU     H'0002'
+  00000001            00324 CVR1                         EQU     H'0001'
+  00000000            00325 CVR0                         EQU     H'0000'
+                      00326 
+                      00327 ;----- ADCON1 Bits --------------------------------------------------------
+                      00328 
+  00000007            00329 ADFM                         EQU     H'0007'
+  00000006            00330 ADCS2                        EQU     H'0006'
+  00000003            00331 PCFG3                        EQU     H'0003'
+  00000002            00332 PCFG2                        EQU     H'0002'
+  00000001            00333 PCFG1                        EQU     H'0001'
+  00000000            00334 PCFG0                        EQU     H'0000'
+                      00335 
+                      00336 ;----- EECON1 Bits --------------------------------------------------------
+                      00337 
+  00000007            00338 EEPGD                        EQU     H'0007'
+  00000003            00339 WRERR                        EQU     H'0003'
+  00000002            00340 WREN                         EQU     H'0002'
+  00000001            00341 WR                           EQU     H'0001'
+  00000000            00342 RD                           EQU     H'0000'
+                      00343 
+                      00344 ;==========================================================================
+                      00345 ;
+                      00346 ;       RAM Definition
+                      00347 ;
+                      00348 ;==========================================================================
+                      00349 
+  000001FF            00350         __MAXRAM H'1FF'
+                      00351         __BADRAM H'8F'-H'90', H'95'-H'97', H'9A'-H'9B'
+                      00352         __BADRAM H'105', H'107'-H'109'
+                      00353         __BADRAM H'185', H'187'-H'189', H'18E'-H'18F'
+                      00354 
+                      00355 ;==========================================================================
+                      00356 ;
+                      00357 ;       Configuration Bits
+                      00358 ;
+                      00359 ;==========================================================================
+                      00360 
+  00001FFF            00361 _CP_ALL                      EQU     H'1FFF'
+gpasm-1.4.0 #1107 (Jan  9 2015) sevseg_Pic16F   2-19-2016  17:06:21         PAGE  8
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+  00003FFF            00362 _CP_OFF                      EQU     H'3FFF'
+  00003FFF            00363 _DEBUG_OFF                   EQU     H'3FFF'
+  000037FF            00364 _DEBUG_ON                    EQU     H'37FF'
+  00003FFF            00365 _WRT_OFF                     EQU     H'3FFF'    ; No prog memmory write protection
+  00003DFF            00366 _WRT_256                     EQU     H'3DFF'    ; First 256 prog memmory write protected
+  00003BFF            00367 _WRT_1FOURTH                 EQU     H'3BFF'    ; First quarter prog memmory write protected
+  000039FF            00368 _WRT_HALF                    EQU     H'39FF'    ; First half memmory write protected
+  00003FFF            00369 _CPD_OFF                     EQU     H'3FFF'
+  00003EFF            00370 _CPD_ON                      EQU     H'3EFF'
+  00003FFF            00371 _LVP_ON                      EQU     H'3FFF'
+  00003F7F            00372 _LVP_OFF                     EQU     H'3F7F'
+  00003FFF            00373 _BODEN_ON                    EQU     H'3FFF'
+  00003FBF            00374 _BODEN_OFF                   EQU     H'3FBF'
+  00003FFF            00375 _PWRTE_OFF                   EQU     H'3FFF'
+  00003FF7            00376 _PWRTE_ON                    EQU     H'3FF7'
+  00003FFF            00377 _WDT_ON                      EQU     H'3FFF'
+  00003FFB            00378 _WDT_OFF                     EQU     H'3FFB'
+  00003FFF            00379 _RC_OSC                      EQU     H'3FFF'
+  00003FFE            00380 _HS_OSC                      EQU     H'3FFE'
+  00003FFD            00381 _XT_OSC                      EQU     H'3FFD'
+  00003FFC            00382 _LP_OSC                      EQU     H'3FFC'
+                      00383 
+                      00384         LIST
+2007   3F7A           00010  __CONFIG _HS_OSC & _WDT_OFF & _LVP_OFF
+                      00011 
+                      00012 ;********************************************************************************
+                      00013 
+                      00014 ;Set aside memory locations for variables
+  00000070            00015 DELAYTEMP       EQU     112
+  00000071            00016 DELAYTEMP2      EQU     113
+  00000077            00017 SYSDIVMULTA     EQU     119
+  00000078            00018 SYSDIVMULTA_H   EQU     120
+  0000007B            00019 SYSDIVMULTB     EQU     123
+  0000007C            00020 SYSDIVMULTB_H   EQU     124
+  00000072            00021 SYSDIVMULTX     EQU     114
+  00000073            00022 SYSDIVMULTX_H   EQU     115
+  00000075            00023 SYSINTEGERTEMPA EQU     117
+  00000076            00024 SYSINTEGERTEMPA_H       EQU     118
+  00000079            00025 SYSINTEGERTEMPB EQU     121
+  0000007A            00026 SYSINTEGERTEMPB_H       EQU     122
+  00000070            00027 SYSINTEGERTEMPX EQU     112
+  00000071            00028 SYSINTEGERTEMPX_H       EQU     113
+  0000007D            00029 SYSSIGNBYTE     EQU     125
+  00000075            00030 SYSWORDTEMPA    EQU     117
+  00000076            00031 SYSWORDTEMPA_H  EQU     118
+  00000079            00032 SYSWORDTEMPB    EQU     121
+  0000007A            00033 SYSWORDTEMPB_H  EQU     122
+  00000070            00034 SYSWORDTEMPX    EQU     112
+  00000071            00035 SYSWORDTEMPX_H  EQU     113
+  00000070            00036 SysByteTempX    EQU     112
+  00000074            00037 SysDivLoop      EQU     116
+  00000077            00038 SysStringA      EQU     119
+  00000075            00039 SysWaitTemp10US EQU     117
+gpasm-1.4.0 #1107 (Jan  9 2015) sevseg_Pic16F   2-19-2016  17:06:21         PAGE  9
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+  00000072            00040 SysWaitTempMS   EQU     114
+  00000073            00041 SysWaitTempMS_H EQU     115
+  00000020            00042 ADN_PORT        EQU     32
+  00000021            00043 ADREADPORT      EQU     33
+  00000022            00044 DISPCHAR        EQU     34
+  00000023            00045 DISPPORT        EQU     35
+  00000024            00046 DISPTEMP        EQU     36
+  00000025            00047 READAD  EQU     37
+  00000026            00048 READAD_H        EQU     38
+  00000027            00049 SysTemp1        EQU     39
+  00000028            00050 SysTemp1_H      EQU     40
+  00000029            00051 VALUE   EQU     41
+                      00052 
+                      00053 ;********************************************************************************
+                      00054 
+                      00055 ;Vectors
+0000                  00056         ORG     0
+0000   2805           00057         goto    BASPROGRAMSTART
+0004                  00058         ORG     4
+0004   0009           00059         retfie
+                      00060 
+                      00061 ;********************************************************************************
+                      00062 
+                      00063 ;Start of program memory page 0
+0005                  00064         ORG     5
+0005                  00065 BASPROGRAMSTART
+                      00066 ;Call initialisation routines
+0005   206C           00067         call    INITSYS
+0006   205E           00068         call    INITSEVENSEG
+                      00069 
+                      00070 ;Start of the main program
+0007   1683 1303      00071         banksel TRISB
+0009   0186           00072         clrf    TRISB
+000A   1405           00073         bsf     TRISA,0
+000B   1387           00074         bcf     TRISC,7
+000C                  00075 MAIN
+000C   1283 1303      00076         banksel ADREADPORT
+000E   01A1           00077         clrf    ADREADPORT
+000F   30FF           00078         movlw   255
+0010   00A0           00079         movwf   ADN_PORT
+0011   2080           00080         call    FN_READAD
+0012   0825           00081         movf    READAD,W
+0013   00F5           00082         movwf   SysINTEGERTempA
+0014   0826           00083         movf    READAD_H,W
+0015   00F6           00084         movwf   SysINTEGERTempA_H
+0016   301A           00085         movlw   26
+0017   00F9           00086         movwf   SysINTEGERTempB
+0018   01FA           00087         clrf    SysINTEGERTempB_H
+0019   2108           00088         call    SysDivSubINT
+001A   0875           00089         movf    SysINTEGERTempA,W
+001B   00A9           00090         movwf   VALUE
+001C   3001           00091         movlw   1
+001D   00A3           00092         movwf   DISPPORT
+gpasm-1.4.0 #1107 (Jan  9 2015) sevseg_Pic16F   2-19-2016  17:06:21         PAGE 10
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+001E   0829           00093         movf    VALUE,W
+001F   00A2           00094         movwf   DISPCHAR
+0020   2028           00095         call    DISPLAYVALUE
+0021   300A           00096         movlw   10
+0022   00F2           00097         movwf   SysWaitTempMS
+0023   01F3           00098         clrf    SysWaitTempMS_H
+0024   2050           00099         call    Delay_MS
+0025   280C           00100         goto    MAIN
+0026                  00101 BASPROGRAMEND
+0026   0063           00102         sleep
+0027   2826           00103         goto    BASPROGRAMEND
+                      00104 
+                      00105 ;********************************************************************************
+                      00106 
+0028                  00107 DISPLAYVALUE
+0028   0A22           00108         incf    DISPCHAR,W
+0029   00F7           00109         movwf   SYSSTRINGA
+002A   20A7           00110         call    SEVENSEGDISPDIGIT
+002B   00A4           00111         movwf   DISPTEMP
+002C   1386           00112         bcf     PORTB,7
+002D   1306           00113         bcf     PORTB,6
+002E   1286           00114         bcf     PORTB,5
+002F   1206           00115         bcf     PORTB,4
+0030   1186           00116         bcf     PORTB,3
+0031   1106           00117         bcf     PORTB,2
+0032   1086           00118         bcf     PORTB,1
+0033   1006           00119         bcf     PORTB,0
+0034   1387           00120         bcf     PORTC,7
+0035   0323           00121         decf    DISPPORT,W
+0036   1903           00122         btfsc   STATUS, Z
+0037   1787           00123         bsf     PORTC,7
+0038   1824           00124         btfsc   DISPTEMP,0
+0039   1786           00125         bsf     PORTB,7
+003A   18A4           00126         btfsc   DISPTEMP,1
+003B   1706           00127         bsf     PORTB,6
+003C   1924           00128         btfsc   DISPTEMP,2
+003D   1686           00129         bsf     PORTB,5
+003E   19A4           00130         btfsc   DISPTEMP,3
+003F   1606           00131         bsf     PORTB,4
+0040   1A24           00132         btfsc   DISPTEMP,4
+0041   1586           00133         bsf     PORTB,3
+0042   1AA4           00134         btfsc   DISPTEMP,5
+0043   1506           00135         bsf     PORTB,2
+0044   1B24           00136         btfsc   DISPTEMP,6
+0045   1486           00137         bsf     PORTB,1
+0046   1BA4           00138         btfsc   DISPTEMP,7
+0047   1406           00139         bsf     PORTB,0
+0048   0008           00140         return
+                      00141 
+                      00142 ;********************************************************************************
+                      00143 
+0049                  00144 Delay_10US
+0049                  00145 D10US_START
+gpasm-1.4.0 #1107 (Jan  9 2015) sevseg_Pic16F   2-19-2016  17:06:21         PAGE 11
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+0049   300C           00146         movlw   12
+004A   00F0           00147         movwf   DELAYTEMP
+004B                  00148 DelayUS0
+004B   0BF0           00149         decfsz  DELAYTEMP,F
+004C   284B           00150         goto    DelayUS0
+004D   0BF5           00151         decfsz  SysWaitTemp10US, F
+004E   2849           00152         goto    D10US_START
+004F   0008           00153         return
+                      00154 
+                      00155 ;********************************************************************************
+                      00156 
+0050                  00157 Delay_MS
+0050   0AF3           00158         incf    SysWaitTempMS_H, F
+0051                  00159 DMS_START
+0051   306C           00160         movlw   108
+0052   00F1           00161         movwf   DELAYTEMP2
+0053                  00162 DMS_OUTER
+0053   300B           00163         movlw   11
+0054   00F0           00164         movwf   DELAYTEMP
+0055                  00165 DMS_INNER
+0055   0BF0           00166         decfsz  DELAYTEMP, F
+0056   2855           00167         goto    DMS_INNER
+0057   0BF1           00168         decfsz  DELAYTEMP2, F
+0058   2853           00169         goto    DMS_OUTER
+0059   0BF2           00170         decfsz  SysWaitTempMS, F
+005A   2851           00171         goto    DMS_START
+005B   0BF3           00172         decfsz  SysWaitTempMS_H, F
+005C   2851           00173         goto    DMS_START
+005D   0008           00174         return
+                      00175 
+                      00176 ;********************************************************************************
+                      00177 
+005E                  00178 INITSEVENSEG
+005E   1683 1303      00179         banksel TRISB
+0060   1386           00180         bcf     TRISB,7
+0061   1306           00181         bcf     TRISB,6
+0062   1286           00182         bcf     TRISB,5
+0063   1206           00183         bcf     TRISB,4
+0064   1186           00184         bcf     TRISB,3
+0065   1106           00185         bcf     TRISB,2
+0066   1086           00186         bcf     TRISB,1
+0067   1006           00187         bcf     TRISB,0
+0068   1387           00188         bcf     TRISC,7
+0069   1283 1303      00189         banksel STATUS
+006B   0008           00190         return
+                      00191 
+                      00192 ;********************************************************************************
+                      00193 
+006C                  00194 INITSYS
+006C   1683 1303      00195         banksel ADCON1
+006E   139F           00196         bcf     ADCON1,ADFM
+006F   1283 1303      00197         banksel ADCON0
+0071   101F           00198         bcf     ADCON0,ADON
+gpasm-1.4.0 #1107 (Jan  9 2015) sevseg_Pic16F   2-19-2016  17:06:21         PAGE 12
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+0072   1683 1303      00199         banksel ADCON1
+0074   119F           00200         bcf     ADCON1,PCFG3
+0075   151F           00201         bsf     ADCON1,PCFG2
+0076   149F           00202         bsf     ADCON1,PCFG1
+0077   101F           00203         bcf     ADCON1,PCFG0
+0078   3007           00204         movlw   7
+0079   009C           00205         movwf   CMCON
+007A   1283 1303      00206         banksel PORTA
+007C   0185           00207         clrf    PORTA
+007D   0186           00208         clrf    PORTB
+007E   0187           00209         clrf    PORTC
+007F   0008           00210         return
+                      00211 
+                      00212 ;********************************************************************************
+                      00213 
+0080                  00214 FN_READAD
+0080   1683 1303      00215         banksel ADCON1
+0082   119F           00216         bcf     ADCON1,PCFG3
+0083   111F           00217         bcf     ADCON1,PCFG2
+0084   109F           00218         bcf     ADCON1,PCFG1
+0085   101F           00219         bcf     ADCON1,PCFG0
+0086   1283 1303      00220         banksel ADCON0
+0088   139F           00221         bcf     ADCON0,ADCS1
+0089   171F           00222         bsf     ADCON0,ADCS0
+008A   119F           00223         bcf     ADCON0,CHS0
+008B   121F           00224         bcf     ADCON0,CHS1
+008C   129F           00225         bcf     ADCON0,CHS2
+008D   1821           00226         btfsc   ADREADPORT,0
+008E   159F           00227         bsf     ADCON0,CHS0
+008F   18A1           00228         btfsc   ADREADPORT,1
+0090   161F           00229         bsf     ADCON0,CHS1
+0091   1921           00230         btfsc   ADREADPORT,2
+0092   169F           00231         bsf     ADCON0,CHS2
+0093   141F           00232         bsf     ADCON0,ADON
+0094   3002           00233         movlw   2
+0095   00F5           00234         movwf   SysWaitTemp10US
+0096   2049           00235         call    Delay_10US
+0097   151F           00236         bsf     ADCON0,GO_DONE
+0098                  00237 SysWaitLoop1
+0098   191F           00238         btfsc   ADCON0,GO_DONE
+0099   2898           00239         goto    SysWaitLoop1
+009A   101F           00240         bcf     ADCON0,ADON
+009B   1683 1303      00241         banksel ADCON1
+009D   119F           00242         bcf     ADCON1,PCFG3
+009E   151F           00243         bsf     ADCON1,PCFG2
+009F   149F           00244         bsf     ADCON1,PCFG1
+00A0   101F           00245         bcf     ADCON1,PCFG0
+00A1   1283 1303      00246         banksel ADRESH
+00A3   081E           00247         movf    ADRESH,W
+00A4   00A5           00248         movwf   READAD
+00A5   01A6           00249         clrf    READAD_H
+00A6   0008           00250         return
+                      00251 
+gpasm-1.4.0 #1107 (Jan  9 2015) sevseg_Pic16F   2-19-2016  17:06:21         PAGE 13
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+                      00252 ;********************************************************************************
+                      00253 
+00A7                  00254 SEVENSEGDISPDIGIT
+00A7   3011           00255         movlw   17
+00A8   0277           00256         subwf   SysStringA, W
+00A9   1803           00257         btfsc   STATUS, C
+00AA   3400           00258         retlw   0
+00AB   0877           00259         movf    SysStringA, W
+00AC   3EB4           00260         addlw   low TableSEVENSEGDISPDIGIT
+00AD   00F7           00261         movwf   SysStringA
+00AE   3000           00262         movlw   high TableSEVENSEGDISPDIGIT
+00AF   1803           00263         btfsc   STATUS, C
+00B0   3E01           00264         addlw   1
+00B1   008A           00265         movwf   PCLATH
+00B2   0877           00266         movf    SysStringA, W
+00B3   0082           00267         movwf   PCL
+00B4                  00268 TableSEVENSEGDISPDIGIT
+00B4   3410           00269         retlw   16
+00B5   343F           00270         retlw   63
+00B6   3406           00271         retlw   6
+00B7   345B           00272         retlw   91
+00B8   344F           00273         retlw   79
+00B9   3466           00274         retlw   102
+00BA   346D           00275         retlw   109
+00BB   347D           00276         retlw   125
+00BC   3407           00277         retlw   7
+00BD   347F           00278         retlw   127
+00BE   346F           00279         retlw   111
+00BF   3477           00280         retlw   119
+00C0   347C           00281         retlw   124
+00C1   3439           00282         retlw   57
+00C2   345E           00283         retlw   94
+00C3   3479           00284         retlw   121
+00C4   3471           00285         retlw   113
+                      00286 
+                      00287 ;********************************************************************************
+                      00288 
+00C5                  00289 SYSCOMPEQUAL16
+00C5   01F0           00290         clrf    SYSBYTETEMPX
+00C6   0875           00291         movf    SYSWORDTEMPA, W
+00C7   0279           00292         subwf   SYSWORDTEMPB, W
+00C8   1D03           00293         btfss   STATUS, Z
+00C9   0008           00294         return
+00CA   0876           00295         movf    SYSWORDTEMPA_H, W
+00CB   027A           00296         subwf   SYSWORDTEMPB_H, W
+00CC   1D03           00297         btfss   STATUS, Z
+00CD   0008           00298         return
+00CE   09F0           00299         comf    SYSBYTETEMPX,F
+00CF   0008           00300         return
+                      00301 
+                      00302 ;********************************************************************************
+                      00303 
+00D0                  00304 SYSDIVSUB16
+gpasm-1.4.0 #1107 (Jan  9 2015) sevseg_Pic16F   2-19-2016  17:06:21         PAGE 14
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+00D0   0875           00305         movf    SYSWORDTEMPA,W
+00D1   00F7           00306         movwf   SYSDIVMULTA
+00D2   0876           00307         movf    SYSWORDTEMPA_H,W
+00D3   00F8           00308         movwf   SYSDIVMULTA_H
+00D4   0879           00309         movf    SYSWORDTEMPB,W
+00D5   00FB           00310         movwf   SYSDIVMULTB
+00D6   087A           00311         movf    SYSWORDTEMPB_H,W
+00D7   00FC           00312         movwf   SYSDIVMULTB_H
+00D8   01F2           00313         clrf    SYSDIVMULTX
+00D9   01F3           00314         clrf    SYSDIVMULTX_H
+00DA   087B           00315         movf    SYSDIVMULTB,W
+00DB   00F5           00316         movwf   SysWORDTempA
+00DC   087C           00317         movf    SYSDIVMULTB_H,W
+00DD   00F6           00318         movwf   SysWORDTempA_H
+00DE   01F9           00319         clrf    SysWORDTempB
+00DF   01FA           00320         clrf    SysWORDTempB_H
+00E0   20C5           00321         call    SysCompEqual16
+00E1   1C70           00322         btfss   SysByteTempX,0
+00E2   28E6           00323         goto    ENDIF16
+00E3   01F5           00324         clrf    SYSWORDTEMPA
+00E4   01F6           00325         clrf    SYSWORDTEMPA_H
+00E5   0008           00326         return
+00E6                  00327 ENDIF16
+00E6   3010           00328         movlw   16
+00E7   00F4           00329         movwf   SYSDIVLOOP
+00E8                  00330 SYSDIV16START
+00E8   1003           00331         bcf     STATUS,C
+00E9   0DF7           00332         rlf     SYSDIVMULTA,F
+00EA   0DF8           00333         rlf     SYSDIVMULTA_H,F
+00EB   0DF2           00334         rlf     SYSDIVMULTX,F
+00EC   0DF3           00335         rlf     SYSDIVMULTX_H,F
+00ED   087B           00336         movf    SYSDIVMULTB,W
+00EE   02F2           00337         subwf   SYSDIVMULTX,F
+00EF   087C           00338         movf    SYSDIVMULTB_H,W
+00F0   1C03           00339         btfss   STATUS,C
+00F1   3E01           00340         addlw   1
+00F2   02F3           00341         subwf   SYSDIVMULTX_H,F
+00F3   1477           00342         bsf     SYSDIVMULTA,0
+00F4   1803           00343         btfsc   STATUS,C
+00F5   28FD           00344         goto    ENDIF17
+00F6   1077           00345         bcf     SYSDIVMULTA,0
+00F7   087B           00346         movf    SYSDIVMULTB,W
+00F8   07F2           00347         addwf   SYSDIVMULTX,F
+00F9   087C           00348         movf    SYSDIVMULTB_H,W
+00FA   1803           00349         btfsc   STATUS,C
+00FB   3E01           00350         addlw   1
+00FC   07F3           00351         addwf   SYSDIVMULTX_H,F
+00FD                  00352 ENDIF17
+00FD   0BF4           00353         decfsz  SYSDIVLOOP, F
+00FE   28E8           00354         goto    SYSDIV16START
+00FF   0877           00355         movf    SYSDIVMULTA,W
+0100   00F5           00356         movwf   SYSWORDTEMPA
+0101   0878           00357         movf    SYSDIVMULTA_H,W
+gpasm-1.4.0 #1107 (Jan  9 2015) sevseg_Pic16F   2-19-2016  17:06:21         PAGE 15
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+0102   00F6           00358         movwf   SYSWORDTEMPA_H
+0103   0872           00359         movf    SYSDIVMULTX,W
+0104   00F0           00360         movwf   SYSWORDTEMPX
+0105   0873           00361         movf    SYSDIVMULTX_H,W
+0106   00F1           00362         movwf   SYSWORDTEMPX_H
+0107   0008           00363         return
+                      00364 
+                      00365 ;********************************************************************************
+                      00366 
+0108                  00367 SYSDIVSUBINT
+0108   0876           00368         movf    SYSINTEGERTEMPA_H,W
+0109   067A           00369         xorwf   SYSINTEGERTEMPB_H,W
+010A   00FD           00370         movwf   SYSSIGNBYTE
+010B   1FF6           00371         btfss   SYSINTEGERTEMPA_H,7
+010C   2912           00372         goto    ENDIF13
+010D   09F5           00373         comf    SYSINTEGERTEMPA,F
+010E   09F6           00374         comf    SYSINTEGERTEMPA_H,F
+010F   0AF5           00375         incf    SYSINTEGERTEMPA,F
+0110   1903           00376         btfsc   STATUS,Z
+0111   0AF6           00377         incf    SYSINTEGERTEMPA_H,F
+0112                  00378 ENDIF13
+0112   1FFA           00379         btfss   SYSINTEGERTEMPB_H,7
+0113   2919           00380         goto    ENDIF14
+0114   09F9           00381         comf    SYSINTEGERTEMPB,F
+0115   09FA           00382         comf    SYSINTEGERTEMPB_H,F
+0116   0AF9           00383         incf    SYSINTEGERTEMPB,F
+0117   1903           00384         btfsc   STATUS,Z
+0118   0AFA           00385         incf    SYSINTEGERTEMPB_H,F
+0119                  00386 ENDIF14
+0119   20D0           00387         call    SYSDIVSUB16
+011A   1FFD           00388         btfss   SYSSIGNBYTE,7
+011B   2926           00389         goto    ENDIF15
+011C   09F5           00390         comf    SYSINTEGERTEMPA,F
+011D   09F6           00391         comf    SYSINTEGERTEMPA_H,F
+011E   0AF5           00392         incf    SYSINTEGERTEMPA,F
+011F   1903           00393         btfsc   STATUS,Z
+0120   0AF6           00394         incf    SYSINTEGERTEMPA_H,F
+0121   09F0           00395         comf    SYSINTEGERTEMPX,F
+0122   09F1           00396         comf    SYSINTEGERTEMPX_H,F
+0123   0AF0           00397         incf    SYSINTEGERTEMPX,F
+0124   1903           00398         btfsc   STATUS,Z
+0125   0AF1           00399         incf    SYSINTEGERTEMPX_H,F
+0126                  00400 ENDIF15
+0126   0008           00401         return
+                      00402 
+                      00403 ;********************************************************************************
+                      00404 
+                      00405 ;Start of program memory page 1
+0800                  00406         ORG     2048
+                      00407 ;Start of program memory page 2
+1000                  00408         ORG     4096
+                      00409 ;Start of program memory page 3
+1800                  00410         ORG     6144
+gpasm-1.4.0 #1107 (Jan  9 2015) sevseg_Pic16F   2-19-2016  17:06:21         PAGE 16
+
+
+LOC    OBJECT CODE    LINE  SOURCE TEXT
+  VALUE
+
+                      00411 
+                      00412  END
+gpasm-1.4.0 #1107 (Jan  9 2015) sevseg_Pic16F   2-19-2016  17:06:21         PAGE 17
+
+
+SYMBOL TABLE
+  LABEL                             VALUE
+
+ACKDT                             00000005
+ACKEN                             00000004
+ACKSTAT                           00000006
+ADCON0                            0000001F
+ADCON1                            0000009F
+ADCS0                             00000006
+ADCS1                             00000007
+ADCS2                             00000006
+ADDEN                             00000003
+ADFM                              00000007
+ADIE                              00000006
+ADIF                              00000006
+ADN_PORT                          00000020
+ADON                              00000000
+ADREADPORT                        00000021
+ADRESH                            0000001E
+ADRESL                            0000009E
+BASPROGRAMEND                     00000026
+BASPROGRAMSTART                   00000005
+BCLIE                             00000003
+BCLIF                             00000003
+BF                                00000000
+BRGH                              00000002
+C                                 00000000
+C1INV                             00000004
+C1OUT                             00000006
+C2INV                             00000005
+C2OUT                             00000007
+CCP1CON                           00000017
+CCP1IE                            00000002
+CCP1IF                            00000002
+CCP1M0                            00000000
+CCP1M1                            00000001
+CCP1M2                            00000002
+CCP1M3                            00000003
+CCP1X                             00000005
+CCP1Y                             00000004
+CCP2CON                           0000001D
+CCP2IE                            00000000
+CCP2IF                            00000000
+CCP2M0                            00000000
+CCP2M1                            00000001
+CCP2M2                            00000002
+CCP2M3                            00000003
+CCP2X                             00000005
+CCP2Y                             00000004
+CCPR1H                            00000016
+CCPR1L                            00000015
+CCPR2H                            0000001C
+CCPR2L                            0000001B
+CHS0                              00000003
+CHS1                              00000004
+CHS2                              00000005
+gpasm-1.4.0 #1107 (Jan  9 2015) sevseg_Pic16F   2-19-2016  17:06:21         PAGE 18
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+CIS                               00000003
+CKE                               00000006
+CKP                               00000004
+CM0                               00000000
+CM1                               00000001
+CM2                               00000002
+CMCON                             0000009C
+CMIE                              00000006
+CMIF                              00000006
+CREN                              00000004
+CSRC                              00000007
+CVR0                              00000000
+CVR1                              00000001
+CVR2                              00000002
+CVR3                              00000003
+CVRCON                            0000009D
+CVREN                             00000007
+CVROE                             00000006
+CVRR                              00000005
+D                                 00000005
+D10US_START                       00000049
+DATA_ADDRESS                      00000005
+DC                                00000001
+DELAYTEMP                         00000070
+DELAYTEMP2                        00000071
+DISPCHAR                          00000022
+DISPLAYVALUE                      00000028
+DISPPORT                          00000023
+DISPTEMP                          00000024
+DMS_INNER                         00000055
+DMS_OUTER                         00000053
+DMS_START                         00000051
+D_A                               00000005
+DelayUS0                          0000004B
+Delay_10US                        00000049
+Delay_MS                          00000050
+EEADR                             0000010D
+EEADRH                            0000010F
+EECON1                            0000018C
+EECON2                            0000018D
+EEDATA                            0000010C
+EEDATH                            0000010E
+EEIE                              00000004
+EEIF                              00000004
+EEPGD                             00000007
+ENDIF13                           00000112
+ENDIF14                           00000119
+ENDIF15                           00000126
+ENDIF16                           000000E6
+ENDIF17                           000000FD
+F                                 00000001
+FERR                              00000002
+FN_READAD                         00000080
+gpasm-1.4.0 #1107 (Jan  9 2015) sevseg_Pic16F   2-19-2016  17:06:21         PAGE 19
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+FSR                               00000004
+GCEN                              00000007
+GIE                               00000007
+GO                                00000002
+GO_DONE                           00000002
+I2C_DATA                          00000005
+I2C_READ                          00000002
+I2C_START                         00000003
+I2C_STOP                          00000004
+INDF                              00000000
+INITSEVENSEG                      0000005E
+INITSYS                           0000006C
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+MAIN                              0000000C
+NOT_A                             00000005
+NOT_ADDRESS                       00000005
+NOT_BO                            00000000
+NOT_BOR                           00000000
+NOT_DONE                          00000002
+NOT_PD                            00000003
+NOT_POR                           00000001
+NOT_RBPU                          00000007
+NOT_RC8                           00000006
+NOT_T1SYNC                        00000002
+NOT_TO                            00000004
+NOT_TX8                           00000006
+NOT_W                             00000002
+NOT_WRITE                         00000002
+OERR                              00000001
+OPTION_REG                        00000081
+P                                 00000004
+PCFG0                             00000000
+PCFG1                             00000001
+PCFG2                             00000002
+PCFG3                             00000003
+PCL                               00000002
+PCLATH                            0000000A
+PCON                              0000008E
+PEIE                              00000006
+PEN                               00000002
+PIE1                              0000008C
+PIE2                              0000008D
+PIR1                              0000000C
+PIR2                              0000000D
+PORTA                             00000005
+PORTB                             00000006
+PORTC                             00000007
+PR2                               00000092
+PS0                               00000000
+gpasm-1.4.0 #1107 (Jan  9 2015) sevseg_Pic16F   2-19-2016  17:06:21         PAGE 20
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+R                                 00000002
+RBIE                              00000003
+RBIF                              00000000
+RC8_9                             00000006
+RC9                               00000006
+RCD8                              00000000
+RCEN                              00000003
+RCIE                              00000005
+RCIF                              00000005
+RCREG                             0000001A
+RCSTA                             00000018
+RD                                00000000
+READAD                            00000025
+READAD_H                          00000026
+READ_WRITE                        00000002
+RP0                               00000005
+RP1                               00000006
+RSEN                              00000001
+RX9                               00000006
+RX9D                              00000000
+R_W                               00000002
+S                                 00000003
+SEN                               00000000
+SEVENSEGDISPDIGIT                 000000A7
+SMP                               00000007
+SPBRG                             00000099
+SPEN                              00000007
+SREN                              00000005
+SSPADD                            00000093
+SSPBUF                            00000013
+SSPCON                            00000014
+SSPCON2                           00000091
+SSPEN                             00000005
+SSPIE                             00000003
+SSPIF                             00000003
+SSPM0                             00000000
+SSPM1                             00000001
+SSPM2                             00000002
+SSPM3                             00000003
+SSPOV                             00000006
+SSPSTAT                           00000094
+STATUS                            00000003
+SYNC                              00000004
+SYSCOMPEQUAL16                    000000C5
+SYSDIV16START                     000000E8
+SYSDIVMULTA                       00000077
+SYSDIVMULTA_H                     00000078
+SYSDIVMULTB                       0000007B
+SYSDIVMULTB_H                     0000007C
+SYSDIVMULTX                       00000072
+gpasm-1.4.0 #1107 (Jan  9 2015) sevseg_Pic16F   2-19-2016  17:06:21         PAGE 21
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+SYSDIVMULTX_H                     00000073
+SYSDIVSUB16                       000000D0
+SYSDIVSUBINT                      00000108
+SYSINTEGERTEMPA                   00000075
+SYSINTEGERTEMPA_H                 00000076
+SYSINTEGERTEMPB                   00000079
+SYSINTEGERTEMPB_H                 0000007A
+SYSINTEGERTEMPX                   00000070
+SYSINTEGERTEMPX_H                 00000071
+SYSSIGNBYTE                       0000007D
+SYSWORDTEMPA                      00000075
+SYSWORDTEMPA_H                    00000076
+SYSWORDTEMPB                      00000079
+SYSWORDTEMPB_H                    0000007A
+SYSWORDTEMPX                      00000070
+SYSWORDTEMPX_H                    00000071
+SysByteTempX                      00000070
+SysDivLoop                        00000074
+SysStringA                        00000077
+SysTemp1                          00000027
+SysTemp1_H                        00000028
+SysWaitLoop1                      00000098
+SysWaitTemp10US                   00000075
+SysWaitTempMS                     00000072
+SysWaitTempMS_H                   00000073
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+T1CKPS0                           00000004
+T1CKPS1                           00000005
+T1CON                             00000010
+T1INSYNC                          00000002
+T1OSCEN                           00000003
+T1SYNC                            00000002
+T2CKPS0                           00000000
+T2CKPS1                           00000001
+T2CON                             00000012
+TMR0                              00000001
+TMR0IE                            00000005
+TMR0IF                            00000002
+TMR1CS                            00000001
+TMR1H                             0000000F
+TMR1IE                            00000000
+TMR1IF                            00000000
+TMR1L                             0000000E
+TMR1ON                            00000000
+TMR2                              00000011
+TMR2IE                            00000001
+TMR2IF                            00000001
+TMR2ON                            00000002
+TOUTPS0                           00000003
+TOUTPS1                           00000004
+gpasm-1.4.0 #1107 (Jan  9 2015) sevseg_Pic16F   2-19-2016  17:06:21         PAGE 22
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TOUTPS2                           00000005
+TOUTPS3                           00000006
+TRISA                             00000085
+TRISB                             00000086
+TRISC                             00000087
+TRMT                              00000001
+TX8_9                             00000006
+TX9                               00000006
+TX9D                              00000000
+TXD8                              00000000
+TXEN                              00000005
+TXIE                              00000004
+TXIF                              00000004
+TXREG                             00000019
+TXSTA                             00000098
+TableSEVENSEGDISPDIGIT            000000B4
+UA                                00000001
+VALUE                             00000029
+W                                 00000000
+WCOL                              00000007
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+Z                                 00000002
+_BODEN_OFF                        00003FBF
+_BODEN_ON                         00003FFF
+_CPD_OFF                          00003FFF
+_CPD_ON                           00003EFF
+_CP_ALL                           00001FFF
+_CP_OFF                           00003FFF
+_DEBUG_OFF                        00003FFF
+_DEBUG_ON                         000037FF
+_HS_OSC                           00003FFE
+_LP_OSC                           00003FFC
+_LVP_OFF                          00003F7F
+_LVP_ON                           00003FFF
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_WRT_1FOURTH                      00003BFF
+_WRT_256                          00003DFF
+_WRT_HALF                         000039FF
+_WRT_OFF                          00003FFF
+_XT_OSC                           00003FFD
+__16F876A                         00000001
+__CODE_END                        00001FFF
+__CODE_START                      00000000
+__COMMON_RAM_END                  0000007F
+__COMMON_RAM_START                00000070
+__EEPROM_END                      000021FF
+__EEPROM_START                    00002100
+gpasm-1.4.0 #1107 (Jan  9 2015) sevseg_Pic16F   2-19-2016  17:06:21         PAGE 23
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+__VECTOR_INT                      00000004
+__VECTOR_RESET                    00000000
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : X---XXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0080 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+00C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0100 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXX--------- ----------------
+2000 : -------X-------- ---------------- ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:   292
+Program Memory Words Free:  7900
+
+
+Errors   :     0
+Warnings :     1 reported,     0 suppressed
+Messages :     0 reported,    26 suppressed
+
+

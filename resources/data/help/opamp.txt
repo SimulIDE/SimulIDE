@@ -1,0 +1,8 @@
+Operational Amplifier:
+
+By default it does not show power pins and will use 0V-5V.
+
+To use any other values, set "Power Pins" property to true and power pins will be shown.
+Connect these pins to any voltage sources you need.
+
+Use "Gain" property to set voltage gain.

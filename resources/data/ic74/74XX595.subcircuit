@@ -1,0 +1,46 @@
+<!DOCTYPE SimulIDE>
+
+<!-- *************************************************************************** -->
+<!-- *   Copyright (C) 2017 by santiago González                               * -->
+<!-- *   santigoro@gmail.com                                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is free software; you can redistribute it and/or modify  * -->
+<!-- *   it under the terms of the GNU General Public License as published by  * -->
+<!-- *   the Free Software Foundation; either version 3 of the License, or     * -->
+<!-- *   (at your option) any later version.                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is distributed in the hope that it will be useful,       * -->
+<!-- *   but WITHOUT ANY WARRANTY; without even the implied warranty of        * -->
+<!-- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         * -->
+<!-- *   GNU General Public License for more details.                          * -->
+<!-- *                                                                         * -->
+<!-- *   You should have received a copy of the GNU General Public License     * -->
+<!-- *   along with this program; if not, see <http://www.gnu.org/licenses/>.  * -->
+<!-- *                                                                         * -->
+<!-- *************************************************************************** -->
+
+<subcircuit enodes="0">
+
+    <item itemtype="eShiftReg" 
+    tristate="true"
+    latchClock="1"
+    serialOut="1"
+    connections="
+    output0-Package_Q0 
+    output1-Package_Q1 
+    output2-Package_Q2 
+    output3-Package_Q3 
+    output4-Package_Q4 
+    output5-Package_Q5 
+    output6-Package_Q6 
+    output7-Package_Q7 
+    input0-Package_DS 
+    input1-Package_!MR 
+    outEnable-Package_!OE 
+    latchClock-Package_STC 
+    clock-Package_SHC 
+    serialOut-Package_Q7'" >
+    </item>
+    
+</subcircuit>
+

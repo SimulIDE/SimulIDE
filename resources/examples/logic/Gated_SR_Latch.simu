@@ -1,0 +1,84 @@
+<circuit speed="1000000" animate="0" type="simulide_0.1" noLinAcc="5" reactStep="50" noLinStep="10">
+ 
+Node-12: 
+<item rotation="0" valLabely="0" Show_id="false" itemtype="Node" labelrot="0" id="Node-1" x="-340" labely="-18" y="-148" vflip="1" objectName="Node-12" valLabRot="0" labelx="6" valLabelx="0" hflip="1"/>
+ 
+Fixed Volt.-11: 
+<item valLabely="0" Show_id="true" rotation="0" vflip="1" Show_Volt="false" x="-388" id="E" Unit=" V" objectName="Fixed Volt.-11" labelrot="0" hflip="1" y="-148" valLabelx="0" Voltage="5" labely="-9" labelx="-47" valLabRot="0" itemtype="Fixed Voltage"/>
+ 
+Fixed Volt.-10: 
+<item valLabely="0" Show_id="true" rotation="0" vflip="1" Show_Volt="false" x="-388" id="S" Unit=" V" objectName="Fixed Volt.-10" labelrot="0" hflip="1" y="-92" valLabelx="0" Voltage="5" labely="-9" labelx="-47" valLabRot="0" itemtype="Fixed Voltage"/>
+ 
+Fixed Volt.-9: 
+<item valLabely="0" Show_id="true" rotation="0" vflip="1" Show_Volt="false" x="-388" id="R" Unit=" V" objectName="Fixed Volt.-9" labelrot="0" hflip="1" y="-204" valLabelx="0" Voltage="5" labely="-9" labelx="-47" valLabRot="0" itemtype="Fixed Voltage"/>
+ 
+Or Gate-8: 
+<item valLabely="0" Show_id="false" rotation="0" vflip="1" Input_Low_V="2.5" Out_High_V="5" x="-220" id="Or Gate-5" objectName="Or Gate-8" Out_Imped="50" labelrot="0" Input_High_V="2.5" hflip="1" y="-108" Out_Low_V="0" valLabelx="0" Input_Imped="1e+20" Open_Collector="false" Inverted="true" labely="-24" Num_Inputs="2" labelx="0" valLabRot="0" itemtype="Or Gate"/>
+ 
+Or Gate-7: 
+<item valLabely="0" Show_id="false" rotation="0" vflip="1" Input_Low_V="2.5" Out_High_V="5" x="-220" id="Or Gate-6" objectName="Or Gate-7" Out_Imped="50" labelrot="0" Input_High_V="2.5" hflip="1" y="-188" Out_Low_V="0" valLabelx="0" Input_Imped="1e+20" Open_Collector="false" Inverted="true" labely="-24" Num_Inputs="2" labelx="0" valLabRot="0" itemtype="Or Gate"/>
+ 
+And Gate-6: 
+<item valLabely="0" Show_id="false" rotation="0" vflip="1" Input_Low_V="2.5" Out_High_V="5" x="-300" id="And Gate-7" objectName="And Gate-6" Out_Imped="50" labelrot="0" Input_High_V="2.5" hflip="1" y="-100" Out_Low_V="0" valLabelx="0" Input_Imped="1e+20" Open_Collector="false" Inverted="false" labely="-24" Num_Inputs="2" labelx="0" valLabRot="0" itemtype="And Gate"/>
+ 
+And Gate-5: 
+<item valLabely="0" Show_id="false" rotation="0" vflip="1" Input_Low_V="2.5" Out_High_V="5" x="-300" id="And Gate-8" objectName="And Gate-5" Out_Imped="50" labelrot="0" Input_High_V="2.5" hflip="1" y="-196" Out_Low_V="0" valLabelx="0" Input_Imped="1e+20" Open_Collector="false" Inverted="false" labely="-24" Num_Inputs="2" labelx="0" valLabRot="0" itemtype="And Gate"/>
+ 
+Probe-4: 
+<item rotation="-45" valLabely="-20" PlotterCh="0" Show_id="true" itemtype="Probe" labelrot="45" id="Q" x="-108" labely="3" y="-204" vflip="1" Show_volt="false" objectName="Probe-4" valLabRot="45" labelx="14" valLabelx="11" hflip="1"/>
+ 
+Node-3: 
+<item rotation="0" valLabely="0" Show_id="false" itemtype="Node" labelrot="0" id="Node-10" x="-172" labely="-24" y="-188" vflip="1" objectName="Node-3" valLabRot="0" labelx="-16" valLabelx="0" hflip="1"/>
+ 
+Probe-2: 
+<item rotation="-45" valLabely="3" PlotterCh="0" Show_id="true" itemtype="Probe" labelrot="45" id="Q'" x="-108" labely="1" y="-124" vflip="1" Show_volt="false" objectName="Probe-2" valLabRot="45" labelx="14" valLabelx="-11" hflip="1"/>
+ 
+Node-1: 
+<item rotation="0" valLabely="0" Show_id="false" itemtype="Node" labelrot="0" id="Node-12" x="-164" labely="-24" y="-108" vflip="1" objectName="Node-1" valLabRot="0" labelx="-16" valLabelx="0" hflip="1"/>
+ 
+Connector-13: 
+<item startpinid="And Gate-5-ePin-output0" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-276" id="Connector-13" enodeid="Circ_eNode-14" objectName="Connector-13" pointList="-276,-196,-236,-196" labelrot="0" hflip="1" endpinid="Or Gate-7-ePin-input0" y="-196" valLabelx="0" labely="-24" labelx="0" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-15: 
+<item startpinid="And Gate-6-ePin-output0" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-276" id="Connector-15" enodeid="Circ_eNode-16" objectName="Connector-15" pointList="-276,-100,-236,-100" labelrot="0" hflip="1" endpinid="Or Gate-8-ePin-input1" y="-100" valLabelx="0" labely="-24" labelx="0" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-17: 
+<item startpinid="Fixed Volt.-10-outnod" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-372" id="Connector-17" enodeid="Circ_eNode-18" objectName="Connector-17" pointList="-372,-92,-316,-92" labelrot="0" hflip="1" endpinid="And Gate-6-ePin-input1" y="-92" valLabelx="0" labely="-24" labelx="0" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-19: 
+<item startpinid="Fixed Volt.-9-outnod" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-372" id="Connector-19" enodeid="Circ_eNode-20" objectName="Connector-19" pointList="-372,-204,-316,-204" labelrot="0" hflip="1" endpinid="And Gate-5-ePin-input0" y="-204" valLabelx="0" labely="-24" labelx="0" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-21: 
+<item startpinid="And Gate-5-ePin-input1" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-316" id="Connector-21" enodeid="Circ_eNode-22" objectName="Connector-21" pointList="-316,-188,-340,-188,-340,-148" labelrot="0" hflip="1" endpinid="Node-12-0" y="-188" valLabelx="0" labely="-24" labelx="0" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-23: 
+<item startpinid="Fixed Volt.-11-outnod" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-372" id="Connector-23" enodeid="Circ_eNode-22" objectName="Connector-23" pointList="-372,-148,-340,-148" labelrot="0" hflip="1" endpinid="Node-12-1" y="-148" valLabelx="0" labely="-24" labelx="0" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-24: 
+<item startpinid="Node-12-2" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-340" id="Connector-24" enodeid="Circ_eNode-22" objectName="Connector-24" pointList="-340,-148,-340,-108,-316,-108" labelrot="0" hflip="1" endpinid="And Gate-6-ePin-input0" y="-148" valLabelx="0" labely="-24" labelx="0" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-25: 
+<item startpinid="Or Gate-7-ePin-output0" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-196" id="Connector-25" enodeid="Circ_eNode-26" objectName="Connector-25" pointList="-196,-188,-172,-188" labelrot="0" hflip="1" endpinid="Node-3-0" y="-188" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-27: 
+<item startpinid="Or Gate-8-ePin-output0" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-196" id="Connector-27" enodeid="Circ_eNode-28" objectName="Connector-27" pointList="-196,-108,-164,-108" labelrot="0" hflip="1" endpinid="Node-1-0" y="-108" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-29: 
+<item startpinid="Node-3-2" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-172" id="Connector-29" enodeid="Circ_eNode-26" objectName="Connector-29" pointList="-172,-188,-172,-140,-260,-140,-260,-116,-236,-116" labelrot="0" hflip="1" endpinid="Or Gate-8-ePin-input0" y="-188" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-30: 
+<item startpinid="Node-3-1" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-172" id="Connector-30" enodeid="Circ_eNode-26" objectName="Connector-30" pointList="-172,-188,-124,-188" labelrot="0" hflip="1" endpinid="Probe-4-inpin" y="-188" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-31: 
+<item startpinid="Node-1-2" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-164" id="Connector-31" enodeid="Circ_eNode-28" objectName="Connector-31" pointList="-164,-108,-164,-156,-260,-156,-260,-180,-236,-180" labelrot="0" hflip="1" endpinid="Or Gate-7-ePin-input1" y="-108" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+Connector-32: 
+<item startpinid="Node-1-1" valLabely="0" Show_id="false" rotation="0" vflip="1" x="-164" id="Connector-32" enodeid="Circ_eNode-28" objectName="Connector-32" pointList="-164,-108,-124,-108" labelrot="0" hflip="1" endpinid="Probe-2-inpin" y="-108" valLabelx="0" labely="-24" labelx="-16" valLabRot="0" itemtype="Connector"/>
+ 
+PlotterWidget-381: 
+<item frameSize="" toolTipDuration="-1" maximumSize="" sizeHint="" pos="" baseSize="" maximumWidth="1000" normalGeometry="" maximized="false" minimumWidth="200" maximumHeight="200" windowFilePath="" windowModality="0" inputMethodHints="0" toolTip="" updatesEnabled="true" palette="" whatsThis="" autoFillBackground="false" minimized="false" itemtype="Plotter" windowOpacity="1" cursor="" styleSheet="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumHeight="200" isActiveWindow="true" minimumSize="" height="200" y="520" childrenRegion="" windowTitle="" contextMenuPolicy="1" x="0" focus="false" windowModified="false" mouseTracking="false" size="" accessibleName="" sizePolicy="" MinVolt="0" childrenRect="" minimumSizeHint="" width="619" acceptDrops="false" windowIcon="" Tracks="1" objectName="PlotterWidget-381" windowIconText="" geometry="" rect="" locale="" modal="false" Scale="2" frameGeometry="" sizeIncrement="" focusPolicy="0" accessibleDescription="" layoutDirection="0" visible="false" fullScreen="false" MaxVolt="500" enabled="true" statusTip=""/>
+ 
+SerialPortWidget-382: 
+<item frameSize="" toolTipDuration="-1" maximumSize="" sizeHint="" pos="" baseSize="" maximumWidth="450" normalGeometry="" maximized="false" minimumWidth="0" maximumHeight="170" windowFilePath="" SettingsProp="ttyS0,0,3,0,0,0" windowModality="0" inputMethodHints="0" toolTip="" updatesEnabled="true" palette="" whatsThis="" autoFillBackground="false" minimized="false" itemtype="SerialPort" windowOpacity="1" cursor="" styleSheet="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" minimumHeight="0" isActiveWindow="true" minimumSize="" height="147" y="573" childrenRegion="" windowTitle="Configuracion" contextMenuPolicy="1" x="153" focus="false" windowModified="false" mouseTracking="false" size="" accessibleName="" sizePolicy="" childrenRect="" minimumSizeHint="" width="450" acceptDrops="false" windowIcon="" objectName="SerialPortWidget-382" windowIconText="" geometry="" rect="" locale="" modal="false" frameGeometry="" sizeIncrement="" focusPolicy="0" accessibleDescription="" layoutDirection="0" visible="false" fullScreen="false" enabled="true" statusTip=""/>
+ 
+</circuit>

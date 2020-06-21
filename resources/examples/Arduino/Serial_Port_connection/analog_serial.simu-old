@@ -1,0 +1,45 @@
+<circuit type="simulide_0.1">
+ 
+Clock-7: 
+<item valLabRot="0" Show_id="false" valLabely="8" Unit=" V" labelx="-64" labelrot="0" labely="-24" objectName="Clock-7" Show_Volt="true" Voltage="5" x="-292" hflip="1" y="-340" id="Clock-7" rotation="0" itemtype="Clock" valLabelx="-16" vflip="1" Freq="1"/>
+ 
+Volt. Source-6: 
+<item valLabRot="0" Show_id="false" valLabely="10" Unit=" V" labelx="-16" labelrot="0" labely="-24" objectName="Volt. Source-6" Show_Volt="true" Voltage="5" x="-52" hflip="1" y="-340" id="Volt. Source-6" rotation="0" itemtype="Voltage Source" valLabelx="-26" vflip="1"/>
+ 
+Volt. Source-5: 
+<item valLabRot="0" Show_id="false" valLabely="10" Unit=" V" labelx="-16" labelrot="0" labely="-24" objectName="Volt. Source-5" Show_Volt="true" Voltage="5" x="-124" hflip="1" y="-340" id="Volt. Source-5" rotation="0" itemtype="Voltage Source" valLabelx="-26" vflip="1"/>
+ 
+Arduino Uno-4: 
+<item Ser_Monitor="true" valLabRot="0" Show_id="true" valLabely="0" program="analog_serial.ino.hex" labelx="-7" labelrot="0" labely="-27" objectName="Arduino Uno-4" Ser_Port="false" x="-364" hflip="1" y="-284" id="Arduino Uno - Sender" rotation="0" itemtype="Arduino" valLabelx="0" Mhz="16" vflip="1"/>
+ 
+Capacitor-3: 
+<item valLabRot="0" Show_id="false" valLabely="-19" Capacitance="9.9999999999999947" Unit=" uF" labelx="-16" labelrot="0" labely="-24" objectName="Capacitor-3" x="-180" hflip="1" y="-292" id="Capacitor-3" Show_Cap="true" rotation="-270" itemtype="Capacitor" valLabelx="-18" vflip="1"/>
+ 
+Potentiometer-2: 
+<item Resistance="5" valLabRot="0" Show_id="false" valLabely="9" Unit=" kΩ" labelx="-16" labelrot="0" labely="-24" Show_res="true" Value_Ohm="0" objectName="Potentiometer-2" x="-228" hflip="1" y="-372" id="Potentiometer-2" rotation="0" itemtype="Potentiometer" valLabelx="7" vflip="1"/>
+ 
+Node-1: 
+<item objectName="Node-1" vflip="1" valLabely="0" itemtype="Node" hflip="1" labelrot="0" labelx="-16" y="-324" labely="-24" rotation="0" valLabelx="0" Show_id="false" id="Node-1" x="-196" valLabRot="0"/>
+ 
+Connector-8: 
+<item valLabRot="0" Show_id="false" valLabely="0" labelx="-16" pointList="-180,-276,-180,-204,-212,-204" labelrot="0" labely="-24" objectName="Connector-8" x="-180" enodeid="Circ_eNode-9" hflip="1" startpinid="Capacitor-3-rPin" y="-276" id="Connector-8" rotation="0" itemtype="Connector" valLabelx="0" vflip="1" endpinid="Arduino Uno-4-GND1"/>
+ 
+Connector-10: 
+<item valLabRot="0" Show_id="false" valLabely="0" labelx="-16" pointList="-212,-244,-196,-244,-196,-324" labelrot="0" labely="-24" objectName="Connector-10" x="-212" enodeid="Circ_eNode-11" hflip="1" startpinid="Arduino Uno-4-PC2" y="-244" id="Connector-10" rotation="0" itemtype="Connector" valLabelx="0" vflip="1" endpinid="Node-1-0"/>
+ 
+Connector-12: 
+<item valLabRot="0" Show_id="false" valLabely="0" labelx="-16" pointList="-276,-340,-244,-340,-244,-372" labelrot="0" labely="-24" objectName="Connector-12" x="-276" enodeid="Circ_eNode-13" hflip="1" startpinid="Clock-7-outnod" y="-340" id="Connector-12" rotation="0" itemtype="Connector" valLabelx="0" vflip="1" endpinid="Potentiometer-2-PinA"/>
+ 
+Connector-14: 
+<item valLabRot="0" Show_id="false" valLabely="0" labelx="-16" pointList="-228,-356,-228,-324,-196,-324" labelrot="0" labely="-24" objectName="Connector-14" x="-228" enodeid="Circ_eNode-11" hflip="1" startpinid="Potentiometer-2-PinM" y="-356" id="Connector-14" rotation="0" itemtype="Connector" valLabelx="0" vflip="1" endpinid="Node-1-1"/>
+ 
+Connector-15: 
+<item valLabRot="0" Show_id="false" valLabely="0" labelx="-16" pointList="-196,-324,-180,-324,-180,-308" labelrot="0" labely="-24" objectName="Connector-15" x="-196" enodeid="Circ_eNode-11" hflip="1" startpinid="Node-1-2" y="-324" id="Connector-15" rotation="0" itemtype="Connector" valLabelx="0" vflip="1" endpinid="Capacitor-3-lPin"/>
+ 
+Connector-16: 
+<item valLabRot="0" Show_id="false" valLabely="0" labelx="-16" pointList="-36,-340,-28,-340,-28,-228,-212,-228" labelrot="0" labely="-24" objectName="Connector-16" x="-36" enodeid="Circ_eNode-17" hflip="1" startpinid="Volt. Source-6-outPin" y="-340" id="Connector-16" rotation="0" itemtype="Connector" valLabelx="0" vflip="1" endpinid="Arduino Uno-4-PC0"/>
+ 
+Connector-18: 
+<item valLabRot="0" Show_id="false" valLabely="0" labelx="-16" pointList="-212,-236,-100,-236,-100,-340,-108,-340" labelrot="0" labely="-24" objectName="Connector-18" x="-212" enodeid="Circ_eNode-19" hflip="1" startpinid="Arduino Uno-4-PC1" y="-236" id="Connector-18" rotation="0" itemtype="Connector" valLabelx="0" vflip="1" endpinid="Volt. Source-5-outPin"/>
+ 
+</circuit>

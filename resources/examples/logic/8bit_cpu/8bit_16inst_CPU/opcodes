@@ -1,0 +1,19 @@
+codeBits = 4
+
+INC = 0
+RLA = 1
+ADD = 2
+SUB = 3
+AND = 4
+OR =  5
+XOR = 6
+NOT = 7
+
+LDI = 8
+LDM = 9
+STM = 10
+JPI = 11
+JPZ = 12
+JPC = 13
+JPN = 14
+NOP = 15

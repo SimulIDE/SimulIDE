@@ -1,0 +1,62 @@
+MCU: ATmega644
+Package: 40 pin PDIP
+ 
+ 1: PB0   T0    XCK0    PCINT8
+ 2: PB1   T1    CLKO    PCINT9
+ 3: PB2   AIN0  INT2    PCINT10
+ 4: PB3   AIN1  OC0A    PCINT11
+ 5: PB4   /SS   OC0B    PCINT12
+ 6: PB5   MOSI  PCINT13
+ 7: PB6   MISO  PCINT14
+ 8: PB7   USCK  PCINT15
+ 9: Reset
+10: Vcc
+11: Gnd
+12: XTAL2
+13: XTAL1
+14: PD0   RXD0  PCINT24
+15: PD1   TXD0  PCINT25
+16: PD2   INT0  RXD1    PCINT26
+17: PD3   INT1  TXD1    PCINT27
+18: PD4   OC1B  XCK1    PCINT28
+19: PD5   OC1A  PCINT29
+20: PD6   ICP1  OC2B    PCINT30
+21: PD7   OC2A  PCINT31
+22: PC0   SCL   PCINT16
+23: PC1   SDA   PCINT17
+24: PC2   TCK   PCINT18
+25: PC3   TMS   PCINT19
+26: PC4   TDO   PCINT20
+27: PC5   TDI   PCINT21
+28: PC6   TOSC1 PCINT22
+29: PC7   TOSC2 PCINT23
+30: AVCC
+31: Gnd
+32: AREF
+33: PA7   ADC7  PCINT7
+34: PA6   ADC6  PCINT6
+35: PA5   ADC5  PCINT5
+36: PA4   ADC4  PCINT4
+37: PA3   ADC3  PCINT3
+38: PA2   ADC2  PCINT2
+39: PA1   ADC1  PCINT1
+40: PA0   ADC0  PCINT0
+
+Summary:
+The high-performance, low-power Microchip 8-bit AVR RISC-based microcontroller
+64 KB ISP flash memory with read-while-write capabilities, 
+2 KB EEPROM, 
+4 KB SRAM, 
+32 general purpose I/O lines, 
+32 general purpose working registers, 
+a JTAG interface for boundary-scan and on-chip debugging/programming, 
+2 x 8-bit, 1 x 16-bit timer/counters with compare modes, 
+6 PWM ñhannels
+internal and external interrupts,
+serial programmable USART, 
+a universal serial interface (USI) with start condition detector, 
+an 8-channel 10-bit A/D converter, 
+programmable watchdog timer with internal oscillator, 
+SPI serial port, 
+five software selectable power saving modes. 
+

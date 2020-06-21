@@ -1,0 +1,26 @@
+<!DOCTYPE SimulIDE>
+
+
+
+<package name="dip16" pins="16" width="4" height="9">
+
+    <pin side="left" pos="1"  type="" id="DATA"  label="DATA"  /><!-- packagePin1 -->
+    <pin side="left" pos="2"  type="" id="JAM1"  label="JAM1"   /><!-- packagePin2 -->
+    <pin side="left" pos="3"  type="" id="JAM2"  label="JAM2"   /><!-- packagePin3 -->
+    <pin side="left" pos="4"  type="" id="!Q2"   label="!Q2"  /><!-- packagePin4 -->
+    <pin side="left" pos="5"  type="" id="!Q1"   label="!Q1"  /><!-- packagePin5 -->
+    <pin side="left" pos="6"  type="" id="!Q3"   label="!Q3"  /><!-- packagePin6 -->
+    <pin side="left" pos="7"  type="" id="JAM3"  label="JAM3"  /><!-- packagePin7 -->
+    <pin side="left" pos="8"  type="" id="Vss"   label="Vss"  /><!-- packagePin8 -->
+
+    <pin side="right" pos="8" type="" id="JAM4"  label="JAM4"  /><!-- packagePin9 -->
+    <pin side="right" pos="7" type="" id="PE"    label="PE"  /><!-- packagePin10 -->
+    <pin side="right" pos="6" type="" id="!Q4"   label="!Q4"  /><!-- packagePin11 -->
+    <pin side="right" pos="5" type="" id="JAM5"  label="JAM5"  /><!-- packagePin12 -->
+    <pin side="right" pos="4" type="" id="!Q5"   label="!Q5"    /><!-- packagePin13 -->
+    <pin side="right" pos="3" type="" id="CLK"   label="CLK"    /><!-- packagePin14 -->
+    <pin side="right" pos="2" type="" id="RES"   label="RES"  /><!-- packagePin15 -->
+    <pin side="right" pos="1" type="" id="Vdd"   label="Vdd"    /><!-- packagePin16 -->
+    
+</package>
+

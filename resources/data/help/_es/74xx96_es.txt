@@ -1,0 +1,17 @@
+74XX96 - 5-bit parallel-load shift register
+
+PE  A..E  QA..QE
+0    x    0
+1   dato  dato
+
+A..E = Entradas (2,3,4,6,7)
+A1..QE = Salidas (15,14,13,11,10)
+SER = Serial (9)
+PE = Preset Enable (8)
+!CLR = Clear (16)
+CLK = Clock (1)
+Vcc = 5
+GND = 12
+
+Ver help en:
+   ..share/simulide/data/examples/logic/74_series/Help_74XX96.simu

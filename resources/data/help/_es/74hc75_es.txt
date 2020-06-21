@@ -1,0 +1,18 @@
+74XX75 - 4-bit biestable latch, complementary outputs
+
+D !RD!SD  Q !Q
+0  1  1   0  1
+1  1  1   1  0
+x  0  0   1  1
+x  1  0   1  0
+x  0  1   0  1
+
+Pines:
+D0..D3 = Entradas
+Q0..Q3 = Salida
+!Q0..!Q3 = Salida (negada)
+E0-1 = 
+E2-3 =
+
+Ver help en:
+   ..share/simulide/data/examples/logic/74_series/Help_74XX75.simu

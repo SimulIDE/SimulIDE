@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Compilation Report</title>
+</head>
+<body>
+<h1>Compilation Report</h1>
+<p>Compiler Version (DD/MM/YYYY): 0.94 2015-10-27</p>
+<h2>Chip resource usage:</h2>
+<p>Chip Model: MEGA168</p>
+<p>Program Memory: 1022/16384 words (6.24%)</p>
+<p>RAM: 61/1024 bytes (5.96%)</p>
+<h2>RAM Allocation</h2>
+<table border="1">
+</table>
+<h2>Subroutines</h2>
+<table border="1">
+<tr><th>Name</th><th>Code Size (lines)</th><th>Compiled Size (words)</th><th>Outgoing calls</th></tr>
+<tr><td>Main</td><td>44</td><td>143</td><td>SYSREADSTRING(2), Delay_S(1), Delay_MS(6), ANIMATE(2), GLCDPRINT(2), GLCDGOTOXY(2), GLCDDRAWFRAME(3), GLCDCLEAR(4), INITGLCD(1), INITSYS(1)</td></tr>
+<tr><td>ANIMATE</td><td>38</td><td>138</td><td>SYSREADSTRING(2), GLCDPRINT(2), GLCDGOTOXY(2)</td></tr>
+<tr><td>INITGLCD</td><td>10</td><td>62</td><td>Delay_MS(1), GLCDWRITE(7)</td></tr>
+<tr><td>GLCDWRITE</td><td>15</td><td>31</td><td></td></tr>
+<tr><td>GLCDCLEAR</td><td>3</td><td>27</td><td>GLCDWRITE(1)</td></tr>
+<tr><td>GLCDCHARACTER</td><td>16</td><td>99</td><td>GLCDWRITE(3)</td></tr>
+<tr><td>GLCDPRINT</td><td>3</td><td>55</td><td>GLCDCHARACTER(1)</td></tr>
+<tr><td>GLCDGOTOXY</td><td>2</td><td>22</td><td>GLCDWRITE(2)</td></tr>
+<tr><td>GLCDDRAWFRAME</td><td>16</td><td>117</td><td>GLCDWRITE(4), GLCDGOTOXY(4)</td></tr>
+<tr><td>INITSYS</td><td>365</td><td>7</td><td></td></tr>
+<tr><td>SYSREADSTRING</td><td>103</td><td>24</td><td></td></tr>
+<tr><td>Delay_MS</td><td>0</td><td>12</td><td></td></tr>
+<tr><td>Delay_S</td><td>0</td><td>7</td><td>Delay_MS(1)</td></tr>
+<tr><td>SysStringTables</td><td>0</td><td>14</td><td></td></tr>
+<tr><td>ASCII_TABLE_L</td><td>0</td><td>132</td><td></td></tr>
+<tr><td>ASCII_TABLE_H</td><td>0</td><td>132</td><td></td></tr>
+</table>
+</body>
+</html>

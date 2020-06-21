@@ -1,0 +1,130 @@
+'''A demonstration program for GCGB and GCB.
+'''--------------------------------------------------------------------------------------------------------------------------------
+'''This program demonstrates shows one LCD (16x2 & 16x4) being driven using a LCD I2C adapters.
+'''This uses the GCB software implementation of IC2 for Microchip devices.
+'''Two types are supported as shown below.  This example is using "#define LCD_IO 10"
+'''- Set LCD_I0 to 10 for the YwRobot LCD1602 IIC V1 or the Sainsmart LCD_PIC I2C adapter.
+'''- Set LCD_I0 to 12 for the Ywmjkdz I2C adapter with pot bent over top of chip.
+'''- Use the following to address a diferent I2C device.
+'''-     #define LCD_I2C_Address 0x4e            'This is the default value, change as appropiate
+'''@author 	EvanV
+'''@licence	GPL
+'''@version	1.0a
+'''@date   	14.02.2015
+'''********************************************************************************
+
+; ----- Configuration
+
+  #chip 16f876, 16
+
+  ; ----- Define Hardware settings
+  ' Define I2C settings - CHANGE PORTS
+   #define I2C_MODE Master
+   #define I2C_DATA PORTC.4
+   #define I2C_CLOCK PORTC.3
+   #define I2C_DISABLE_INTERRUPTS ON
+   'Optionally, you can reduce the I2C timings.
+'   #define I2C_BIT_DELAY 0 us
+'   #define I2C_CLOCK_DELAY 1 us
+'   #define I2C_END_DELAY 0 us
+
+  '''Set up LCD
+   #define LCD_IO 10
+
+   'You may need to use SLOW or MEDIUM if your LCD is a slower device.
+   #define LCD_SPEED FAST
+   'You may need to invert these states. Dependent of LCD I2C adapter.
+   #define LCD_Backlight_On_State  1
+   #define LCD_Backlight_Off_State 0
+
+; ----- Constants
+  'None required beyond the scope of the hardware.
+
+; ----- Quick Command Reference:
+
+ '''Set LCD_10 to 10 for the YwRobot LCD1602 IIC V1 or the Sainsmart LCD_PIC I2C adapter
+ '''Set LCD_10 to 12 for the Ywmjkdz I2C adapter with pot bent over top of chip
+
+; ----- Main body of program commences here.
+    PRINT "Great Cow Basic"
+    WAIT 1 s
+
+    Do Forever
+        CLS
+        WAIT 3 s
+        PRINT "START TEST"
+        locate 1,0
+        PRINT "DISPLAY ON"
+        wait 3 s
+
+        CLS
+        Locate 0,0
+        Print "Cursor ON"
+        Locate 1,0
+        LCDcursor CursorOn
+        wait 3 S
+        CLS
+        LCDcursor CursorOFF
+        locate 0,0
+        Print "Cursor OFF"
+        wait 3 s
+        CLS
+        Locate 0,0
+        Print "FLASH ON"
+        Locate 1,0
+        LCDcursor FLASHON
+        wait 3 s
+
+        CLS
+        locate 0,0
+        Print "FLASH OFF"
+        LCDCURSOR FLASHOFF
+        wait 3 sec
+
+        Locate 0,0
+        Print "CURSR & FLSH ON"
+        locate 1,0
+        LCDCURSOR CURSORON
+        LCDCURSOR FLASHON
+        Wait 3 sec
+
+        Locate 0,0
+        Print "CURSR & FLSH OFF"
+        locate 1,0
+        LCDCURSOR CursorOFF
+        LCDCURSOR FLASHOFF
+        Wait 3 sec
+
+        CLS
+        Locate 0,4
+        PRINT "Flashing"
+        Locate 1,4
+        Print "Display"
+        wait 500 ms
+
+        repeat 10
+            LCDCURSOR LCDOFF
+            wait 500 ms
+            LCDCURSOR LCDON
+            wait 500 ms
+        end repeat
+        CLS
+        Locate 0,0
+        Print "DISPLAY & BACKL."
+        Locate 1,0
+        Print "FOR 5 SEC"
+        Wait 2 SEC
+        LCDCURSOR LCDOFF
+        LCDBacklight OFF
+        WAIT 5 s
+        LCDBacklight ON
+        CLS
+        Locate 0,0
+        LCDCURSOR LCDON
+        Print "END TEST"
+        wait 3 s
+    loop
+
+
+end
+

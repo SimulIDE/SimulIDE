@@ -1,0 +1,102 @@
+<circuit noLinAcc="5" animate="1" reactStep="50" type="simulide_0.4" speed="1000000">
+ 
+Node-247: 
+<item y="-332" labelrot="0" x="-340" labely="-24" valLabely="0" id="Node-247" labelx="-16" itemtype="Node" Show_id="false" objectName="Node-247" valLabRot="0" rotation="0" vflip="1" hflip="1" valLabelx="0"/>
+ 
+TextComponent-233: 
+<item valLabelx="0" labelx="-16" Margin="5" labelrot="0" itemtype="TextComponent" hflip="1" Fixed_Width="true" Border="1" valLabRot="0" Text="0..1&#xa;0..3&#xa;0..7" Opacity="1" Font="Helvetica [Cronyx]" y="-344" vflip="1" x="-108" labely="-24" objectName="TextComponent-233" rotation="0" Show_id="false" id="TextComponent-233" valLabely="0" Font_Size="10"/>
+ 
+Node-230: 
+<item y="-316" labelrot="0" x="-220" labely="-24" valLabely="0" id="Node-230" labelx="-16" itemtype="Node" Show_id="false" objectName="Node-230" valLabRot="0" rotation="0" vflip="1" hflip="1" valLabelx="0"/>
+ 
+Node-227: 
+<item y="-324" labelrot="0" x="-212" labely="-24" valLabely="0" id="Node-227" labelx="-16" itemtype="Node" Show_id="false" objectName="Node-227" valLabRot="0" rotation="0" vflip="1" hflip="1" valLabelx="0"/>
+ 
+Node-224: 
+<item y="-332" labelrot="0" x="-204" labely="-24" valLabely="0" id="Node-224" labelx="-16" itemtype="Node" Show_id="false" objectName="Node-224" valLabRot="0" rotation="0" vflip="1" hflip="1" valLabelx="0"/>
+ 
+Node-222: 
+<item y="-340" labelrot="0" x="-124" labely="-24" valLabely="0" id="Node-222" labelx="-16" itemtype="Node" Show_id="false" objectName="Node-222" valLabRot="0" rotation="0" vflip="1" hflip="1" valLabelx="0"/>
+ 
+Node-219: 
+<item y="-332" labelrot="0" x="-124" labely="-24" valLabely="0" id="Node-219" labelx="-16" itemtype="Node" Show_id="false" objectName="Node-219" valLabRot="0" rotation="0" vflip="1" hflip="1" valLabelx="0"/>
+ 
+SwitchDip-199: 
+<item y="-308" labelrot="0" x="-156" labely="-44" valLabely="0" id="SwitchDip-199" labelx="-16" itemtype="SwitchDip" Show_id="false" objectName="SwitchDip-199" valLabRot="0" rotation="0" Size="3" State="242" vflip="1" hflip="1" valLabelx="0"/>
+ 
+Node-175: 
+<item y="-340" labelrot="0" x="-244" labely="-24" valLabely="0" id="Node-175" labelx="-16" itemtype="Node" Show_id="false" objectName="Node-175" valLabRot="0" rotation="0" vflip="1" hflip="1" valLabelx="0"/>
+ 
+7-Seg BCD-167: 
+<item y="-400" labelrot="0" x="-212" labely="-24" valLabely="0" id="7-Seg BCD-167" labelx="-16" itemtype="7-Seg BCD" Show_id="false" objectName="7-Seg BCD-167" valLabRot="0" rotation="0" vflip="1" hflip="1" valLabelx="0"/>
+ 
+74XX90-142: 
+<item y="-364" labelrot="0" x="-316" labely="-20" valLabely="0" id="74XX90" labelx="4" itemtype="Subcircuit" Show_id="true" objectName="74XX90-142" valLabRot="0" rotation="0" vflip="1" hflip="1" Logic_Symbol="true" valLabelx="0"/>
+ 
+Clock-128: 
+<item valLabelx="-16" labelx="12" labelrot="0" itemtype="Clock" hflip="1" Unit=" V" valLabRot="0" y="-308" vflip="1" x="-472" labely="-14" objectName="Clock-128" rotation="0" Show_id="true" Show_Volt="false" id="Clock" Voltage="5" Running="true" valLabely="8" Freq="1"/>
+ 
+Connector-149: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="Clock-128-outnod" y="-308" vflip="1" x="-456" labely="-24" pointList="-456,-308,-324,-308" objectName="Connector-149" rotation="0" Show_id="false" id="Connector-149" enodeid="enode-149" valLabely="0" endpinid="74XX90-142-CP0"/>
+ 
+Connector-168: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="74XX90-142-Q0" y="-340" vflip="1" x="-268" labely="-24" pointList="-268,-340,-244,-340" objectName="Connector-168" rotation="0" Show_id="false" id="Connector-168" enodeid="enode-177" valLabely="0" endpinid="Node-175-0"/>
+ 
+Connector-176: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="Node-175-2" y="-340" vflip="1" x="-244" labely="-24" pointList="-244,-340,-244,-284,-332,-284,-332,-300,-324,-300" objectName="Connector-176" rotation="0" Show_id="false" id="Connector-176" enodeid="enode-177" valLabely="0" endpinid="74XX90-142-CP1"/>
+ 
+Connector-218: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="SwitchDip-199-switch1-pinN" y="-324" vflip="1" x="-140" labely="-24" pointList="-140,-324,-124,-324,-124,-332" objectName="Connector-218" rotation="0" Show_id="false" id="Connector-218" enodeid="enode-223" valLabely="0" endpinid="Node-219-1"/>
+ 
+Connector-220: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="Node-219-2" y="-332" vflip="1" x="-124" labely="-24" pointList="-124,-332,-124,-340" objectName="Connector-220" rotation="0" Show_id="false" id="Connector-220" enodeid="enode-223" valLabely="0" endpinid="Node-222-0"/>
+ 
+Connector-221: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="SwitchDip-199-switch0-pinN" y="-332" vflip="1" x="-140" labely="-24" pointList="-140,-332,-124,-332,-124,-340" objectName="Connector-221" rotation="0" Show_id="false" id="Connector-221" enodeid="enode-223" valLabely="0" endpinid="Node-222-1"/>
+ 
+Connector-177: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="Node-175-1" y="-340" vflip="1" x="-244" labely="-24" pointList="-244,-340,-196,-340,-196,-368" objectName="Connector-177" rotation="0" Show_id="false" id="Connector-177" enodeid="enode-177" valLabely="0" endpinid="7-Seg BCD-167-in0"/>
+ 
+Connector-180: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="74XX90-142-Q3" y="-316" vflip="1" x="-268" labely="-24" pointList="-268,-316,-220,-316" objectName="Connector-180" rotation="0" Show_id="false" id="Connector-180" enodeid="enode-232" valLabely="0" endpinid="Node-230-0"/>
+ 
+Connector-215: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="SwitchDip-199-switch2-pinN" y="-316" vflip="1" x="-140" labely="-24" pointList="-140,-316,-124,-316,-124,-332" objectName="Connector-215" rotation="0" Show_id="false" id="Connector-215" enodeid="enode-223" valLabely="0" endpinid="Node-219-0"/>
+ 
+Connector-178: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="74XX90-142-Q1" y="-332" vflip="1" x="-268" labely="-24" pointList="-268,-332,-204,-332" objectName="Connector-178" rotation="0" Show_id="false" id="Connector-178" enodeid="enode-226" valLabely="0" endpinid="Node-224-0"/>
+ 
+Connector-179: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="74XX90-142-Q2" y="-324" vflip="1" x="-268" labely="-24" pointList="-268,-324,-212,-324" objectName="Connector-179" rotation="0" Show_id="false" id="Connector-179" enodeid="enode-229" valLabely="0" endpinid="Node-227-0"/>
+ 
+Connector-225: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="Node-224-2" y="-332" vflip="1" x="-204" labely="-24" pointList="-204,-332,-204,-368" objectName="Connector-225" rotation="0" Show_id="false" id="Connector-225" enodeid="enode-226" valLabely="0" endpinid="7-Seg BCD-167-in1"/>
+ 
+Connector-226: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="Node-224-1" y="-332" vflip="1" x="-204" labely="-24" pointList="-204,-332,-164,-332" objectName="Connector-226" rotation="0" Show_id="false" id="Connector-226" enodeid="enode-226" valLabely="0" endpinid="SwitchDip-199-switch0-pinP"/>
+ 
+Connector-228: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="Node-227-2" y="-324" vflip="1" x="-212" labely="-24" pointList="-212,-324,-212,-368" objectName="Connector-228" rotation="0" Show_id="false" id="Connector-228" enodeid="enode-229" valLabely="0" endpinid="7-Seg BCD-167-in2"/>
+ 
+Connector-229: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="Node-227-1" y="-324" vflip="1" x="-212" labely="-24" pointList="-212,-324,-164,-324" objectName="Connector-229" rotation="0" Show_id="false" id="Connector-229" enodeid="enode-229" valLabely="0" endpinid="SwitchDip-199-switch1-pinP"/>
+ 
+Connector-231: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="Node-230-2" y="-316" vflip="1" x="-220" labely="-24" pointList="-220,-316,-220,-368" objectName="Connector-231" rotation="0" Show_id="false" id="Connector-231" enodeid="enode-232" valLabely="0" endpinid="7-Seg BCD-167-in3"/>
+ 
+Connector-232: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="Node-230-1" y="-316" vflip="1" x="-220" labely="-24" pointList="-220,-316,-164,-316" objectName="Connector-232" rotation="0" Show_id="false" id="Connector-232" enodeid="enode-232" valLabely="0" endpinid="SwitchDip-199-switch2-pinP"/>
+ 
+Connector-190: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="74XX90-142-MR2" y="-324" vflip="1" x="-324" labely="-24" pointList="-324,-324,-340,-324,-340,-332" objectName="Connector-190" rotation="0" Show_id="false" id="Connector-190" enodeid="enode-223" valLabely="0" endpinid="Node-247-0"/>
+ 
+Connector-248: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="Node-247-2" y="-332" vflip="1" x="-340" labely="-24" pointList="-340,-332,-324,-332" objectName="Connector-248" rotation="0" Show_id="false" id="Connector-248" enodeid="enode-223" valLabely="0" endpinid="74XX90-142-MR1"/>
+ 
+Connector-223: 
+<item valLabelx="0" labelx="-16" labelrot="0" itemtype="Connector" hflip="1" valLabRot="0" startpinid="Node-222-2" y="-340" vflip="1" x="-124" labely="-24" pointList="-124,-340,-124,-452,-340,-452,-340,-332" objectName="Connector-223" rotation="0" Show_id="false" id="Connector-223" enodeid="enode-223" valLabely="0" endpinid="Node-247-1"/>
+ 
+PlotterWidget-12: 
+<item childrenRect="" toolTip="" Scale="1" sizePolicy="" objectName="PlotterWidget-12" acceptDrops="false" MaxVolt="500" sizeIncrement="" minimumWidth="200" fullScreen="false" height="200" cursor="" minimumSize="" maximumSize="" maximized="false" sizeHint="" windowOpacity="1" geometry="" font="Sans Serif,9,-1,5,50,0,0,0,0,0" pos="" x="0" childrenRegion="" rect="" maximumWidth="1000" windowModified="false" windowIcon="" MinVolt="-500" y="0" minimumSizeHint="" styleSheet="" frameSize="" minimumHeight="200" minimized="false" Tracks="1" windowTitle="" whatsThis="" windowModality="0" locale="" updatesEnabled="true" baseSize="" layoutDirection="0" toolTipDuration="-1" itemtype="Plotter" focusPolicy="0" mouseTracking="false" maximumHeight="200" windowFilePath="" size="" palette="" accessibleName="" inputMethodHints="0" visible="false" normalGeometry="" focus="false" isActiveWindow="true" frameGeometry="" statusTip="" contextMenuPolicy="1" enabled="true" windowIconText="" accessibleDescription="" width="200" modal="false" autoFillBackground="false"/>
+ 
+</circuit>

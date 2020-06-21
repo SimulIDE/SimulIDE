@@ -1,0 +1,91 @@
+'''A demonstration program for GCGB and GCB.
+'''--------------------------------------------------------------------------------------------------------------------------------
+'''This program plays 'Mary had a little lamb' on portc.2 connected to Piezo speaker.
+'''It plays once and stops until the momentary switch on portb.0 is pressed then it plays again.
+'''This uses a GCB table as the data source.
+'''@author 	EvanV plus works of ChuckH
+'''@licence	GPL
+'''@version	1.0a
+'''@date   	31.01.2015
+'''********************************************************************************
+
+; ----- Configuration
+  #chip 16F886, 16
+  #option explicit
+
+; ----- Define Hardware settings
+  DIR portb.0 in
+
+; ----- Constants
+  #define SoundOut portc.2
+
+
+; ----- Variables
+  'Requires word size to hold note frequencies
+  dim note as word
+  Dim CNT as Byte
+
+
+; ----- Main body of program commences here.
+    Do
+        hold:
+        If portb.0 = 1 Then goto hold		'play music when switch is pressed
+
+        for cnt = 1 to 32
+        readtable mary, cnt, note ' Read notes from table
+        tone note, 50							' Play notes
+        next
+    	
+    Loop
+
+    Table MARY
+    554 'C#
+    494 'B
+    440 'A
+    494 'B
+    554 'C#
+    0 	'SILENT
+    554 'C#
+    554 'C#
+    494 'B
+    0 	'SILENT
+    494 'B
+    0 	'SILENT
+    494 'B
+    554 'C#
+    659 'E
+    0 	'SILENT
+    659 'E
+    554 'C#
+    494 'B
+    440 'A
+    494 'B
+    554 'C#
+    0 	'SILENT
+    554 'C#
+    0 	'SILENT
+    554 'C#
+    494 'B
+    0 	'SILENT
+    494 'B
+    554 'C#
+    494 'B
+    440 'A
+
+    end table
+
+
+'Tone.gcb
+
+'440 	' A
+'466 	' A#
+'494	' B
+'523	' C
+'554	' C#
+'587	' D
+'622	' D#
+'659	' E
+'699	' F
+'740	' F#
+'784	' G
+'831	' G#

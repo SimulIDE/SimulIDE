@@ -1,0 +1,87 @@
+<!DOCTYPE SimulIDE>
+
+<!-- *************************************************************************** -->
+<!-- *   Copyright (C) 2018 by santiago González                               * -->
+<!-- *   santigoro@gmail.com                                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is free software; you can redistribute it and/or modify  * -->
+<!-- *   it under the terms of the GNU General Public License as published by  * -->
+<!-- *   the Free Software Foundation; either version 3 of the License, or     * -->
+<!-- *   (at your option) any later version.                                   * -->
+<!-- *                                                                         * -->
+<!-- *   This program is distributed in the hope that it will be useful,       * -->
+<!-- *   but WITHOUT ANY WARRANTY; without even the implied warranty of        * -->
+<!-- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         * -->
+<!-- *   GNU General Public License for more details.                          * -->
+<!-- *                                                                         * -->
+<!-- *   You should have received a copy of the GNU General Public License     * -->
+<!-- *   along with this program; if not, see <http://www.gnu.org/licenses/>.  * -->
+<!-- *                                                                         * -->
+<!-- *************************************************************************** -->
+
+<itemlib>
+    <tag>QT_TRANSLATE_NOOP("xmlfile","Logic")</tag>
+    
+    <itemset category="Logic" type="">
+        <item name="IC CD"  package=""  subcircuit=""  icon="ic2.png" ></item>
+    </itemset>
+    
+    <itemset category="Logic/IC CD" type="Subcircuit">
+    <item name="CD4006"  package="icCD/CD4006"  subcircuit="icCD/CD4006" info="  18-stage static shift register" ></item>
+    <item name="CD4013"  package="icCD/CD4013"  subcircuit="icCD/CD4013" info="  dual D positive edge triggered flip-flop, asynchronous preset and clear " ></item>
+    <item name="CD4014"  package="icCD/CD4014"  subcircuit="icCD/CD4014" info="  8-stage static shift register" ></item>
+    <item name="CD4015"  package="icCD/CD4015"  subcircuit="icCD/CD4015" info="  dual 4-stage static shift register" ></item>
+    <item name="CD4018"  package="icCD/CD4018"  subcircuit="icCD/CD4018" info="  Presettable Divide-By-N Counter" ></item>
+    <item name="CD4019"  package="icCD/CD4019"  subcircuit="icCD/CD4019" info="  quadruple 2-input multiplexer" ></item>
+    <item name="CD4021"  package="icCD/CD4021"  subcircuit="icCD/CD4021" info="  8-stage static shift register, asynchronous load" ></item>
+    <item name="CD4026"  package="icCD/CD4026"  subcircuit="icCD/CD4026" info="  Decade Counter/Divider" ></item>
+    <item name="CD4027"  package="icCD/CD4027"  subcircuit="icCD/CD4027" info="  dual J-K flip-flop" ></item>
+    <item name="CD4029"  package="icCD/CD4029"  subcircuit="icCD/CD4029" info="  synchronous binary/decade, up/down counter" ></item>
+    <item name="CD4033"  package="icCD/CD4033"  subcircuit="icCD/CD4033" info="  Decade Counter/Divider" ></item>
+    <item name="CD4035"  package="icCD/CD4035"  subcircuit="icCD/CD4035" info="  4-bit parallel in/parallel out shift register" ></item>
+    <item name="CD4042"  package="icCD/CD4042"  subcircuit="icCD/CD4042" info="  quad clocked D-latch" ></item>
+    <item name="CD4043"  package="icCD/CD4043"  subcircuit="icCD/CD4043" info="  quad R/S latch (active HIGH), tristate outputs " ></item>
+    <item name="CD4044"  package="icCD/CD4044"  subcircuit="icCD/CD4044" info="  quad R/S latch (active LOW), tristate outputs " ></item>
+    <item name="CD4066"  package="icCD/CD4066"  subcircuit="icCD/CD4066" info="  cmos quad bilateral switch" ></item>
+    <item name="CD4076"  package="icCD/CD4076"  subcircuit="icCD/CD4076" info="  4-bit D-type registers, tristate outputs" ></item>
+    <item name="CD4085"  package="icCD/CD4085"  subcircuit="icCD/CD4085" info="  Dual 2 wide 2 input AND-OR-INVERT gate" ></item>
+    <item name="CD4094"  package="icCD/CD4094"  subcircuit="icCD/CD4094" info="  8-stage shift and store register, tristate outputs" ></item>
+    <item name="CD4095"  package="icCD/CD4095"  subcircuit="icCD/CD4095" info="  J-K flip-flop with triple JK AND-ed inputs" ></item>
+    <item name="CD4096"  package="icCD/CD4096"  subcircuit="icCD/CD4096" info="  J-K flip-flop with triple JK AND-ed inputs (one inverted)" ></item>
+    <item name="CD4099"  package="icCD/CD4099"  subcircuit="icCD/CD4099" info="  8-bit adressable latch" ></item>
+    <item name="CD4502"  package="icCD/CD4502"  subcircuit="icCD/CD4502" info="  Strobed Hex inverter/buffer" ></item>
+    <item name="CD4503"  package="icCD/CD4503"  subcircuit="icCD/CD4503" info="  Hex buffer, tristate outputs" ></item>
+    <item name="CD4508"  package="icCD/CD4508"  subcircuit="icCD/CD4508" info="  dual 4-bit latch with reset" ></item>
+    <item name="CD4510"  package="icCD/CD4510"  subcircuit="icCD/CD4510" info="  Presettable Up/Down Counter" ></item>
+    <item name="CD4511"  package="icCD/CD4511"  subcircuit="icCD/CD4511" info="  BCD to 7 Segment Latch Decoder Driver" ></item>
+    <item name="CD4512"  package="icCD/CD4512"  subcircuit="icCD/CD4512" info="  8-input multiplexer with tristate output" ></item>
+    <item name="CD4516"  package="icCD/CD4510"  subcircuit="icCD/CD4516" info="  Presettable Up/Down Counter" ></item>
+    <item name="CD4522"  package="icCD/CD4522"  subcircuit="icCD/CD4522" info="  Programmable 4-bit BCD DOWN Counter" ></item>
+    <item name="CD4526"  package="icCD/CD4526"  subcircuit="icCD/CD4526" info="  Programmable 4-bit Binary DOWN Counter" ></item>
+    <item name="CD4532"  package="icCD/CD4532"  subcircuit="icCD/CD4532" info="  8-input priority encoder" ></item>
+    <item name="CD4539"  package="icCD/CD4539"  subcircuit="icCD/CD4539" info="  Dual 4 input multiplexer" ></item>
+    <item name="CD4553"  package="icCD/CD4553"  subcircuit="icCD/CD4553" info="  3-digit BCD counter" ></item>
+    <item name="CD4555"  package="icCD/CD4555"  subcircuit="icCD/CD4555" info="  Dual Binary to 1 of 4 Decoder/Demultiplexer" ></item>
+    <item name="CD4556"  package="icCD/CD4556"  subcircuit="icCD/CD4556" info="  Dual Binary to 1 of 4 Decoder/Demultiplexer, inverted outputs" ></item>
+    <item name="CD40110" package="icCD/CD40110" subcircuit="icCD/CD40110" info="  Decade Up/Down Counter Latch Display Driver"></item>
+    <item name="CD40160" package="ic74/74HC160" subcircuit="ic74/74HC160" info="  Synchronous presettable 4-bit decade counter, asynchronous clear"></item>
+    <item name="CD40161" package="ic74/74HC160" subcircuit="ic74/74HC161" info="  Synchronous presettable 4-bit binary counter, asynchronous clear "></item>
+    <item name="CD40162" package="ic74/74HC160" subcircuit="ic74/74HC162" info="  Synchronous presettable 4-bit decade counter, synchronous clear "></item>
+    <item name="CD40163" package="ic74/74HC160" subcircuit="ic74/74HC163" info="  Synchronous presettable 4-bit binary counter, synchronous clear "></item>
+    <item name="CD40174" package="icCD/CD40174" subcircuit="icCD/CD40174" info="  six positive-edge triggered D-type flip-flops "></item>
+    <item name="CD40175" package="icCD/CD40175" subcircuit="icCD/CD40175" info="  four positive-edge triggered D-type flip-flops, true and complement outputs "></item>
+    <item name="CD40192" package="ic74/74HC192" subcircuit="ic74/74HC192" info="  Synchronous presettable up/down decade counter, clear "></item>
+    <item name="CD40193" package="ic74/74HC192" subcircuit="ic74/74HC193" info="  Synchronous presettable up/down 4-bit binary counter, clear"></item>
+    <item name="MC14495" package="icCD/MC14495" subcircuit="icCD/MC14495" info="  Hexadecimal to 7 segment latch/decoder led driver"></item>
+    <item name="MM74C922" package="icCD/MM74C922" subcircuit="icCD/MM74C922" info="  16 key encoder (SIMPLIFIED MODEL)"></item>
+    <item name="MM74C923" package="icCD/MM74C923" subcircuit="icCD/MM74C923" info="  20 key encoder (SIMPLIFIED MODEL)"></item>
+    <item name="TC4560"  package="icCD/TC4560"  subcircuit="icCD/TC4560" info="  4-bit BCD adder" ></item>
+    <item name="TC4561"  package="icCD/TC4561"  subcircuit="icCD/TC4561" info="  9`s complementer" ></item>
+    <item name="TC4467"  package="icCD/TC4467"  subcircuit="icCD/TC4467"  info="  Logic-input CMOS quad drivers, inverted outputs" ></item>
+    <item name="TC4468"  package="icCD/TC4468"  subcircuit="icCD/TC4468"  info="  Logic-input CMOS quad drivers" ></item>
+    <item name="TC4469"  package="icCD/TC4469"  subcircuit="icCD/TC4469"  info="  Logic-input CMOS quad drivers, one inverted input " ></item>
+
+    </itemset>
+
+</itemlib>
+

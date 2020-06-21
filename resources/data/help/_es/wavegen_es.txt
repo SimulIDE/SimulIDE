@@ -1,0 +1,24 @@
+Generador de onda:
+
+Se puede activar/desactivar con el botón en el lado izquierdo.
+
+Parámetros:
+- Voltaje: 
+   Determina la amplitud de la onda. 5
+- Unidades:
+   Determina la tensión. V
+- Mostrar Voltaje:
+   Muestra o no la tensión. True
+- Freq.:  
+   Determina la frecuencia. 1000
+- Volt. Base:
+   Determina la tensión mínima. 0
+- Ancho de Pulso Onda Cuadrada:
+   Solo si seleccionas tipo = onda cuadrado, podrás elegir el ancho de pulso (Duty cicle). 50%
+- Calidad:
+   ???
+- Tipo de onda: Cuatro formas de onda disponibles:
+   1. Seno (Sine)
+   2. Sierra (Saw)
+   3. Triangulo (Triangle)
+   4. Cuadrado (Square)

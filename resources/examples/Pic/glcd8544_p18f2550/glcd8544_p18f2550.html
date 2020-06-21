@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Compilation Report</title>
+</head>
+<body>
+<h1>Compilation Report</h1>
+<p>Compiler Version (DD/MM/YYYY): 0.94 2015-10-27</p>
+<h2>Chip resource usage:</h2>
+<p>Chip Model: 18F2550</p>
+<p>Program Memory: 1133/16384 words (6.92%)</p>
+<p>RAM: 67/2048 bytes (3.27%)</p>
+<h2>RAM Allocation</h2>
+<table border="1">
+</table>
+<h2>Subroutines</h2>
+<table border="1">
+<tr><th>Name</th><th>Code Size (lines)</th><th>Compiled Size (words)</th><th>Outgoing calls</th></tr>
+<tr><td>Main</td><td>46</td><td>216</td><td>INITUSART(1), SYSREADSTRING(6), Delay_S(1), Delay_MS(6), ANIMATE(2), GLCDPRINT(2), GLCDGOTOXY(2), GLCDDRAWFRAME(3), GLCDCLEAR(4), HSERSEND(4), HSERPRINT(4), INITGLCD(1), INITSYS(1)</td></tr>
+<tr><td>ANIMATE</td><td>47</td><td>217</td><td>SYSREADSTRING(7), GLCDPRINT(2), GLCDGOTOXY(2), HSERSEND(4), HSERPRINT(5)</td></tr>
+<tr><td>INITGLCD</td><td>10</td><td>42</td><td>Delay_MS(1), GLCDWRITE(7)</td></tr>
+<tr><td>GLCDWRITE</td><td>16</td><td>28</td><td></td></tr>
+<tr><td>GLCDCLEAR</td><td>3</td><td>16</td><td>GLCDWRITE(1)</td></tr>
+<tr><td>GLCDCHARACTER</td><td>16</td><td>62</td><td>GLCDWRITE(3)</td></tr>
+<tr><td>GLCDPRINT</td><td>3</td><td>39</td><td>GLCDCHARACTER(1)</td></tr>
+<tr><td>GLCDGOTOXY</td><td>2</td><td>12</td><td>GLCDWRITE(2)</td></tr>
+<tr><td>GLCDDRAWFRAME</td><td>16</td><td>73</td><td>GLCDWRITE(4), GLCDGOTOXY(4)</td></tr>
+<tr><td>INITSYS</td><td>365</td><td>15</td><td></td></tr>
+<tr><td>SYSREADSTRING</td><td>103</td><td>23</td><td></td></tr>
+<tr><td>INITUSART</td><td>64</td><td>10</td><td></td></tr>
+<tr><td>HSERSEND</td><td>22</td><td>6</td><td></td></tr>
+<tr><td>HSERPRINT</td><td>15</td><td>38</td><td>Delay_MS(1), HSERSEND(1)</td></tr>
+<tr><td>Delay_MS</td><td>0</td><td>18</td><td></td></tr>
+<tr><td>Delay_S</td><td>0</td><td>10</td><td>Delay_MS(1)</td></tr>
+<tr><td>SysStringTables</td><td>0</td><td>40</td><td></td></tr>
+<tr><td>ASCII_TABLE_L</td><td>0</td><td>134</td><td></td></tr>
+<tr><td>ASCII_TABLE_H</td><td>0</td><td>134</td><td></td></tr>
+</table>
+</body>
+</html>
