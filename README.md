@@ -1,4 +1,4 @@
-# SimulIDE 0.3.10
+# SimulIDE
 
 Electronic Circuit Simulator
 
@@ -68,3 +68,7 @@ Run time dependencies:
 
 SimuliDE executable is in bin folder.
 No need for installation, place SimulIDE folder wherever you want and run the executable.
+
+## Social:
+
+Here on [this Discord channel](https://discord.gg/nTRbdpY) you may ask for help or dicuss different SimulIDE related matters.
