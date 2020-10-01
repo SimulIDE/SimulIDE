@@ -22,11 +22,12 @@ jobs:
         with:
           version: ${{ matrix.qt_version }}
           arch: ${{ matrix.qtarch }}
+          modules: qtscripts
 
       - name: Build
         shell: bash
         run: |
-          sudo apt install libelf-dev
+          sudo apt install libelf-dev libgl-dev libx11-dev libxkbcommon-x11-dev
           mkdir build
           cd build
           qmake ..
