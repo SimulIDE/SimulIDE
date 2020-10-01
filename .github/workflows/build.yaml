@@ -22,8 +22,8 @@ jobs:
         with:
           version: ${{ matrix.qt_version }}
           arch: ${{ matrix.qtarch }}
-          modules: qtscripts
-
+          modules: qtscript
+          
       - name: Build
         shell: bash
         run: |
