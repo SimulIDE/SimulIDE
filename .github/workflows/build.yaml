@@ -27,7 +27,7 @@ jobs:
       - name: Build
         shell: bash
         run: |
-          sudo apt install libelf-dev libgl-dev libx11-dev libxkbcommon-x11-dev
+          sudo apt install libelf-dev libgl-dev libx11-dev libxkbcommon-x11-dev libpulse-dev
           mkdir build
           cd build
           qmake ..
