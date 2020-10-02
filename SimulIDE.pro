@@ -696,6 +696,13 @@ HEADERS += ../src/appiface.h \
     ../src/simulator/elements/processors/picprocessor.h \
     ../src/simulator/matrixsolver.h \
     ../src/simulator/simulator.h \
+    ../resources/data/arduinos.xml \
+    ../resources/data/avrs.xml \
+    ../resources/data/ic74.xml \
+    ../resources/data/icCD.xml \
+    ../resources/data/keys.xml \
+    ../resources/data/pics.xml \
+    ../resources/data/ternary.xml \
     ../src/utils.h
 
 INCLUDEPATH += ../src \
@@ -730,13 +737,6 @@ INCLUDEPATH += ../src \
     ../src/simavr/sim \
     ../src/simavr/sim/avr \
     ../src/simavr/cores \
-    ../resources/data/arduinos.xml \
-    ../resources/data/avrs.xml \
-    ../resources/data/ic74.xml \
-    ../resources/data/icCD.xml \
-    ../resources/data/keys.xml \
-    ../resources/data/pics.xml \
-    ../resources/data/ternary.xml \
     ../src/gpsim \
     ../src/gpsim/devices \
     ../src/gpsim/modules \

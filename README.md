@@ -9,13 +9,13 @@ It's intended for general purpose electronics and microcontroller simulation, su
 
 PIC simulation is provided by gpsim and avr simulation by simavr.
 
-This is not an accurate simulator for circuit analisis, it aims to be the fast, simple and easy to use, so this means simple and not very accurate electronic models and limited features.
+This is not an accurate simulator for circuit analysis. It aims to be fast, simple and easy to use, so this means simple and not very accurate electronic models and limited features.
 
-Intended for hobbist or students to learn and experiment with simple circuits.
+Intended for hobbyist or students to learn and experiment with simple circuits.
 
 
 SimulIDE also features a code Editor and Debugger for GcBasic, Arduino, PIC asm and AVR asm.
-Editor/Debugger is still in it's firsts stages of development, with basic functionalities, but it is possible to write, compile and basic debugging with breakpoints, watch registers and global variables.
+Editor/Debugger is still in its firsts stages of development, with basic functionalities, but it is possible to write, compile and perform basic debugging with breakpoints, watch registers and global variables.
 
 
 ## Building SimulIDE:
@@ -45,7 +45,7 @@ $ qmake
 $ make
 ```
 
-In folder build_XX/release/SimulIDE_x.x.x you will find executable and all files needed to run SimulIDE.
+In the folder build_XX/release/SimulIDE_x.x.x you will find the executable and all the files needed to run SimulIDE.
 
 
 
@@ -66,9 +66,9 @@ Run time dependencies:
  - libelf
 
 
-SimuliDE executable is in bin folder.
+SimulIDE executable is in bin folder.
 No need for installation, place SimulIDE folder wherever you want and run the executable.
 
 ## Social:
 
-Here on [this Discord channel](https://discord.gg/nTRbdpY) you may ask for help or dicuss different SimulIDE related matters.
+Here on [this Discord channel](https://discord.gg/nTRbdpY) you may ask for help or discuss different SimulIDE related matters.
