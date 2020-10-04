@@ -35,14 +35,14 @@ QMAKE_CXXFLAGS_RELEASE -= -O1
 QMAKE_CXXFLAGS_RELEASE -= -O2
 QMAKE_CXXFLAGS_RELEASE *= -O3
 
-QMAKE_CFLAGS += --std=gnu1z
+QMAKE_CFLAGS += --std=gnu11
 
 QMAKE_LIBS += -lelf
 
 CONFIG += qt 
 CONFIG += warn_on
 CONFIG += no_qml_debug
-CONFIG *= c++1z
+CONFIG *= c++11
 CONFIG += lrelease
 
 DEFINES += MAINMODULE_EXPORT=
