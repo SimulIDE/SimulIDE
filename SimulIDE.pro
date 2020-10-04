@@ -23,7 +23,11 @@ TEMPLATE = app
 
 QT += core gui multimedia widgets serialport concurrent script xml svg
 
-include($$PWD/SimulIDE.pri)
+win32-g++{
+    LIBS += -lws2_32
+}
+
+include(./SimulIDE.pri)
 
 QMAKE_CXXFLAGS_DEBUG -= -O
 QMAKE_CXXFLAGS_DEBUG -= -O1
@@ -52,23 +56,25 @@ TARGET_NAME = SimulIDE_$$VERSION$$
 
 TARGET = simulide
 
-runLrelease.commands = lrelease ../resources/translations/simulide.ts \
-    ../resources/translations/simulide_en.ts \
-    ../resources/translations/simulide_es.ts \
-    ../resources/translations/simulide_fr.ts \
-    ../resources/translations/simulide_ru.ts
+runLrelease.commands = lrelease $$PWD/resources/translations/simulide.ts \
+    $$PWD/resources/translations/simulide_en.ts \
+    $$PWD/resources/translations/simulide_es.ts \
+    $$PWD/resources/translations/simulide_fr.ts \
+    $$PWD/resources/translations/simulide_ru.ts
 
 QMAKE_EXTRA_TARGETS += runLrelease
 POST_TARGETDEPS     += runLrelease
 
+RESOURCES = ./src/application.qrc
+
 QM_FILES_INSTALL_PATH = $$PREFIX/share/$$TARGET/translations
 
 data.path = $$PREFIX/share/$$TARGET
-data.files = ../resources/data
+data.files = ./resources/data
 examples.path = $$PREFIX/share/$$TARGET
-examples.files = ../resources/examples
+examples.files = ./resources/examples
 icons.path = $$PREFIX/share
-icons.files = ../resources/icons
+icons.files = ./resources/icons
 target.path = $$PREFIX/bin
 INSTALLS += data
 INSTALLS += examples
