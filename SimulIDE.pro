@@ -42,7 +42,7 @@ QMAKE_LIBS += -lelf
 CONFIG += qt 
 CONFIG += warn_on
 CONFIG += no_qml_debug
-CONFIG *= c++17
+CONFIG *= c++1z
 CONFIG += lrelease
 
 DEFINES += MAINMODULE_EXPORT=
