@@ -742,6 +742,13 @@ INCLUDEPATH += ../src \
     ../src/gpsim/modules \
     ../src/gpsim/registers
 
+macx {
+    DEFINES += __LIBELF_INTERNAL__
+    INCLUDEPATH += /usr/local/Cellar/libelf/0.8.13_1/include/libelf/ 
+} else {
+    QMAKE_LIBS += -lelf
+}
+
 TRANSLATIONS +=  \
     ../resources/translations/simulide.ts \
     ../resources/translations/simulide_en.ts \
@@ -763,7 +770,7 @@ QMAKE_CXXFLAGS_RELEASE *= -O3
 
 QMAKE_CFLAGS += --std=gnu11
 
-QMAKE_LIBS += -lelf
+
 
 CONFIG += qt 
 CONFIG += warn_on
