@@ -708,4 +708,5 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
-# End of https://www.toptal.com/developers/gitignore/api/qt,qtcreator,c++,c,windows,macos,linux,visualstudio,xcode,clion
+# Git files
+*.orig
