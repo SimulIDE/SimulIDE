@@ -41,7 +41,7 @@ QMAKE_CXXFLAGS_RELEASE *= -O3
 
 QMAKE_CFLAGS += --std=gnu11
 
-QMAKE_LIBS += -lelf
+
 
 CONFIG += qt 
 CONFIG += warn_on
