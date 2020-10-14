@@ -3,7 +3,7 @@
 Electronic Circuit Simulator Community Edition
 
 
-SimulIDE Community Edition is a fork of SumulIDE software, a simple real time electronic circuit simulator, intended for hobbyist or students to learn and experiment with simple electronic circuits and microcontrollers, supporting PIC, AVR and Arduino. This is not an accurate simulator for circuit analysis. It aims to be fast, simple and easy to use, so this means simple and not very accurate electronic models and limited features. SimulIDE also features a code Editor and Debugger for GcBasic, Arduino, PIC asm and AVR asm. Editor/Debugger is still in its firsts stages of development, with basic functionalities, but it is possible to write, compile and perform basic debugging with breakpoints, watch registers and global variables. PIC simulation is provided by gpsim and avr simulation by simavr.
+SimulIDE Community Edition is a fork of SimulIDE software, a simple real time electronic circuit simulator, intended for hobbyist or students to learn and experiment with simple electronic circuits and microcontrollers, supporting PIC, AVR and Arduino. This is not an accurate simulator for circuit analysis. It aims to be fast, simple and easy to use, so this means simple and not very accurate electronic models and limited features. SimulIDE also features a code Editor and Debugger for GcBasic, Arduino, PIC asm and AVR asm. Editor/Debugger is still in its firsts stages of development, with basic functionalities, but it is possible to write, compile and perform basic debugging with breakpoints, watch registers and global variables. PIC simulation is provided by gpsim and avr simulation by simavr.
 
 
 ## Building SimulIDE:
@@ -26,7 +26,7 @@ Build dependencies:
  - avr-libc
 
  
-Once installed go to build_XX folder, then:
+Once installed:
 
 ```
 mkdir build
