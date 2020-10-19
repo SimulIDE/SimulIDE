@@ -17,6 +17,8 @@ Changes:
     - 100 MHz max. circuit speed.
     - Editor: Move "Control Circuit" from Editor to Debugger Properties.
     
+  SR5:
+    - Delete key working again to remove Components.
     
 New Features:
   RC1:
@@ -84,6 +86,12 @@ New Features:
     - Gui French translation (Pascal Cotret)
     - Change Language: Circuit->Properties.
   
+  SR3:
+    - Gui Brazilian Portuguese Translation ( Maico Smaniotto ).
+    
+  SR4:
+    - Several AVR Logic Symbol Packages (Sergey Roenko).
+    - Several AVR help files (Sergey Roenko).
     
 Bug Fixes:
   RC1:
@@ -212,6 +220,36 @@ Bug Fixes:
     - Mcu: Pullups not working depending on Pin direction set order.
     - BcdToDec not working in subcircuits.
     - Editor: asm type not recognized after modify and save.
+    
+  SR3:
+    - Clock & WaveGen: Wrong frequency after circuit speed change > 1 MHz while running.
+    - New Circuit when Simulation is paused = Power button dissabled.
+    - Serial Monitor not properly deleted.
+    - Remove waveGen max frequency limit.
+    - AVR Adc not working for channels > 8.
+    - Avr asm Copmiler: error in mega16 & mega 32 .inc files.
+    - Arduino Uno should have a buffer lo drive builtin led.
+    - Locale variants not working (eg. pt_BR).
+    - AVR i2c not working properly.
+    
+  SR4:
+    - Drag&Drop files not working as it should (item created at Drag enter).
+    - Crash: Arduino Uno led buffer not properly removed (0.4.13-SR3).
+    - LedMatrix not cleanly removed.
+    - Serial Monitor Windows always on top.
+    - Missing files: TC4560, TC4561 (Sergey Roenko).
+    - 74HC148 not working properly (Sergey Roenko).
+    - Fix Windows version number.
+  SR5:
+    - Text Component: Delete Key not working.
+    - PIC Comparator: Output Vref to Pin doesn't work.
+    - Image Component: Animated Gifs not working.
+    - RamTable: Load varset brokes RamTable (addr = 0).
+    - Pic Uart sends extra character after reset (0.4.13.SR2).
+    - Serial Monitor doesn't keep on top of main window (0.4.13.SR4).
+    - AVR spi not synched to mcu clock in some cases (asteroid game).
+    - Editor: Set Compiler Path for unsaved or unsupported files should show an info dialog.
+    - Crash dropping files to circuit in some cases.
     
     
     New Components:
