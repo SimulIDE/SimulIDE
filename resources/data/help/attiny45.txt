@@ -1,0 +1,27 @@
+MCU: attiny45
+Package: 8-pin PDIP
+
+1: PB5 ADC0 !Reset dW   PCINT5
+2: PB3 ADC3 !OC1B  CLKI XTAL1 PCINT3  
+3: PB4 ADC2 OC1B   CLKO XTAL2 PCINT4 
+4: Gnd
+5: PB0 MOSI DI     SDA  AIN0  OC0A !OC1A  AREF PCINT0
+6: PB1 MISO DO     AIN1 OC0B  OC1A PCINT1
+7: PB2 SCK  USCK   SCL  ADC1  T0   INT0   PCINT2
+8: Vcc
+
+Summary:
+The high-performance Microchip picoPower 8-bit AVR RISC-based microcontroller
+4 KB ISP flash memory with read-while-write capabilities,
+256 Byte EEPROM,
+256 Byte SRAM,
+6 general purpose I/O lines,
+32 general purpose working registers,
+1 x 8-bit timer/counters,
+2-channel PWM,
+1 comparators,
+internal and external interrupts,
+In-System Programmable via SPI Port,
+4-channel 10-bit A/D converter,
+programmable watchdog timer with internal oscillator,
+The device operates between 1.8-5.5 volts.

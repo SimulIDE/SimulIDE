@@ -87,6 +87,7 @@ class VRCON : public sfr_register
   ~VRCON();
 
   virtual void put(uint new_value);
+  virtual void outputToPin( bool enabled );
   virtual void setIOpin(PinModule *);
   virtual double get_Vref();
   void setValidBits(uint mask) { valid_bits = mask;}

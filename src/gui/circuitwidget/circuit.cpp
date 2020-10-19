@@ -110,10 +110,12 @@ void Circuit::setLang( Langs lang )
 
 QString Circuit::loc()
 {
-    QString locale = "_en";
-    if     ( m_lang == French )  locale = "fr";
-    else if( m_lang == Russian ) locale = "ru";
-    else if( m_lang == Spanish ) locale = "es";
+    QString locale = "en";
+    if     ( m_lang == French )    locale = "fr";
+    else if( m_lang == German )    locale = "de";
+    else if( m_lang == Russian )   locale = "ru";
+    else if( m_lang == Spanish )   locale = "es";
+    else if( m_lang == Pt_Brasil ) locale = "pt_BR";
 
     return locale;
 }
@@ -122,9 +124,11 @@ void Circuit::setLoc( QString loc )
 {
     Langs lang = English;
 
-    if     ( loc == "fr" ) lang = French;
-    else if( loc == "ru" ) lang = Russian;
-    else if( loc == "es" ) lang = Spanish;
+    if     ( loc == "fr" )    lang = French;
+    else if( loc == "de" )    lang = German;
+    else if( loc == "ru" )    lang = Russian;
+    else if( loc == "es" )    lang = Spanish;
+    else if( loc == "pt_BR" ) lang = Pt_Brasil;
 
     m_lang = lang;
 }
@@ -759,6 +763,11 @@ void Circuit::remove() // Remove everything ( Clear Circuit )
 bool Circuit::deleting()
 {
     return m_deleting;
+}
+
+void Circuit::deselectAll()
+{
+    for( QGraphicsItem* item : selectedItems() ) item->setSelected( false );
 }
 
 void Circuit::saveState()
@@ -1470,7 +1479,11 @@ void Circuit::keyPressEvent( QKeyEvent* event )
         }
         else QGraphicsScene::keyPressEvent( event );
     }
-    else if( key == Qt::Key_Delete ) removeItems();
+    else if( key == Qt::Key_Delete )
+    {
+        removeItems();
+        QGraphicsScene::keyPressEvent( event );
+    }
     else
     {
         if( !event->isAutoRepeat() ) // Deliver Key events ( switches )
@@ -1505,6 +1518,44 @@ void Circuit::keyReleaseEvent( QKeyEvent* event )
         }
     }
     QGraphicsScene::keyReleaseEvent( event );
+}
+
+
+void Circuit::dropEvent( QGraphicsSceneDragDropEvent* event )
+{
+    QString type = event->mimeData()->html();
+    QString id   = event->mimeData()->text();
+
+    QString file = "file://";
+    if( id.startsWith( file ) )
+    {
+        id.replace( file, "" ).replace("\r\n", "" );
+#ifdef _WIN32
+        if( id.startsWith( "/" )) id.remove( 0, 1 );
+#endif
+        QString loId = id.toLower();
+
+        if( loId.endsWith( ".jpg")
+         || loId.endsWith( ".png")
+         || loId.endsWith( ".gif"))
+        {
+            file = id;
+            type = "Image";
+            id   = "Image";
+            Component* enterItem = createItem( type, id+"-"+newSceneId() );
+            if( enterItem )
+            {
+                saveState();
+
+                enterItem->setBackground( file );
+
+                QPoint cPos = QCursor::pos()-CircuitView::self()->mapToGlobal( QPoint(0,0));
+                enterItem->setPos( CircuitView::self()->mapToScene( cPos ) );
+                addItem( enterItem );
+            }
+        }
+        else CircuitWidget::self()->loadCirc( id );
+    }
 }
 
 void Circuit::drawBackground ( QPainter*  painter, const QRectF & rect )

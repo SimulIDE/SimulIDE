@@ -33,23 +33,6 @@
     </message>
 </context>
 <context>
-    <name>AVRComponentPin</name>
-    <message>
-        <source>Register descriptor file for this AVR processor %1 is corrupted - cannot attach pin</source>
-        <translation>Le fichier de description du registre pour ce processeur AVR %1 est corrmpu - On ne peut peut rattacher la broche</translation>
-    </message>
-    <message>
-        <source>Register descriptor file for this AVR processor %1 is corrupted - cannot attach pin 
-</source>
-        <translation>Le fichier de description du registre pour ce processeur AVR %1 est corrompu - On ne peut peut rattacher la broche 
-</translation>
-    </message>
-    <message>
-        <source>Pin is not initialized properly:</source>
-        <translation>La broche n&apos;est pas initalisée correctement :</translation>
-    </message>
-</context>
-<context>
     <name>Amperimeter</name>
     <message>
         <source>Amperimeter</source>
@@ -80,10 +63,6 @@
     <message>
         <source>ReactStep</source>
         <translation>ReactStep</translation>
-    </message>
-    <message>
-        <source>NoLinStep</source>
-        <translation>NoLinStep</translation>
     </message>
     <message>
         <source>NoLinAcc</source>
@@ -156,10 +135,6 @@
     <message>
         <source>Capacitance</source>
         <translation>Capacité</translation>
-    </message>
-    <message>
-        <source>Show_Cap</source>
-        <translation>Afficher la capacité</translation>
     </message>
     <message>
         <source>Freq</source>
@@ -326,10 +301,6 @@
         <translation>Rcoil</translation>
     </message>
     <message>
-        <source>Itrig</source>
-        <translation>Itrig</translation>
-    </message>
-    <message>
         <source>Poles</source>
         <translation>Pôles</translation>
     </message>
@@ -444,6 +415,142 @@
     <message>
         <source>Height</source>
         <translation>Hauteur</translation>
+    </message>
+    <message>
+        <source>Logic Symbol</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Animate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font Scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto Backup Secs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>BC diode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Address Bits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start Bit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Data Bits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Persistent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open Collector</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Trigger</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> 16 Bits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mhz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto Load</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Init gdb</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Port Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>BaudRate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>DataBits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>StopBits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>FlowControl</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mcu Uart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show volt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Font</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Buzzer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical Pins</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bipolar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Cap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IOn</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IOff</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Package File</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -615,12 +722,12 @@
 <context>
     <name>BcdToDec</name>
     <message>
-        <source>Bcd To Dec.</source>
-        <translation>BCD vers décimal.</translation>
-    </message>
-    <message>
         <source>Logic/Converters</source>
         <translation>Logique/Convertisseurs</translation>
+    </message>
+    <message>
+        <source>Decoder(4 to 10/16)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -729,6 +836,22 @@ vers DomDocument</translation>
     <message>
         <source>Create Subcircuit</source>
         <translation>Créer sous-circuit</translation>
+    </message>
+    <message>
+        <source>Select Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cannot set file:
+%1
+to DomDocument</source>
+        <translation type="unfinished">Impossible de modifier le fichier :
+%1
+vers DomDocument</translation>
+    </message>
+    <message>
+        <source>2 Package Pins connected together</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -870,6 +993,14 @@ Voulez-vous sauvegarder les changements ?
         <source>    Real Speed: </source>
         <translation>    Vitesse réelle : </translation>
     </message>
+    <message>
+        <source>Pause Simulation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Clock</name>
@@ -899,10 +1030,6 @@ Voulez-vous sauvegarder les changements ?
     <message>
         <source>     SUCCESS!!! Compilation Ok</source>
         <translation>     SUCCES!!! Compilation OK</translation>
-    </message>
-    <message>
-        <source>     ERROR!!! Compilation Faliled</source>
-        <translation>     ERREUR!!! Compilation KO</translation>
     </message>
     <message>
         <source>Uploading: </source>
@@ -941,12 +1068,24 @@ Erreur : microcontrôleur supprimé pendant le debug !!
         <translation>Erreur de chargement du firmware... </translation>
     </message>
     <message>
-        <source>Debbuger Started </source>
-        <translation>Debugger démarré </translation>
+        <source>     ERROR!!! Compilation Failed</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Debbuger Stopped </source>
-        <translation>Debugger arrêté </translation>
+        <source>Debugger Started </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debugger Stopped </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please save the Document first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No Compiler available for: %1 files</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -961,6 +1100,10 @@ Erreur : microcontrôleur supprimé pendant le debug !!
     <message>
         <source>Custom</source>
         <translation>Personnalisé</translation>
+    </message>
+    <message>
+        <source>Transparent</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1064,12 +1207,12 @@ vers DomDocument</translation>
 <context>
     <name>DecToBcd</name>
     <message>
-        <source>Dec. To Bcd</source>
-        <translation>Décimal vers BCD</translation>
-    </message>
-    <message>
         <source>Logic/Converters</source>
         <translation>Logique/Convertisseurs</translation>
+    </message>
+    <message>
+        <source>Encoder(10/16 to 4)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1092,6 +1235,29 @@ vers DomDocument</translation>
     <message>
         <source>Active</source>
         <translation>Actif</translation>
+    </message>
+</context>
+<context>
+    <name>EditDialog</name>
+    <message>
+        <source>Pin Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pin Id:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invert Pin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unused Pin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit Pin </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1119,10 +1285,6 @@ Do you want to save your changes?
 Le document a été modifié.
 Voulez-vous sauvegarder les changements?
 </translation>
-    </message>
-    <message>
-        <source>set Compiler Path</source>
-        <translation>Configurer le chemin du compilateur</translation>
     </message>
     <message>
         <source>&amp;New	Ctrl+N</source>
@@ -1281,8 +1443,16 @@ Voulez-vous sauvegarder les changements?
         <translation>Démarrer le debugger</translation>
     </message>
     <message>
-        <source>All files (*);;Arduino (*.ino);;Asm (*.asm);;GcBasic (*.gcb)</source>
-        <translation>Tous types (*);;Arduino (*.ino);;Asm (*.asm);;GcBasic (*.gcb)</translation>
+        <source>All files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set Compiler Path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1293,7 +1463,11 @@ Voulez-vous sauvegarder les changements?
     </message>
     <message>
         <source>Other</source>
-        <translation>Autre</translation>
+        <translation type="vanished">Autre</translation>
+    </message>
+    <message>
+        <source>Graphical</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1516,6 +1690,29 @@ Voulez-vous sauvegarder les changements?
     </message>
 </context>
 <context>
+    <name>Image</name>
+    <message>
+        <source>Image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation type="obsolete">Autre</translation>
+    </message>
+    <message>
+        <source>Load Image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All files (*.*)</source>
+        <translation type="unfinished">Tous types (*.*)</translation>
+    </message>
+    <message>
+        <source>Graphical</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Inductor</name>
     <message>
         <source>Inductor</source>
@@ -1644,7 +1841,11 @@ Voulez-vous sauvegarder les changements?
     </message>
     <message>
         <source>Other</source>
-        <translation>Autre</translation>
+        <translation type="vanished">Autre</translation>
+    </message>
+    <message>
+        <source>Graphical</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1742,16 +1943,8 @@ vers DomDocument</translation>
         <translation>Ouvrir le moniteur série.</translation>
     </message>
     <message>
-        <source>Close Serial Monitor</source>
-        <translation>Fermer le moniteur série</translation>
-    </message>
-    <message>
         <source>Open Serial Port.</source>
         <translation>Ouvrir le port série.</translation>
-    </message>
-    <message>
-        <source>Close Serial Port</source>
-        <translation>Fermer le port série</translation>
     </message>
     <message>
         <source>Load Firmware</source>
@@ -1774,8 +1967,8 @@ vers DomDocument</translation>
         <translation>Sauvegarder la mémoire EEPROM</translation>
     </message>
     <message>
-        <source>Hex Files (*.hex);;ELF Files (*.elf);;All files (*.*)</source>
-        <translation>Fichiers Hex (*.hex);;Fichiers ELF (*.elf);;Tous types (*.*)</translation>
+        <source>All files (*.*);;ELF Files (*.elf);;Hex Files (*.hex)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1783,10 +1976,6 @@ vers DomDocument</translation>
     <message>
         <source>Load Data</source>
         <translation>Charger données</translation>
-    </message>
-    <message>
-        <source>All files (*.*)</source>
-        <translation>Tous types (*.*)</translation>
     </message>
     <message>
         <source>Save Data</source>
@@ -1797,6 +1986,10 @@ vers DomDocument</translation>
 %2.</source>
         <translation>Impossible d&apos;écrire le fichier %1 :
 %2.</translation>
+    </message>
+    <message>
+        <source>.data (*.data);;.bin (*.bin);;All files (*.*)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2099,7 +2292,11 @@ dans le circuit.</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation>Autre</translation>
+        <translation type="vanished">Autre</translation>
+    </message>
+    <message>
+        <source>Graphical</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2147,98 +2344,11 @@ dans le circuit.</translation>
     </message>
 </context>
 <context>
-    <name>SerialPortWidget</name>
+    <name>SerialPort</name>
     <message>
-        <source>N/A</source>
-        <translation>N/A</translation>
-    </message>
-    <message>
-        <source>Description: %1</source>
-        <translation>Description: %1</translation>
-    </message>
-    <message>
-        <source>Manufacturer: %1</source>
-        <translation>Fabricant : %1</translation>
-    </message>
-    <message>
-        <source>Serial number: %1</source>
-        <translation>Numéro de série : %1</translation>
-    </message>
-    <message>
-        <source>Connected to %1 : %2, %3, %4, %5, %6</source>
-        <translation>Connecté à %1 : %2, %3, %4, %5, %6</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Erreur</translation>
-    </message>
-    <message>
-        <source>Custom</source>
-        <translation>Personnalisé</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Aucun</translation>
-    </message>
-    <message>
-        <source>Even</source>
-        <translation>Pair</translation>
-    </message>
-    <message>
-        <source>Odd</source>
-        <translation>Impair</translation>
-    </message>
-    <message>
-        <source>Mark</source>
-        <translation>Marque</translation>
-    </message>
-    <message>
-        <source>Space</source>
-        <translation>Espace</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Réglages</translation>
-    </message>
-    <message>
-        <source>Manufacturer:</source>
-        <translation>Fabricant :</translation>
-    </message>
-    <message>
-        <source>Serial number:</source>
-        <translation>Numéro de série :</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation>Description :</translation>
-    </message>
-    <message>
-        <source>Open</source>
-        <translation>Ouvrir</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation>Fermer</translation>
-    </message>
-    <message>
-        <source>Parity:</source>
-        <translation>Parité:</translation>
-    </message>
-    <message>
-        <source>Flow control:</source>
-        <translation>Contrôle de flux:</translation>
-    </message>
-    <message>
-        <source>Stop bits:</source>
-        <translation>Bits de stop:</translation>
-    </message>
-    <message>
-        <source>BaudRate:</source>
-        <translation>Baudrate :</translation>
-    </message>
-    <message>
-        <source>Data bits:</source>
-        <translation>Bits de données :</translation>
+        <source>Cannot Open Port %1:
+%2.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2283,6 +2393,17 @@ dans le circuit.</translation>
     <message>
         <source>Logic/Arithmetic</source>
         <translation>Logique/Arithmétique</translation>
+    </message>
+</context>
+<context>
+    <name>Ssd1306</name>
+    <message>
+        <source>Ssd1306</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Outputs</source>
+        <translation type="unfinished">Sorties</translation>
     </message>
 </context>
 <context>
@@ -2332,18 +2453,6 @@ vers DomDocument</translation>
         <translation>Package</translation>
     </message>
     <message>
-        <source>Pin Label</source>
-        <translation>Label</translation>
-    </message>
-    <message>
-        <source>Set Pin Name:</source>
-        <translation>Nom de la broche :</translation>
-    </message>
-    <message>
-        <source>name</source>
-        <translation>nom</translation>
-    </message>
-    <message>
         <source>
 Package has been modified.
 Do you want to save your changes?
@@ -2356,18 +2465,6 @@ Voulez-vous sauvegarder les changements ?
     <message>
         <source>Move Pin </source>
         <translation>Déplacer la broche </translation>
-    </message>
-    <message>
-        <source>Rename Pin </source>
-        <translation>Renommer la broche </translation>
-    </message>
-    <message>
-        <source>Invert Pin </source>
-        <translation>Inverser la broche </translation>
-    </message>
-    <message>
-        <source>Unused Pin </source>
-        <translation>Broche inutilisée </translation>
     </message>
     <message>
         <source>Delete Pin </source>
@@ -2398,6 +2495,10 @@ Voulez-vous sauvegarder les changements ?
     <message>
         <source>Other</source>
         <translation>Autre</translation>
+    </message>
+    <message>
+        <source>Edit Pin </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2448,6 +2549,14 @@ Voulez-vous sauvegarder les changements ?
         <source>Sent to Micro:</source>
         <translation>Envoyé vers le microcontrôleur :</translation>
     </message>
+    <message>
+        <source>CR</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TextComponent</name>
@@ -2457,7 +2566,11 @@ Voulez-vous sauvegarder les changements ?
     </message>
     <message>
         <source>Other</source>
-        <translation>Autre</translation>
+        <translation type="vanished">Autre</translation>
+    </message>
+    <message>
+        <source>Graphical</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2491,6 +2604,17 @@ Voulez-vous sauvegarder les changements ?
     <message>
         <source>Meters</source>
         <translation>Mesures</translation>
+    </message>
+</context>
+<context>
+    <name>WS2812</name>
+    <message>
+        <source>WS2812 Led</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Outputs</source>
+        <translation type="unfinished">Sorties</translation>
     </message>
 </context>
 <context>

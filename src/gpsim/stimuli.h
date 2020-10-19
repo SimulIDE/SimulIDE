@@ -352,6 +352,8 @@ class IOPIN : public stimulus
       virtual void show();
             
       void setPicPin( PICComponentPin* pin ){ m_picPin = pin; }
+      
+      PICComponentPin* m_picPin;
 
     protected:
       bool is_analog;                         // Pin is in analog mode
@@ -373,7 +375,6 @@ class IOPIN : public stimulus
       double Vdrive_low;
       
       IOPIN_TYPE m_type;
-      PICComponentPin* m_picPin;
 };
 
 class IO_bi_directional : public IOPIN

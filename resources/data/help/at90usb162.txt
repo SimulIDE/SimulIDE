@@ -1,0 +1,51 @@
+MCU: AT90USB162
+
+Package: 32-pin-QFN
+
+ 1: XTAL1
+ 2: XTAL2 PC0
+ 3: Gnd
+ 4: Vcc
+ 5: PC2 PCINT11
+ 6: PD0 OC0B INT0
+ 7: PD1 AIN0 INT1
+ 8: PD2 RXD1 AIN1 INT2
+ 9: PD3 TXD1 INT3
+10: PD4 INT5
+11: PD5 XCK  PCINT12
+12: PD6 !RTS INT6
+13: PD7 !CTS !HWB  T0 INT7
+14: PB0 !SS  PCINT0
+15: PB1 SCLK PCINT1
+16: PB2 PDI  MOSI  PCINT2
+17: PB3 PDO  MISO  PCINT3
+18: PB4 T1   PCINT4
+19: PB5 PCINT5
+20: PB6 PCINT6
+21: PB7 PCINT7 OC0A OC1C
+22: PC7 INT4   ICP1 CLKO
+23: PC6 OC1A PCINT8
+24: !Reset   PC1    dW
+25: PC5 PCINT9 OC1B
+26: PC4 PCINT10
+27: UCAP
+28: UGND
+29: D+ SCK
+30: D- SDATA
+31: UVCC
+32: AVCC
+
+
+Summary:
+The high-performance Microchip low Power 8-bit AVR RISC-based microcontroller
+16 KB ISP flash memory with read-while-write capabilities,
+512 Byte EEPROM,
+512 Byte SRAM,
+22 general purpose I/O lines,
+32 general purpose working registers,
+2  timer/counters (8-bit¡ 16-bit),
+5-channel PWM,
+1 comparators,
+internal and external interrupts,
+programmable watchdog timer with internal oscillator,
+The device operates between 2.7-5.5 volts.

@@ -78,7 +78,7 @@ void AVRComponentPin::attach( avr_t*  AvrProcessor )
             {
                 if( ty.startsWith("adc") )
                 {
-                    m_channel = ty.right(1).toInt();
+                    m_channel = ty.remove( "adc" ).toInt();
                     m_Write_adc_irq = avr_io_getirq( m_avrProcessor, AVR_IOCTL_ADC_GETIRQ, m_channel );
                     break;
                 }

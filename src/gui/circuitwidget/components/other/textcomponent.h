@@ -50,6 +50,8 @@ class MAINMODULE_EXPORT TextComponent : public Component
         qreal opac();
         void setOpac( qreal op );
 
+        bool eventFilter( QObject* object, QEvent* event );
+
         void paint( QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *widget );
 
     signals:

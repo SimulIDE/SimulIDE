@@ -508,7 +508,8 @@ uint CMxCON0_base::get()
 
 VRCON::VRCON(Processor *pCpu, const char *pName, const char *pDesc)
   : sfr_register(pCpu, pName, pDesc),
-    vr_PinModule(0), vr_pu(0), vr_pd(0),
+    vr_PinModule(0)
+    , vr_pu(0), vr_pd(0),
     pin_name(0)
 {
   valid_bits = VR0|VR1|VR2|VR3|VRR|VROE|VREN;
@@ -529,17 +530,20 @@ void VRCON::setIOpin(PinModule *newPinModule)
 
 double VRCON::get_Vref()
 {
-    uint new_value = value.get();
-    Vref_high =  ((Processor*)cpu)->get_Vdd();
+    //// Moved to VRCON::put
+    /*uint new_value = value.get();
+
+    Vref_high = cpu->get_Vdd();
     Vref_low = 0.0;
-    vr_Rhigh = (8 + (16 - (new_value & 0x0f))) * 2000.;
-    vr_Rlow  = (new_value & 0x0f) * 2000.;
+
+    vr_Rhigh =( 8 +( 16 -( new_value & 0x0f))) * 2000.;
+    vr_Rlow  =( new_value & 0x0f) * 2000.;
     
     if( !(new_value & VRR)) vr_Rlow += 16000.;  // High range ?
-        
-    vr_Vref = (Vref_high - Vref_low) * vr_Rlow / (vr_Rhigh + vr_Rlow) + Vref_low;
 
-    return(vr_Vref);
+    vr_Vref =( Vref_high - Vref_low) * vr_Rlow /( vr_Rhigh + vr_Rlow) + Vref_low;*/
+
+    return( vr_Vref );
 }
 
 void VRCON::put(uint new_value)
@@ -548,55 +552,55 @@ void VRCON::put(uint new_value)
     uint old_value = value.get();
     uint diff = new_value ^ old_value;
 
-    if (!diff) return;
+    if( !diff ) return;
 
-    // if no PinModule clear VROE bit
-    if (!vr_PinModule) new_value &= ~VROE;
-    value.put(new_value);
+    if( !vr_PinModule ) new_value &= ~VROE; // if no PinModule clear VROE bit
+    value.put( new_value );
 
-    if (new_value & VREN)         // Vreference enable set
+    if( new_value & VREN )         // Vreference enable set
     {
-        get_Vref();
-        if (new_value & VROE)   // output voltage to pin
-        {
-            if (! vr_pu) vr_pu = new stimulus("vref_pu", Vref_high, vr_Rhigh);
-            if (! vr_pd) vr_pd = new stimulus("vref_pd", Vref_low, vr_Rlow);
+        ////get_Vref();
+        Vref_high = cpu->get_Vdd();
+        Vref_low = 0.0;
 
-            if (vr_PinModule->getPin().snode)
-            {
-                vr_pu->set_Zth(vr_Rhigh);
-                vr_pd->set_Zth(vr_Rlow);
-                vr_PinModule->getPin().snode->attach_stimulus(vr_pu);
-                vr_PinModule->getPin().snode->attach_stimulus(vr_pd);
-                vr_PinModule->getPin().snode->update();
-            }
-        }
-        else if (vr_PinModule)    // not outputing voltage to pin
+        vr_Rhigh =( 8 +( 16 -( new_value & 0x0f))) * 2000.;
+        vr_Rlow  =( new_value & 0x0f) * 2000.;
+
+        if( !(new_value & VRR)) vr_Rlow += 16000.;  // High range ?
+
+        vr_Vref =( Vref_high - Vref_low) * vr_Rlow /( vr_Rhigh + vr_Rlow) + Vref_low;
+
+        if( vr_PinModule )
         {
-            if (diff & 0x2f) _cmcon->get();   // did value of vreference change ?
-               
-            if(vr_PinModule && vr_PinModule->getPin().snode)
+            if( new_value & VROE ) outputToPin( true ); // output voltage to pin
+            else                                        // not outputing voltage to pin
             {
-                vr_PinModule->getPin().snode->detach_stimulus(vr_pu);
-                vr_PinModule->getPin().snode->detach_stimulus(vr_pd);
-                vr_PinModule->getPin().snode->update();
+                if( diff & 0x2f ) _cmcon->get();   // did value of vreference change ?
+
+                outputToPin( false );
             }
         }
         else        // output pin not defined
         {
-            if (diff & 0x2f)    // did value of vreference change ?
-                _cmcon->get();
+            if( diff & 0x2f ) _cmcon->get();   // did value of vreference change ?
         }
     }
-    else  // vref disable
+    else if( vr_PinModule  ) outputToPin( false ); // vref disable
+}
+
+void VRCON::outputToPin( bool enabled )
+{
+    PICComponentPin* picPin = vr_PinModule->getPin().m_picPin;
+
+    double vddAdmit = 0;
+    double gndAdmit = 0;
+
+    if( enabled )
     {
-        if(vr_PinModule && vr_PinModule->getPin().snode)
-        {
-              vr_PinModule->getPin().snode->detach_stimulus(vr_pu);
-              vr_PinModule->getPin().snode->detach_stimulus(vr_pd);
-              vr_PinModule->getPin().snode->update();
-        }
+        vddAdmit = 1/vr_Rhigh;
+        gndAdmit = 1/vr_Rlow;
     }
+    picPin->setExtraSource( vddAdmit, gndAdmit );
 }
 
 

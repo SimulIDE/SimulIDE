@@ -58,6 +58,8 @@ void eI2C::resetState()
     m_state = I2C_IDLE;
     m_addressBits = 7;
 
+    //setEnabled( m_enabled ); // Restart Pin State
+
     /*if( m_input.size() == 0 ) return;
     if( !m_enabled ) return;
     m_input[0]->setVoltHigh( 0 );
@@ -83,50 +85,61 @@ void eI2C::simuClockStep()       // We are in Mater mode, controlling Clock
     {
         if( --m_nextCycle > 0 ) return;
     }
+    m_SDA = eLogicDevice::getInputState( 0 );       // State of SDA pin
 
     if( m_state == I2C_STARTED )                    // Send Start Condition
     {
-        m_SDA = eLogicDevice::getInputState( 0 );   // State of SDA pin
-
-        if( m_SDA )                                 // Step 1: SDA is High, Lower it
+        if( m_SDA )                            // Step 1: SDA is High, Lower it
         {
             m_input[0]->setOut( false );
             m_input[0]->setImp( m_outImp );
         }
         else if( !clkLow )                          // Step 2: SDA Already Low, Lower Clock
         {
+            //m_clockPin->setOut( false );
             m_clockPin->setImp( m_outImp );
-            if( m_comp ) m_comp->inStateChanged( 128 ); // Set TWINT ( set to 0 )
+            if( m_comp ) m_comp->inStateChanged( 128 ); // Set TWINT
         }
     }
     else if( m_state == I2C_WRITTING )               // We are Writting data
     {
         m_toggleClock = true;                        // Keep Clocking
         m_nextCycle += m_stepsPe;
-        if( clkLow ) writeBit();                     // Set SDA while clk is Low
+        if( clkLow ) writeBit();                      // Set SDA while clk is Low
+    }
+    else if( m_state == I2C_READING )                // We are Reading data
+    {
+        m_toggleClock = true;                        // Keep Clocking
+        m_nextCycle += m_stepsPe;
+        if( !clkLow )                                // Read bit while clk is high
+        {
+            readBit();
+            if( m_bitPtr == 8 )
+            {
+                readByte();
+                if( m_comp ) m_comp->inStateChanged( 128+I2C_READING );
+            }
+        }
     }
     else if( m_state == I2C_WAITACK )                // Read ACK
     {
-        m_SDA = eLogicDevice::getInputState( 0 );    // State of SDA pin
-
         int ack = 257;                               //  ACK
         if( m_SDA ) ack = 256;                       // NACK
         if( m_comp ) m_comp->inStateChanged( ack );
 
         m_state = I2C_ACK;
         m_toggleClock = true;                        // Lower Clock afther ack
+        m_nextCycle += m_stepsPe;
     }
     else if( m_state == I2C_STOPPED )                // Send Stop Condition
     {
-        m_SDA = eLogicDevice::getInputState( 0 );    // State of SDA pin
-
         if     ( m_SDA  && clkLow ) m_input[0]->setImp( m_outImp ); // Step 1: Lower SDA
         else if( !m_SDA && clkLow ) m_clockPin->setImp( high_imp ); // Step 2: Raise Clock
         else if( !m_SDA && !clkLow) m_input[0]->setImp( high_imp ); // Step 3: Raise SDA
         else if( m_SDA && !clkLow )                                 // Step 4: Operation Finished
         {
             m_state = I2C_IDLE;
-            if( m_comp ) m_comp->inStateChanged( 128 ); // Set TWINT ( set to 0 )
+            if( m_comp ) m_comp->inStateChanged( 128+I2C_STOPPED ); // Set TWINT ( set to 0 )
         }
         m_toggleClock = false;                        // Stop Clocking
         m_nextCycle = 0;
@@ -148,7 +161,6 @@ void eI2C::setVChanged()            // Some Pin Changed State, Manage it
             m_bitPtr = 0;
             m_rxReg = 0;
             m_state = I2C_STARTED;
-            //qDebug() << "eI2C::stepSlave I2C_STARTED";
         }
         else if( m_SDA && !m_lastSDA ) {   // We are in a Stop Condition
            slaveStop();
@@ -170,6 +182,7 @@ void eI2C::setVChanged()            // Some Pin Changed State, Manage it
                     } else {                        // Master is Writting
                         m_state = I2C_WRITTING;
                         m_bitPtr = 0;
+                        startWrite();
                     }
                     ACK();
                     //qDebug() << "eI2C::stepSlave Reading" << rw;
@@ -210,6 +223,12 @@ void eI2C::setVChanged()            // Some Pin Changed State, Manage it
 void eI2C::masterStart( uint8_t addr )
 {
     //qDebug() << "eI2C::masterStart"<<addr;
+
+    m_input[0]->setOut( false );
+    m_input[0]->setImp( high_imp );
+    m_clockPin->setOut( false );
+    m_clockPin->setImp( high_imp );
+
     m_state = I2C_STARTED;
 }
 
@@ -219,6 +238,18 @@ void eI2C::masterWrite( uint8_t data )
     m_state = I2C_WRITTING;
     m_txReg = data;
     writeByte();
+}
+
+void eI2C::masterRead()
+{
+    qDebug() << "eI2C::masterRead";
+
+    m_input[0]->setOut( false );
+    m_input[0]->setImp( high_imp );
+
+    m_bitPtr = 0;
+
+    m_state = I2C_READING;
 }
 
 void eI2C::masterStop()

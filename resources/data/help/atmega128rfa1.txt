@@ -1,0 +1,127 @@
+﻿MCU: ATmega128RFA1
+Package: 64 pin QFN
+
+ 1: PF2 ADC2 DIG2
+ 2: PF3 ADC3 DIG4
+ 3: PF4 ADC4 TCK
+ 4: PF5 ADC5 TMS
+ 5: PF6 ADC6 TDO
+ 6: PF7 ADC7 TDI
+ 7: AVCC_RFP
+ 8: RFP
+ 9: RFN
+10: ACVV_RFN
+11: TST
+12: RSTN
+13: RSTON
+14: PG0 DIG3
+15: PG1 DIG1
+16: PG2 AMR
+17: PG3 TOSC2
+18: PG4 TOSC1
+19: PG5 OC0B
+20: Gnd
+21: Vcc
+22: Vcc
+23: Vcc
+24: Gnd
+25: PD0 INT0 SCL
+26: PD1 INT1 SDA
+27: PD2 INT2 RXD1
+28: PD3 INT3 TXD1
+29: PD4 ICP1
+30: PD5 XCK1
+31: PD6 T1
+32: PD7 T0
+33: CLKI
+34: Vcc
+35: Gnd
+36: PB0 SSN PCINT0
+37: PB1 SCK PCINT1
+38: PB2 MOSI PDI PCINT2
+39: PB3 MISO PDO PCINT3
+40: PB4 OC2A PCINT4
+41: PB5 OC1A PCINT5
+42: PB6 OC1B PCINT6
+43: PB7 OC0A OC1C PCINT7
+44: Vcc
+45: Gnd
+46: PE0 RXD0 PCINT8
+47: PE1 TXD0
+48: PE2 XCK0 AIN0
+49: PE3 OC3A AIN1
+50: PE4 OC3B INT4
+51: PE5 OC3C INT5
+52: PE6 T3 INT6
+53: PE7 ICP3 INT7 CLKO
+54: Vcc
+5: Gnd
+56: XTAL2
+57: XTAL1
+58: AGND
+59: AVCC
+60: AGND
+61: AGND
+62: AREF
+63: PF0 ADC0
+ 64: PF1 ADC1
+
+
+Summary:
+ 
+8-bit Microcontroller with Low Power 2.4GHz 
+Transceiver for ZigBee and IEEE 802.15.4 
+ 
+Features 
+•  High Performance, Low Power AVR 8-Bit Microcontroller 
+•  Advanced RISC Architecture 
+-  135 Powerful Instructions – Most Single Clock Cycle Execution 
+-  32x8 General Purpose Working Registers 
+-  Fully Static Operation 
+-  Up to 16 MIPS Throughput at 16 MHz and 1.8V 
+-  On-Chip 2-cycle Multiplier 
+•  Non-volatile Program and Data Memories 
+-  128K Bytes of In-System Self-Programmable Flash 
+•  Endurance: 10’000 Write/Erase Cycles @ 125°C (25’000 Cycles @ 85°C) 
+-  4K Bytes EEPROM 
+•  Endurance: 20’000 Write/Erase Cycles @ 125°C (100’000 Cycles @ 25°C) 
+-  16K Bytes Internal SRAM 
+•  JTAG (IEEE std. 1149.1 compliant) Interface 
+-  Boundary-scan Capabilities According to the JTAG Standard 
+-  Extensive On-chip Debug Support 
+-  Programming of Flash EEPROM, Fuses and Lock Bits through the JTAG interface 
+•  Peripheral Features 
+-  Multiple Timer/Counter & PWM channels 
+-  Real Time Counter with Separate Oscillator 
+-  10-bit, 330 ks/s A/D Converter; Analog Comparator; On-chip Temperature Sensor 
+-  Master/Slave SPI Serial Interface 
+-  Two Programmable Serial USART 
+-  Byte Oriented 2-wire Serial Interface 
+•  Advanced Interrupt Handler 
+•  Watchdog Timer with Separate On-Chip Oscillator 
+•  Power-on Reset and Low Current Brown-Out Detector 
+•  Advanced Power Save Modes 
+•  Fully integrated Low Power Transceiver for 2.4 GHz ISM Band 
+-  Supported Data Rates: 250 kb/s and 500 kb/s, 1 Mb/s, 2 Mb/s 
+-  -100 dBm RX Sensitivity; TX Output Power up to 3.5 dBm  
+-  Hardware Assisted MAC (Auto-Acknowledge, Auto-Retry) 
+-  32 Bit IEEE 802.15.4 Symbol Counter 
+-  Baseband Signal Processing 
+-  SFD-Detection, Spreading; De-Spreading; Framing ; CRC-16 Computation 
+-  Antenna Diversity and TX/RX control 
+-  TX/RX 128 Byte Frame Buffer 
+•  Hardware Security (AES, True Random Generator) 
+•  Integrated Crystal Oscillators (32.768 kHz & 16 MHz, external crystal needed) 
+•  I/O and Package 
+-  38 Programmable I/O Lines 
+-  64-pad QFN (RoHS/Fully Green) 
+•  Temperature Range: -40°C to  125°C Industrial 
+•  Supply voltage range 1.8V to 3.6V with integrated voltage regulators 
+•  Ultra Low Power consumption (1.8 to 3.6V) for Rx/Tx & AVR: <18.6 mA 
+-  CPU Active Mode (16MHz): 4.1 mA 
+-  2.4GHz Transceiver: RX_ON 12.5 mA / TX 14.5 mA (maximum TX output power) 
+-  Deep Sleep Mode: <250nA @ 25°C 
+•  Speed Grade: 0 – 16 MHz @ 1.8 – 3.6V 
+
+
+

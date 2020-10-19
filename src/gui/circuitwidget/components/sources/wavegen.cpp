@@ -150,13 +150,6 @@ void WaveGen::updateValues()
     setQuality( m_quality );
 }
 
-void WaveGen::setFreq( double freq )
-{
-    if( freq > 1e5 ) freq = 1e5;
-    
-    ClockBase::setFreq( freq );
-}
-
 double WaveGen::duty()
 {
     return m_duty;

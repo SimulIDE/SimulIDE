@@ -34,8 +34,9 @@ void MemData::loadData( QVector<int>* toData, bool resize, int bits )
 {
     QString dir = Circuit::self()->getFileName();
     dir.replace( ".simu", ".data" );
-    QString fileName = QFileDialog::getOpenFileName( 0l, QCoreApplication::translate("MemData", "Load Data"), dir,
-                       QCoreApplication::translate( "MemData", ".data (*.data);;.bin (*.data);;All files (*.*)"));
+    QString fileName = QFileDialog::getOpenFileName( 0l,
+                       QCoreApplication::translate( "MemData", "Load Data"), dir,
+                       QCoreApplication::translate( "MemData", ".data (*.data);;.bin (*.bin);;All files (*.*)"));
 
     if( fileName.isEmpty() ) return; // User cancels loading
 
@@ -122,9 +123,9 @@ void MemData::saveData( QVector<int> data, int bits )
     QString dir = Circuit::self()->getFileName();
     dir.replace( ".simu", ".data" );
 
-    QString fileName = QFileDialog::getSaveFileName( 0l
-                                , QCoreApplication::translate( "MemData", "Save Data" ), dir
-                                , QCoreApplication::translate( "MemData", ".data (*.data);;.bin (*.data);;All files (*.*)") );
+    QString fileName = QFileDialog::getSaveFileName( 0l,
+                       QCoreApplication::translate( "MemData", "Save Data" ), dir,
+                       QCoreApplication::translate( "MemData", ".data (*.data);;.bin (*.bin);;All files (*.*)") );
 
     if( fileName.isEmpty() ) return; // User cancels saving
 

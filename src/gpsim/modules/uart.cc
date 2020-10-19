@@ -265,6 +265,7 @@ _SPBRGH::_SPBRGH(Processor *pCpu, const char *pName, const char *pDesc)
 void _TXREG::put( uint new_value )
 {
     value.put(new_value & 0xff);
+    if( ((Processor*)cpu)->isHalted() ) return; // Resetting: new_value=0 coming from reset registers.
 
     assert(m_txsta);
     assert(m_rcsta);

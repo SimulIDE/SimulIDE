@@ -16,105 +16,132 @@
  *   along with this program; if not, see <http://www.gnu.org/licenses/>.  *
  *                                                                         *
  ***************************************************************************/
- 
+
 //#include <iostream>
 
 #include "e-pin.h"
-#include "e-node.h"
+
 #include "circuit.h"
+#include "e-node.h"
 
 //#include <QDebug>
 
-ePin::ePin( std::string id, int index )
+ePin::ePin(std::string id, int index)
 {
-    m_id    = id;
-    m_index = index;
-    m_enode    = 0l;
-    m_enodeCon = 0l;
+    m_id        = id;
+    m_index     = index;
+    m_enode     = 0l;
+    m_enodeCon  = 0l;
     m_connected = false;
     m_inverted  = false;
 }
 ePin::~ePin()
 {
-    //qDebug() << "deleting" << QString::fromStdString( m_id );
-    if( m_enode ) m_enode->remEpin( this );
+    // qDebug() << "deleting" << QString::fromStdString( m_id );
+    if (m_enode)
+        m_enode->remEpin(this);
 }
 
 void ePin::reset()
 {
-    setEnode( 0l );
+    setEnode(0l);
 }
 
-eNode* ePin::getEnode()
+eNode *ePin::getEnode()
 {
-    //qDebug() << "ePin::getEnode" << m_connected<<m_enode;
-    return m_enode; 
+    // qDebug() << "ePin::getEnode" << m_connected<<m_enode;
+    return m_enode;
 }
 
-void ePin::setEnode( eNode* enode )
+void ePin::setEnode(eNode *enode)
 {
-    if( enode == m_enode ) return;
+    if (enode == m_enode)
+        return;
 
-    //qDebug() << "ePin::setEnode" << QString::fromStdString(m_id) << enode <<m_enode;
+    // qDebug() << "ePin::setEnode" << QString::fromStdString(m_id) << enode
+    // <<m_enode;
 
-    if( m_enode ) m_enode->remEpin( this );
-    if( enode )   enode->addEpin( this );
+    if (m_enode)
+        m_enode->remEpin(this);
+    if (enode)
+        enode->addEpin(this);
 
-    m_enode = enode;
-    m_connected = (enode!=0l);
+    m_enode     = enode;
+    m_connected = (enode != 0l);
 }
 
-//eNode* ePin::getEnodeComp() { return m_enodeCon; }
+// eNode* ePin::getEnodeComp() { return m_enodeCon; }
 
-void ePin::setEnodeComp( eNode* enode )
+void ePin::setEnodeComp(eNode *enode)
 {
-    //std::cout << "\nePin::setEnodeComp "<< m_id << m_connected ;
-    m_enodeCon = enode;
+    // std::cout << "\nePin::setEnodeComp "<< m_id << m_connected ;
+    m_enodeCon      = enode;
     int enodeConNum = 0;
-    if( enode ) enodeConNum = enode->getNodeNumber();
-    if( m_connected ) m_enode->pinChanged( this, enodeConNum );
+    if (enode)
+        enodeConNum = enode->getNodeNumber();
+    if (m_connected)
+        m_enode->pinChanged(this, enodeConNum);
 }
 
-void ePin::stampCurrent( double data )
+void ePin::stampCurrent(double data)
 {
-    //qDebug() << "ePin::stampCurrent connected" << m_connected << data;
-    if( m_connected ) m_enode->stampCurrent( this, data );
+    // qDebug() << "ePin::stampCurrent connected" << m_connected << data;
+    if (m_connected)
+        m_enode->stampCurrent(this, data);
 }
 
-void ePin::stampAdmitance( double data )
+void ePin::stampAdmitance(double data)
 {
-    if( m_connected )
-    {
-        if( !m_enodeCon ) data = 1e-12;
-        m_enode->stampAdmitance( this, data );
+    if (m_connected) {
+        if (!m_enodeCon)
+            data = 1e-12;
+        m_enode->stampAdmitance(this, data);
     }
 }
 
 double ePin::getVolt()
 {
-    //std::cout << "\nePin::getVolt "<< m_id << m_connected ;
-    if( m_connected )return m_enode->getVolt();
-    if( m_enodeCon ) return m_enodeCon->getVolt();
+    // std::cout << "\nePin::getVolt "<< m_id << m_connected ;
+    if (m_connected)
+        return m_enode->getVolt();
+    if (m_enodeCon)
+        return m_enodeCon->getVolt();
     return 0;
 }
 
-void ePin::setConnected( bool connected )  { m_connected = connected; }
-
-bool ePin::isConnected() { return m_connected; }
-
-eNode* ePin::getEnodeComp(){ return m_enodeCon; }
-
-bool ePin::inverted() { return m_inverted; }
-
-void ePin::setInverted( bool inverted ){ m_inverted = inverted; }
-
-std::string ePin::getId() { return m_id; }
-
-void ePin::setId( std::string id )
+void ePin::setConnected(bool connected)
 {
-    //Circuit::self()->removePin( m_id );
-    Circuit::self()->updatePin( this, id );
-    m_id = id;
+    m_connected = connected;
 }
 
+bool ePin::isConnected()
+{
+    return m_connected;
+}
 
+eNode *ePin::getEnodeComp()
+{
+    return m_enodeCon;
+}
+
+bool ePin::inverted()
+{
+    return m_inverted;
+}
+
+void ePin::setInverted(bool inverted)
+{
+    m_inverted = inverted;
+}
+
+std::string ePin::getId()
+{
+    return m_id;
+}
+
+void ePin::setId(std::string id)
+{
+    // Circuit::self()->removePin( m_id );
+    Circuit::self()->updatePin(this, id);
+    m_id = id;
+}

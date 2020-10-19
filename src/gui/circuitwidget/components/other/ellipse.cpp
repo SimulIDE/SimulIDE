@@ -27,7 +27,7 @@ LibraryItem* Ellipse::libraryItem()
 {
     return new LibraryItem(
             tr( "Ellipse" ),
-            tr( "Other" ),
+            tr( "Graphical" ),
             "ellipse.png",
             "Ellipse",
             Ellipse::construct);

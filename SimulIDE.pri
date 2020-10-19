@@ -714,3 +714,6 @@ SOURCES += \
     ./src/simulator/elements/processors/read_elf.c \
     ./src/simulator/matrixsolver.cpp \
     ./src/simulator/simulator.cpp
+
+DISTFILES += \
+    $$PWD/resources/translations/simulide_pt_BR.ts

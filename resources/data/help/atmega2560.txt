@@ -1,0 +1,170 @@
+﻿MCU: ATmega2560
+Package: 100 pin TQFP
+
+ 1: PG5 OC0B
+ 2: PE0 RXD0 PCINT8
+ 3: PE1 TXD0
+ 4: PE2 XCK0 AIN0
+ 5: PE3 OC3A
+ 6: PE4 OC3B INT4
+ 7: PE5 OC3C INT5
+ 8: PE6 T3 INT6
+ 9: PE7 CLKO ICP3 INT7
+10: Vcc
+11: Gnd
+12: PH0 RXD2
+13: PH1 TXD2
+14: PH2 XCk2
+15: PH3 OC4A
+16: PH4 OC4B
+17: PH5 OC4C
+18: PH6 OC2B
+19: PB0 /SS PCINT0
+20: PB1 SCK PCINT1
+21: PB2 MOSI PCINT2
+22: PB3 MISO PCINT3
+23: PB4 OC2A PCINT4
+24: PB5 OC1A PCINT5
+25: PB6 OC1B PCINT6
+26: PB7 OC0A OC1C PCINT7
+27: PH7 T4
+28: PG3 TOSC2
+29: PG4 TOSC1
+30: Reset
+31: Vcc
+32: Gnd
+33: XTAL2
+34: XTAL1
+35: PL0 ICP4
+36: PL1 ICP5
+37: PL2 T5
+38: PL3 OC5A
+39: PL4 OC5B
+40: PL5 OC5C
+41: PL6
+42: PL7
+43: PD0 SCL INT0
+44: PD1 SDA INT1
+45: PD2 RXD1 INT2
+46: PD3 TXD1 INT3
+47: PD4 ICP1
+48: PD5 XCK1
+49: PD6 T1
+50: PD7 T0
+51: PG0 WR
+52: PG1 RD
+53: PC0 A8
+54: PC1 A9
+55: PC2 A10
+56: PC3 A11
+57: PC4 A12
+58: PC5 A13
+59: PC6 A14
+60: PC7 A15
+61: Vcc
+62: Gnd
+63: PJ0 RXD3 PCINT9
+64: PJ1 TXD3 PCINT10
+65: PJ2 XCK3 PCINT11
+66: PJ3 PCINT12
+67: PJ4 PCINT13
+68: PJ5 PCINT14
+69: PJ6 PCINT15
+70: PG2 ALE
+71: PA7 AD7
+72: PA6 AD6
+73: PA5 AD5
+74: PA4 AD4
+75: PA3 AD3
+76: PA2 AD2
+77: PA1 AD1
+78: PA0 AD0
+79: PJ7
+80: Vcc
+81: Gnd
+82: PK7 ADC15 PCINT23
+83: PK6 ADC14 PCINT22
+84: PK5 ADC13 PCINT21
+85: PK4 ADC12 PCINT20
+86: PK3 ADC11 PCINT19
+87: PK2 ADC10 PCINT18
+88: PK1 ADC9 PCINT17
+89: PK0 ADC8 PCINT16
+90: PF7 ADC7 TDI
+91: PF6 ADC6 TDO
+92: PF5 ADC5 TMS
+93: PF4 ADC4 TCK
+94: PF3 ADC3
+95: PF2 ADC2
+96: PF1 ADC1
+97: PF0 ADC0
+98: AREF
+99: Gnd
+100: AVCC
+
+Summary:
+ 
+• High Performance, Low Power Atmel AVR 8-Bit Microcontroller
+• Advanced RISC Architecture
+– 135 Powerful Instructions – Most Single Clock Cycle Execution
+– 32 * 8 General Purpose Working Registers
+– Fully Static Operation
+– Up to 16 MIPS Throughput at 16MHz
+– On-Chip 2-cycle Multiplier
+• High Endurance Non-volatile Memory Segments
+– 256 KBytes of In-System Self-Programmable Flash 
+– 4 Kbytes EEPROM
+– 8 Kbytes Internal SRAM
+– Write/Erase Cycles:10,000 Flash/100,000 EEPROM
+– Data retention: 20 years at 85 C/ 100 years at 25 C
+– Optional Boot Code Section with Independent Lock Bits
+• In-System Programming by On-chip Boot Program
+• True Read-While-Write Operation
+– Programming Lock for Software Security
+• Endurance: Up to 64Kbytes Optional External Memory Space
+• Atmel QTouch library support
+– Capacitive touch buttons, sliders and wheels
+– QTouch and QMatrix acquisition
+– Up to 64 sense channels
+• JTAG (IEEE std. 1149.1 compliant) Interface
+– Boundary-scan Capabilities According to the JTAG Standard
+– Extensive On-chip Debug Support
+– Programming of Flash, EEPROM, Fuses, and Lock Bits through the JTAG Interface
+• Peripheral Features
+– Two 8-bit Timer/Counters with Separate Prescaler and Compare Mode
+– Four 16-bit Timer/Counter with Separate Prescaler, Compare- and Capture Mode
+– Real Time Counter with Separate Oscillator
+– Four 8-bit PWM Channels
+– 16 PWM Channels with Programmable Resolution from 2 to 16 Bits
+– Output Compare Modulator
+– 16-channel, 10-bit ADC
+– Four Programmable Serial USART
+– Master/Slave SPI Serial Interface
+– Byte Oriented 2-wire Serial Interface
+– Programmable Watchdog Timer with Separate On-chip Oscillator
+– On-chip Analog Comparator
+– Interrupt and Wake-up on Pin Change
+• Special Microcontroller Features
+– Power-on Reset and Programmable Brown-out Detection
+– Internal Calibrated Oscillator
+– External and Internal Interrupt Sources
+– Six Sleep Modes: Idle, ADC Noise Reduction, Power-save, Power-down, Standby,
+and Extended Standby
+• I/O and Packages
+– 86 Programmable I/O Lines 
+– 100-lead TQFP
+– RoHS/Fully Green
+• Temperature Range:
+– -40C to 85C Industrial
+• Ultra-Low Power Consumption
+– Active Mode: 1MHz, 1.8V: 500µA
+– Power-down Mode: 0.1µA at 1.8V
+• Speed Grade:
+– ATmega640V/ATmega1280V/ATmega1281V:
+• 0 - 4MHz @ 1.8V - 5.5V, 0 - 8MHz @ 2.7V - 5.5V
+– ATmega2560V/ATmega2561V:
+• 0 - 2MHz @ 1.8V - 5.5V, 0 - 8MHz @ 2.7V - 5.5V
+– ATmega640/ATmega1280/ATmega1281:
+• 0 - 8MHz @ 2.7V - 5.5V, 0 - 16MHz @ 4.5V - 5.5V
+– ATmega2560/ATmega2561:
+• 0 - 16MHz @ 4.5V - 5.5V

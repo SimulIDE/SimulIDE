@@ -27,7 +27,7 @@ LibraryItem* Rectangle::libraryItem()
 {
     return new LibraryItem(
             tr( "Rectangle" ),
-            tr( "Other" ),
+            tr( "Graphical" ),
             "rectangle.png",
             "Rectangle",
             Rectangle::construct);

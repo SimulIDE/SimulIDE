@@ -1,0 +1,126 @@
+﻿MCU: ATmega169
+Package: 64 pin QFN
+
+ 1: LCDCAP
+ 2: PE0 RXD0 PCINT0
+ 3: PE1 TXD0 PCINT1
+ 4: PE2 XCK AIN0 PCINT2
+ 5: PE3 AIN1 PCINT3
+ 6: PE4 USCK SCL PCINT4
+ 7: PE5 DI SDA PCINT5
+ 8: PE6 DO PCINT6
+ 9: PE7 CLKO PCINT7
+10: PB0 /SS PCINT8
+11: PB1 SCK PCINT9
+12: PB2 MOSI PCINT10
+13: PB3 MISO PCINT11
+14: PB4 OC0A PCINT12
+15: PB5 OC1A PCINT13
+16: PB6 OC1B PCINT14
+17: PB7 OC2A PCINT15
+18: PG3 T1 SEG24
+19: PG4 T0 SEG23
+20: Reset
+21: Vcc
+22: Gnd
+23: XTAL2 TOSC2
+24: XTAL1 TOSC1
+25: PD0 ICP1 SEG22
+26: PD1 INT0 SEG21
+27: PD2 SEG20
+28: PD3 SEG19
+29: PD4 SEG18
+30: PD5 SEG17
+31: PD6 SEG16
+32: PD7 SEG15
+33: PG0 SEG14
+34: PG1 SEG13
+35: PC0 SEG12
+36: PC1 SEG11
+37: PC2 SEG10
+38: PC3 SEG9
+39: PC4 SEG8
+40: PC5 SEG7
+41: PC6 SEG6
+42: PC7 SEG5
+43: PG2 SEG4
+44: PA7 SEG3
+45: PA6 SEG2
+46: PA5 SEG1
+47: PA4 SEG0
+48: PA3 COM3
+49: PA2 COM2
+50: PA1 COM1
+51: PA0 COM0
+52: Vcc
+53: Gnd
+54: PF7 TDI ADC7
+55: PF6 TDO ADC6
+56: PF5 TMS ADC5
+57: PF4 TCK ADC4
+58: PF3 ADC3
+59: PF2 ADC2
+60: PF1 ADC1
+61: PF0 ADC0
+62: AREF
+63: Gnd
+64: AVCC
+
+Summary:
+
+• High Performance, Low Power AVR 8-Bit Microcontroller
+• Advanced RISC Architecture
+– 130 Powerful Instructions – Most Single Clock Cycle Execution
+– 32 x 8 General Purpose Working Registers
+– Fully Static Operation
+– Up to 16 MIPS Throughput at 16 MHz
+– On-Chip 2-cycle Multiplier
+• Non-volatile Program and Data Memories
+– 16K bytes of In-System Self-Programmable Flash 
+Endurance: 10,000 Write/Erase Cycles
+– Optional Boot Code Section with Independent Lock Bits
+In-System Programming by On-chip Boot Program
+True Read-While-Write Operation
+– 512 bytes EEPROM
+Endurance: 100,000 Write/Erase Cycles
+– 1K byte Internal SRAM
+– Programming Lock for Software Security
+• JTAG (IEEE std. 1149.1 compliant) Interface
+– Boundary-scan Capabilities According to the JTAG Standard
+– Extensive On-chip Debug Support
+– Programming of Flash, EEPROM, Fuses, and Lock Bits through the JTAG Interface
+• Peripheral Features
+– 4 x 25 Segment LCD Driver
+– Two 8-bit Timer/Counters with Separate Prescaler and Compare Mode
+– One 16-bit Timer/Counter with Separate Prescaler, Compare Mode, and Capture 
+Mode
+– Real Time Counter with Separate Oscillator
+– Four PWM Channels
+– 8-channel, 10-bit ADC
+– Programmable Serial USART
+– Master/Slave SPI Serial Interface
+– Universal Serial Interface with Start Condition Detector
+– Programmable Watchdog Timer with Separate On-chip Oscillator
+– On-chip Analog Comparator
+– Interrupt and Wake-up on Pin Change
+• Special Microcontroller Features
+– Power-on Reset and Programmable Brown-out Detection
+– Internal Calibrated Oscillator
+– External and Internal Interrupt Sources
+– Five Sleep Modes: Idle, ADC Noise Reduction, Power-save, Power-down, and 
+Standby
+• I/O and Packages
+– 53 Programmable I/O Lines
+– 64-lead TQFP and 64-pad QFN/MLF
+• Speed Grade:
+– ATmega169V: 0 - 4 MHz @ 1.8 - 5.5V, 0 - 8 MHz @ 2.7 - 5.5V
+– ATmega169: 0 - 8 MHz @ 2.7 - 5.5V, 0 - 16 MHz @ 4.5 - 5.5V
+• Temperature range:
+– -40°C to 85°C Industrial
+• Ultra-Low Power Consumption
+– Active Mode: 
+1 MHz, 1.8V: 350µA
+32 kHz, 1.8V: 20µA (including Oscillator)
+32 kHz, 1.8V: 40µA (including Oscillator and LCD)
+– Power-down Mode: 0.1µA at 1.8V
+

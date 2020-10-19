@@ -1,0 +1,32 @@
+MCU: attiny24
+Package: 14-pin PDIP
+ 1: Vcc
+ 2: PB0 PCINT8 XTAL1 CLKI
+ 3: PB1 PCINT9 XTAL2
+ 4: PB3 dW     !Reset PCINT11
+ 5: PB2 PCINT10 INT0 OC0A CKOUT
+ 6: PA7 PCINT7 ICP1 OC0B ADC7
+ 7: PA6 PCINT6 OC1A SDA MOSI DI ADC6
+ 8: PA5 ADC5 DO MISO OC1B PCINT5
+ 9: PA4 ADC4 USCK SCL T1 PCINT4
+10: PA3 ADC3 T0 PCINT3
+11: PA2 ADC2 AIN1 PCINT2
+12: PA1 ADC1 AIN0 PCINT1
+13: PA0 ADC0 AREF PCINT0
+14: Gnd
+
+Summary:
+The high-performance Microchip picoPower 8-bit AVR RISC-based microcontroller
+2 KB ISP flash memory with read-while-write capabilities,
+128 Byte EEPROM,
+128 Byte SRAM,
+12 general purpose I/O lines,
+32 general purpose working registers,
+2  timer/counters (8-bit¡ 16-bit),
+4-channel PWM,
+1 comparators,
+internal and external interrupts,
+In-System Programmable via SPI Port,
+8+12-channel 10-bit A/D converter,
+programmable watchdog timer with internal oscillator,
+The device operates between 1.8-5.5 volts.

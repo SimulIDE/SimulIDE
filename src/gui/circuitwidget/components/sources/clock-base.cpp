@@ -78,6 +78,11 @@ void ClockBase::setFreq( double freq )
     emit freqChanged();
 }
 
+void ClockBase::rateChanged()
+{
+    setFreq( m_freq );
+}
+
 bool ClockBase::running() { return m_isRunning; }
 
 void ClockBase::setRunning( bool running )

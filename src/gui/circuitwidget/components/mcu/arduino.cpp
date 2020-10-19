@@ -99,20 +99,13 @@ void Arduino::remove()
     ledPin1->setEnode( 0l );
     delete ledPin1;
 
-    delete m_groundpin;
-    delete m_ground;
+    delete m_groundEnode;
+    delete m_boardLedBuffer;
 
     McuComponent::remove();
-
-    Simulator::self()->remFromEnodeList( m_groundEnode, true );
+    if( m_boardLedEnode ) Simulator::self()->remFromEnodeList( m_boardLedEnode, true );
+    Simulator::self()->remFromEnodeList( m_bufferEnode, true );
     Simulator::self()->remFromUpdateList( m_boardLed );
-    Circuit::self()->compList()->removeOne( m_boardLed );
-
-    /*if( m_shield )
-    {
-        Circuit::self()->compList()->removeOne( m_shield );
-        delete m_shield;
-    }*/
 }
 
 void Arduino::attach()
@@ -127,21 +120,25 @@ void Arduino::attach()
     }
     else if( enod != m_boardLedEnode ) // Connected to external eNode: Delete boardLed eNode
     {
-        //Simulator::self()->remFromEnodeList( m_boardLedEnode, true );
         m_boardLedEnode = enod;
     }
     else return;                       // Already connected to boardLed eNode: Do nothing
-    //qDebug() << "Arduino::initialize() Pin 13"<<enod->itemId() ;
-    m_boardLed->getEpin(0)->setEnode(enod);
+
+    m_boardLedBuffer->getEpin( "input0" )->setEnode(enod);
 }
 
 void Arduino::initBoard()
 {
-    // Create Led ground
-    m_groundEnode = new eNode(    m_id+"-Gnod");
-    m_groundpin   = new ePin(    (m_id+"-Gnod-ePin_ground").toStdString(), 0);
-    m_ground      = new eSource( (m_id+"-Gnod-eSource_ground").toStdString(), m_groundpin );
-    m_groundpin->setEnode( m_groundEnode );
+    // Create Led eNodes
+    m_groundEnode = new eNode( m_id+"-Gnod");
+    m_groundEnode->setNodeNumber(0);
+    Simulator::self()->remFromEnodeList( m_groundEnode, false );
+    m_bufferEnode = new eNode( m_id+"-Lnod");
+
+    // Create Led Buffer
+    m_boardLedBuffer = new eGate( (m_id+"boardLedBuffer").toStdString(), 0 );
+    m_boardLedBuffer->createPins( 1, 1 );
+    m_boardLedBuffer->getEpin( "output0" )->setEnode( m_bufferEnode );
 
     // Create board led
     m_boardLed = new LedSmd( this, "LEDSMD", m_id+"boardled", QRectF(0, 0, 4, 3) );
@@ -150,15 +147,13 @@ void Arduino::initBoard()
     m_boardLed->setEnabled(false);
     m_boardLed->setMaxCurrent( 0.003 );
     m_boardLed->setRes( 1000 );
-    
+    Circuit::self()->compList()->removeOne( m_boardLed );
+
+    m_boardLed->getEpin(0)->setEnode( m_bufferEnode );
+    m_boardLed->getEpin(1)->setEnode( m_groundEnode ); // Connect board led to ground
+
     if( objectName().contains("Mega") ) m_boardLed->setPos( 35+12, 125+105 );
     else                                m_boardLed->setPos( 35, 125 );
-    
-    m_boardLedEnode = 0l;
-    
-    ePin* boardLedEpin1 = m_boardLed->getEpin(1);
-
-    boardLedEpin1->setEnode( m_groundEnode ); // Connect board led to ground
 
     for( int i=0; i<m_numpins; i++ )                      // Create Pins
     {

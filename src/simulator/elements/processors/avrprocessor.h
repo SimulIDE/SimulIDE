@@ -44,10 +44,11 @@ class AvrProcessor : public BaseProcessor
         void terminate();
 
         void reset();
-        void step();
         void stepOne();
-        void stepCpu();
+        void stepCpu() { m_avrProcessor->run( m_avrProcessor ); }
         int pc();
+
+        virtual uint64_t cycle(){ return m_avrProcessor->cycle; }
 
         int getRamValue( int address );
 

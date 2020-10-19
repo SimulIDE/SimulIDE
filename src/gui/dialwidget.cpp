@@ -17,13 +17,11 @@
  *                                                                         *
  ***************************************************************************/
 
-#include <QVariant>
-
 #include "dialwidget.h"
 
-DialWidget::DialWidget()
-{
-}
+#include <QVariant>
+
+DialWidget::DialWidget() {}
 DialWidget::~DialWidget() {}
 
 void DialWidget::setupWidget()

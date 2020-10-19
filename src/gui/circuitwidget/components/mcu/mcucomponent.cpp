@@ -237,7 +237,7 @@ void McuComponent::setFreq( double freq )
 void McuComponent::reset()
 {
     for ( int i = 0; i < m_pinList.size(); i++ ) // Reset pins states
-        m_pinList[i]->resetOutput();
+        m_pinList[i]->resetState();
     
     m_processor->reset();
 }
@@ -247,7 +247,6 @@ void McuComponent::terminate()
     qDebug() <<"        Terminating"<<m_id<<"...";
 
     m_processor->terminate();
-    for( int i=0; i<m_numpins; i++ ) m_pinList[i]->terminate();
 
     m_pSelf = 0l;
 

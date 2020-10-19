@@ -23,6 +23,7 @@
 
 #include "baseprocessor.h"
 
+#include "pic-processor.h"
 #include "registers.h"
 #include "hexutils.h"
 
@@ -35,17 +36,18 @@ class PicProcessor : public BaseProcessor
     public:
         PicProcessor( QObject* parent=0 );
         ~PicProcessor();
-        
- //static PicProcessor* self() { return m_pSelf; }
 
         bool loadFirmware( QString file );
         void terminate();
 
         void reset();
-        void step(); 
         void stepOne();
-        void stepCpu();
+        void stepCpu() { m_pPicProcessor->step_cycle(); }
         int pc();
+
+        virtual uint64_t cycle(){ return get_cycles().get(); }
+
+        virtual void setSteps( double steps ) { m_mcuStepsPT = steps/4; }
 
         int getRamValue( int address );
 
@@ -58,8 +60,6 @@ class PicProcessor : public BaseProcessor
 
     private:
         virtual int  validate( int address );
-        
-        double m_ipc;
         
         pic_processor* m_pPicProcessor;
         

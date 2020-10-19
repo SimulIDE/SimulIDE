@@ -254,6 +254,13 @@ QString CodeEditor::getFilePath()
 void CodeEditor::setCompilerPath()
 {
     if( m_debugger ) m_debugger->getCompilerPath();
+    else
+    {
+        if( m_fileExt == "" ) MessageBoxNB( "CodeEditor::setCompilerPath",
+                                        tr( "Please save the Document first" ) );
+        else MessageBoxNB( "CodeEditor::setCompilerPath",
+                       tr( "No Compiler available for: %1 files" ).arg(m_fileExt));
+    }
 }
 
 void CodeEditor::compile()

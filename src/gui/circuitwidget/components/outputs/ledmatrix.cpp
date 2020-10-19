@@ -147,14 +147,16 @@ void LedMatrix::deleteMatrix()
 {
     for( int row=0; row<m_rows; row++ )
     {
+        for( int col=0; col<m_cols; col++ )
+        {
+            LedSmd* lsmd = m_led[row][col];
+            lsmd->getEpin(0)->reset();
+            lsmd->getEpin(1)->reset();
+            Circuit::self()->removeComp( lsmd );
+        }
         Pin* pin = m_rowPin[row];
         if( pin->isConnected() ) pin->connector()->remove();
         delete pin;
-        
-        for( int col=0; col<m_cols; col++ )
-        {
-            Circuit::self()->removeComp( m_led[row][col] );
-        }
     }
     for( int col=0; col<m_cols; col++ )
     {

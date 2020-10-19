@@ -45,6 +45,9 @@ TerminalWidget::TerminalWidget( QWidget* parent, SerialTerm* ser )
     
     setMinimumSize(QSize(200, 200));
     
+    setWindowFlags ( Qt::Window | Qt::WindowTitleHint
+                   | Qt::WindowSystemMenuHint | Qt::WindowCloseButtonHint );
+    
     m_verticalLayout.setObjectName( "verticalLayout" );
     m_verticalLayout.setContentsMargins(0, 0, 0, 0);
     m_verticalLayout.setSpacing(4);
@@ -170,9 +173,8 @@ TerminalWidget::~TerminalWidget() { }
 
 void TerminalWidget::closeEvent(QCloseEvent* event)
 {
-    event->accept();
-    hide();
-    emit closeTerminal();
+    m_serComp->slotClose();
+    QWidget::closeEvent( event );
 }
 
 void TerminalWidget::onTextChanged()

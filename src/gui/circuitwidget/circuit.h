@@ -51,8 +51,10 @@ class MAINMODULE_EXPORT Circuit : public QGraphicsScene
         enum Langs {
             English = 0,
             French,
+            German,
             Russian,
-            Spanish
+            Spanish,
+            Pt_Brasil
         };
 
  static Circuit* self() { return m_pSelf; }
@@ -94,6 +96,8 @@ class MAINMODULE_EXPORT Circuit : public QGraphicsScene
         void compRemoved( bool removed );
         void saveState();
         void setChanged();
+
+        void deselectAll();
 
         void drawBackground( QPainter* painter, const QRectF &rect );
 
@@ -148,6 +152,7 @@ class MAINMODULE_EXPORT Circuit : public QGraphicsScene
         void mouseMoveEvent( QGraphicsSceneMouseEvent* event );
         void keyPressEvent ( QKeyEvent * event );
         void keyReleaseEvent( QKeyEvent* event );
+        void dropEvent( QGraphicsSceneDragDropEvent* event );
 
     private:
         void loadDomDoc( QDomDocument* doc );

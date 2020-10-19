@@ -221,24 +221,8 @@ void AvrProcessor::reset()
     avr_reset( m_avrProcessor );
     m_avrProcessor->pc = 0;
     m_avrProcessor->cycle = 0;
-    m_nextCycle = 0;
-}
-
-void AvrProcessor::step()
-{
-    if( !m_loadStatus || m_resetStatus ) return;
-
-    m_nextCycle += m_mcuStepsPT;
-
-    while( m_avrProcessor->cycle < m_nextCycle )
-    {
-        if( m_avrProcessor->state > cpu_StepDone ) // cpu_Done or cpu_Crashed
-        {
-            break;//qDebug() << "AvrProcessor::step() CRASHED!!!";
-        }
-        else
-            m_avrProcessor->run( m_avrProcessor );
-    }
+    m_nextCycle = m_mcuStepsPT;
+    m_extraCycle = 0;
 }
 
 void AvrProcessor::stepOne()
@@ -253,11 +237,6 @@ void AvrProcessor::stepOne()
         m_nextCycle += m_mcuStepsPT; //McuComponent::self()->freq(); //
         runSimuStep(); // 1 simu step = 1uS
     }
-}
-
-void AvrProcessor::stepCpu()
-{
-    if( m_avrProcessor->state < cpu_Done ) m_avrProcessor->run( m_avrProcessor );
 }
 
 int AvrProcessor::pc()

@@ -20,55 +20,52 @@
 #ifndef ESOURCE_H
 #define ESOURCE_H
 
-
 #include "e-element.h"
 #include "e-node.h"
 
 class MAINMODULE_EXPORT eSource : public eElement
 {
-    public:
-        eSource( std::string id, ePin* epin );
-        virtual ~eSource();
+  public:
+    eSource(std::string id, ePin *epin);
+    virtual ~eSource();
 
-        virtual void initialize();
-        
-        void stamp();
-        void stampOutput();
+    virtual void initialize();
 
-        double voltHight();
-        void  setVoltHigh( double v );
+    void stamp();
+    void stampOutput();
 
-        double voltLow();
-        void  setVoltLow( double v );
-        
-        bool  out();
-        void  setOut( bool hight );
+    double voltHight();
+    void setVoltHigh(double v);
 
-        bool  isInverted();
-        void  setInverted( bool inverted );
+    double voltLow();
+    void setVoltLow(double v);
 
-        double imp();
-        void  setImp( double imp );
+    bool out();
+    void setOut(bool hight);
 
-        double getVolt();
+    bool isInverted();
+    void setInverted(bool inverted);
 
-        ePin* getEpin();
-        ePin* getEpin( QString pinName );
+    double imp();
+    void setImp(double imp);
 
-        void  createPin();
+    double getVolt();
 
-    protected:
-        
-        double m_voltHigh;
-        double m_voltLow;
-        double m_voltOut;
-        double m_imp;
-        double m_admit;
+    ePin *getEpin();
+    ePin *getEpin(QString pinName);
 
-        bool m_out;
-        bool m_inverted;
+    void createPin();
 
-        eNode* m_scrEnode;
+  protected:
+    double m_voltHigh;
+    double m_voltLow;
+    double m_voltOut;
+    double m_imp;
+    double m_admit;
+
+    bool m_out;
+    bool m_inverted;
+
+    eNode *m_scrEnode;
 };
 #endif
-

@@ -177,6 +177,8 @@ class Processor : public Module
       Processor(const char *_name=0, const char *desc=0);
       virtual ~Processor();
 
+      bool isHalted() { return m_halted; }
+
       uint clocks_per_inst; /// Oscillator cycles for 1 instruction
 
       /// Stimulus nodes for CVREF and V06REF
@@ -323,12 +325,14 @@ class Processor : public Module
       phaseCaptureInterrupt *mCaptureInterrupt;
       phaseIdle             *mIdle;
       
-    private:
+    protected:
       CPU_Freq *mFrequency;
       uint  m_ProgramMemoryAllocationSize;
 
       Boolean *m_pbBreakOnInvalidRegisterRead;
       Boolean *m_pbBreakOnInvalidRegisterWrite;
+
+      bool m_halted;
 };
 
 //-------------------------------------------------------------------

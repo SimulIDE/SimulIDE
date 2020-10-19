@@ -35,19 +35,13 @@ McuComponentPin::McuComponentPin( McuComponent* mcuComponent, QString id, QStrin
     m_pinType = 0;
     
     m_attached = false;
-    m_isInput  = true;
+    m_isInput  = false;
     m_openColl = false;
 
-    m_inputImp = high_imp;
-
-    Pin* pin = new Pin( angle, QPoint (xpos, ypos), mcuComponent->itemID()+"-"+id, pos, m_mcuComponent );
+    Pin* pin = new Pin( angle, QPoint( xpos, ypos ), mcuComponent->itemID()+"-"+id, pos, m_mcuComponent );
     pin->setLabelText( label );
     m_ePin[0] = pin;
 
-    eSource::setImp( m_inputImp );
-    eSource::setVoltHigh( 5 );
-    eSource::setOut( false );
-    
     type = type.toLower();
     if( type == "gnd" 
      || type == "vdd" 
@@ -65,29 +59,38 @@ McuComponentPin::~McuComponentPin()
 
 void McuComponentPin::stamp()
 {
-    //if( m_pinType == 1 ) eSource::setImp( m_inputImp );// All  IO Pins should be inputs at start-up
+    if( m_pinType == 1 )
+    {
+        if( m_isInput )
+        {
+            if( m_ePin[0]->isConnected() && m_attached )        // Receive voltage change notifications
+                m_ePin[0]->getEnode()->addToChangedFast(this);
 
-    if( m_ePin[0]->isConnected() && m_attached )
-        m_ePin[0]->getEnode()->addToChangedFast(this);
+            if( (m_pupAdmit>0) && !(m_ePin[0]->isConnected()) ) // Pullup ?
+                pullupNotConnected( true );
 
-    //if( m_pinType == 21 ) BaseProcessor::self()->hardReset( true );
-    eSource::stamp();
+        }
+        update();
+    }
+    else eSource::stamp();
 }
 
 void McuComponentPin::resetState()
 {
     if( m_pinType == 1 )
     {
-        m_inputImp = high_imp ;
-        eSource::setImp( high_imp );// All  IO Pins should be inputs at start-up
-        eSource::setOut( false );
-        eSource::stamp();
-    }
-}
+        m_state   = false;
+        m_isInput = true;
 
-void McuComponentPin::terminate()
-{
-    m_attached = false;
+        m_vddAdmit = 0;
+        m_gndAdmit = cero_doub;
+        m_vddAdmEx = 0;
+        m_gndAdmEx = 0;
+        m_pupAdmit = 0;
+
+        eSource::setVoltHigh( 5 );
+        update();
+    }
 }
 
 void McuComponentPin::setDirection( bool out )
@@ -95,24 +98,25 @@ void McuComponentPin::setDirection( bool out )
     //qDebug() << "McuComponentPin::setDirection "<< m_id << out;
     m_isInput = !out;
 
-    if( out )                                     // Set Pin to Output
+    if( out )       // Set Pin to Output
     {
+        if( m_ePin[0]->isConnected() && m_attached )
+            m_ePin[0]->getEnode()->remFromChangedFast(this); // Don't Receive voltage change notifications
+
         eSource::setImp( 40 );
-
-        if( m_ePin[0]->isConnected() && m_attached )
-            m_ePin[0]->getEnode()->remFromChangedFast(this);
-
-        if( m_state != m_out ) setOutput( m_state );
+        setState( m_state );
     }
-    else                                          // Set Pin to Input
+    else           // Set Pin to Input
     {
-        eSource::setImp( m_inputImp );
-
         if( m_ePin[0]->isConnected() && m_attached )
-            m_ePin[0]->getEnode()->addToChangedFast(this);
+            m_ePin[0]->getEnode()->addToChangedFast(this); // Receive voltage change notifications
+
+        m_vddAdmit = 0;
+        m_gndAdmit = cero_doub;
+        update();
+
+        BaseProcessor::self()->setExtraStep(); // Run Extra Simulation Step
     }
-    // Run Extra Step when current Processor Step is finished
-    BaseProcessor::self()->p_runExtStep = true;
 }
 
 void McuComponentPin::setState( bool state )
@@ -124,60 +128,63 @@ void McuComponentPin::setState( bool state )
 
     if( m_isInput )  return;
 
-    setOutput( state );
-}
-
-void McuComponentPin::setOutput( bool state )
-{
     if( m_openColl )
     {
-        if( state ) eSource::setImp( m_inputImp );
-        else        eSource::setImp( 40 );
-
-        eSource::stamp();
+        if( state )
+        {
+            m_vddAdmit = 0;
+            m_gndAdmit = cero_doub;
+        }
+        else
+        {
+            m_vddAdmit = 0;
+            m_gndAdmit = 1./40.;
+        }
+        update();
     }
     else
     {
         eSource::setOut( state );
         eSource::stampOutput();
     }
-    // Run Extra Step when current Processor Step is finished
-    BaseProcessor::self()->p_runExtStep = true;
+    BaseProcessor::self()->setExtraStep(); // Run Extra Simulation Step
+}
+
+void McuComponentPin::update()
+{
+    double vddAdmit = m_vddAdmit+m_vddAdmEx+m_pupAdmit;
+    double gndAdmit = m_gndAdmit+m_gndAdmEx;
+    double Rth  = 1/(vddAdmit+gndAdmit);
+
+    m_voltOut = 5*vddAdmit*Rth;
+
+    eSource::setImp( Rth );
 }
 
 void McuComponentPin::setPullup( bool up )
 {
-    m_inputImp = up? 1e5:high_imp;
-
     if( !m_isInput ) return;
 
     //qDebug() << "McuComponentPin::setPullup "<< m_id << pullup;
 
-    if( up )                               // Activate pullup
-    {
-        eSource::setImp( 1e5 );
-        m_voltOut = m_voltHigh;
-    }
-    else                                 // Deactivate pullup
-    {
-        eSource::setImp( m_inputImp );
-        m_voltOut = m_voltLow;
-    }
+    if( up ) m_pupAdmit = 1/1e5; // Activate pullup
+    else     m_pupAdmit = 0;     // Deactivate pullup
+
     if( !(m_ePin[0]->isConnected()) )
     {
         pullupNotConnected( up );
         return;
     }
-    m_ePin[0]->stampCurrent( m_voltOut/m_imp );
+    update();
 
-    // Run Extra Step when current Processor Step is finished
-    BaseProcessor::self()->p_runExtStep = true;
+    BaseProcessor::self()->setExtraStep(); // Run Extra Simulation Step
 }
 
-void McuComponentPin::resetOutput()
+void McuComponentPin::setExtraSource( double vddAdmit, double gndAdmit )
 {
-    eSource::setOut(false );
-    eSource::stampOutput();
+    m_vddAdmEx = vddAdmit;
+    m_gndAdmEx = gndAdmit;
+    update();
 }
 
 void McuComponentPin::move( int dx, int dy )

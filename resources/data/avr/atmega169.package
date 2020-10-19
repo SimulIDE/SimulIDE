@@ -41,7 +41,7 @@
     <pin side="bottom" pos="2"  type="bidir" id="PB7" label="B7"/>
     <pin side="bottom" pos="3"  type="bidir" id="PG3" label="G3"/>
     <pin side="bottom" pos="4"  type="bidir" id="PG4" label="G4"/>
-    <pin side="bottom" pos="5"  type="bidir" id="PG5" label="G5"/>
+    <pin side="bottom" pos="5"  type="reset" id="RST" label="!RES"/>
     <pin side="bottom" pos="6"  type="vcc"   id="VCC" label="Vcc"/>
     <pin side="bottom" pos="7"  type="gnd"   id="GND" label="Gnd"/>
     <pin side="bottom" pos="8"  type="osc"   id="XTAL2" label="XTAL2"/>

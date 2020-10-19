@@ -47,20 +47,15 @@ LibraryItem* SerialTerm::libraryItem()
 SerialTerm::SerialTerm( QObject* parent, QString type, QString id )
           : Component( parent, type, id )
           , eElement( (id+"-eElement").toStdString() )
-          , m_serialWidget( 0l, this )
+          , m_serialWidget( CircuitWidget::self(), this )
 {
     Q_UNUSED( SerialTerm_properties );
 
     m_area = QRect( 0, 0, 0, 0 );
 
-    m_serialWidget.setWindowFlags ( Qt::WindowStaysOnTopHint | Qt::WindowTitleHint
-                                  | Qt::WindowSystemMenuHint | Qt::WindowCloseButtonHint );
     m_serialWidget.show();
 
     connect( McuComponent::self(), SIGNAL( closeSerials()),
-                             this, SLOT(   slotClose()) );
-
-    connect( &m_serialWidget, SIGNAL( closeTerminal()),
                              this, SLOT(   slotClose()) );
 
     Simulator::self()->addToUpdateList( this );
