@@ -34,22 +34,6 @@
     </message>
 </context>
 <context>
-    <name>AVRComponentPin</name>
-    <message>
-        <source>Register descriptor file for this AVR processor %1 is corrupted - cannot attach pin</source>
-        <translation type="vanished">Archivo de registros del procesador %1 no valido - No se puede configurar pin</translation>
-    </message>
-    <message>
-        <source>Register descriptor file for this AVR processor %1 is corrupted - cannot attach pin 
-</source>
-        <translation type="vanished">Archivo de registros del procesador %1 no valido - No se puede configurar pin</translation>
-    </message>
-    <message>
-        <source>Pin is not initialized properly:</source>
-        <translation type="vanished">Inicializacion incorrecta del Pin:</translation>
-    </message>
-</context>
-<context>
     <name>Amperimeter</name>
     <message>
         <source>Amperimeter</source>
@@ -98,10 +82,6 @@
         <translation>Paso React.</translation>
     </message>
     <message>
-        <source>NoLinStep</source>
-        <translation type="vanished">Paso No Lin.</translation>
-    </message>
-    <message>
         <source>NoLinAcc</source>
         <translation>Precision No Lin.</translation>
     </message>
@@ -139,7 +119,7 @@
     </message>
     <message>
         <source>Num Bits</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de Bits</translation>
     </message>
     <message>
         <source>Impedance</source>
@@ -160,10 +140,6 @@
     <message>
         <source>Capacitance</source>
         <translation>Capacidad</translation>
-    </message>
-    <message>
-        <source>Show_Cap</source>
-        <translation type="vanished">Mostrar Cap.</translation>
     </message>
     <message>
         <source>Freq</source>
@@ -322,10 +298,6 @@
         <translation>Res. Bobina</translation>
     </message>
     <message>
-        <source>Itrig</source>
-        <translation type="vanished">Int. Disparo</translation>
-    </message>
-    <message>
         <source>Poles</source>
         <translation>Polos</translation>
     </message>
@@ -454,14 +426,6 @@
         <translation>Auto Recargar</translation>
     </message>
     <message>
-        <source>PcLink Command</source>
-        <translation type="vanished">Comando PcLink</translation>
-    </message>
-    <message>
-        <source>PcLink Port</source>
-        <translation type="vanished">Puerto PcLink</translation>
-    </message>
-    <message>
         <source>Port Name</source>
         <translation>Nombre Puerto</translation>
     </message>
@@ -512,10 +476,6 @@
     <message>
         <source>Animate</source>
         <translation>Animar</translation>
-    </message>
-    <message>
-        <source>Font_Scale</source>
-        <translation type="vanished">Tamaño Texto</translation>
     </message>
     <message>
         <source>Auto Backup Secs</source>
@@ -591,22 +551,6 @@
     </message>
     <message>
         <source>Package File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>RPM Nominal</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Volt Nominal</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Max Resistance</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Min Resistance</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -780,10 +724,6 @@
 <context>
     <name>BcdToDec</name>
     <message>
-        <source>Bcd To Dec.</source>
-        <translation type="vanished">Bcd a Dec.</translation>
-    </message>
-    <message>
         <source>Logic/Converters</source>
         <translation>Logica/Conversores</translation>
     </message>
@@ -931,22 +871,6 @@ a DomDocument</translation>
         <translation>Rehacer</translation>
     </message>
     <message>
-        <source>Open Circuit</source>
-        <translation type="vanished">Abrir Circuito</translation>
-    </message>
-    <message>
-        <source>New Circuit</source>
-        <translation type="vanished">Nuevo Circuito</translation>
-    </message>
-    <message>
-        <source>Save Circuit</source>
-        <translation type="vanished">Guardar circuito</translation>
-    </message>
-    <message>
-        <source>Save Circuit As...</source>
-        <translation type="vanished">Guardar Circuito Como...</translation>
-    </message>
-    <message>
         <source>Import Circuit</source>
         <translation>Importar Circuito</translation>
     </message>
@@ -1051,16 +975,8 @@ Quiere guardar los cambios?</translation>
         <translation>Guardar circuito</translation>
     </message>
     <message>
-        <source>Real Speed: Debugger</source>
-        <translation type="vanished">Velocidad Real: Depurador</translation>
-    </message>
-    <message>
         <source>Circuit ERROR!!!</source>
         <translation>ERROR de Circuito!!!</translation>
-    </message>
-    <message>
-        <source>Real Speed: </source>
-        <translation type="vanished">Velocidad Real:</translation>
     </message>
     <message>
         <source>About SimulIDE</source>
@@ -1117,10 +1033,6 @@ Quiere guardar los cambios?</translation>
         <translation>     SUCCESS!!! Compilacion Correcta</translation>
     </message>
     <message>
-        <source>     ERROR!!! Compilation Faliled</source>
-        <translation>     ERROR!!! Compilacion Fallida</translation>
-    </message>
-    <message>
         <source>Uploading: </source>
         <translation>Cargando: </translation>
     </message>
@@ -1157,12 +1069,24 @@ Error:  Mcu Borrado mientras se Depuraba!!
         <translation>Error Cargando Firmware... </translation>
     </message>
     <message>
-        <source>Debbuger Started </source>
-        <translation>Depurador Iniciado </translation>
+        <source>     ERROR!!! Compilation Failed</source>
+        <translation>     ERROR!!! la Compilation Falló</translation>
     </message>
     <message>
-        <source>Debbuger Stopped </source>
-        <translation>Depurador Detenido </translation>
+        <source>Debugger Started </source>
+        <translation>Depurador Iniciado</translation>
+    </message>
+    <message>
+        <source>Debugger Stopped </source>
+        <translation>Depurador Detenido</translation>
+    </message>
+    <message>
+        <source>Please save the Document first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No Compiler available for: %1 files</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1282,22 +1206,7 @@ a DomDocument</translation>
     </message>
 </context>
 <context>
-    <name>DcMotor</name>
-    <message>
-        <source>Dc Motor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Outputs</source>
-        <translation type="unfinished">Salidas</translation>
-    </message>
-</context>
-<context>
     <name>DecToBcd</name>
-    <message>
-        <source>Dec. To Bcd</source>
-        <translation type="vanished">Dec a Bcd</translation>
-    </message>
     <message>
         <source>Logic/Converters</source>
         <translation>Logica/Conversores</translation>
@@ -1359,10 +1268,6 @@ a DomDocument</translation>
         <translation>Abrir Archivo</translation>
     </message>
     <message>
-        <source>All files (*)</source>
-        <translation type="vanished">Todos (*)</translation>
-    </message>
-    <message>
         <source>Save Document As</source>
         <translation>Guardar Documento Como</translation>
     </message>
@@ -1380,10 +1285,6 @@ Do you want to save your changes?
         <translation>
 El Documento ha sido modificado.
 Quiere guardar los cambios?</translation>
-    </message>
-    <message>
-        <source>set Compiler Path</source>
-        <translation type="vanished">Seleccionar Ruta del Compilador</translation>
     </message>
     <message>
         <source>&amp;New	Ctrl+N</source>
@@ -1542,10 +1443,6 @@ Quiere guardar los cambios?</translation>
         <translation></translation>
     </message>
     <message>
-        <source>All files (*);;Arduino (*.ino);;Asm (*.asm);;GcBasic (*.gcb)</source>
-        <translation type="vanished">Todos (*);;Arduino (*.ino);;Asm (*.asm);;GcBasic (*.gcb)</translation>
-    </message>
-    <message>
         <source>Set Compiler Path</source>
         <translation>Establecer Ruta Compilador</translation>
     </message>
@@ -1555,7 +1452,7 @@ Quiere guardar los cambios?</translation>
     </message>
     <message>
         <source>All files</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos los archivos</translation>
     </message>
 </context>
 <context>
@@ -1566,7 +1463,11 @@ Quiere guardar los cambios?</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation>Otros</translation>
+        <translation type="vanished">Otros</translation>
+    </message>
+    <message>
+        <source>Graphical</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1796,7 +1697,7 @@ Quiere guardar los cambios?</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation>Otros</translation>
+        <translation type="vanished">Otros</translation>
     </message>
     <message>
         <source>Load Image</source>
@@ -1806,16 +1707,9 @@ Quiere guardar los cambios?</translation>
         <source>All files (*.*)</source>
         <translation>Todos los Archivos (*.*)</translation>
     </message>
-</context>
-<context>
-    <name>InBus</name>
     <message>
-        <source>In Bus</source>
-        <translation type="vanished">Bus Entrada</translation>
-    </message>
-    <message>
-        <source>Logic/Other Logic</source>
-        <translation type="vanished">Logica/Otros (Logica)</translation>
+        <source>Graphical</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1907,17 +1801,6 @@ Quiere guardar los cambios?</translation>
     </message>
 </context>
 <context>
-    <name>Ldr</name>
-    <message>
-        <source>LDR</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Passive</source>
-        <translation type="unfinished">Pasivos</translation>
-    </message>
-</context>
-<context>
     <name>Led</name>
     <message>
         <source>Outputs</source>
@@ -1958,7 +1841,11 @@ Quiere guardar los cambios?</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation>Otros</translation>
+        <translation type="vanished">Otros</translation>
+    </message>
+    <message>
+        <source>Graphical</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2056,24 +1943,12 @@ a DomDocument</translation>
         <translation>Abrir Monitor.Serial </translation>
     </message>
     <message>
-        <source>Close Serial Monitor</source>
-        <translation type="vanished">Cerrar Monitor.Serial </translation>
-    </message>
-    <message>
         <source>Open Serial Port.</source>
         <translation>Abrir Puerto Serie.</translation>
     </message>
     <message>
-        <source>Close Serial Port</source>
-        <translation type="vanished">Cerrar Puerto Serie.</translation>
-    </message>
-    <message>
         <source>Load Firmware</source>
         <translation>Cargar firmware</translation>
-    </message>
-    <message>
-        <source>Hex Files (*.hex);;ELF Files (*.elf);;all files (*.*)</source>
-        <translation type="vanished">Hex (*.hex);;ELF (*.elf);;Todos (*.*)</translation>
     </message>
     <message>
         <source>No File:</source>
@@ -2095,22 +1970,12 @@ a DomDocument</translation>
         <source>All files (*.*);;ELF Files (*.elf);;Hex Files (*.hex)</source>
         <translation>Todos (*.*);;archivos ELF (*.elf);;archivos Hex (*.hex)</translation>
     </message>
-    <message>
-        <source>PcLink Cannot Open Port %1:
-%2.</source>
-        <translation type="vanished">PcLink No Puede Abrir el Puerto %1:
-%2.</translation>
-    </message>
 </context>
 <context>
     <name>MemData</name>
     <message>
         <source>Load Data</source>
         <translation>Cargar Datos</translation>
-    </message>
-    <message>
-        <source>All files (*.*)</source>
-        <translation type="vanished">Todos los Archivos (*.*)</translation>
     </message>
     <message>
         <source>Save Data</source>
@@ -2123,8 +1988,8 @@ a DomDocument</translation>
 %2.</translation>
     </message>
     <message>
-        <source>.data (*.data);;.bin (*.data);;All files (*.*)</source>
-        <translation type="unfinished"></translation>
+        <source>.data (*.data);;.bin (*.bin);;All files (*.*)</source>
+        <translation>.data (*.data);;.bin (*.bin);;Todos los archivos (*.*)</translation>
     </message>
 </context>
 <context>
@@ -2175,10 +2040,6 @@ a DomDocument</translation>
         <translation>Multiplexor Analogico</translation>
     </message>
     <message>
-        <source>Outputs</source>
-        <translation type="obsolete">Salidas</translation>
-    </message>
-    <message>
         <source>Active</source>
         <translation>Activos</translation>
     </message>
@@ -2214,17 +2075,6 @@ a DomDocument</translation>
     <message>
         <source>Meters</source>
         <translation>Medida</translation>
-    </message>
-</context>
-<context>
-    <name>OutBus</name>
-    <message>
-        <source>Out Bus</source>
-        <translation type="vanished">Bus Salida</translation>
-    </message>
-    <message>
-        <source>Logic/Other Logic</source>
-        <translation type="vanished">Logica/Otros (Logica)</translation>
     </message>
 </context>
 <context>
@@ -2319,10 +2169,6 @@ a DomDocument</translation>
         <translation>Medida</translation>
     </message>
     <message>
-        <source>Add to Plotter</source>
-        <translation type="vanished">Añadir al Plotter</translation>
-    </message>
-    <message>
         <source>Remove from Plotter</source>
         <translation>Quitar del Plotter</translation>
     </message>
@@ -2389,22 +2235,7 @@ a DomDocument</translation>
     </message>
 </context>
 <context>
-    <name>Ram8bit</name>
-    <message>
-        <source>8bit Ram</source>
-        <translation type="vanished">Ram 8 Bit</translation>
-    </message>
-    <message>
-        <source>Logic/Memory</source>
-        <translation type="vanished">Logica/Memoria</translation>
-    </message>
-</context>
-<context>
     <name>RamTable</name>
-    <message>
-        <source>Binary</source>
-        <translation type="vanished">Binario</translation>
-    </message>
     <message>
         <source>Load VarSet</source>
         <translation>Cargar Grupo de Variables</translation>
@@ -2460,7 +2291,11 @@ a DomDocument</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation>Otros</translation>
+        <translation type="vanished">Otros</translation>
+    </message>
+    <message>
+        <source>Graphical</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2499,10 +2334,6 @@ a DomDocument</translation>
 <context>
     <name>SR04</name>
     <message>
-        <source>Outputs</source>
-        <translation type="obsolete">Salidas</translation>
-    </message>
-    <message>
         <source>HC-SR04</source>
         <translation></translation>
     </message>
@@ -2514,97 +2345,10 @@ a DomDocument</translation>
 <context>
     <name>SerialPort</name>
     <message>
-        <source>SerialPort</source>
-        <translation type="obsolete">Puerto Serie</translation>
-    </message>
-    <message>
         <source>Cannot Open Port %1:
 %2.</source>
         <translation>No se Pudo Abrir el Puerto %1:
 %2.</translation>
-    </message>
-</context>
-<context>
-    <name>SerialPortWidget</name>
-    <message>
-        <source>Description: %1</source>
-        <translation type="vanished">Descripcion: %1</translation>
-    </message>
-    <message>
-        <source>Manufacturer: %1</source>
-        <translation type="vanished">Fabricante: %1</translation>
-    </message>
-    <message>
-        <source>Serial number: %1</source>
-        <translation type="vanished">Numero de Serie: %1</translation>
-    </message>
-    <message>
-        <source>Connected to %1 : %2, %3, %4, %5, %6</source>
-        <translation type="vanished">Connectado a %1 : %2, %3, %4, %5, %6</translation>
-    </message>
-    <message>
-        <source>Custom</source>
-        <translation type="vanished">Personalizado</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation type="vanished">Ninguno</translation>
-    </message>
-    <message>
-        <source>Even</source>
-        <translation type="vanished">Par</translation>
-    </message>
-    <message>
-        <source>Odd</source>
-        <translation type="vanished">Impar</translation>
-    </message>
-    <message>
-        <source>Mark</source>
-        <translation type="vanished">Marcar</translation>
-    </message>
-    <message>
-        <source>Space</source>
-        <translation type="vanished">Espacio</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation type="vanished">Configuracion</translation>
-    </message>
-    <message>
-        <source>Manufacturer:</source>
-        <translation type="vanished">Fabricante:</translation>
-    </message>
-    <message>
-        <source>Serial number:</source>
-        <translation type="vanished">Numero de Serie:</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation type="vanished">Descripcion:</translation>
-    </message>
-    <message>
-        <source>Open</source>
-        <translation type="vanished">Abrir</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="vanished">Cerrar</translation>
-    </message>
-    <message>
-        <source>Parity:</source>
-        <translation type="vanished">Paridad:</translation>
-    </message>
-    <message>
-        <source>Flow control:</source>
-        <translation type="vanished">Control de Flujo</translation>
-    </message>
-    <message>
-        <source>Stop bits:</source>
-        <translation type="vanished">Bits de Parada:</translation>
-    </message>
-    <message>
-        <source>Data bits:</source>
-        <translation type="vanished">Bits de Datos</translation>
     </message>
 </context>
 <context>
@@ -2631,10 +2375,6 @@ a DomDocument</translation>
 </context>
 <context>
     <name>SevenSegmentBCD</name>
-    <message>
-        <source>Logic</source>
-        <translation type="vanished">Logica</translation>
-    </message>
     <message>
         <source>7 Seg BCD</source>
         <translation></translation>
@@ -2713,22 +2453,6 @@ a DomDocument</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Logic</source>
-        <translation type="vanished">Logica</translation>
-    </message>
-    <message>
-        <source>Pin Label</source>
-        <translation type="vanished">Nombre de Pin</translation>
-    </message>
-    <message>
-        <source>Set Pin Name:</source>
-        <translation type="vanished">Cambiar Nombre de Pin</translation>
-    </message>
-    <message>
-        <source>name</source>
-        <translation type="vanished">nombre</translation>
-    </message>
-    <message>
         <source>
 Package has been modified.
 Do you want to save your changes?
@@ -2741,18 +2465,6 @@ Quiere guardar los cambios?
     <message>
         <source>Move Pin </source>
         <translation>Mover Pin </translation>
-    </message>
-    <message>
-        <source>Rename Pin </source>
-        <translation type="vanished">Renombrar Pin </translation>
-    </message>
-    <message>
-        <source>Invert Pin </source>
-        <translation type="vanished">Invertir Pin </translation>
-    </message>
-    <message>
-        <source>Unused Pin </source>
-        <translation type="vanished">Deshabilitar Pin </translation>
     </message>
     <message>
         <source>Delete Pin </source>
@@ -2772,7 +2484,7 @@ Quiere guardar los cambios?
     </message>
     <message>
         <source>Packages (*.package);;All files (*.*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Packages (*.package);;Todos los archivos (*.*)</translation>
     </message>
     <message>
         <source>Cannot write file %1:
@@ -2843,18 +2555,7 @@ Quiere guardar los cambios?
     </message>
     <message>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Termistor</name>
-    <message>
-        <source>Termistor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Passive</source>
-        <translation type="unfinished">Pasivos</translation>
+        <translation type="unfinished">Borrar</translation>
     </message>
 </context>
 <context>
@@ -2865,18 +2566,11 @@ Quiere guardar los cambios?
     </message>
     <message>
         <source>Other</source>
-        <translation>Otros</translation>
+        <translation type="vanished">Otros</translation>
     </message>
-</context>
-<context>
-    <name>VarResistor</name>
     <message>
-        <source>Variable Resistor</source>
+        <source>Graphical</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Passive</source>
-        <translation type="unfinished">Pasivos</translation>
     </message>
 </context>
 <context>

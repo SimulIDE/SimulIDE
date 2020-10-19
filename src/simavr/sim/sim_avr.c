@@ -137,6 +137,7 @@ void avr_reset( avr_t* avr)
 {
 	AVR_LOG(avr, LOG_TRACE, "%s reset\n", avr->mmcu);
 
+    avr->cyclesDone = 0;
 	avr->state = cpu_Running;
 	for(int i = 0x20; i <= avr->ioend; i++)
 		avr->data[i] = 0;
@@ -297,45 +298,44 @@ void avr_callback_sleep_raw( avr_t * avr, avr_cycle_count_t howLong)
 
 void avr_callback_run_raw( avr_t* avr )
 {
-	avr_flashaddr_t new_pc = avr->pc;
+    if( avr->state == cpu_Done ) return;
 
-	if (avr->state == cpu_Running) {
-		new_pc = avr_run_one(avr);
-#if CONFIG_SIMAVR_TRACE
-		avr_dump_state(avr);
-#endif
-	}
+    if( avr->state == cpu_Running )
+    {
+        if( avr->cyclesDone > 1 ) avr->cyclesDone -= 1;
+        else                      avr->pc  = avr_run_one( avr );
+        avr->cycle += 1;
+    }
 
-	// run the cycle timers, get the suggested sleep time
-	// until the next timer is due
-	avr_cycle_count_t sleep = avr_cycle_timer_process(avr);
+    // run the cycle timers, get the suggested sleep time until the next timer is due
+    //avr_cycle_count_t sleep =
+    avr_cycle_timer_process( avr );
 
-	avr->pc = new_pc;
+    if( avr->state == cpu_Sleeping )
+    {
+        if( !avr->sreg[S_I] )
+        {
+            if( avr->log) AVR_LOG(avr, LOG_TRACE, "simavr: sleeping with interrupts off, quitting gracefully\n");
 
-	if (avr->state == cpu_Sleeping) {
-		if (!avr->sreg[S_I]) {
-			if (avr->log)
-				AVR_LOG(avr, LOG_TRACE, "simavr: sleeping with interrupts off, quitting gracefully\n");
-			avr->state = cpu_Done;
-			return;
-		}
-		/*
-		 * try to sleep for as long as we can (?)
-		 */
-		avr->sleep(avr, sleep);
-		avr->cycle += 1 + sleep;
-	}
-	// Interrupt servicing might change the PC too, during 'sleep'
-	if (avr->state == cpu_Running || avr->state == cpu_Sleeping) {
-		/* Note: checking interrupt_state here is completely superfluous, however
-			as interrupt_state tells us all we really need to know, here
-			a simple check here may be cheaper than a call not needed. */
-		if (avr->interrupt_state)
-			avr_service_interrupts(avr);
-	}
+            avr->state = cpu_Done;
+            return;
+        }
+
+        //avr->sleep(avr, sleep); //try to sleep for as long as we can( ?)
+        avr->cycle += 1; // + sleep;
+    }
+
+    if( avr->state == cpu_Running
+     || avr->state == cpu_Sleeping ) // Interrupts might change the PC too, during 'sleep'
+    {
+        /* Note: checking interrupt_state here is completely superfluous, however
+            as interrupt_state tells us all we really need to know, here
+            a simple check here may be cheaper than a call not needed. */
+        if( avr->interrupt_state ) avr_service_interrupts( avr );
+    }
 }
 
-int avr_run( avr_t * avr)
+int avr_run( avr_t* avr)
 {
 	avr->run(avr);
 	return avr->state;
@@ -348,13 +348,13 @@ avr_t* avr_core_allocate( const avr_t* core, uint32_t coreLen)
 	return (avr_t *)b;
 }
 
-avr_t* avr_make_mcu_by_name( const char *name)
+avr_t* avr_make_mcu_by_name( const char* name )
 {
-	avr_kind_t * maker = NULL;
-    for (int i = 0; avr_kind[i] && !maker; i++)
+    avr_kind_t* maker = NULL;
+    for( int i=0; avr_kind[i] && !maker; i++ )
     {
-		for (int j = 0; avr_kind[i]->names[j]; j++)
-			if (!strcmp(avr_kind[i]->names[j], name)) {
+        for( int j = 0; avr_kind[i]->names[j]; j++ )
+            if( !strcmp(avr_kind[i]->names[j], name)) {
 				maker = avr_kind[i];
 				break;
 			}

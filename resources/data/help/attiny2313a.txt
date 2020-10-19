@@ -1,0 +1,40 @@
+MCU: attiny2313a
+
+Package: 20-pin PDIP
+
+ 1: PA2 dW   !Reset
+ 2: PD0 RXD0
+ 3: PD1 TXD0
+ 4: PA1 XTAL2
+ 5: PA0 XTAL1
+ 6: PD2 INT0 XCK0 CKOUT
+ 7: PD3 INT1
+ 8: PD4 T0
+ 9: PD5 T1 OC0B
+10: Gnd
+11: PD6 ICP
+12: PB0 AIN0 PCINT0
+13: PB1 AIN1 PCINT1
+14: PB2 OC0A PCINT2
+15: PB3 OC1A PCINT3
+16: PB4 OC1B PCINT4
+17: PB5 MOSI DI SDA PCINT5
+18: PB6 MISO DO PCINT6
+19: PB7 USCK SCK PCINT7
+20: Vcc
+
+
+Summary:
+The high-performance Microchip picoPower 8-bit AVR RISC-based microcontroller
+2 KB ISP flash memory with read-while-write capabilities,
+128 Byte EEPROM,
+128 Byte SRAM,
+18 general purpose I/O lines,
+32 general purpose working registers,
+2  timer/counters (8-bit¡ 16-bit),
+4-channel PWM,
+1 comparators,
+internal and external interrupts,
+In-System Programmable via SPI Port,
+programmable watchdog timer with internal oscillator,
+The device operates between 1.8-5.5 volts.

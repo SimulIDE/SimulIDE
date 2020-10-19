@@ -145,11 +145,6 @@ void CircuitWidget::createToolBars()
 
 bool CircuitWidget::newCircuit()
 {
-    if (Simulator::self()->isPaused())
-    {
-        Simulator::self()->resumeSim();
-        powerCircAct->setEnabled(true);
-    }
     powerCircOff();
     
     if( MainWindow::self()->windowTitle().endsWith('*') )
@@ -242,6 +237,7 @@ void CircuitWidget::powerCirc()
 void CircuitWidget::powerCircOn()
 {
     powerCircAct->setIcon(QIcon(":/poweron.png"));
+    powerCircAct->setEnabled( true );
     powerCircAct->setIconText("On");
     pauseSimAct->setEnabled( true );
     Simulator::self()->runContinuous();
@@ -249,16 +245,20 @@ void CircuitWidget::powerCircOn()
 
 void CircuitWidget::powerCircOff()
 {
+    if( Simulator::self()->isPaused() ) Simulator::self()->resumeSim();
+    Simulator::self()->stopSim();
+
     powerCircAct->setIcon(QIcon(":/poweroff.png"));
     powerCircAct->setIconText("Off");
+    powerCircAct->setEnabled( true );
     pauseSimAct->setEnabled( false );
-    Simulator::self()->stopSim();
 }
 
 void CircuitWidget::powerCircDebug( bool run )
 {
     powerCircAct->setIcon(QIcon(":/powerdeb.png"));
     powerCircAct->setIconText("Debug");
+    powerCircAct->setEnabled( true );
 
     Simulator::self()->debug( run );
     m_rateLabel->setText( tr("    Real Speed: Debugger") );

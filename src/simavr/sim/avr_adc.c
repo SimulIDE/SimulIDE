@@ -269,31 +269,31 @@ static void
 avr_adc_irq_notify(
 		struct avr_irq_t * irq, uint32_t value, void * param)
 {
-	avr_adc_t * p = (avr_adc_t *)param;
-	avr_t * avr = p->io.avr;
+    avr_adc_t* p = (avr_adc_t *)param;
+    avr_t* avr = p->io.avr;
 
-	switch (irq->irq) {
-		case ADC_IRQ_ADC0 ... ADC_IRQ_ADC7: {
-			p->adc_values[irq->irq] = value;
-		} 	break;
-		case ADC_IRQ_TEMP: {
-			p->temp = value;
-		}	break;
-		case ADC_IRQ_IN_TRIGGER: {
-			if (avr_regbit_get(avr, p->adate)) {
-				// start a conversion only if it's not running
-				// otherwise ignore the trigger
-				if(!avr_regbit_get(avr, p->adsc) ) {
-			  		uint8_t addr = p->adsc.reg;
-					if (addr) {
-						uint8_t val = avr->data[addr] | (1 << p->adsc.bit);
-						// write ADSC to ADCSRA
-						avr_adc_write_adcsra(avr, addr, val, param);
-					}
-				}
-			}
-		}	break;
-	}
+    uint32_t irqN = irq->irq;
+
+    if     ( irqN <= ADC_IRQ_ADC15 ) p->adc_values[irqN] = value;
+    else if( irqN == ADC_IRQ_TEMP )  p->temp = value;
+    else if( irqN == ADC_IRQ_IN_TRIGGER )
+    {
+        if (avr_regbit_get(avr, p->adate))
+        {
+            // start a conversion only if it's not running
+            // otherwise ignore the trigger
+            if(!avr_regbit_get(avr, p->adsc) )
+            {
+                uint8_t addr = p->adsc.reg;
+                if (addr)
+                {
+                    uint8_t val = avr->data[addr] | (1 << p->adsc.bit);
+                    // write ADSC to ADCSRA
+                    avr_adc_write_adcsra(avr, addr, val, param);
+                }
+            }
+        }
+    }
 }
 
 static void avr_adc_reset(avr_io_t * port)

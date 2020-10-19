@@ -22,18 +22,16 @@
 
 #include <QtWidgets>
 
-
 class TopWidget : public QWidget
 {
     Q_OBJECT
-    
-    public:
-        TopWidget();
-        ~TopWidget();
 
-        void setupWidget( QWidget* intWidget );
+  public:
+    TopWidget();
+    ~TopWidget();
 
-        QVBoxLayout* verticalLayout;
+    void setupWidget(QWidget *intWidget);
+
+    QVBoxLayout *verticalLayout;
 };
 #endif
-

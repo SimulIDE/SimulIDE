@@ -446,7 +446,9 @@ void pic_processor::finish()
 //
 void pic_processor::reset( RESET_TYPE r )
 {
+    m_halted = true;
     rma.reset(r);
+    m_halted = false;
     stack->reset(r);
     wdt.reset(r);
     pc->reset();

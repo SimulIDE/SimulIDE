@@ -48,11 +48,12 @@ class MAINMODULE_EXPORT BaseProcessor : public QObject
         virtual void terminate();
 
         virtual void setSteps( double steps );
-        virtual void step()=0;
+        virtual void step();
         virtual void stepOne()=0;
         virtual void stepCpu()=0;
         virtual void reset()=0;
         virtual int  pc()=0;
+        virtual uint64_t cycle()=0;
         
         virtual void hardReset( bool reset );
         virtual int getRamValue( QString name );
@@ -74,7 +75,7 @@ class MAINMODULE_EXPORT BaseProcessor : public QObject
         
         virtual void setRegisters();
 
-        bool p_runExtStep;
+        void setExtraStep();
 
     signals:
         void uartDataOut( int uart, int value );
@@ -91,9 +92,10 @@ class MAINMODULE_EXPORT BaseProcessor : public QObject
         QString m_dataFile;
         QString m_device;
         
-        double m_mcuStepsPT;
-        int  m_msimStep;
-        double m_nextCycle;
+        double   m_nextCycle;
+        double   m_mcuStepsPT;
+        int      m_msimStep;
+        uint64_t m_extraCycle;
 
         RamTable* m_ramTable;
         QStringList m_regList;

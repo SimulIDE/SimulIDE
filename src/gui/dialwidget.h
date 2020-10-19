@@ -22,20 +22,18 @@
 
 #include <QtWidgets>
 
-
 class DialWidget : public QWidget
 {
     Q_OBJECT
-    
-    public:
-        DialWidget();
-        ~DialWidget();
 
-        void setupWidget();
+  public:
+    DialWidget();
+    ~DialWidget();
 
-        QDial       *dial;
+    void setupWidget();
 
-        QVBoxLayout *verticalLayout;
+    QDial *dial;
+
+    QVBoxLayout *verticalLayout;
 };
 #endif
-

@@ -20,57 +20,80 @@
 #ifndef EELEMENT_H
 #define EELEMENT_H
 
-#include <string>
-#include <math.h>
-#include <QPointer>
-#include <QDebug>
 #include "e-pin.h"
 
+#include <QDebug>
+#include <QPointer>
+#include <math.h>
+#include <string>
 
 // The following provides compatibility with gcc compiler v5 and up
 // (i.e. c++11 standard complience)
 //#if __GNUC__ >= 5
- #define GNU_CONST_STATIC_FLOAT_DECLARATION constexpr
+#define GNU_CONST_STATIC_FLOAT_DECLARATION constexpr
 //#else
 // #define GNU_CONST_STATIC_FLOAT_DECLARATION const
 //#endif
 
 class MAINMODULE_EXPORT eElement
 {
-    public:
-        eElement( std::string id=0 );
-        virtual ~eElement();
+  public:
+    eElement(std::string id = 0);
+    virtual ~eElement();
 
-        virtual void initEpins();
-        virtual void setNumEpins( int n );
+    virtual void initEpins();
+    virtual void setNumEpins(int n);
 
-        virtual ePin* getEpin( int pin );
-        virtual ePin* getEpin( QString pinName );
-        
-        virtual void setEpin( int num, ePin* pin );
+    virtual ePin *getEpin(int pin);
+    virtual ePin *getEpin(QString pinName);
 
-        std::string getId(){ return m_elmId; }
+    virtual void setEpin(int num, ePin *pin);
 
-        virtual void initialize(){;}
-        virtual void resetState(){;}
-        virtual void attach(){;}
-        virtual void stamp(){;}
+    std::string getId()
+    {
+        return m_elmId;
+    }
 
-        virtual void simuClockStep(){;}
-        virtual void updateStep(){;}
-        virtual void setVChanged(){;}
+    virtual void initialize()
+    {
+        ;
+    }
+    virtual void resetState()
+    {
+        ;
+    }
+    virtual void attach()
+    {
+        ;
+    }
+    virtual void stamp()
+    {
+        ;
+    }
 
-        static GNU_CONST_STATIC_FLOAT_DECLARATION double cero_doub         = 1e-14;
-        static GNU_CONST_STATIC_FLOAT_DECLARATION double high_imp          = 1e14;
-        static GNU_CONST_STATIC_FLOAT_DECLARATION double digital_high      = 5.0;
-        static GNU_CONST_STATIC_FLOAT_DECLARATION double digital_low       = 0.0;
-        static GNU_CONST_STATIC_FLOAT_DECLARATION double digital_threshold = 2.5;
+    virtual void simuClockStep()
+    {
+        ;
+    }
+    virtual void updateStep()
+    {
+        ;
+    }
+    virtual void setVChanged()
+    {
+        ;
+    }
 
-    protected:
-        std::vector<ePin*> m_ePin;
+    static GNU_CONST_STATIC_FLOAT_DECLARATION double cero_doub         = 1e-14;
+    static GNU_CONST_STATIC_FLOAT_DECLARATION double high_imp          = 1e14;
+    static GNU_CONST_STATIC_FLOAT_DECLARATION double digital_high      = 5.0;
+    static GNU_CONST_STATIC_FLOAT_DECLARATION double digital_low       = 0.0;
+    static GNU_CONST_STATIC_FLOAT_DECLARATION double digital_threshold = 2.5;
 
-        std::string m_elmId;
+  protected:
+    std::vector<ePin *> m_ePin;
+
+    std::string m_elmId;
 };
 
 #endif
-

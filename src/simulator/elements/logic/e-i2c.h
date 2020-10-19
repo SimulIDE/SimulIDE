@@ -46,9 +46,11 @@ class MAINMODULE_EXPORT eI2C : public eLogicDevice
         virtual void simuClockStep();
         virtual void setVChanged();
 
+        virtual void startWrite(){;}
         virtual void writeByte();
         virtual void readByte();
         virtual void slaveStop();
+        //virtual bool isEnabled() { return m_enabled; }
         virtual void setEnabled( bool en );
         virtual void setMaster( bool m );
         virtual void setAddress( int address );
@@ -57,7 +59,10 @@ class MAINMODULE_EXPORT eI2C : public eLogicDevice
 
         virtual void masterStart( uint8_t addr );
         virtual void masterWrite( uint8_t data );
+        virtual void masterRead();
         virtual void masterStop();
+
+        virtual int byteReceived() { return m_rxReg; }
 
         void createPins();
 

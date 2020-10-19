@@ -45,25 +45,21 @@ typedef uint32_t avr_flashaddr_t;
 
 struct avr_t;
 typedef uint8_t (*avr_io_read_t)(
-		struct avr_t * avr,
+        struct avr_t* avr,
 		avr_io_addr_t addr,
-		void * param);
+        void* param);
+
 typedef void (*avr_io_write_t)(
-		struct avr_t * avr,
+        struct avr_t* avr,
 		avr_io_addr_t addr,
 		uint8_t v,
-		void * param);
+        void* param);
 
 enum {
-	// SREG bit indexes
-	S_C = 0,S_Z,S_N,S_V,S_S,S_H,S_T,S_I,
-
-	// 16 bits register pairs
-	R_XL	= 0x1a, R_XH,R_YL,R_YH,R_ZL,R_ZH,
-	// stack pointer
-	R_SPL	= 32+0x3d, R_SPH,
-	// real SREG
-	R_SREG	= 32+0x3f,
+    S_C = 0,S_Z,S_N,S_V,S_S,S_H,S_T,S_I,      // SREG bit indexes
+    R_XL	= 0x1a, R_XH,R_YL,R_YH,R_ZL,R_ZH, // 16 bits register pairs
+    R_SPL	= 32+0x3d, R_SPH,                 // stack pointer
+    R_SREG	= 32+0x3f,                        // real SREG
 
 	// maximum number of IO registers, on normal AVRs
 	MAX_IOs	= 280,	// Bigger AVRs need more than 256-32 (mega1280)
@@ -145,8 +141,7 @@ struct avr_trace_data_t {
 	uint32_t	touched[256 / 32];	// debug
 };
 
-typedef void (*avr_run_t)(
-		struct avr_t * avr);
+typedef void (*avr_run_t)( struct avr_t* avr);
 
 #define AVR_FUSE_LOW	0
 #define AVR_FUSE_HIGH	1
@@ -156,7 +151,8 @@ typedef void (*avr_run_t)(
  * Main AVR instance. Some of these fields are set by the AVR "Core" definition files
  * the rest is runtime data (as little as possible)
  */
-typedef struct avr_t {
+typedef struct avr_t
+{
 	const char * 		mmcu;	// name of the AVR
 	// these are filled by sim_core_declare from constants in /usr/lib/avr/include/avr/io*.h
 	uint16_t			ioend;
@@ -189,6 +185,7 @@ typedef struct avr_t {
 	// not only to "cycles that runs" but also "cycles that might have run"
 	// like, sleeping.
 	avr_cycle_count_t	cycle;		// current cycle
+    uint64_t cyclesDone;
 
 	// these next two allow the core to freely run between cycle timers and also allows
 	// for a maximum run cycle limit... run_cycle_count is set during cycle timer processing.
@@ -375,61 +372,35 @@ avr_core_allocate(
 		uint32_t coreLen);
 
 // resets the AVR, and the IO modules
-void
-avr_reset(
-		avr_t * avr);
+void avr_reset( avr_t * avr);
 // run one cycle of the AVR, sleep if necessary
-int
-avr_run(
-		avr_t * avr);
+int avr_run( avr_t * avr);
 // finish any pending operations
-void
-avr_terminate(
-		avr_t * avr);
+void avr_terminate( avr_t * avr);
 
 // set an IO register to receive commands from the AVR firmware
 // it's optional, and uses the ELF tags
-void
-avr_set_command_register(
-		avr_t * avr,
-		avr_io_addr_t addr);
+void avr_set_command_register( avr_t * avr, avr_io_addr_t addr);
 
 // specify the "console register" -- output sent to this register
 // is printed on the simulator console, without using a UART
-void
-avr_set_console_register(
-		avr_t * avr,
-		avr_io_addr_t addr);
+void avr_set_console_register( avr_t * avr, avr_io_addr_t addr);
 
 // load code in the "flash"
-int
-avr_loadcode(
-		avr_t * avr,
-		uint8_t * code,
-		uint32_t size,
-		avr_flashaddr_t address);
+int avr_loadcode( avr_t * avr, uint8_t * code, uint32_t size, avr_flashaddr_t address);
 
 /*
  * These are accessors for avr->data but allows watchpoints to be set for gdb
  * IO modules use that to set values to registers, and the AVR core decoder uses
  * that to register "public" read by instructions.
  */
-void
-avr_core_watch_write(
-		avr_t *avr,
-		uint16_t addr,
-		uint8_t v);
-uint8_t
-avr_core_watch_read(
-		avr_t *avr,
-		uint16_t addr);
+void avr_core_watch_write( avr_t *avr, uint16_t addr, uint8_t v);
+uint8_t avr_core_watch_read( avr_t *avr, uint16_t addr);
 
 // called when the core has detected a crash somehow.
 // this might activate gdb server
 void
-avr_sadly_crashed(
-		avr_t *avr,
-		uint8_t signal);
+avr_sadly_crashed( avr_t *avr, uint8_t signal);
 
 /*
  * Logs a message using the current logger
@@ -449,12 +420,9 @@ avr_global_logger(
 typedef void (*avr_logger_p)(struct avr_t* avr, const int level, const char * format, va_list ap);
 
 /* Sets a global logging function in place of the default */
-void
-avr_global_logger_set(
-		avr_logger_p logger);
+void avr_global_logger_set( avr_logger_p logger);
 /* Gets the current global logger function */
-avr_logger_p
-avr_global_logger_get(void);
+avr_logger_p avr_global_logger_get(void);
 #endif
 
 /*
@@ -472,9 +440,7 @@ void avr_callback_run_raw(avr_t * avr);
  * This function is an utility function for the sleep callbacks
  */
 uint32_t
-avr_pending_sleep_usec(
-		avr_t * avr,
-		avr_cycle_count_t howLong);
+avr_pending_sleep_usec( avr_t * avr, avr_cycle_count_t howLong);
 
 #ifdef __cplusplus
 };

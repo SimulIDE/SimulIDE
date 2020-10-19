@@ -63,15 +63,15 @@ void AvrCompBase::attachPins()
         avr_irq_register_notify( i2cOutIrq, i2c_out_hook, this );
 
         // TWEN change irq
-        int twrcAddr = BaseProcessor::self()->getRegAddress( "TWCR" );
-        if( twrcAddr < 0 ) qDebug()<<"AvrCompBase::attachPins: TWCR Register Not found";
+        int twcrAddr = BaseProcessor::self()->getRegAddress( "TWCR" );
+        if( twcrAddr < 0 ) qDebug()<<"AvrCompBase::attachPins: TWCR Register Not found";
         else
         {
             qDebug()<<"AvrCompBase::attachPins Found SDA SCL";
             m_avrI2C.setInput( 0, m_sda );         // Input SDA
             m_avrI2C.setClockPin( m_scl );         // Input SCL
 
-            avr_irq_t* twenIrq = avr_iomem_getirq( cpu, twrcAddr, 0l, 2 );
+            avr_irq_t* twenIrq = avr_iomem_getirq( cpu, twcrAddr, 0l, 2 );
             avr_irq_register_notify( twenIrq, twen_hook, this );
 
             m_i2cInIrq = avr_io_getirq( cpu, AVR_IOCTL_TWI_GETIRQ(0), TWI_IRQ_INPUT);
@@ -133,8 +133,8 @@ void AvrCompBase::i2cOut( uint32_t value )
 
     if( msg & TWI_COND_START )
     {
-        m_slvAddr = v.u.twi.addr;
-        m_avrI2C.masterStart( m_slvAddr );
+        //m_slvAddr = v.u.twi.addr;
+        m_avrI2C.masterStart( 0 );
     }
     else if( msg & TWI_COND_ADDR )
     {
@@ -151,7 +151,7 @@ void AvrCompBase::i2cOut( uint32_t value )
     }
     else if( msg & TWI_COND_READ )
     {
-qDebug() << "AvrCompBase::i2cOut TWI_COND_READ";
+        m_avrI2C.masterRead();
     }
     else
         qDebug() << "AvrCompBase::i2cOut UNKNOWN ACTION";
@@ -161,19 +161,25 @@ void AvrCompBase::inStateChanged( int value )
 {
     if( value < 128 ) return;
 
-    if( value & 256 )
+    if( value & 256 ) // ACK received
     {
-        avr_raise_irq( m_i2cInIrq, avr_twi_irq_msg(TWI_COND_ACK, m_slvAddr, value & 1) );
+        uint32_t irqMsg = avr_twi_irq_msg( TWI_COND_ACK, m_slvAddr, value & 1 );
+        avr_raise_irq( m_i2cInIrq, irqMsg );
     }
-    //else if( value == 512 )
+    else if( value == 128 ) // Start Condition sent
     {
-        int twrcAddr = BaseProcessor::self()->getRegAddress( "TWCR" );
-        int twcr = BaseProcessor::self()->getRamValue( twrcAddr );
-        twcr &= ~(1<<7); // Set TWINT ( set to 0 )
-
-        AvrProcessor* ap = dynamic_cast<AvrProcessor*>( m_processor );
-        avr_t* cpu = ap->getCpu();
-        cpu->data[twrcAddr] = twcr;
+        uint32_t irqMsg = avr_twi_irq_msg( TWI_COND_START, m_slvAddr, 0 );
+        avr_raise_irq( m_i2cInIrq, irqMsg );
+    }
+    else if( value == 130 ) // Received a byte
+    {
+        uint32_t irqMsg = avr_twi_irq_msg( TWI_COND_READ, m_slvAddr, m_avrI2C.byteReceived() );
+        avr_raise_irq( m_i2cInIrq, irqMsg );
+    }
+    else if( value == 132 ) // Stop Condition sent
+    {
+        uint32_t irqMsg = avr_twi_irq_msg( TWI_COND_STOP, m_slvAddr, 0 );
+        avr_raise_irq( m_i2cInIrq, irqMsg );
     }
 }
 

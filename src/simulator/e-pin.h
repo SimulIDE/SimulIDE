@@ -20,48 +20,48 @@
 #ifndef EPIN_H
 #define EPIN_H
 
-//Have to use #include <QtCore/QtGlobal> for Q_DECL_EXPORT?
+// Have to use #include <QtCore/QtGlobal> for Q_DECL_EXPORT?
 #include <string>
 
 class eNode;
 
 class MAINMODULE_EXPORT ePin
 {
-    public:
-        ePin( std::string id, int index );
-        ~ePin();
+  public:
+    ePin(std::string id, int index);
+    ~ePin();
 
-        bool isConnected();
-        void setConnected( bool connected );
+    bool isConnected();
+    void setConnected(bool connected);
 
-        double getVolt();
+    double getVolt();
 
-        eNode* getEnode();
-        void   setEnode( eNode* enode );
+    eNode *getEnode();
+    void setEnode(eNode *enode);
 
-        eNode* getEnodeComp();
-        void   setEnodeComp( eNode* enode ); // The enode at other side of component
+    eNode *getEnodeComp();
+    void setEnodeComp(eNode *enode); // The enode at other side of component
 
-        bool inverted();
-        void setInverted( bool inverted );
+    bool inverted();
+    void setInverted(bool inverted);
 
-        void stampAdmitance( double data );
-        void stampCurrent( double data );
+    void stampAdmitance(double data);
+    void stampCurrent(double data);
 
-        void reset();
-        
-        std::string getId();
-        void setId( std::string id );
+    void reset();
 
-    protected:
-        eNode* m_enode;
-        eNode* m_enodeCon;
+    std::string getId();
+    void setId(std::string id);
 
-        std::string m_id;
-        int m_index;
+  protected:
+    eNode *m_enode;
+    eNode *m_enodeCon;
 
-        bool m_connected;
-        bool m_inverted;
+    std::string m_id;
+    int m_index;
+
+    bool m_connected;
+    bool m_inverted;
 };
 
 #endif

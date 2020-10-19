@@ -19,16 +19,14 @@
 
 #include "topwidget.h"
 
-TopWidget::TopWidget()
-{
-}
+TopWidget::TopWidget() {}
 TopWidget::~TopWidget() {}
 
-void TopWidget::setupWidget( QWidget* intWidget)
+void TopWidget::setupWidget(QWidget *intWidget)
 {
     verticalLayout = new QVBoxLayout(this);
     verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
     verticalLayout->setContentsMargins(0, 0, 0, 0);
-    verticalLayout->addWidget( intWidget );
+    verticalLayout->addWidget(intWidget);
 }
 #include "moc_topwidget.cpp"

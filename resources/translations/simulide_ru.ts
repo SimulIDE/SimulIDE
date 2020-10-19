@@ -34,23 +34,6 @@
     </message>
 </context>
 <context>
-    <name>AVRComponentPin</name>
-    <message>
-        <source>Register descriptor file for this AVR processor %1 is corrupted - cannot attach pin</source>
-        <translation type="vanished">Регистр файла дескриптора для этого AVR микроконтроллера %1 повреждён - не могу назначить вывод</translation>
-    </message>
-    <message>
-        <source>Register descriptor file for this AVR processor %1 is corrupted - cannot attach pin 
-</source>
-        <translation type="vanished">Регистр файла дескриптора для этого AVR микроконтроллера %1 повреждён - не могу назначить вывод 
-</translation>
-    </message>
-    <message>
-        <source>Pin is not initialized properly:</source>
-        <translation type="vanished">Вывод не инициализирован:</translation>
-    </message>
-</context>
-<context>
     <name>Amperimeter</name>
     <message>
         <source>Amperimeter</source>
@@ -97,10 +80,6 @@
     <message>
         <source>ReactStep</source>
         <translation>Шаг отклика</translation>
-    </message>
-    <message>
-        <source>NoLinStep</source>
-        <translation type="vanished">Шаг NoLin</translation>
     </message>
     <message>
         <source>NoLinAcc</source>
@@ -161,10 +140,6 @@
     <message>
         <source>Capacitance</source>
         <translation>Ёмкость</translation>
-    </message>
-    <message>
-        <source>Show_Cap</source>
-        <translation type="vanished">Показать емкость</translation>
     </message>
     <message>
         <source>Freq</source>
@@ -323,10 +298,6 @@
         <translation>Сопротивление обмотки</translation>
     </message>
     <message>
-        <source>Itrig</source>
-        <translation type="vanished">Триггер</translation>
-    </message>
-    <message>
         <source>Poles</source>
         <translation>Число контактных групп</translation>
     </message>
@@ -455,18 +426,6 @@
         <translation>Автозагрузка</translation>
     </message>
     <message>
-        <source>Auto PcLink</source>
-        <translation type="vanished">Автоподключение к ПК</translation>
-    </message>
-    <message>
-        <source>PcLink Command</source>
-        <translation type="vanished">PcLink команда</translation>
-    </message>
-    <message>
-        <source>PcLink Port</source>
-        <translation type="vanished">Порт для подключения к ПК</translation>
-    </message>
-    <message>
         <source>Port Name</source>
         <translation>Имя порта</translation>
     </message>
@@ -517,10 +476,6 @@
     <message>
         <source>Animate</source>
         <translation>Анимация</translation>
-    </message>
-    <message>
-        <source>Font_Scale</source>
-        <translation type="vanished">Масштаб шрифта</translation>
     </message>
     <message>
         <source>Auto Backup Secs</source>
@@ -596,22 +551,6 @@
     </message>
     <message>
         <source>Package File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>RPM Nominal</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Volt Nominal</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Max Resistance</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Min Resistance</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -785,10 +724,6 @@
 <context>
     <name>BcdToDec</name>
     <message>
-        <source>Bcd To Dec.</source>
-        <translation type="vanished">Дешифратор.</translation>
-    </message>
-    <message>
         <source>Logic/Converters</source>
         <translation>Логика/конвертер</translation>
     </message>
@@ -936,22 +871,6 @@ to DomDocument</source>
         <translation>Выполнить повторно</translation>
     </message>
     <message>
-        <source>Open Circuit</source>
-        <translation type="vanished">Открыть схему</translation>
-    </message>
-    <message>
-        <source>New Circuit</source>
-        <translation type="vanished">Новая схема</translation>
-    </message>
-    <message>
-        <source>Save Circuit</source>
-        <translation type="vanished">Сохранить схему</translation>
-    </message>
-    <message>
-        <source>Save Circuit As...</source>
-        <translation type="vanished">Сохранить схему как...</translation>
-    </message>
-    <message>
         <source>Import Circuit</source>
         <translation>Импортировать схему</translation>
     </message>
@@ -1057,16 +976,8 @@ Do you want to save your changes?
         <translation>Сохранить схему</translation>
     </message>
     <message>
-        <source>Real Speed: Debugger</source>
-        <translation type="vanished">Реальная скорость: Отладчик</translation>
-    </message>
-    <message>
         <source>Circuit ERROR!!!</source>
         <translation>Ошибка в схеме!!!</translation>
-    </message>
-    <message>
-        <source>Real Speed: </source>
-        <translation type="vanished">Реальная скорость: </translation>
     </message>
     <message>
         <source>About SimulIDE</source>
@@ -1123,10 +1034,6 @@ Do you want to save your changes?
         <translation>     УСПЕШНО!!! Компиляция завершена</translation>
     </message>
     <message>
-        <source>     ERROR!!! Compilation Faliled</source>
-        <translation>     ОШИБКА!!! Компиляция не выполнена</translation>
-    </message>
-    <message>
         <source>Uploading: </source>
         <translation>Загрузка: </translation>
     </message>
@@ -1163,12 +1070,24 @@ Error:  Mcu Deleted while Debugging!!
         <translation>Ошибка загрузки прошивки... </translation>
     </message>
     <message>
-        <source>Debbuger Started </source>
-        <translation>Отладчик запущен </translation>
+        <source>     ERROR!!! Compilation Failed</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Debbuger Stopped </source>
-        <translation>Отладчик остановлен </translation>
+        <source>Debugger Started </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debugger Stopped </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please save the Document first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No Compiler available for: %1 files</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1288,22 +1207,7 @@ to DomDocument</source>
     </message>
 </context>
 <context>
-    <name>DcMotor</name>
-    <message>
-        <source>Dc Motor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Outputs</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>DecToBcd</name>
-    <message>
-        <source>Dec. To Bcd</source>
-        <translation type="vanished">Шифратор</translation>
-    </message>
     <message>
         <source>Logic/Converters</source>
         <translation>Логика/конвертер</translation>
@@ -1365,10 +1269,6 @@ to DomDocument</source>
         <translation>Загрузить файл</translation>
     </message>
     <message>
-        <source>All files (*)</source>
-        <translation type="vanished">Все файлы (*)</translation>
-    </message>
-    <message>
         <source>Save Document As</source>
         <translation>Сохранить документ как</translation>
     </message>
@@ -1387,10 +1287,6 @@ Do you want to save your changes?
 Документ был изменен.
 Хотите сохранить изменения?
 </translation>
-    </message>
-    <message>
-        <source>set Compiler Path</source>
-        <translation type="vanished">Задать путь компилятора</translation>
     </message>
     <message>
         <source>&amp;New	Ctrl+N</source>
@@ -1549,10 +1445,6 @@ Do you want to save your changes?
         <translation>Запустить отладчик</translation>
     </message>
     <message>
-        <source>All files (*);;Arduino (*.ino);;Asm (*.asm);;GcBasic (*.gcb)</source>
-        <translation type="vanished">Все файлы (*);;Arduino (*.ino);;Asm (*.asm);;GcBasic (*.gcb)</translation>
-    </message>
-    <message>
         <source>Set Compiler Path</source>
         <translation>Задать путь к  компилятору</translation>
     </message>
@@ -1562,7 +1454,7 @@ Do you want to save your changes?
     </message>
     <message>
         <source>All files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Все файлы</translation>
     </message>
 </context>
 <context>
@@ -1573,7 +1465,11 @@ Do you want to save your changes?
     </message>
     <message>
         <source>Other</source>
-        <translation>Другое</translation>
+        <translation type="vanished">Другое</translation>
+    </message>
+    <message>
+        <source>Graphical</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1803,7 +1699,7 @@ Do you want to save your changes?
     </message>
     <message>
         <source>Other</source>
-        <translation>Другое</translation>
+        <translation type="vanished">Другое</translation>
     </message>
     <message>
         <source>Load Image</source>
@@ -1813,16 +1709,9 @@ Do you want to save your changes?
         <source>All files (*.*)</source>
         <translation>Все файлы (*.*)</translation>
     </message>
-</context>
-<context>
-    <name>InBus</name>
     <message>
-        <source>In Bus</source>
-        <translation type="vanished">Входная шина</translation>
-    </message>
-    <message>
-        <source>Logic/Other Logic</source>
-        <translation type="vanished">Логика/Другое (Логика)</translation>
+        <source>Graphical</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1914,17 +1803,6 @@ Do you want to save your changes?
     </message>
 </context>
 <context>
-    <name>Ldr</name>
-    <message>
-        <source>LDR</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Passive</source>
-        <translation type="unfinished">Пассивные элементы</translation>
-    </message>
-</context>
-<context>
     <name>Led</name>
     <message>
         <source>Led</source>
@@ -1965,7 +1843,11 @@ Do you want to save your changes?
     </message>
     <message>
         <source>Other</source>
-        <translation>Другое</translation>
+        <translation type="vanished">Другое</translation>
+    </message>
+    <message>
+        <source>Graphical</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2063,24 +1945,12 @@ to DomDocument</source>
         <translation>Открыть Serial Monitor.</translation>
     </message>
     <message>
-        <source>Close Serial Monitor</source>
-        <translation type="vanished">Закрыть Serial Monitor</translation>
-    </message>
-    <message>
         <source>Open Serial Port.</source>
         <translation>Открыть Serial Port.</translation>
     </message>
     <message>
-        <source>Close Serial Port</source>
-        <translation type="vanished">Закрыть Serial Port</translation>
-    </message>
-    <message>
         <source>Load Firmware</source>
         <translation>Загрузить прошивку</translation>
-    </message>
-    <message>
-        <source>Hex Files (*.hex);;ELF Files (*.elf);;all files (*.*)</source>
-        <translation type="vanished">Файлы HEX (*.hex);;Файлы ELF (*.elf);;Все файлы (*.*)</translation>
     </message>
     <message>
         <source>No File:</source>
@@ -2102,22 +1972,12 @@ to DomDocument</source>
         <source>All files (*.*);;ELF Files (*.elf);;Hex Files (*.hex)</source>
         <translation>Все файлы (*.*);;ELF файлы (*.elf);;Hex файлы (*.hex)</translation>
     </message>
-    <message>
-        <source>PcLink Cannot Open Port %1:
-%2.</source>
-        <translation type="vanished">PcLink не может открыть порт %1:
-%2.</translation>
-    </message>
 </context>
 <context>
     <name>MemData</name>
     <message>
         <source>Load Data</source>
         <translation>Загрузить данные</translation>
-    </message>
-    <message>
-        <source>All files (*.*)</source>
-        <translation type="vanished">Все файлы  (*.*)</translation>
     </message>
     <message>
         <source>Save Data</source>
@@ -2130,7 +1990,7 @@ to DomDocument</source>
 %2.</translation>
     </message>
     <message>
-        <source>.data (*.data);;.bin (*.data);;All files (*.*)</source>
+        <source>.data (*.data);;.bin (*.bin);;All files (*.*)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2217,17 +2077,6 @@ to DomDocument</source>
     <message>
         <source>Meters</source>
         <translation>Измерение</translation>
-    </message>
-</context>
-<context>
-    <name>OutBus</name>
-    <message>
-        <source>Out Bus</source>
-        <translation type="vanished">Выходная шина</translation>
-    </message>
-    <message>
-        <source>Logic/Other Logic</source>
-        <translation type="vanished">Логика/Другое (Логика)</translation>
     </message>
 </context>
 <context>
@@ -2322,10 +2171,6 @@ to DomDocument</source>
         <translation>Измерение</translation>
     </message>
     <message>
-        <source>Add to Plotter</source>
-        <translation type="vanished">Добавить в графопостроитель</translation>
-    </message>
-    <message>
         <source>Remove from Plotter</source>
         <translation>Удалить из графопостроителя</translation>
     </message>
@@ -2392,17 +2237,6 @@ to DomDocument</source>
     </message>
 </context>
 <context>
-    <name>Ram8bit</name>
-    <message>
-        <source>8bit Ram</source>
-        <translation type="vanished">Память 8-бит</translation>
-    </message>
-    <message>
-        <source>Logic/Memory</source>
-        <translation type="vanished">Логика/память</translation>
-    </message>
-</context>
-<context>
     <name>RamTable</name>
     <message>
         <source>Reg.</source>
@@ -2411,10 +2245,6 @@ to DomDocument</source>
     <message>
         <source>Dec</source>
         <translation>Десятичный</translation>
-    </message>
-    <message>
-        <source>Binary</source>
-        <translation type="vanished">Бинарный</translation>
     </message>
     <message>
         <source>Load VarSet</source>
@@ -2463,7 +2293,11 @@ to DomDocument</source>
     </message>
     <message>
         <source>Other</source>
-        <translation>Другое</translation>
+        <translation type="vanished">Другое</translation>
+    </message>
+    <message>
+        <source>Graphical</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2520,101 +2354,6 @@ to DomDocument</source>
     </message>
 </context>
 <context>
-    <name>SerialPortWidget</name>
-    <message>
-        <source>N/A</source>
-        <translation type="vanished">Нет данных</translation>
-    </message>
-    <message>
-        <source>Description: %1</source>
-        <translation type="vanished">Описание: %1</translation>
-    </message>
-    <message>
-        <source>Manufacturer: %1</source>
-        <translation type="vanished">Изготовитель: %1</translation>
-    </message>
-    <message>
-        <source>Serial number: %1</source>
-        <translation type="vanished">Серийный номер: %1</translation>
-    </message>
-    <message>
-        <source>Connected to %1 : %2, %3, %4, %5, %6</source>
-        <translation type="vanished">Подключен к %1 : %2, %3, %4, %5, %6</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="vanished">Ошибка</translation>
-    </message>
-    <message>
-        <source>Custom</source>
-        <translation type="vanished">Настройка</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation type="vanished">Нет</translation>
-    </message>
-    <message>
-        <source>Even</source>
-        <translation type="vanished">Чётный</translation>
-    </message>
-    <message>
-        <source>Odd</source>
-        <translation type="vanished">Нечётный</translation>
-    </message>
-    <message>
-        <source>Mark</source>
-        <translation type="vanished">Маркер</translation>
-    </message>
-    <message>
-        <source>Space</source>
-        <translation type="vanished">Пробел</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation type="vanished">Настройки</translation>
-    </message>
-    <message>
-        <source>Manufacturer:</source>
-        <translation type="vanished">Изготовитель:</translation>
-    </message>
-    <message>
-        <source>Serial number:</source>
-        <translation type="vanished">Серийный номер:</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation type="vanished">Описание:</translation>
-    </message>
-    <message>
-        <source>Open</source>
-        <translation type="vanished">Открыть</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="vanished">Закрыть</translation>
-    </message>
-    <message>
-        <source>Parity:</source>
-        <translation type="vanished">Чётность:</translation>
-    </message>
-    <message>
-        <source>Flow control:</source>
-        <translation type="vanished">Управление потоком:</translation>
-    </message>
-    <message>
-        <source>Stop bits:</source>
-        <translation type="vanished">Стоповые биты:</translation>
-    </message>
-    <message>
-        <source>BaudRate:</source>
-        <translation type="vanished">Бит в секунду:</translation>
-    </message>
-    <message>
-        <source>Data bits:</source>
-        <translation type="vanished">Биты данных:</translation>
-    </message>
-</context>
-<context>
     <name>Servo</name>
     <message>
         <source>Servo</source>
@@ -2641,10 +2380,6 @@ to DomDocument</source>
     <message>
         <source>7 Seg BCD</source>
         <translation>7-сегментный декодер</translation>
-    </message>
-    <message>
-        <source>Logic</source>
-        <translation type="vanished">Логика</translation>
     </message>
     <message>
         <source>Logic/Other Logic</source>
@@ -2718,10 +2453,6 @@ to DomDocument</source>
     <message>
         <source>Package</source>
         <translation>Корпус</translation>
-    </message>
-    <message>
-        <source>Logic</source>
-        <translation type="vanished">Логика</translation>
     </message>
     <message>
         <source>
@@ -2829,17 +2560,6 @@ Do you want to save your changes?
     </message>
 </context>
 <context>
-    <name>Termistor</name>
-    <message>
-        <source>Termistor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Passive</source>
-        <translation type="unfinished">Пассивные элементы</translation>
-    </message>
-</context>
-<context>
     <name>TextComponent</name>
     <message>
         <source>Text</source>
@@ -2847,18 +2567,11 @@ Do you want to save your changes?
     </message>
     <message>
         <source>Other</source>
-        <translation>Другое</translation>
+        <translation type="vanished">Другое</translation>
     </message>
-</context>
-<context>
-    <name>VarResistor</name>
     <message>
-        <source>Variable Resistor</source>
+        <source>Graphical</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Passive</source>
-        <translation type="unfinished">Пассивные элементы</translation>
     </message>
 </context>
 <context>

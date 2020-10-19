@@ -20,61 +20,69 @@
 #ifndef CIRCMATRIX_H
 #define CIRCMATRIX_H
 
-#include <vector>
-#include <QList>
-
 #include "e-node.h"
+
+#include <QList>
+#include <vector>
 
 class MAINMODULE_EXPORT CircMatrix
 {
-    typedef std::vector<int>                  i_vector_t;
-    typedef std::vector<double>               d_vector_t;
-    typedef std::vector<double*>              dp_vector_t;
-    typedef std::vector<std::vector<double>>  d_matrix_t;
-    typedef std::vector<std::vector<double*>> dp_matrix_t;
-    
-    public:
-        CircMatrix();
-        ~CircMatrix();
+    typedef std::vector<int> i_vector_t;
+    typedef std::vector<double> d_vector_t;
+    typedef std::vector<double *> dp_vector_t;
+    typedef std::vector<std::vector<double>> d_matrix_t;
+    typedef std::vector<std::vector<double *>> dp_matrix_t;
 
- static CircMatrix* self() { return m_pSelf; }
+  public:
+    CircMatrix();
+    ~CircMatrix();
 
-        void printMatrix();
-        void createMatrix( QList<eNode*> &eNodeList );
-        void stampMatrix( int row, int col, double value );
-        void stampCoef( int row, double value );
-        bool solveMatrix();
-        
-        void setCircChanged();
-        
-        d_matrix_t getMatrix() { return m_circMatrix; }
-        d_vector_t getCoeffVect() { return m_coefVect; }
+    static CircMatrix *self()
+    {
+        return m_pSelf;
+    }
 
-    private:
- static CircMatrix* m_pSelf;
-        
-        void factorMatrix( int n, int group );
-        bool luSolve( int n, int group );
-        void addConnections( int enodNum, QList<int>* nodeGroup, QList<int>* allNodes );
-        
-        int m_numEnodes;
-        QList<eNode*>* m_eNodeList;
-        
-        QList<dp_matrix_t> m_aList;
-        QList<d_matrix_t>  m_aFaList;
-        QList<dp_vector_t> m_bList;
-        QList<i_vector_t>  m_ipvtList;
-        
-        QList<eNode*>*       m_eNodeActive;
-        QList<QList<eNode*>> m_eNodeActList;
+    void printMatrix();
+    void createMatrix(QList<eNode *> &eNodeList);
+    void stampMatrix(int row, int col, double value);
+    void stampCoef(int row, double value);
+    bool solveMatrix();
 
-        d_matrix_t m_circMatrix;
-        d_vector_t m_coefVect;
-        
-        bool m_admitChanged;
-        bool m_circChanged;
-        bool m_currChanged;
+    void setCircChanged();
+
+    d_matrix_t getMatrix()
+    {
+        return m_circMatrix;
+    }
+    d_vector_t getCoeffVect()
+    {
+        return m_coefVect;
+    }
+
+  private:
+    static CircMatrix *m_pSelf;
+
+    void factorMatrix(int n, int group);
+    bool luSolve(int n, int group);
+    void addConnections(int enodNum, QList<int> *nodeGroup,
+                        QList<int> *allNodes);
+
+    int m_numEnodes;
+    QList<eNode *> *m_eNodeList;
+
+    QList<dp_matrix_t> m_aList;
+    QList<d_matrix_t> m_aFaList;
+    QList<dp_vector_t> m_bList;
+    QList<i_vector_t> m_ipvtList;
+
+    QList<eNode *> *m_eNodeActive;
+    QList<QList<eNode *>> m_eNodeActList;
+
+    d_matrix_t m_circMatrix;
+    d_vector_t m_coefVect;
+
+    bool m_admitChanged;
+    bool m_circChanged;
+    bool m_currChanged;
 };
- #endif
-
-
+#endif

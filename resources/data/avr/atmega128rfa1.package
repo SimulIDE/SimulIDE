@@ -41,11 +41,13 @@
     <pin side="bottom" pos="2"  type="bidir" id="PG3" label="G3"/>
     <pin side="bottom" pos="3"  type="bidir" id="PG4" label="G4"/>
     <pin side="bottom" pos="4"  type="bidir" id="PG5" label="G5"/>
-    <pin side="bottom" pos="5"  type="bidir" id="PG5" label="G5"/>
-    <pin side="bottom" pos="6"  type="vcc"   id="VCC" label="Vcc"/>
-    <pin side="bottom" pos="7"  type="gnd"   id="GND" label="Gnd"/>
-    <pin side="bottom" pos="8"  type="osc"   id="XTAL2" label="XTAL2"/>
-    <pin side="bottom" pos="9"  type="osc"   id="XTAL1" label="XTAL1"/>
+
+    <pin side="bottom" pos="5"  type="dvss"  id="DVss" label="Dvss"/>
+    <pin side="bottom" pos="6"  type="????"  id="Dvdd" label="Dvdd"/>
+    <pin side="bottom" pos="7"  type="????"  id="Dvdd" label="Dvdd"/>
+    <pin side="bottom" pos="8"  type="devdd" id="DEvdd" label="DEvdd"/>
+    <pin side="bottom" pos="9"  type="dvss"  id="DVss" label="Dvss"/>
+
     <pin side="bottom" pos="10" type="bidir,scl" id="PD0" label="D0"/>
     <pin side="bottom" pos="11" type="bidir,sda" id="PD1" label="D1"/>
     <pin side="bottom" pos="12" type="bidir" id="PD2" label="D2"/>
@@ -55,7 +57,7 @@
     <pin side="bottom" pos="16" type="bidir" id="PD6" label="D6"/>
     <pin side="bottom" pos="17" type="bidir" id="PD7" label="D7"/>
 
-    <pin side="right" pos="17" type="bidir" id="PG0" label="G0"/>
+    <pin side="right" pos="17" type="????" id="CLKI" label="CLKI"/>
     <pin side="right" pos="16" type="devdd" id="DEVDD" label="DEvdd"/>
     <pin side="right" pos="15" type="dvss"  id="DVss" label="Dvss"/>
     <pin side="right" pos="14" type="bidir" id="PB0" label="B0"/>

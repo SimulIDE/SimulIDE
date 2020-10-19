@@ -61,8 +61,6 @@ class MAINMODULE_EXPORT WaveGen : public ClockBase
         wave_type waveType()              { return m_type; }
         void setWaveType( wave_type typ ) { m_type = typ; }
         
-        virtual void setFreq( double freq );
-        
         virtual void updateStep();
         virtual void simuClockStep();
 

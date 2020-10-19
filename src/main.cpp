@@ -22,6 +22,16 @@
 
 #include "mainwindow.h"
 
+QString langFile( QString locale )
+{
+    QString langF = "../share/simulide/translations/simulide_"+locale+".qm";
+
+    QFile file( langF );
+    if( !file.exists() ) langF = "";
+
+    return langF;
+}
+
 int main(int argc, char *argv[])
 {
 
@@ -50,16 +60,19 @@ int main(int argc, char *argv[])
 
     QSettings settings( QStandardPaths::standardLocations( QStandardPaths::DataLocation).first()+"/simulide.ini",  QSettings::IniFormat, 0l );
 
-    QString locale   = QLocale::system().name().split("_").first();
+    QString locale = QLocale::system().name();
     if( settings.contains( "language" ) ) locale = settings.value( "language" ).toString();
 
-    QString langFile = "../share/simulide/translations/simulide_"+locale+".qm";
-    
-    QFile file( langFile );
-    if( !file.exists() ) langFile = "../share/simulide/translations/simulide_en.qm";
+    QString langF = langFile( locale );
+    if( langF == "" )
+    {
+        locale = QLocale::system().name().split("_").first();
+        langF = langFile( locale );
+    }
+    if( langF == "" ) langF = "../share/simulide/translations/simulide_en.qm";
     
     QTranslator translator;
-    translator.load( langFile );
+    translator.load( langF );
     app.installTranslator( &translator );
 
     MainWindow window;

@@ -24,6 +24,7 @@
 #include "ledsmd.h"
 #include "e-source.h"
 #include "e-node.h"
+#include "e-gate.h"
 #include "itemlibrary.h"
 
 
@@ -48,11 +49,11 @@ class Arduino : public AvrCompBase
     private:
         void initBoard();
 
-        eSource* m_ground;
         eNode*   m_groundEnode;
-        ePin*    m_groundpin;
+        eNode*   m_bufferEnode;
         LedSmd*  m_boardLed;
         eNode*   m_boardLedEnode;
+        eGate*   m_boardLedBuffer;
         Pin*     m_pb5Pin;
 };
 

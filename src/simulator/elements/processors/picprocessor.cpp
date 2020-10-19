@@ -25,7 +25,6 @@
 #include "utils.h"
 
 // GpSim includes
-#include "pic-processor.h"
 #include "uart.h"
 #include "pir.h"
 #include "eeprom.h"
@@ -95,17 +94,11 @@ bool PicProcessor::loadFirmware( QString fileN )
     m_pPicProcessor->set_Vdd( 5 );
     setEeprom( m_eeprom ); // Load EEPROM
 
-    int cpi = m_pPicProcessor->get_ClockCycles_per_Instruction();
-    m_ipc = 1/(double)cpi;
-    m_nextCycle  = m_mcuStepsPT/cpi;
-    if( m_nextCycle == 0 ) m_nextCycle = 1;
-
     //m_pPicProcessor->set_frequency( (double)McuComponent::self()->freq()*1e6 );
     qDebug() <<"\nProcessor Ready:\n    Device    ="<<m_pPicProcessor->name().c_str();
     qDebug() << "    Freq. MHz =" <<  McuComponent::self()->freq();
     qDebug() << "    Int. OSC  =" << (m_pPicProcessor->get_int_osc() ? "true" : "false");
     qDebug() << "    Use PLLx4 =" << (m_pPicProcessor->get_pplx4_osc() ? "true" : "false");
-    qDebug() << "    Cycs/Inst =" << cpi;
 
     int address = getRegAddress( "OSCCAL" );
     if( address > 0 ) // Initialize Program Memory at 0x3FF for OSCCAL
@@ -133,21 +126,14 @@ bool PicProcessor::loadFirmware( QString fileN )
     return true;
 }
 
-void PicProcessor::step()                 // Run 1 step 
+void PicProcessor::reset()
 {
-    if( !m_loadStatus || m_resetStatus ) return;
-    
-    while( m_nextCycle >= 1 )
-    {
-        m_pPicProcessor->step_cycle();
-        m_nextCycle -= 1;
-        if( p_runExtStep )
-        {
-            Simulator::self()->runExtraStep( get_cycles().get() );
-            p_runExtStep = false;
-        }
-    }
-    m_nextCycle += m_mcuStepsPT*m_ipc;
+    if( !m_loadStatus ) return;
+
+    if( m_pPicProcessor->is_sleeping() ) m_pPicProcessor->exit_sleep();
+    m_pPicProcessor->reset( POR_RESET ); // POR_RESET MCLR_RESET EXIT_RESET IO_RESET
+    m_nextCycle = m_mcuStepsPT;
+    m_extraCycle = 0;
 }
 
 void PicProcessor::stepOne() 
@@ -158,24 +144,11 @@ void PicProcessor::stepOne()
     while( m_nextCycle < 1 )
     {
         runSimuStep(); // 1 simu step = 1uS
-        m_nextCycle += McuComponent::self()->freq()*m_ipc;
+        m_nextCycle += McuComponent::self()->freq()/4;
     }
 }
 
-void PicProcessor::stepCpu()
-{
-    m_pPicProcessor->step_cycle();
-}
-
 int PicProcessor::pc() { return m_pPicProcessor->pc->get_value(); }
-
-void PicProcessor::reset()
-{
-    if( !m_loadStatus ) return;
-
-    if( m_pPicProcessor->is_sleeping() ) m_pPicProcessor->exit_sleep();
-    m_pPicProcessor->reset( POR_RESET ); // POR_RESET MCLR_RESET EXIT_RESET IO_RESET
-}
 
 int PicProcessor::getRamValue( int address )
 { 

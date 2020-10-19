@@ -123,6 +123,8 @@ void CircuitView::clear()
         m_circuit->deleteLater();
     }
     resetMatrix();
+
+    m_enterItem = 0l;
     
     m_circuit = new Circuit( -1600, -1200, 3200, 2400, this );
     setScene( m_circuit );
@@ -139,35 +141,11 @@ void CircuitView::wheelEvent( QWheelEvent *event )
 void CircuitView::dragEnterEvent(QDragEnterEvent *event)
 {
     event->accept();
-    //bool pauseSim = Simulator::self()->isRunning();
-    //if( pauseSim )  Simulator::self()->pauseSim();
+    m_enterItem = 0l;
 
     QString type = event->mimeData()->html();
     QString id   = event->mimeData()->text();
 
-    QString file = "file://";
-    if( id.startsWith( file ) )
-    {
-        id.replace( file, "" ).replace("\r\n", "" );
-#ifdef _WIN32
-        if( id.startsWith( "/" )) id.remove( 0, 1 );
-#endif
-        QString loId = id.toLower();
-
-        if( loId.endsWith( ".jpg")
-         || loId.endsWith( ".png")
-         || loId.endsWith( ".gif"))
-        {
-            file = id;
-            type = "Image";
-            id   = "Image";
-        }
-        else
-        {
-            CircuitWidget::self()->loadCirc( id );
-            return;
-        }
-    }
     if( type.isEmpty() || id.isEmpty() ) return;
 
     m_enterItem = m_circuit->createItem( type, id+"-"+m_circuit->newSceneId() );
@@ -179,13 +157,11 @@ void CircuitView::dragEnterEvent(QDragEnterEvent *event)
             SubCircuit* subC = static_cast<SubCircuit*>( m_enterItem );
             subC->setLogicSymbol( true );
         }
-        else if( type == "Image" ) m_enterItem->setBackground( file );
 
         m_enterItem->setPos( mapToScene( event->pos() ) );
         m_circuit->addItem( m_enterItem );
         //qDebug()<<"CircuitView::dragEnterEvent"<<m_enterItem->itemID()<< type<< id;
     }
-    //if( pauseSim ) Simulator::self()->resumeSim();
 }
 
 void CircuitView::dragMoveEvent(QDragMoveEvent *event)

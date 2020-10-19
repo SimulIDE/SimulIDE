@@ -60,7 +60,31 @@ void BaseProcessor::initialized()
 
     m_loadStatus = true;
     m_msimStep = 0;
-    p_runExtStep = false;
+    m_extraCycle = 0;
+}
+
+void BaseProcessor::setExtraStep() // Run Extra Simulation Step If MCU clock speed > Simulation speed
+{
+    if( m_mcuStepsPT > 1 ) m_extraCycle = cycle();
+}
+
+void BaseProcessor::step()
+{
+    if( !m_loadStatus || m_resetStatus ) return;
+
+    while( m_nextCycle >= 1 )
+    {
+        stepCpu();
+        m_nextCycle -= 1;
+
+        if( m_extraCycle )
+        {
+            //qDebug() << "-" << m_extraCycle;qDebug() << " ";
+            Simulator::self()->runExtraStep( m_extraCycle );
+            m_extraCycle = 0;
+        }
+    }
+    m_nextCycle += m_mcuStepsPT;
 }
 
 void BaseProcessor::runSimuStep()

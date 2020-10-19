@@ -60,6 +60,7 @@ class MAINMODULE_EXPORT SerialTerm : public Component, public eElement
         void resizeY( int y ) {m_serialWidget.resize( QSize( m_serialWidget.size().width(), y) ); }
 
         virtual void paint( QPainter* p, const QStyleOptionGraphicsItem* option, QWidget* widget );
+
     public slots:
         void slotClose();
         void setUart( int uart );

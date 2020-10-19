@@ -39,7 +39,7 @@ LibraryItem* TextComponent::libraryItem()
 {
     return new LibraryItem(
         tr( "Text" ),
-        tr( "Other" ),
+        tr( "Graphical" ),
         "text.png",
         "TextComponent",
     TextComponent::construct );
@@ -175,6 +175,18 @@ void TextComponent::mouseDoubleClickEvent( QGraphicsSceneMouseEvent* event )
         m_text->setFocus();
         setSelected( false );
     }
+}
+
+bool TextComponent::eventFilter( QObject* object, QEvent* event )
+{
+    if( event->type() == QEvent::FocusIn )
+    {
+        if( object == m_text)
+        {
+            Circuit::self()->deselectAll();
+        }
+    }
+    return false;
 }
 
 void TextComponent::paint( QPainter *p, const QStyleOptionGraphicsItem *option, QWidget *widget )

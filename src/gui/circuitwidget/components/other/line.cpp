@@ -27,7 +27,7 @@ LibraryItem* Line::libraryItem()
 {
     return new LibraryItem(
             tr( "Line" ),
-            tr( "Other" ),
+            tr( "Graphical" ),
             "line.png",
             "Line",
             Line::construct);

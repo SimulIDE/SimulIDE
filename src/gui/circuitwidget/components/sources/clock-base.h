@@ -48,6 +48,7 @@ class MAINMODULE_EXPORT ClockBase : public LogicInput
     public slots:
         virtual void onbuttonclicked();
         virtual void remove();
+        void rateChanged();
 
     protected:
         bool m_isRunning;

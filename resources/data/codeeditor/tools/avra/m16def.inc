@@ -532,7 +532,7 @@
 .equ	ADPS2	= 2	; ADC  Prescaler Select Bits
 .equ	ADIE	= 3	; ADC Interrupt Enable
 .equ	ADIF	= 4	; ADC Interrupt Flag
-.equ	ADATE	= 5	; When this bit is written to one,the Timer/Counter2 prescaler will be reset.The bit will be cleared by hardware after the operation is performed.Writing a zero to this bit will have no effect.This bit will always be read as zero if Timer/Counter2 is clocked by the internal CPU clock.If this bit is written when Timer/Counter2 is operating in asynchronous mode,the bit will remain one until the prescaler has been reset.
+.equ	ADATE	= 5	; When this bit is written to one,the Timer/Counter2 prescaler will be reset.
 .equ	ADFR	= ADATE	; For compatibility
 .equ	ADSC	= 6	; ADC Start Conversion
 .equ	ADEN	= 7	; ADC Enable

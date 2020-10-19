@@ -20,8 +20,9 @@
 #ifndef RAMTABLE_H
 #define RAMTABLE_H
 
-#include <QtWidgets>
 #include "baseprocessor.h"
+
+#include <QtWidgets>
 
 class BaseProcessor;
 class BaseDebugger;
@@ -29,42 +30,41 @@ class BaseDebugger;
 class RamTable : public QTableWidget
 {
     Q_OBJECT
-    public:
-        RamTable( BaseProcessor* processor );
-        ~RamTable();
+  public:
+    RamTable(BaseProcessor *processor);
+    ~RamTable();
 
-        void updateValues();
-        
-        void setItemValue( int col, QString value );
-        void setItemValue( int col, int32_t value );
-        void setItemValue( int col, float value );
-        
-        void setDebugger( BaseDebugger*  deb );
-        void remDebugger( BaseDebugger*  deb );
+    void updateValues();
 
-    public slots:
+    void setItemValue(int col, QString value);
+    void setItemValue(int col, int32_t value);
+    void setItemValue(int col, float value);
 
-        void clearSelected();
-        void clearTable();
-        void loadVarSet();
-        void saveVarSet();
-        void loadVariables();
+    void setDebugger(BaseDebugger *deb);
+    void remDebugger(BaseDebugger *deb);
 
-    private slots:
-        void addToWatch( QTableWidgetItem* );
-        void slotContextMenu( const QPoint& );
+  public slots:
 
-    private:
-        BaseProcessor* m_processor;
-        BaseDebugger*  m_debugger;
+    void clearSelected();
+    void clearTable();
+    void loadVarSet();
+    void saveVarSet();
+    void loadVariables();
 
-        QHash<int, QString> watchList;
-        
-        bool m_loadingVars;
+  private slots:
+    void addToWatch(QTableWidgetItem *);
+    void slotContextMenu(const QPoint &);
 
-        int m_numRegs;
-        int m_currentRow;
+  private:
+    BaseProcessor *m_processor;
+    BaseDebugger *m_debugger;
+
+    QHash<int, QString> watchList;
+
+    bool m_loadingVars;
+
+    int m_numRegs;
+    int m_currentRow;
 };
 
 #endif // RAMTABLE_H
-

@@ -619,31 +619,19 @@ static inline int _avr_is_instruction_32_bits(avr_t * avr, avr_flashaddr_t pc)
  */
 avr_flashaddr_t avr_run_one(avr_t * avr)
 {
-run_one_again:
-#if CONFIG_SIMAVR_TRACE
-	/*
-	 * this traces spurious reset or bad jumps
-	 */
-	if ((avr->pc == 0 && avr->cycle > 0) || avr->pc >= avr->codeend || _avr_sp_get(avr) > avr->ramend) {
-//		avr->trace = 1;
-		STATE("RESET\n");
-		crash(avr);
-	}
-	avr->trace_data->touched[0] = avr->trace_data->touched[1] = avr->trace_data->touched[2] = 0;
-#endif
+    //run_one_again:
 
-	/* Ensure we don't crash simavr due to a bad instruction reading past
-	 * the end of the flash.
-	 */
-	if (unlikely(avr->pc >= avr->flashend)) {
-		STATE("CRASH\n");
-		crash(avr);
-		return 0;
-	}
+    // Ensure we don't crash simavr due to a bad instruction reading past the end of the flash.
+    if( unlikely(avr->pc >= avr->flashend) )
+    {
+        STATE("CRASH\n");
+        crash(avr);
+        return 0;
+    }
 
-	uint32_t		opcode = _avr_flash_read16le(avr, avr->pc);
-	avr_flashaddr_t	new_pc = avr->pc + 2;	// future "default" pc
-	int 			cycle = 1;
+    uint32_t		opcode = _avr_flash_read16le(avr, avr->pc);
+    avr_flashaddr_t	new_pc = avr->pc + 2;	// future "default" pc
+    int 			cycle = 1;
 
 	switch (opcode & 0xf000) {
 		case 0x0000: {
@@ -1420,18 +1408,20 @@ run_one_again:
 		default: _avr_invalid_opcode(avr);
 
 	}
-	avr->cycle += cycle;
+    avr->cyclesDone = cycle;
+    ////avr->cycle += cycle;
 
-	if ((avr->state == cpu_Running) &&
-		(avr->run_cycle_count > cycle) &&
-		(avr->interrupt_state == 0))
-	{
-		avr->run_cycle_count -= cycle;
-		avr->pc = new_pc;
-		goto run_one_again;
-	}
+    ////
+    /*if( (avr->state == cpu_Running)
+     && (avr->run_cycle_count > cycle)
+     && (avr->interrupt_state == 0))
+    {
+        avr->run_cycle_count -= cycle;
+        avr->pc = new_pc;
+        goto run_one_again;
+    }*/
 
-	return new_pc;
+    return new_pc;
 }
 
 
