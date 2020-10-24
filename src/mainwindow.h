@@ -32,75 +32,80 @@ class MAINMODULE_EXPORT MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-    public:
-        MainWindow();
-        ~MainWindow();
+  public:
+    MainWindow();
+    ~MainWindow();
 
- static MainWindow* self() { return m_pSelf; }
+    static MainWindow *self()
+    {
+        return m_pSelf;
+    }
 
-        QSettings* settings();
+    QSettings *settings();
 
-        void loadPlugins();
-        void unLoadPugin( QString pluginName );
-        
-        void readSettings();
-        
-        void setTitle( QString title );
-        
-        double fontScale() { return m_fontScale; }
-        void setFontScale( double scale ) { m_fontScale = scale; }
+    void loadPlugins();
+    void unLoadPugin(QString pluginName);
 
-        int autoBck();
-        void setAutoBck( int secs );
+    void readSettings();
 
-        QString loc();
-        void setLoc( QString loc );
+    void setTitle(QString title);
 
-        QString* circHelp() ;
-        void loadCircHelp();
-        
-        QTabWidget*  m_sidepanel;
-        QWidget*     m_ramTabWidget;
-        QGridLayout* m_ramTabWidgetLayout;
+    double fontScale()
+    {
+        return m_fontScale;
+    }
+    void setFontScale(double scale)
+    {
+        m_fontScale = scale;
+    }
 
-    protected:
-        void closeEvent(QCloseEvent* event);
+    int autoBck();
+    void setAutoBck(int secs);
 
-    private slots:
-        void about();
+    QString loc();
+    void setLoc(QString loc);
 
-    private:
+    QString *circHelp();
+    void loadCircHelp();
 
- static MainWindow* m_pSelf;
- 
-        void loadPluginsAt( QDir pluginsDir );
+    QTabWidget *m_sidepanel;
+    QWidget *m_ramTabWidget;
+    QGridLayout *m_ramTabWidgetLayout;
 
-        bool m_blocked;
+  protected:
+    void closeEvent(QCloseEvent *event);
 
-        void createWidgets();
-        void createMenus();
-        void createToolBars();
-        void writeSettings();
-        void applyStile();
-        
-        float m_fontScale;
-        int m_autoBck;
-        
-        QSettings m_settings;
-        
-        QString m_version;
-        QString m_styleSheet;
-        QString m_circHelp;
+  private:
+    static MainWindow *m_pSelf;
 
-        QHash<QString, QPluginLoader*>  m_plugins;
-        
-        CircuitWidget*      m_circuit;
-        ComponentSelector*  m_components;
-        PropertiesWidget*   m_itemprop;
-        EditorWindow*       m_editor;
-        
-        QSplitter*  m_Centralsplitter;
-        FileWidget* m_fileSystemTree;
+    void loadPluginsAt(QDir pluginsDir);
+
+    bool m_blocked;
+
+    void createWidgets();
+    void createMenus();
+    void createToolBars();
+    void writeSettings();
+    void applyStile();
+
+    float m_fontScale;
+    int m_autoBck;
+
+    QSettings m_settings;
+
+    QString m_version;
+    QString m_styleSheet;
+    QString m_circHelp;
+
+    QHash<QString, QPluginLoader *> m_plugins;
+
+    CircuitWidget *m_circuit;
+    ComponentSelector *m_components;
+    PropertiesWidget *m_itemprop;
+    EditorWindow *m_editor;
+
+    QSplitter *m_Centralsplitter;
+    FileWidget *m_fileSystemTree;
 };
 
 #endif
