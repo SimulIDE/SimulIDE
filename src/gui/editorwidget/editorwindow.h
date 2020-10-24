@@ -20,113 +20,113 @@
 #ifndef EDITORWINDOW_H
 #define EDITORWINDOW_H
 
-#include <QtGui>
-
 #include "codeeditorwidget.h"
 #include "findreplacedialog.h"
+
+#include <QtGui>
 
 class EditorWindow : public QWidget
 {
     Q_OBJECT
 
-    public:
-        EditorWindow( QWidget *parent );
-        ~EditorWindow();
-        
- static EditorWindow* self() { return m_pSelf; }
+  public:
+    EditorWindow(QWidget *parent);
+    ~EditorWindow();
 
-        bool close();
-        
-        void enableStepOver( bool en );
+    static EditorWindow *self()
+    {
+        return m_pSelf;
+    }
 
-        CodeEditor* getCodeEditor();
+    bool close();
 
-    public slots:
-        void loadFile(const QString &fileName);
-        void pause();
-        void stop();
-        void run();
-        bool save();
-        
-    private slots:
-        void newFile();
-        void open();
-        bool saveAs();
-        void about();
-        void closeTab(int);
-        void documentWasModified();
-        void tabContextMenu( const QPoint & eventpoint );
-        void tabChanged( int tab );
-        void setCompiler();
-        void reload();
+    void enableStepOver(bool en);
 
-        void cut();
-        void copy();
-        void paste();
-        void undo();
-        void redo();
-        
-        void debug();
-        void step();
-        void stepOver();
-        void reset();
-        void compile();
-        void upload();
-        void findReplaceDialog();
+    CodeEditor *getCodeEditor();
 
-    private:
- static EditorWindow*  m_pSelf;
-        void createWidgets();
-        void createActions();
-        void createToolBars();
-        void readSettings();
-        void writeSettings();
-        void enableFileActs( bool enable );
-        void enableDebugActs( bool enable );
-        void setStepActs();
-        void keyPressEvent(QKeyEvent *event);
+  public slots:
+    void loadFile(const QString &fileName);
+    void pause();
+    void stop();
+    void run();
+    bool save();
 
-        bool maybeSave();
-        bool saveFile(const QString &fileName);
-        
-        QString strippedName(const QString &fullFileName);
-        
-        QGridLayout* baseWidgetLayout;
-        QTabWidget*  m_docWidget;
-        
-        FindReplaceDialog* findRepDiaWidget;
-        
-        QString     m_lastDir;
-        QStringList m_fileList;
+  private slots:
+    void newFile();
+    void open();
+    bool saveAs();
+    void closeTab(int);
+    void documentWasModified();
+    void tabContextMenu(const QPoint &eventpoint);
+    void tabChanged(int tab);
+    void setCompiler();
+    void reload();
 
-        QToolBar* m_editorToolBar;
-        QToolBar* m_debuggerToolBar;
+    void cut();
+    void copy();
+    void paste();
+    void undo();
+    void redo();
 
-        QAction *newAct;
-        QAction *openAct;
-        QAction *saveAct;
-        QAction *saveAsAct;
-        QAction *exitAct;
-        QAction *aboutAct;
-        QAction *aboutQtAct;
-        QAction *undoAct;
-        QAction *redoAct;
+    void debug();
+    void step();
+    void stepOver();
+    void reset();
+    void compile();
+    void upload();
+    void findReplaceDialog();
 
-        QAction *cutAct;
-        QAction *copyAct;
-        QAction *pasteAct;
-        
-        QAction *debugAct;
-        
-        QAction *stepAct;
-        QAction *stepOverAct;
-        QAction *runAct;
-        QAction *pauseAct;
-        QAction *resetAct;
-        QAction *stopAct;
-        QAction *compileAct;
-        QAction *loadAct;
-        QAction *findQtAct;
+  private:
+    static EditorWindow *m_pSelf;
+    void createWidgets();
+    void createActions();
+    void createToolBars();
+    void readSettings();
+    void writeSettings();
+    void enableFileActs(bool enable);
+    void enableDebugActs(bool enable);
+    void setStepActs();
+    void keyPressEvent(QKeyEvent *event);
+
+    bool maybeSave();
+    bool saveFile(const QString &fileName);
+
+    QString strippedName(const QString &fullFileName);
+
+    QGridLayout *baseWidgetLayout;
+    QTabWidget *m_docWidget;
+
+    FindReplaceDialog *findRepDiaWidget;
+
+    QString m_lastDir;
+    QStringList m_fileList;
+
+    QToolBar *m_editorToolBar;
+    QToolBar *m_debuggerToolBar;
+
+    QAction *newAct;
+    QAction *openAct;
+    QAction *saveAct;
+    QAction *saveAsAct;
+    QAction *exitAct;
+    QAction *undoAct;
+    QAction *redoAct;
+
+    QAction *cutAct;
+    QAction *copyAct;
+    QAction *pasteAct;
+
+    QAction *debugAct;
+
+    QAction *stepAct;
+    QAction *stepOverAct;
+    QAction *runAct;
+    QAction *pauseAct;
+    QAction *resetAct;
+    QAction *stopAct;
+    QAction *compileAct;
+    QAction *loadAct;
+    QAction *findQtAct;
 };
 
 #endif
