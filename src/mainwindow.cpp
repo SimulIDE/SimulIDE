@@ -355,7 +355,7 @@ void MainWindow::unLoadPugin(QString pluginName)
     }
 }
 
-void MainWindow::applyStile()
+void MainWindow::applyStyle()
 {
     QFile file(":/simulide.qss");
     file.open(QFile::ReadOnly);
