@@ -13,6 +13,8 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
       - name: Checkout
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
         uses: actions/checkout@v2
         with:
           submodules: 'recursive'
