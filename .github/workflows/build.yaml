@@ -13,14 +13,12 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
       - name: Checkout
-        env:
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
         uses: actions/checkout@v2
         with:
           submodules: 'recursive'
 
       - name: Installing Qt
-        uses: jurplel/install-qt-action@v2.6.2
+        uses: jurplel/install-qt-action@v2.10.0
         with:
           version: ${{ matrix.qt_version }}
           arch: ${{ matrix.qtarch }}
