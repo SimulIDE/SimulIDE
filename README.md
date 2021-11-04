@@ -49,3 +49,7 @@ Here on [this Discord channel](https://discord.gg/nTRbdpY) you may ask for help 
 
 
 ![GitHub](https://img.shields.io/github/license/SimulIDE/SimulIDE)
+
+## Disclaimer:
+
+SimulIDE software is originally developed by [Santiago González Rodriguez](santigoro@gmail.com) and he is still the core developer of the software. This GitHub organization/repositories and the corresponding Discord channels, are community driven effort to make the software more accessible to users and developers. If you enjoy  the software please support the original developer [here on Patreon](https://www.patreon.com/simulide).
